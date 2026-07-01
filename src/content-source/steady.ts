@@ -114,7 +114,7 @@ export class SteadyContentSource implements ContentSource {
     const curves = await this.curvesArray();
     const curve = curves.find((x: any) => x.slug === slug);
     if (!curve) return 0;
-    return (curve.painBand as any[]).filter((p: any) => p.basis === "interpolated").length;
+    return ((curve.painBand ?? []) as any[]).filter((p: any) => p.basis === "interpolated").length;
   }
 
   async applyOps(ops: EditOp[]): Promise<void> {
@@ -134,7 +134,9 @@ export class SteadyContentSource implements ContentSource {
           const idx = parseInt(parts[1], 10);
           const arr = objLit.getPropertyOrThrow(parts[0]).asKindOrThrow(SyntaxKind.PropertyAssignment)
             .getInitializerIfKindOrThrow(SyntaxKind.ArrayLiteralExpression);
-          arr.getElements()[idx].replaceWithText(JSON.stringify(op.newText));
+          const el = arr.getElements()[idx];
+          if (!el) throw new Error(`replaceProse index out of range: ${op.field}`);
+          el.replaceWithText(JSON.stringify(op.newText));
         } else if (parts[0] === "phase") {
           // phase.<id>.body.<i>
           const phaseId = parts[1];
@@ -150,15 +152,21 @@ export class SteadyContentSource implements ContentSource {
           if (!phaseEl) throw new Error(`Phase "${phaseId}" not found in ${op.procedureSlug}`);
           const body = phaseEl.getPropertyOrThrow("body").asKindOrThrow(SyntaxKind.PropertyAssignment)
             .getInitializerIfKindOrThrow(SyntaxKind.ArrayLiteralExpression);
-          body.getElements()[bodyIdx].replaceWithText(JSON.stringify(op.newText));
+          const bodyEl = body.getElements()[bodyIdx];
+          if (!bodyEl) throw new Error(`replaceProse index out of range: ${op.field}`);
+          bodyEl.replaceWithText(JSON.stringify(op.newText));
         } else if (parts[0] === "faq") {
           // faq.<i>.q or faq.<i>.a
           const idx = parseInt(parts[1], 10);
           const propName = parts[2];
           const faqs = objLit.getPropertyOrThrow("faqs").asKindOrThrow(SyntaxKind.PropertyAssignment)
             .getInitializerIfKindOrThrow(SyntaxKind.ArrayLiteralExpression);
-          const faqEl = faqs.getElements()[idx].asKindOrThrow(SyntaxKind.ObjectLiteralExpression);
-          faqEl.getPropertyOrThrow(propName).asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(JSON.stringify(op.newText));
+          const faqEl = faqs.getElements()[idx];
+          if (!faqEl) throw new Error(`replaceProse index out of range: ${op.field}`);
+          faqEl.asKindOrThrow(SyntaxKind.ObjectLiteralExpression)
+            .getPropertyOrThrow(propName).asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(JSON.stringify(op.newText));
+        } else {
+          throw new Error(`unknown replaceProse field: ${op.field}`);
         }
 
         await sf.save();
@@ -188,7 +196,10 @@ export class SteadyContentSource implements ContentSource {
         const sf = project.addSourceFileAtPathIfExists(contentFile) ?? project.addSourceFileAtPath(contentFile);
         const objLit = sf.getFirstDescendantByKindOrThrow(SyntaxKind.ObjectLiteralExpression);
         // Map "title" → "metaTitle", "description" → "metaDescription"
-        const propName = op.field === "title" ? "metaTitle" : "metaDescription";
+        let propName: string;
+        if (op.field === "title") propName = "metaTitle";
+        else if (op.field === "description") propName = "metaDescription";
+        else throw new Error(`unknown updateMeta field: ${op.field}`);
         objLit.getPropertyOrThrow(propName).asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(JSON.stringify(op.value));
         await sf.save();
       } else if (op.type === "promoteToMeasured") {
