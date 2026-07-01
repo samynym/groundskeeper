@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Groundskeeper — Design Spec</title>
+<style>
+  :root{
+    --bg:#F0EEE6; --panel:#FCFBF7; --panel2:#F5F1E8; --line:#E4DDCE; --line2:#EDE7DA;
+    --ink:#1A1915; --muted:#6B6558; --faint:#9A9482;
+    --accent:#D97757; --accent-dim:#C15F3C; --accent-tint:#F7E9E2; --accent-ink:#fff;
+    --amber:#B7791F; --amber-tint:#F6ECD6; --red:#C0392B; --red-tint:#F6E3DF; --blue:#3F72A8; --blue-tint:#E4ECF5;
+    --radius:14px; --maxw:1080px;
+    --shadow:0 1px 2px rgba(60,50,35,.04),0 6px 20px rgba(60,50,35,.06);
+    --shadow-lg:0 2px 4px rgba(60,50,35,.05),0 12px 34px rgba(60,50,35,.09);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:radial-gradient(1200px 620px at 72% -12%, #F6EDE2 0%, var(--bg) 58%);
+    color:var(--ink); font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent-dim);text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .layout{display:grid;grid-template-columns:220px 1fr;gap:40px;max-width:1320px;margin:0 auto;padding:0 24px}
+  @media(max-width:900px){.layout{grid-template-columns:1fr;padding:0 18px}.toc{display:none}}
+
+  /* Header */
+  header.hero{padding:64px 0 28px;border-bottom:1px solid var(--line)}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dim);font-weight:700}
+  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-tint)}
+  h1{font-size:44px;line-height:1.08;margin:14px 0 8px;letter-spacing:-.02em}
+  h1 small{display:block;font-size:17px;font-weight:500;color:var(--muted);letter-spacing:0;margin-top:10px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .pill{font-size:12.5px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted);box-shadow:var(--shadow)}
+  .pill.ok{color:var(--accent-dim);border-color:#EACBBB;background:var(--accent-tint)}
+
+  /* Thesis */
+  .thesis{margin:34px 0 8px;padding:26px 28px;border-radius:var(--radius);
+    background:linear-gradient(135deg,#F9ECE4,#F5E4D9);border:1px solid #EACBBB;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+  .thesis:before{content:"“";position:absolute;top:-24px;right:16px;font-size:150px;color:#E7B79F;opacity:.55;font-family:Georgia,serif}
+  .thesis .lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dim);font-weight:700;margin-bottom:10px}
+  .thesis p{font-size:23px;line-height:1.35;margin:0;font-weight:600;letter-spacing:-.01em;color:#3a2418}
+  .thesis .sub{font-size:15px;font-weight:400;color:#6d5647;margin-top:14px;max-width:70ch}
+
+  /* TOC */
+  .toc{position:sticky;top:24px;align-self:start;font-size:14px;padding-top:8px}
+  .toc .tt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 12px;font-weight:700}
+  .toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+  .toc li{counter-increment:t;margin:2px 0}
+  .toc a{display:block;color:var(--muted);padding:6px 10px;border-radius:8px;border-left:2px solid transparent}
+  .toc a:hover{color:var(--ink);background:var(--panel);border-left-color:var(--accent)}
+  .toc a:before{content:counter(t,decimal-leading-zero);color:var(--faint);font-variant-numeric:tabular-nums;margin-right:9px;font-size:12px}
+
+  main{padding:8px 0 80px}
+  section{padding:34px 0;border-bottom:1px solid var(--line)}
+  section:last-child{border-bottom:0}
+  h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dim);margin:0 0 4px;font-weight:700}
+  .h2sub{font-size:26px;margin:0 0 18px;letter-spacing:-.02em;font-weight:650;color:var(--ink)}
+  p{color:#3f3a31}
+  strong{color:#000}
+  code{background:var(--panel2);border:1px solid var(--line);padding:1.5px 6px;border-radius:6px;font:13.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#9a4a2c}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:760px){.grid3{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+  .card h3{margin:0 0 6px;font-size:16px}
+  .card .tag{font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+  .card p{margin:6px 0 0;font-size:14px;color:var(--muted)}
+  .card.gap{border-color:#EACBBB;background:var(--accent-tint)}
+  .card.gap .tag{color:var(--accent-dim)}
+  .card .tag.warn{color:var(--amber)} .card .tag.bad{color:var(--red)}
+
+  table{width:100%;border-collapse:collapse;margin-top:6px;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line2);vertical-align:top}
+  th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;background:var(--panel2)}
+  td:first-child{white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:var(--panel2)}
+  .mono{font:13px/1.4 ui-monospace,Menlo,monospace;color:#9a4a2c}
+
+  /* Stepper */
+  .steps{position:relative;margin:6px 0 0;padding:0;list-style:none}
+  .steps:before{content:"";position:absolute;left:15px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),#EAD9CE)}
+  .steps li{position:relative;padding:0 0 16px 46px;min-height:32px;color:#3f3a31}
+  .steps li .n{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--panel);border:1px solid var(--accent-dim);
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:var(--accent-dim);box-shadow:var(--shadow)}
+  .steps li b{color:#000}
+  .steps li .mod{font:12px/1 ui-monospace,Menlo,monospace;color:var(--accent-dim);background:var(--accent-tint);border:1px solid #EACBBB;padding:3px 7px;border-radius:6px;margin-right:8px;display:inline-block}
+
+  .callout{border-radius:var(--radius);padding:18px 20px;border:1px solid var(--line);background:var(--panel);margin-top:14px;box-shadow:var(--shadow)}
+  .callout.layer{border-left:3px solid var(--accent)}
+  .callout h4{margin:0 0 8px;font-size:15px;display:flex;align-items:center;gap:9px}
+  .callout ul{margin:6px 0 0;padding-left:20px;color:var(--muted);font-size:14px}
+  .callout li{margin:4px 0}
+  .badge{font-size:11px;padding:2px 8px;border-radius:999px;font-weight:700;letter-spacing:.03em}
+  .badge.mech{background:var(--accent-tint);color:var(--accent-dim);border:1px solid #EACBBB}
+  .badge.judge{background:var(--blue-tint);color:var(--blue);border:1px solid #C6D6E9}
+
+  .stance{margin-top:14px;padding:14px 18px;border-radius:12px;background:var(--red-tint);border:1px solid #E9C6BF;color:#6a2a22;font-size:14.5px}
+  .stance b{color:var(--red)}
+
+  .crit{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:760px){.crit{grid-template-columns:1fr}}
+  .crit .card{border-top:3px solid var(--accent)}
+  .crit .card .big{font-size:15px;font-weight:700;color:#000;display:flex;gap:9px;align-items:baseline}
+  .crit .card .big .chk{color:var(--accent-dim)}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .chip{font-size:13px;padding:6px 12px;border-radius:999px;border:1px dashed #D8CFBD;color:var(--muted);background:var(--panel)}
+
+  .dl{display:grid;grid-template-columns:minmax(160px,220px) 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:6px;box-shadow:var(--shadow);background:var(--panel)}
+  .dl dt{padding:12px 16px;background:var(--panel2);border-bottom:1px solid var(--line2);font-size:13px;color:var(--muted);font-weight:600}
+  .dl dd{padding:12px 16px;margin:0;border-bottom:1px solid var(--line2);border-left:1px solid var(--line2);font-size:14px;color:#000}
+  .dl dt:last-of-type,.dl dd:last-of-type{border-bottom:0}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.two{grid-template-columns:1fr}}
+  footer{color:var(--faint);font-size:13px;padding:30px 0 60px;text-align:center}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker"><span class="dot"></span> Design Spec · Brainstorm output</span>
+    <h1>Groundskeeper
+      <small>A closed-world content refresh agent — maintains an existing site without ever asserting a fact it can’t cite.</small>
+    </h1>
+    <div class="meta">
+      <span class="pill ok">● Design approved · pending spec review</span>
+      <span class="pill">2026-07-01</span>
+      <span class="pill">Working name: <code>groundskeeper</code></span>
+      <span class="pill">First target: Steady · growsteady.me</span>
+    </div>
+
+    <div class="thesis">
+      <div class="lbl">The one rule the whole product hangs on</div>
+      <p>A claim that can’t cite a source in the evidence base does not ship.</p>
+      <div class="sub">Every competitor runs an <em>open-world</em> writer that can hallucinate, with the human as the safety net. Groundskeeper inverts it: the agent runs <em>closed-world</em>, and the <strong>guard</strong> — not the human — is the safety net. The human is only the merge gate.</div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc">
+    <p class="tt">On this page</p>
+    <ol>
+      <li><a href="#seam">The seam</a></li>
+      <li><a href="#goals">Goals &amp; non-goals</a></li>
+      <li><a href="#arch">Architecture</a></li>
+      <li><a href="#components">Components</a></li>
+      <li><a href="#flow">Data flow</a></li>
+      <li><a href="#guard">Grounding guard</a></li>
+      <li><a href="#autonomy">Autonomy</a></li>
+      <li><a href="#success">Success criteria</a></li>
+      <li><a href="#scope">Out of scope</a></li>
+      <li><a href="#testing">Testing</a></li>
+      <li><a href="#open">Open questions</a></li>
+      <li><a href="#log">Decision log</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="seam">
+      <h2>Why this exists</h2>
+      <div class="h2sub">The open seam between the incumbents</div>
+      <div class="grid3">
+        <div class="card"><span class="tag bad">Outrank</span><h3>Sprays new posts</h3><p>Autonomous but fire-and-forget. Never maintains what it published. Targets non-marketers.</p></div>
+        <div class="card"><span class="tag warn">Frase</span><h3>Not autonomous</h3><p>Has maintenance + AEO features, but human drives a dashboard. Built for marketing teams.</p></div>
+        <div class="card"><span class="tag warn">Slate</span><h3>Enterprise-only</h3><p>Genuinely autonomous closed-loop — but 1,000+ pages, $10–25k/yr. Abandons the bottom of the market.</p></div>
+      </div>
+      <div class="card gap" style="margin-top:14px">
+        <span class="tag">The gap →</span>
+        <h3>An autonomous maintenance loop for the non-marketer / small site — below Slate’s floor — made safe by closed-world grounding.</h3>
+        <p>Steady is the ideal first target: its evidence base is already structured and cited, and it’s a YMYL site where grounding matters most.</p>
+      </div>
+    </section>
+
+    <section id="goals">
+      <h2>Scope</h2>
+      <div class="h2sub">Goals &amp; non-goals</div>
+      <div class="two">
+        <div class="callout">
+          <h4>✅ Goals</h4>
+          <ul>
+            <li>Prove an agent can maintain a real YMYL site <strong>unattended without producing garbage</strong>.</li>
+            <li>Refresh <strong>existing</strong> pages, driven by underperformance + staleness.</li>
+            <li>Ground every edit strictly in a curated, cited evidence base.</li>
+            <li>Ship review-ready PRs; human approves the merge.</li>
+            <li>Dogfood on Steady; keep clean seams to productize later.</li>
+          </ul>
+        </div>
+        <div class="callout">
+          <h4>🚫 Non-goals (v1)</h4>
+          <ul>
+            <li>New-page generation.</li>
+            <li>GEO / AI-citation tracking.</li>
+            <li>Web dashboard, auth, multi-tenancy.</li>
+            <li>CMS adapters (WordPress/Webflow).</li>
+            <li>Auto-merge — human approves every PR.</li>
+            <li>Deciding vertical vs horizontal productization.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="arch">
+      <h2>How it’s wired</h2>
+      <div class="h2sub">Architecture — a separate repo that operates on a checkout</div>
+      <p>Groundskeeper is its <strong>own repository</strong>. It never stores the target site’s content. It operates on a <strong>local checkout</strong> of the target repo at a configured path:</p>
+      <ul>
+        <li>Reads content + citations via a <code>ContentSource</code> adapter.</li>
+        <li>Reads performance via the target’s existing GSC tooling (<code>scripts/seo-loop.mjs</code>).</li>
+        <li>Drafts edits → grounding guard → verifies the target’s build.</li>
+        <li>Branches, commits, pushes, opens a PR on the target repo via <code>gh</code>.</li>
+      </ul>
+      <p>The <strong>Steady adapter</strong> is the first and only <code>ContentSource</code> for the MVP — it encodes Steady’s <code>lib/benchmarks/*</code> layout. A second site later = a second adapter, nothing else. The separate repo forces that boundary to be real from day one.</p>
+    </section>
+
+    <section id="components">
+      <h2>The parts</h2>
+      <div class="h2sub">Components — each independently testable</div>
+      <table>
+        <thead><tr><th>Module</th><th>Responsibility</th><th>Reuses (Steady)</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">ContentSource</td><td>Interface: read/write pages as structured objects; abstract the target’s layout</td><td class="mono">—</td></tr>
+          <tr><td class="mono">…Steady</td><td>Adapter over <code>benchmarks/{curves,content,weekly}</code> + <code>sources[]</code></td><td class="mono">lib/benchmarks/*</td></tr>
+          <tr><td class="mono">PerformanceSignal</td><td>Pull GSC 28d/7d clicks, impressions, CTR, position per URL</td><td class="mono">seo-loop.mjs</td></tr>
+          <tr><td class="mono">TargetSelector</td><td>Score &amp; rank candidates; pick <strong>one</strong> target per run</td><td class="mono">—</td></tr>
+          <tr><td class="mono">EvidenceRetriever</td><td>Return all citable facts: per-point <code>sourceUrl</code>, <code>sources[]</code>, dossier passages</td><td class="mono">recovery-data-sources.md</td></tr>
+          <tr><td class="mono">RefreshDrafter</td><td>LLM proposes edits to content modules, constrained to retrieved evidence</td><td class="mono">extend-procedure-cards</td></tr>
+          <tr><td class="mono">GroundingGuard</td><td>Reject any claim not traceable to a cited source; enforce <code>basis</code>/<code>sourceUrl</code></td><td class="mono">—</td></tr>
+          <tr><td class="mono">BuildVerifier</td><td>Run target’s <code>tsc</code> + lint + tests; block PR on failure</td><td class="mono">repo scripts</td></tr>
+          <tr><td class="mono">PRWriter</td><td>Branch, commit, push, open PR with a claim→source audit table</td><td class="mono">gh</td></tr>
+          <tr><td class="mono">Orchestrator</td><td>Run one cycle end-to-end on a schedule; dry-run mode</td><td class="mono">—</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="flow">
+      <h2>One cycle</h2>
+      <div class="h2sub">Data flow, start to PR</div>
+      <ol class="steps">
+        <li><span class="n">1</span><span class="mod">PerformanceSignal</span> GSC snapshot for <code>sc-domain:growsteady.me</code>.</li>
+        <li><span class="n">2</span><span class="mod">TargetSelector</span> Rank all procedure/week pages by <b>underperformance</b> (page 2–3 position; high-impression / low-CTR) + <b>staleness</b> (<code>basis:"interpolated"</code>, thin <code>sources[]</code>, long time since last git edit). Pick the top <b>one</b>.</li>
+        <li><span class="n">3</span><span class="mod">EvidenceRetriever</span> Assemble the citable fact set for that target.</li>
+        <li><span class="n">4</span><span class="mod">RefreshDrafter</span> Propose a concrete diff: prose tightening, FAQ/intent fixes, <b>promoting</b> an <code>interpolated</code> value to <code>measured</code> when the dossier already documents it (never fetching a new source), metadata / internal-link fixes for CTR.</li>
+        <li><span class="n">5</span><span class="mod">GroundingGuard</span> Validate <b>every</b> claim against the evidence set. Unsupported → strip or reject; log why.</li>
+        <li><span class="n">6</span><span class="mod">BuildVerifier</span> Typecheck + lint + test the edited checkout. Fail → abort, no PR.</li>
+        <li><span class="n">7</span><span class="mod">PRWriter</span> Open a PR whose body lists each change with the exact source it traces to.</li>
+        <li><span class="n">8</span><span class="mod">Human</span> Review the PR. Merge → ships via Vercel SSG.</li>
+      </ol>
+    </section>
+
+    <section id="guard">
+      <h2>The crux</h2>
+      <div class="h2sub">Grounding guard — two layers, a claim must pass both</div>
+      <p>This runs on the agent’s <strong>own output</strong>, before any human sees it. It’s what lets the agent run unattended.</p>
+      <div class="two">
+        <div class="callout layer">
+          <h4><span class="badge mech">Layer 1 · Mechanical</span></h4>
+          <p style="font-size:13.5px;color:var(--muted);margin:0 0 6px">Deterministic &amp; cheap — leverages the fact that citations are structured objects.</p>
+          <ul>
+            <li>Every numeric value carries a <code>basis</code> + resolvable <code>sourceUrl</code>.</li>
+            <li>Every prose claim references an existing <code>sources[]</code> entry.</li>
+            <li>No <code>sourceUrl</code> may be invented — must already exist.</li>
+            <li><code>measured</code> never replaced by a worse <code>interpolated</code>.</li>
+            <li>The <code>measured/interpolated</code> honesty flag preserved, never silently downgraded.</li>
+          </ul>
+        </div>
+        <div class="callout layer" style="border-left-color:var(--blue)">
+          <h4><span class="badge judge">Layer 2 · Adversarial judge</span></h4>
+          <p style="font-size:13.5px;color:var(--muted);margin:0 0 6px">A separate LLM pass, for prose.</p>
+          <ul>
+            <li>Reads each new sentence: “is this supported by the cited passage — yes/no?”</li>
+            <li><strong>Defaults to reject</strong> when uncertain.</li>
+            <li>Only claims surviving <em>both</em> layers ship.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stance">Design stance: <b>false negatives</b> — a fabricated claim that slips through — are the <b>only</b> unacceptable failure. The guard is tuned to over-reject. A rejected-but-true claim just doesn’t get made this cycle. That’s fine.</div>
+    </section>
+
+    <section id="autonomy">
+      <h2>Who pulls the trigger</h2>
+      <div class="h2sub">Autonomy model</div>
+      <div class="two">
+        <div class="card"><span class="tag" style="color:var(--accent-dim)">v1</span><h3>Autonomous up to the PR</h3><p>Human approves the merge. No auto-merge on a YMYL site.</p></div>
+        <div class="card"><span class="tag" style="color:var(--faint)">Later</span><h3>Selective auto-merge</h3><p>Only low-risk classes (metadata, internal links), once the guard’s reject rate + human accept rate are proven. Not v1.</p></div>
+      </div>
+    </section>
+
+    <section id="success">
+      <h2>Definition of done</h2>
+      <div class="h2sub">MVP success = all three</div>
+      <div class="crit">
+        <div class="card"><div class="big"><span class="chk">1 ·</span> Zero ungrounded claims</div><p>Every claim in every PR traces to a real source (manual audit confirms the guard). <strong>Pass/fail bar</strong> — nothing else matters if this fails.</p></div>
+        <div class="card"><div class="big"><span class="chk">2 ·</span> Useful, not noise</div><p>You’d merge <strong>≥50%</strong> of PRs with at most light edits.</p></div>
+        <div class="card"><div class="big"><span class="chk">3 ·</span> Unattended</div><p>A full cycle runs end-to-end on a schedule with no hand-holding.</p></div>
+      </div>
+      <p style="margin-top:14px;color:var(--muted);font-size:14px">Traffic lift is the eventual proof but too slow to gate the MVP — it’s a post-MVP metric.</p>
+    </section>
+
+    <section id="scope">
+      <h2>Deliberately not building</h2>
+      <div class="h2sub">Out of scope (YAGNI)</div>
+      <div class="chips">
+        <span class="chip">Dashboard / web UI</span>
+        <span class="chip">CMS adapters</span>
+        <span class="chip">New-page generation</span>
+        <span class="chip">GEO / AI-citation tracking</span>
+        <span class="chip">Multi-tenant / auth</span>
+        <span class="chip">Auto-merge</span>
+        <span class="chip">Productization model</span>
+      </div>
+      <p style="margin-top:14px;font-size:14px;color:var(--muted)">The <code>ContentSource</code> and <code>GroundingGuard</code> seams make these cheap to add later. We just don’t build them now.</p>
+    </section>
+
+    <section id="testing">
+      <h2>Proving it works</h2>
+      <div class="h2sub">Testing strategy</div>
+      <div class="grid3">
+        <div class="card"><h3>Guard unit tests</h3><p>Golden set mixing grounded + subtly fabricated claims. Must catch <strong>100%</strong> of fabrications — false negatives fail the build.</p></div>
+        <div class="card"><h3>Dry-run mode</h3><p>Produce the diff + audit table without opening a PR. Fast iteration.</p></div>
+        <div class="card"><h3>One real E2E PR</h3><p>A single end-to-end PR on Steady as the acceptance test.</p></div>
+      </div>
+    </section>
+
+    <section id="open">
+      <h2>Left for later</h2>
+      <div class="h2sub">Open questions / branches</div>
+      <ul>
+        <li><strong>Productization model</strong> — vendor-curated per-vertical bases vs customers bring their own. Revisit after dogfood.</li>
+        <li><strong>Second <code>ContentSource</code> adapter</strong> — which site/CMS first; the trigger to extract shared logic.</li>
+        <li><strong>Auto-merge change classes</strong> — which, and what trust threshold.</li>
+        <li><strong>GEO / AI-citation layer</strong> — additive later; reuses the base + guard.</li>
+      </ul>
+    </section>
+
+    <section id="log">
+      <h2>How we got here</h2>
+      <div class="h2sub">Decision log (from brainstorm)</div>
+      <dl class="dl">
+        <dt>Ambition</dt><dd>Dogfood first, then productize</dd>
+        <dt>Core job</dt><dd>Maintain &amp; refresh existing pages (not new-page generation)</dd>
+        <dt>Trigger</dt><dd>Underperformance + staleness (works on a young site)</dd>
+        <dt>Grounding</dt><dd>Curated evidence base only (closed-world)</dd>
+        <dt>MVP shape</dt><dd>Approach A — git-native, PR-based</dd>
+        <dt>Housing</dt><dd>Separate repo (not in the target repo)</dd>
+        <dt>Batch size</dt><dd>One target per run</dd>
+      </dl>
+    </section>
+
+    <footer>
+      Groundskeeper · design spec · 2026-07-01 · next step → writing-plans
+    </footer>
+  </main>
+</div>
+</body>
+</html>
