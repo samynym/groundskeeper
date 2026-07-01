@@ -15,7 +15,7 @@ export class GroundingGuard {
 
       const failures: string[] = [];
       if (op.type === "replaceProse" || op.type === "updateMeta") {
-        const claims = op.type === "replaceProse" ? op.claims : op.claims;
+        const claims = op.claims;
         for (const c of claims) {
           const passage = ev.facts.find((f) => f.sourceUrl === c.sourceUrl)?.claimText ?? c.text;
           const v = await judgeClaim(this.llm, c.text, passage);
