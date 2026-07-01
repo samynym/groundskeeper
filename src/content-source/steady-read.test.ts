@@ -22,4 +22,9 @@ describe("SteadyContentSource read", () => {
     expect(await cs.currentBasis("hip-arthroscopy-fai", 6, "typical")).toBe("interpolated");
     expect(await cs.currentBasis("hip-arthroscopy-fai", 99, "typical")).toBeNull();
   });
+  it("listPages emits absolute URL when targetOrigin is set", async () => {
+    const csWithOrigin = new SteadyContentSource({ repoPath: fixtureRoot, loadModule, targetOrigin: "https://growsteady.me" });
+    const pages = await csWithOrigin.listPages();
+    expect(pages.some((p) => p.url === "https://growsteady.me/hip-arthroscopy-recovery-timeline")).toBe(true);
+  });
 });

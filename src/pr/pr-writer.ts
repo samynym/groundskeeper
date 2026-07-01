@@ -20,6 +20,10 @@ export class PRWriter {
   private git(args: string[]) { return this.runner("git", args, { cwd: this.opts.targetRepoPath }); }
 
   async startBranch(ref: PageRef): Promise<string> {
+    const { stdout: statusOut } = await this.git(["status", "--porcelain"]);
+    if (statusOut.trim()) {
+      throw new Error("target repo has uncommitted changes; refusing to run (commit/stash them first)");
+    }
     const branch = `groundskeeper/${ref.procedureSlug}-${Date.now()}`;
     await this.git(["fetch", "origin", this.opts.baseBranch]);
     await this.git(["checkout", "-B", branch, this.opts.baseBranch]);

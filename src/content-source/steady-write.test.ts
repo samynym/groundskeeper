@@ -36,4 +36,13 @@ describe("SteadyContentSource applyOps", () => {
     const src = readFileSync(join(repo, "lib/benchmarks/content/hip.ts"), "utf8");
     expect(src).toContain("PMC8530429");
   });
+
+  it("promoteToMeasured mutates exact week-1 and leaves week-12 unchanged", async () => {
+    await cs.applyOps([{ type: "promoteToMeasured", procedureSlug: "hip-arthroscopy-fai", week: 1, band: "typical", value: 4.4, sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5721367/", nativeScale: "x" }]);
+    const src = readFileSync(join(repo, "lib/benchmarks/curves/hip.ts"), "utf8");
+    // week-1 point should be mutated to 4.4 / "measured"
+    expect(src).toMatch(/week: 1\b[^}]*value: 4\.4[^}]*basis: "measured"/s);
+    // week-12 should remain 2.0 / "interpolated" (substring bug would have mutated this instead)
+    expect(src).toMatch(/week: 12\b[^}]*value: 2[^}]*basis: "interpolated"/s);
+  });
 });

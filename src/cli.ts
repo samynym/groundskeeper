@@ -16,7 +16,7 @@ import type { PageRef } from "./types.js";
 
 export function buildOrchestrator(config: Config): Orchestrator {
   const llm = new AnthropicClient(config.anthropicApiKey, config.model);
-  const cs = new SteadyContentSource({ repoPath: config.targetRepoPath });
+  const cs = new SteadyContentSource({ repoPath: config.targetRepoPath, targetOrigin: config.targetOrigin });
 
   const retriever = new EvidenceRetriever({
     readContent: (ref) => cs.readContent(ref),
