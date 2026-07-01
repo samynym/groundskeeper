@@ -13,6 +13,33 @@ export interface PerfOpts {
   runner?: Runner;
 }
 
+interface SeoLoopRow {
+  query: string;
+  page: string;
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+}
+
+interface SeoLoopOutput {
+  generatedAt: string;
+  search:
+    | { ok: false; reason: string }
+    | {
+        ok: true;
+        property?: string;
+        ranges?: unknown;
+        trend?: unknown;
+        counts?: unknown;
+        mode?: unknown;
+        topQueries?: unknown[];
+        strikingDistance: SeoLoopRow[];
+        ctrOpportunities: SeoLoopRow[];
+      };
+  audit?: unknown;
+}
+
 export class PerformanceSignal {
   private runner: Runner;
   constructor(private opts: PerfOpts) {
@@ -20,15 +47,49 @@ export class PerformanceSignal {
   }
 
   async snapshot(): Promise<Record<string, GscRow>> {
-    const { stdout } = await this.runner("node", ["scripts/seo-loop.mjs", "--json"], {
+    const { stdout } = await this.runner("node", ["scripts/seo-loop.mjs"], {
       cwd: this.opts.targetRepoPath,
       env: { ...process.env, GSC_SA_JSON: this.opts.gscSaJson, GSC_PROPERTY: this.opts.gscProperty },
     });
-    const data = JSON.parse(stdout) as { rows: Array<{ page: string; clicks: number; impressions: number; ctr: number; position: number }> };
-    const out: Record<string, GscRow> = {};
-    for (const r of data.rows) {
+
+    const data = JSON.parse(stdout) as SeoLoopOutput;
+
+    if (!data.search || !data.search.ok) {
+      return {};
+    }
+
+    const search = data.search;
+    const rows: SeoLoopRow[] = [
+      ...(search.ctrOpportunities ?? []),
+      ...(search.strikingDistance ?? []),
+    ];
+
+    // Aggregate by page
+    const agg = new Map<string, { clicks: number; impressions: number; weightedPositionSum: number }>();
+
+    for (const r of rows) {
       const url = r.page.startsWith("http") ? r.page : this.opts.targetOrigin + r.page;
-      out[url] = { url, clicks: r.clicks, impressions: r.impressions, ctr: r.ctr, position: r.position };
+      const existing = agg.get(url);
+      if (existing) {
+        existing.clicks += r.clicks;
+        existing.impressions += r.impressions;
+        existing.weightedPositionSum += r.position * r.impressions;
+      } else {
+        agg.set(url, {
+          clicks: r.clicks,
+          impressions: r.impressions,
+          weightedPositionSum: r.position * r.impressions,
+        });
+      }
+    }
+
+    const out: Record<string, GscRow> = {};
+    for (const [url, acc] of agg) {
+      const impressions = acc.impressions;
+      const clicks = acc.clicks;
+      const ctr = impressions > 0 ? clicks / impressions : 0;
+      const position = impressions > 0 ? acc.weightedPositionSum / impressions : 0;
+      out[url] = { url, clicks, impressions, ctr, position };
     }
     return out;
   }
