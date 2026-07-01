@@ -29,7 +29,7 @@ export function buildOrchestrator(config: Config): Orchestrator {
   });
 
   const selector = new TargetSelector({
-    interpolatedCount: async () => 0, // wired concretely against curves in a follow-up; 0 keeps selection GSC-driven
+    interpolatedCount: async (ref: PageRef) => cs.interpolatedCount(ref.procedureSlug),
     sourceCount: async (ref) => (await cs.readContent(ref)).sources.length,
     lastEditedAt: (slug) => cs.lastEditedAt(slug),
   });

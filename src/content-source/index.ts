@@ -14,6 +14,8 @@ export interface ContentSource {
   currentBasis(procedureSlug: string, week: number, band: "low" | "typical" | "high"): Promise<Basis | null>;
   /** Epoch ms of the last git commit touching this procedure's files. */
   lastEditedAt(procedureSlug: string): Promise<number>;
+  /** Number of interpolated points in the painBand curve for this procedure. */
+  interpolatedCount(slug: string): Promise<number>;
   /** Apply structured edits to the working tree (no commit). */
   applyOps(ops: EditOp[]): Promise<void>;
 }

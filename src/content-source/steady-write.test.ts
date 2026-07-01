@@ -24,25 +24,60 @@ describe("SteadyContentSource applyOps", () => {
     });
   });
 
-  it("replaceProse edits the prose field in source", async () => {
-    await cs.applyOps([{ type: "replaceProse", procedureSlug: "hip-arthroscopy-fai", field: "intro", oldText: "Recovery after hip arthroscopy for FAI is gradual.", newText: "Recovery is gradual and measured in weeks.", claims: [] }]);
-    const src = readFileSync(join(repo, "lib/benchmarks/content/hip.ts"), "utf8");
+  it("replaceProse on heroIntro.0 edits that element", async () => {
+    await cs.applyOps([{
+      type: "replaceProse",
+      procedureSlug: "hip-arthroscopy-fai",
+      field: "heroIntro.0",
+      oldText: "Recovery after hip arthroscopy for FAI is gradual.",
+      newText: "Recovery is gradual and measured in weeks.",
+      claims: [],
+    }]);
+    const src = readFileSync(join(repo, "lib/benchmarks/content/hip-arthroscopy-fai.ts"), "utf8");
     expect(src).toContain("measured in weeks");
     expect(src).not.toContain("FAI is gradual.");
   });
 
-  it("addSource appends to the sources array", async () => {
-    await cs.applyOps([{ type: "addSource", procedureSlug: "hip-arthroscopy-fai", source: { title: "Memon RTP meta 2019", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8530429/", tier: "meta-analysis", reliabilityScore: 8.0 } }]);
-    const src = readFileSync(join(repo, "lib/benchmarks/content/hip.ts"), "utf8");
-    expect(src).toContain("PMC8530429");
+  it("replaceProse on phase.early-recovery.body.1 edits that line", async () => {
+    await cs.applyOps([{
+      type: "replaceProse",
+      procedureSlug: "hip-arthroscopy-fai",
+      field: "phase.early-recovery.body.1",
+      oldText: "Crutches are typical for the first two to four weeks.",
+      newText: "Crutches are needed for two to six weeks in more complex cases.",
+      claims: [],
+    }]);
+    const src = readFileSync(join(repo, "lib/benchmarks/content/hip-arthroscopy-fai.ts"), "utf8");
+    expect(src).toContain("two to six weeks");
+    // old body text should be gone (the faq also has "two to four weeks" but not the exact original phrase)
+    expect(src).not.toContain("Crutches are typical for the first two to four weeks.");
   });
 
-  it("promoteToMeasured mutates exact week-1 and leaves week-12 unchanged", async () => {
-    await cs.applyOps([{ type: "promoteToMeasured", procedureSlug: "hip-arthroscopy-fai", week: 1, band: "typical", value: 4.4, sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5721367/", nativeScale: "x" }]);
-    const src = readFileSync(join(repo, "lib/benchmarks/curves/hip.ts"), "utf8");
-    // week-1 point should be mutated to 4.4 / "measured"
-    expect(src).toMatch(/week: 1\b[^}]*value: 4\.4[^}]*basis: "measured"/s);
-    // week-12 should remain 2.0 / "interpolated" (substring bug would have mutated this instead)
-    expect(src).toMatch(/week: 12\b[^}]*value: 2[^}]*basis: "interpolated"/s);
+  it("addSource appends to the curve's sources array (not content file)", async () => {
+    await cs.applyOps([{
+      type: "addSource",
+      procedureSlug: "hip-arthroscopy-fai",
+      source: { title: "Memon RTP meta 2019", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8530429/", tier: "meta-analysis", reliabilityScore: 8.0 },
+    }]);
+    const curveSrc = readFileSync(join(repo, "lib/benchmarks/curves/index.ts"), "utf8");
+    expect(curveSrc).toContain("PMC8530429");
+  });
+
+  it("promoteToMeasured week 6 — sets measured, leaves week 12 untouched (exact-week-match)", async () => {
+    await cs.applyOps([{
+      type: "promoteToMeasured",
+      procedureSlug: "hip-arthroscopy-fai",
+      week: 6,
+      band: "typical",
+      value: 3.5,
+      sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5721367/",
+      nativeScale: "0-10",
+    }]);
+    const src = readFileSync(join(repo, "lib/benchmarks/curves/index.ts"), "utf8");
+    // week 6 typical should be updated, basis → "measured"
+    expect(src).toMatch(/week: 6[^}]*typical: 3\.5/s);
+    expect(src).toMatch(/week: 6[^}]*basis: "measured"/s);
+    // week 12 must remain interpolated (proves exact-match didn't catch week 12 as substring of 12)
+    expect(src).toMatch(/week: 12[^}]*basis: "interpolated"/s);
   });
 });
