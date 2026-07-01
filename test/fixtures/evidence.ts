@@ -4,11 +4,12 @@ const ref: PageRef = { procedureSlug: "hip-arthroscopy-fai", urlSlug: "hip-arthr
 
 const KNOWN_A = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5721367/";
 const KNOWN_B = "https://pmc.ncbi.nlm.nih.gov/articles/PMC8530429/";
+export const KNOWN_C = "https://pmc.ncbi.nlm.nih.gov/articles/PMC9999999/";
 
 export const goldenEvidence: EvidenceSet = {
   ref,
   sources: [{ title: "Cunningham 2017", url: KNOWN_A, tier: "cohort", reliabilityScore: 7.5 }],
-  knownSourceUrls: new Set([KNOWN_A, KNOWN_B]),
+  knownSourceUrls: new Set([KNOWN_A, KNOWN_B, KNOWN_C]),
   facts: [
     { claimText: "week 0 typical = 5.2", sourceUrl: KNOWN_A, sourceTitle: "Cunningham 2017", numbers: [0, 5.2] },
     { claimText: "87% return to sport by 12 months", sourceUrl: KNOWN_B, sourceTitle: "Memon 2019", numbers: [87, 12] },

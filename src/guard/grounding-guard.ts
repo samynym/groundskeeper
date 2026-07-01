@@ -15,11 +15,24 @@ export class GroundingGuard {
 
       const failures: string[] = [];
       if (op.type === "replaceProse" || op.type === "updateMeta") {
-        const claims = op.claims;
-        for (const c of claims) {
-          const passage = ev.facts.find((f) => f.sourceUrl === c.sourceUrl)?.claimText ?? c.text;
-          const v = await judgeClaim(this.llm, c.text, passage);
-          if (!v.supported) failures.push(`judge rejected "${c.text}": ${v.reason}`);
+        const text = op.type === "replaceProse" ? op.newText : op.value;
+        const citedUrls = op.claims.map((c) => c.sourceUrl);
+
+        // C1: fail closed — if any cited source has no evidentiary fact, reject without judging
+        for (const url of citedUrls) {
+          if (!ev.facts.some((f) => f.sourceUrl === url)) {
+            failures.push(`cited source has no evidentiary fact: ${url}`);
+          }
+        }
+
+        // C2: judge the FULL prose text against all facts from cited sources (one call, not per-claim)
+        if (failures.length === 0) {
+          const passage = ev.facts
+            .filter((f) => citedUrls.includes(f.sourceUrl))
+            .map((f) => f.claimText)
+            .join("\n");
+          const v = await judgeClaim(this.llm, text, passage);
+          if (!v.supported) failures.push(`judge rejected prose: ${v.reason}`);
         }
       }
       verdicts.push({ op, ok: failures.length === 0, failures });
