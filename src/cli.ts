@@ -5,13 +5,14 @@ import { SteadyContentSource } from "./content-source/steady.js";
 import { PerformanceSignal } from "./performance/gsc.js";
 import { TargetSelector } from "./selector/target-selector.js";
 import { EvidenceRetriever } from "./evidence/retriever.js";
+import { expandPainBand } from "./evidence/expand-curve.js";
 import { RefreshDrafter } from "./drafter/refresh-drafter.js";
 import { GroundingGuard } from "./guard/grounding-guard.js";
 import { BuildVerifier } from "./build/verifier.js";
 import { PRWriter } from "./pr/pr-writer.js";
 import { Orchestrator } from "./orchestrator.js";
-import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { pathToFileURL } from "node:url";
 import type { PageRef } from "./types.js";
 
 export function buildOrchestrator(config: Config): Orchestrator {
@@ -21,11 +22,28 @@ export function buildOrchestrator(config: Config): Orchestrator {
   const retriever = new EvidenceRetriever({
     readContent: (ref) => cs.readContent(ref),
     loadCurvePoints: async (slug) => {
-      const mod = await import(`file://${join(config.targetRepoPath, "lib/benchmarks/curves/index.ts")}`).catch(() => ({}));
-      const curve = (Object.values(mod as any).flat() as any[]).find?.((c) => c?.slug === slug);
-      return curve?.points ?? [];
+      const curvesUrl = pathToFileURL(join(config.targetRepoPath, "lib/benchmarks/curves/index.ts")).href;
+      const mod = await import(curvesUrl).catch(() => ({})) as Record<string, unknown>;
+      // Prefer the named `curves` export; fall back to the first array export.
+      let curvesArr: any[] = [];
+      if (Array.isArray((mod as any).curves)) {
+        curvesArr = (mod as any).curves;
+      } else {
+        for (const v of Object.values(mod)) {
+          if (Array.isArray(v)) { curvesArr = v; break; }
+        }
+      }
+      const curve = curvesArr.find((c: any) => c?.slug === slug);
+      if (!curve || !Array.isArray(curve.painBand)) return [];
+      return expandPainBand(curve);
     },
-    readDossier: async (slug) => readFile(join(config.targetRepoPath, "docs/benchmarks/recovery-data-sources.md"), "utf8").catch(() => ""),
+    readDossier: async (_slug) => {
+      // TODO: scope docs/benchmarks/recovery-data-sources.md to the procedure section
+      // Returning "" for now — per-procedure evidence comes from the curve's structured
+      // sources and painBand points. The 166 KB whole-dossier would bloat the drafter
+      // prompt and isn't scoped to the procedure being refreshed.
+      return "";
+    },
   });
 
   const selector = new TargetSelector({
