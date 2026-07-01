@@ -80,4 +80,31 @@ describe("SteadyContentSource applyOps", () => {
     // week 12 must remain interpolated (proves exact-match didn't catch week 12 as substring of 12)
     expect(src).toMatch(/week: 12[^}]*basis: "interpolated"/s);
   });
+
+  it("replaceProse on unknown field throws", async () => {
+    await expect(cs.applyOps([{
+      type: "replaceProse",
+      procedureSlug: "hip-arthroscopy-fai",
+      field: "bogusField.0",
+      oldText: "x",
+      newText: "y",
+      claims: [],
+    }])).rejects.toThrow(/unknown replaceProse field/);
+  });
+
+  it("promoteToMeasured week 6 — leaves adjacent bands (low, high) untouched", async () => {
+    await cs.applyOps([{
+      type: "promoteToMeasured",
+      procedureSlug: "hip-arthroscopy-fai",
+      week: 6,
+      band: "typical",
+      value: 3.5,
+      sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5721367/",
+      nativeScale: "0-10",
+    }]);
+    const src = readFileSync(join(repo, "lib/benchmarks/curves/index.ts"), "utf8");
+    // low and high at week 6 must remain at fixture values (2 and 4)
+    expect(src).toMatch(/week: 6[^}]*low: 2\b/s);
+    expect(src).toMatch(/week: 6[^}]*high: 4\b/s);
+  });
 });
