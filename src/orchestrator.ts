@@ -26,7 +26,7 @@ export class Orchestrator {
     const gsc = await this.d.performance.snapshot();
     const pages = await this.d.contentSource.listPages();
     const candidate = this.d.selector.pickOne(await this.d.selector.rank(pages, gsc, this.d.now()));
-    if (!candidate) return { status: "no-target", detail: "no page scored above zero", passedOps: [] };
+    if (!candidate) return { status: "no-target", detail: "selector found no target", passedOps: [] };
 
     const ev = await this.d.retriever.retrieve(candidate.ref);
     const content = await this.d.contentSource.readContent(candidate.ref);
@@ -37,13 +37,18 @@ export class Orchestrator {
     if (opts.dryRun) return { status: "dry-run", detail: `${guard.passedOps.length} op(s) would ship for ${candidate.ref.procedureSlug}`, passedOps: guard.passedOps };
 
     const branch = await this.d.pr.startBranch(candidate.ref);
-    await this.d.contentSource.applyOps(guard.passedOps);
-    const build = await this.d.build.verify();
-    if (!build.ok) {
+    try {
+      await this.d.contentSource.applyOps(guard.passedOps);
+      const build = await this.d.build.verify();
+      if (!build.ok) {
+        await this.d.pr.abort(branch);
+        return { status: "build-failed", detail: build.log.slice(0, 500), passedOps: guard.passedOps };
+      }
+      const prUrl = await this.d.pr.finalize(candidate.ref, guard.passedOps, ev);
+      return { status: "pr-opened", detail: prUrl, passedOps: guard.passedOps };
+    } catch (err) {
       await this.d.pr.abort(branch);
-      return { status: "build-failed", detail: build.log.slice(0, 500), passedOps: guard.passedOps };
+      throw err;
     }
-    const prUrl = await this.d.pr.finalize(candidate.ref, guard.passedOps, ev);
-    return { status: "pr-opened", detail: prUrl, passedOps: guard.passedOps };
   }
 }
