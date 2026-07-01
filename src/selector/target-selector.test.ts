@@ -29,4 +29,32 @@ describe("TargetSelector", () => {
     const top = sel.pickOne(await sel.rank(pages, gsc, now));
     expect(top?.ref.procedureSlug).toBe("a");
   });
+  it("does not add age bonus when lastEditedAt is unknown (0)", async () => {
+    const unknownPage = { procedureSlug: "unknown", urlSlug: "unknown", week: null, url: "https://s/unknown" };
+    const recentPage = { procedureSlug: "recent", urlSlug: "recent", week: null, url: "https://s/recent" };
+    const oldPage = { procedureSlug: "old", urlSlug: "old", week: null, url: "https://s/old" };
+
+    const testDeps = {
+      interpolatedCount: async () => 0,
+      sourceCount: async () => 8,
+      lastEditedAt: async (slug: string) => {
+        if (slug === "unknown") return 0;           // Unknown edit time
+        if (slug === "recent") return now - 5 * 864e5;  // 5 days old
+        if (slug === "old") return now - 200 * 864e5;   // 200 days old
+        return 0;
+      },
+    };
+
+    const sel = new TargetSelector(testDeps);
+    const ranked = await sel.rank([unknownPage, recentPage, oldPage], {}, now);
+
+    const unknownCandidate = ranked.find(c => c.ref.procedureSlug === "unknown");
+    const oldCandidate = ranked.find(c => c.ref.procedureSlug === "old");
+
+    // Unknown page must NOT have "since last edit" in reasons
+    expect(unknownCandidate?.reasons.some(r => r.includes("since last edit"))).toBe(false);
+
+    // Old page MUST have "since last edit" in reasons
+    expect(oldCandidate?.reasons.some(r => r.includes("since last edit"))).toBe(true);
+  });
 });

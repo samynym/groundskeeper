@@ -26,8 +26,11 @@ export class TargetSelector {
       if (interp > 0) { score += Math.min(interp, 5) * 0.6; reasons.push(`${interp} interpolated band(s)`); }
       const sources = await this.deps.sourceCount(ref);
       if (sources <= 2) { score += 1.5; reasons.push(`thin sources (${sources})`); }
-      const age = (now - (await this.deps.lastEditedAt(ref.procedureSlug))) / DAY;
-      if (age > 90) { score += Math.min((age - 90) / 90, 2); reasons.push(`${Math.round(age)}d since last edit`); }
+      const edited = await this.deps.lastEditedAt(ref.procedureSlug);
+      if (edited > 0) {
+        const age = (now - edited) / DAY;
+        if (age > 90) { score += Math.min((age - 90) / 90, 2); reasons.push(`${Math.round(age)}d since last edit`); }
+      }
 
       candidates.push({ ref, score, reasons, gsc });
     }
