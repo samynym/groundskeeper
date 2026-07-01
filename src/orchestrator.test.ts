@@ -46,4 +46,20 @@ describe("Orchestrator", () => {
     const o = new Orchestrator(baseDeps({ selector: { rank: async () => [], pickOne: () => null } }));
     expect((await o.runOnce({ dryRun: false })).status).toBe("no-target");
   });
+  it("returns nothing-passed when guard passes no ops", async () => {
+    const o = new Orchestrator(baseDeps({ guard: { check: async () => ({ verdicts: [], passedOps: [], allPassed: false }) } }));
+    const r = await o.runOnce({ dryRun: false });
+    expect(r.status).toBe("nothing-passed");
+    expect(r.passedOps.length).toBe(0);
+  });
+  it("aborts and re-throws if applyOps throws", async () => {
+    let aborted = false;
+    const base = baseDeps();
+    const o = new Orchestrator(baseDeps({
+      pr: { startBranch: async () => "groundskeeper/x", finalize: async () => "x", abort: async () => { aborted = true; } },
+      contentSource: { listPages: base.contentSource.listPages, readContent: base.contentSource.readContent, applyOps: async () => { throw new Error("boom"); } },
+    }));
+    await expect(o.runOnce({ dryRun: false })).rejects.toThrow(/boom/);
+    expect(aborted).toBe(true);
+  });
 });
