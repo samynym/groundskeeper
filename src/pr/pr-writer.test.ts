@@ -11,10 +11,26 @@ describe("PRWriter", () => {
   });
   it("startBranch issues git checkout -b off base", async () => {
     const calls: string[][] = [];
+    // runner returns "" for status --porcelain (clean tree) and "" for all other commands
     const w = new PRWriter({ targetRepoPath: "/tmp/s", baseBranch: "main", runner: async (c, a) => { calls.push([c, ...a]); return { stdout: "", stderr: "" }; } });
     const branch = await w.startBranch(goldenEvidence.ref);
     expect(branch).toMatch(/^groundskeeper\/hip-arthroscopy-fai-/);
     expect(calls.some((c) => c[0] === "git" && c.includes("checkout") && c.includes("main"))).toBe(true);
+  });
+
+  it("startBranch refuses dirty target working tree and never issues checkout", async () => {
+    const calls: string[][] = [];
+    const w = new PRWriter({
+      targetRepoPath: "/tmp/s",
+      baseBranch: "main",
+      runner: async (c, a) => {
+        calls.push([c, ...a]);
+        if (c === "git" && a[0] === "status") return { stdout: " M lib/benchmarks/content/hip.ts\n", stderr: "" };
+        return { stdout: "", stderr: "" };
+      },
+    });
+    await expect(w.startBranch(goldenEvidence.ref)).rejects.toThrow(/uncommitted/);
+    expect(calls.every((c) => !(c[0] === "git" && c.includes("checkout")))).toBe(true);
   });
 
   it("finalize: correct command sequence, audit table in --body, no merge, returns PR URL", async () => {

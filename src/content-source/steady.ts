@@ -14,6 +14,8 @@ export interface SteadyOpts {
   contentModules?: string[];
   curveModules?: string[];
   loadModule?: (rel: string) => Promise<any>;
+  /** Public origin for absolute URLs, e.g. "https://growsteady.me". Defaults to "" (relative) for backwards compat. */
+  targetOrigin?: string;
 }
 
 export class SteadyContentSource implements ContentSource {
@@ -21,12 +23,14 @@ export class SteadyContentSource implements ContentSource {
   private contentModules: string[];
   private curveModules: string[];
   private loadModule: (rel: string) => Promise<any>;
+  private targetOrigin: string;
 
   constructor(opts: SteadyOpts) {
     this.repoPath = opts.repoPath;
     this.contentModules = opts.contentModules ?? ["lib/benchmarks/content/hip.ts"];
     this.curveModules = opts.curveModules ?? ["lib/benchmarks/curves/hip.ts"];
     this.loadModule = opts.loadModule ?? ((rel) => import(pathToFileURL(join(this.repoPath, rel)).href));
+    this.targetOrigin = opts.targetOrigin ?? "";
   }
 
   private async allContent(): Promise<any[]> {
@@ -42,7 +46,7 @@ export class SteadyContentSource implements ContentSource {
     const content = await this.allContent();
     const pages: PageRef[] = [];
     for (const c of content) {
-      pages.push({ procedureSlug: c.slug, urlSlug: c.urlSlug, week: null, url: `/${c.urlSlug}` });
+      pages.push({ procedureSlug: c.slug, urlSlug: c.urlSlug, week: null, url: `${this.targetOrigin}/${c.urlSlug}` });
     }
     return pages;
   }
@@ -105,9 +109,9 @@ export class SteadyContentSource implements ContentSource {
         const pt = points.getElements().find((el) => {
           const o = el.asKind(SyntaxKind.ObjectLiteralExpression);
           if (!o) return false;
-          const w = o.getProperty("week")?.getText() ?? "";
-          const b = o.getProperty("band")?.getText() ?? "";
-          return w.includes(String(op.week)) && b.includes(op.band);
+          const wInit = o.getProperty("week")?.asKind(SyntaxKind.PropertyAssignment)?.getInitializer()?.getText() ?? "";
+          const bInit = o.getProperty("band")?.asKind(SyntaxKind.PropertyAssignment)?.getInitializer()?.getText() ?? "";
+          return wInit === String(op.week) && bInit === JSON.stringify(op.band);
         })?.asKindOrThrow(SyntaxKind.ObjectLiteralExpression);
         if (!pt) throw new Error(`curve point ${op.week}/${op.band} not found`);
         pt.getPropertyOrThrow("value").asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(String(op.value));
