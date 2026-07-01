@@ -79,9 +79,9 @@ Each is independently testable with a single clear responsibility.
 ## Data flow (one cycle)
 
 1. `PerformanceSignal` → GSC snapshot for `sc-domain:growsteady.me`.
-2. `TargetSelector` → ranks all procedure/week pages by **underperformance** (position on page 2–3; high-impression/low-CTR) + **staleness** (`basis:"interpolated"` data, thin `sources[]`, aging dossier entries); picks the top **one**.
+2. `TargetSelector` → ranks all procedure/week pages by **underperformance** (position on page 2–3; high-impression/low-CTR) + **staleness** (`basis:"interpolated"` data, thin `sources[]`, long time since last edit via git history); picks the top **one**.
 3. `EvidenceRetriever` → assembles the citable fact set for that target.
-4. `RefreshDrafter` → proposes a concrete diff to the TS modules: prose tightening, FAQ/search-intent fixes, replacing an `interpolated` value with a newly-cited `measured` one, metadata / internal-link improvements for CTR.
+4. `RefreshDrafter` → proposes a concrete diff to the TS modules: prose tightening, FAQ/search-intent fixes, **promoting** an `interpolated` value to `measured` when the dossier already documents a measured figure (citing a source already in the base — never fetching a new one), metadata / internal-link improvements for CTR.
 5. `GroundingGuard` → validates **every** asserted claim against the evidence set. Unsupported claim → strip it or reject the edit; log the reason.
 6. `BuildVerifier` → typecheck + lint + test the edited checkout. Fail → abort, no PR.
 7. `PRWriter` → opens a PR whose body enumerates each change with the exact source it traces to.
