@@ -2,6 +2,7 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
+import { Project, SyntaxKind } from "ts-morph";
 import type { Basis, EditOp, PageRef, Source } from "../types.js";
 import type { ContentSource, ReadContent } from "./index.js";
 
@@ -69,7 +70,51 @@ export class SteadyContentSource implements ContentSource {
     }
   }
 
-  async applyOps(_ops: EditOp[]): Promise<void> {
-    throw new Error("applyOps not implemented (Task 7)");
+  async applyOps(ops: EditOp[]): Promise<void> {
+    const project = new Project({ useInMemoryFileSystem: false });
+    const contentPath = join(this.repoPath, this.contentModules[0]);
+    const curvePath = join(this.repoPath, this.curveModules[0]);
+
+    for (const op of ops) {
+      if (op.type === "replaceProse" || op.type === "addSource" || op.type === "updateMeta") {
+        const sf = project.addSourceFileAtPathIfExists(contentPath) ?? project.addSourceFileAtPath(contentPath);
+        const objLit = sf.getFirstDescendantByKindOrThrow(SyntaxKind.ObjectLiteralExpression);
+
+        if (op.type === "replaceProse") {
+          const prose = objLit.getPropertyOrThrow("prose").asKindOrThrow(SyntaxKind.PropertyAssignment)
+            .getInitializerIfKindOrThrow(SyntaxKind.ObjectLiteralExpression);
+          const field = prose.getPropertyOrThrow(op.field).asKindOrThrow(SyntaxKind.PropertyAssignment);
+          field.setInitializer(JSON.stringify(op.newText));
+        } else if (op.type === "addSource") {
+          const sources = objLit.getPropertyOrThrow("sources").asKindOrThrow(SyntaxKind.PropertyAssignment)
+            .getInitializerIfKindOrThrow(SyntaxKind.ArrayLiteralExpression);
+          sources.addElement(JSON.stringify(op.source));
+        } else {
+          // updateMeta: content module has a `meta` object keyed by "pillar" or `week-${n}`
+          const meta = objLit.getPropertyOrThrow("meta").asKindOrThrow(SyntaxKind.PropertyAssignment)
+            .getInitializerIfKindOrThrow(SyntaxKind.ObjectLiteralExpression);
+          const key = op.week === null ? "pillar" : `week-${op.week}`;
+          const entry = meta.getPropertyOrThrow(key).asKindOrThrow(SyntaxKind.PropertyAssignment)
+            .getInitializerIfKindOrThrow(SyntaxKind.ObjectLiteralExpression);
+          entry.getPropertyOrThrow(op.field).asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(JSON.stringify(op.value));
+        }
+        await sf.save();
+      } else if (op.type === "promoteToMeasured") {
+        const sf = project.addSourceFileAtPathIfExists(curvePath) ?? project.addSourceFileAtPath(curvePath);
+        const points = sf.getFirstDescendantByKindOrThrow(SyntaxKind.ArrayLiteralExpression);
+        const pt = points.getElements().find((el) => {
+          const o = el.asKind(SyntaxKind.ObjectLiteralExpression);
+          if (!o) return false;
+          const w = o.getProperty("week")?.getText() ?? "";
+          const b = o.getProperty("band")?.getText() ?? "";
+          return w.includes(String(op.week)) && b.includes(op.band);
+        })?.asKindOrThrow(SyntaxKind.ObjectLiteralExpression);
+        if (!pt) throw new Error(`curve point ${op.week}/${op.band} not found`);
+        pt.getPropertyOrThrow("value").asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(String(op.value));
+        pt.getPropertyOrThrow("basis").asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(JSON.stringify("measured"));
+        pt.getPropertyOrThrow("sourceUrl").asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(JSON.stringify(op.sourceUrl));
+        await sf.save();
+      }
+    }
   }
 }
