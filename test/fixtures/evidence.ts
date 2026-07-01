@@ -20,6 +20,8 @@ export const groundedOps: EditOp[] = [
   { type: "replaceProse", procedureSlug: ref.procedureSlug, field: "outlook", oldText: "Most return within a year.", newText: "About 87% of patients return to sport by 12 months.", claims: [{ text: "87% return to sport by 12 months", sourceUrl: KNOWN_B }] },
   // adding a source that exists in the dossier/known set
   { type: "addSource", procedureSlug: ref.procedureSlug, source: { title: "Memon 2019", url: KNOWN_B, tier: "meta-analysis", reliabilityScore: 8.0 } },
+  // promote: sourceUrl is known, value 5.2 is backed by KNOWN_A's fact, and basis is stubbed "interpolated" → passes
+  { type: "promoteToMeasured", procedureSlug: ref.procedureSlug, week: 0, band: "typical", value: 5.2, sourceUrl: KNOWN_A, nativeScale: "0-10 scale" },
 ];
 
 export const fabricatedOps: EditOp[] = [
@@ -29,4 +31,8 @@ export const fabricatedOps: EditOp[] = [
   { type: "replaceProse", procedureSlug: ref.procedureSlug, field: "outlook", oldText: "x", newText: "95% return to sport by 12 months.", claims: [{ text: "95% return to sport by 12 months", sourceUrl: KNOWN_B }] },
   // why: addSource with an invented URL
   { type: "addSource", procedureSlug: ref.procedureSlug, source: { title: "Fake study", url: "https://example.com/nope", tier: "cohort", reliabilityScore: 9 } },
+  // why: promote cites a sourceUrl not in knownSourceUrls
+  { type: "promoteToMeasured", procedureSlug: ref.procedureSlug, week: 0, band: "typical", value: 5.2, sourceUrl: "https://example.com/made-up", nativeScale: "x" },
+  // why: promote value 99 is not present in KNOWN_A's facts
+  { type: "promoteToMeasured", procedureSlug: ref.procedureSlug, week: 0, band: "typical", value: 99, sourceUrl: KNOWN_A, nativeScale: "x" },
 ];

@@ -18,4 +18,20 @@ describe("mechanicalGuard", () => {
       expect(v.failures.length).toBeGreaterThan(0);
     }
   });
+
+  it("rejects promoteToMeasured when current basis is not interpolated", async () => {
+    const localDeps = { currentBasis: async () => "measured" as const };
+    const op = {
+      type: "promoteToMeasured" as const,
+      procedureSlug: goldenEvidence.ref.procedureSlug,
+      week: 0,
+      band: "typical" as const,
+      value: 5.2,
+      sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5721367/",
+      nativeScale: "0-10 scale",
+    };
+    const v = await mechanicalGuard(op, goldenEvidence, localDeps);
+    expect(v.ok).toBe(false);
+    expect(v.failures.some((f) => /interpolated|basis/i.test(f))).toBe(true);
+  });
 });
