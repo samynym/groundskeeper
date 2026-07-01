@@ -15,6 +15,11 @@ const OpSchema = z.discriminatedUnion("type", [
 ]);
 const ReplySchema = z.object({ rationale: z.string(), ops: z.array(OpSchema) });
 
+// Compile-time guard: the zod-inferred op type must stay assignable to the canonical EditOp.
+// If OpSchema drifts from EditOp, this line fails to compile.
+const _opSchemaMatchesEditOp = (op: z.infer<typeof OpSchema>): EditOp => op;
+void _opSchemaMatchesEditOp;
+
 export class RefreshDrafter {
   constructor(private llm: LlmClient) {}
 

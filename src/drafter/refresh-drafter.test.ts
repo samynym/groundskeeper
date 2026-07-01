@@ -23,4 +23,12 @@ describe("RefreshDrafter", () => {
     const d = await drafter.draft(candidate, content, goldenEvidence);
     expect(d.ops).toHaveLength(0);
   });
+  it("retries on unparseable first reply and returns ops from second", async () => {
+    const validReply = JSON.stringify({ rationale: "ok", ops: [
+      { type: "replaceProse", procedureSlug: "hip-arthroscopy-fai", field: "outlook", oldText: "Most return within a year.", newText: "About 87% return to sport by 12 months.", claims: [{ text: "87% return to sport by 12 months", sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8530429/" }] },
+    ] });
+    const drafter = new RefreshDrafter(new FakeLlm(["not json at all", validReply]));
+    const d = await drafter.draft(candidate, content, goldenEvidence);
+    expect(d.ops).toHaveLength(1);
+  });
 });
