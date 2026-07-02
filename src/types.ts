@@ -53,6 +53,12 @@ export interface EvidenceItem {
   sourceUrl: string;
   sourceTitle: string;
   numbers: number[];   // numeric tokens present in claimText (for mechanical checks)
+  // Structured provenance — present for curve-derived facts, undefined for free-text
+  // dossier facts. A promoteToMeasured may only cite a fact whose basis is "measured".
+  week?: number;
+  band?: "low" | "typical" | "high";
+  value?: number;
+  basis?: Basis;
 }
 
 export interface EvidenceSet {

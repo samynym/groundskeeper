@@ -11,7 +11,12 @@ export const goldenEvidence: EvidenceSet = {
   sources: [{ title: "Cunningham 2017", url: KNOWN_A, tier: "cohort", reliabilityScore: 7.5 }],
   knownSourceUrls: new Set([KNOWN_A, KNOWN_B, KNOWN_C]),
   facts: [
-    { claimText: "week 0 typical = 5.2", sourceUrl: KNOWN_A, sourceTitle: "Cunningham 2017", numbers: [0, 5.2] },
+    // A real MEASURED curve point — the only kind that may back a promote.
+    { claimText: "week 0 typical = 5.2", sourceUrl: KNOWN_A, sourceTitle: "Cunningham 2017", numbers: [0, 5.2], week: 0, band: "typical", value: 5.2, basis: "measured" },
+    // An INTERPOLATED curve point tagged with the same source — must NOT be promotable
+    // (promoting it would launder Steady's own guess into a "measured" claim).
+    { claimText: "week 4 typical = 2", sourceUrl: KNOWN_A, sourceTitle: "Cunningham 2017", numbers: [4, 2], week: 4, band: "typical", value: 2, basis: "interpolated" },
+    // A free-text dossier fact — no structured week/band/basis, backs prose only.
     { claimText: "87% return to sport by 12 months", sourceUrl: KNOWN_B, sourceTitle: "Memon 2019", numbers: [87, 12] },
   ],
 };
@@ -36,4 +41,9 @@ export const fabricatedOps: EditOp[] = [
   { type: "promoteToMeasured", procedureSlug: ref.procedureSlug, week: 0, band: "typical", value: 5.2, sourceUrl: "https://example.com/made-up", nativeScale: "x" },
   // why: promote value 99 is not present in KNOWN_A's facts
   { type: "promoteToMeasured", procedureSlug: ref.procedureSlug, week: 0, band: "typical", value: 99, sourceUrl: KNOWN_A, nativeScale: "x" },
+  // why: LAUNDERING — the only backing fact at week 4/typical (=2, KNOWN_A) is itself
+  // interpolated. Promoting it would mint a false "measured" claim from Steady's own guess.
+  { type: "promoteToMeasured", procedureSlug: ref.procedureSlug, week: 4, band: "typical", value: 2, sourceUrl: KNOWN_A, nativeScale: "x" },
+  // why: CROSS-WEEK COINCIDENCE — 5.2 is measured at week 0, but this claims week 4.
+  { type: "promoteToMeasured", procedureSlug: ref.procedureSlug, week: 4, band: "typical", value: 5.2, sourceUrl: KNOWN_A, nativeScale: "x" },
 ];
