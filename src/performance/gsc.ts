@@ -47,12 +47,19 @@ export class PerformanceSignal {
   }
 
   async snapshot(): Promise<Record<string, GscRow>> {
-    const { stdout } = await this.runner("node", ["scripts/seo-loop.mjs"], {
-      cwd: this.opts.targetRepoPath,
-      env: { ...process.env, GSC_SA_JSON: this.opts.gscSaJson, GSC_PROPERTY: this.opts.gscProperty },
-    });
-
-    const data = JSON.parse(stdout) as SeoLoopOutput;
+    // Performance data is a SIGNAL, not a requirement. If GSC creds are absent or the loop script
+    // errors (e.g. the keyless cloud run drops GSC), degrade to {} so selection falls back to
+    // staleness — never let a missing signal abort the whole cycle.
+    let data: SeoLoopOutput;
+    try {
+      const { stdout } = await this.runner("node", ["scripts/seo-loop.mjs"], {
+        cwd: this.opts.targetRepoPath,
+        env: { ...process.env, GSC_SA_JSON: this.opts.gscSaJson, GSC_PROPERTY: this.opts.gscProperty },
+      });
+      data = JSON.parse(stdout) as SeoLoopOutput;
+    } catch {
+      return {};
+    }
 
     if (!data.search || !data.search.ok) {
       return {};

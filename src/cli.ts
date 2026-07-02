@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { loadConfig, type Config } from "./config.js";
-import { AnthropicClient } from "./llm/client.js";
+import { AnthropicClient, ClaudeCliClient } from "./llm/client.js";
 import { SteadyContentSource } from "./content-source/steady.js";
 import { PerformanceSignal } from "./performance/gsc.js";
 import { TargetSelector } from "./selector/target-selector.js";
@@ -16,7 +16,11 @@ import { pathToFileURL } from "node:url";
 import type { PageRef } from "./types.js";
 
 export function buildOrchestrator(config: Config): Orchestrator {
-  const llm = new AnthropicClient(config.anthropicApiKey, config.model);
+  // "cli" mode drives the ambient `claude` CLI (session's own auth, no API key) — used in the
+  // cloud routine so no secret is embedded. "sdk" mode calls the Anthropic API directly (local).
+  const llm = config.llmMode === "cli"
+    ? new ClaudeCliClient(config.model)
+    : new AnthropicClient(config.anthropicApiKey, config.model);
   const cs = new SteadyContentSource({ repoPath: config.targetRepoPath, targetOrigin: config.targetOrigin });
 
   const retriever = new EvidenceRetriever({

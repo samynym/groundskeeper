@@ -16,9 +16,12 @@
 - [ ] **V2** updateMeta restatement mode: feed the page's CURRENT PROSE into the judge passage (labeled) and allow numbers in prose ∪ facts, so CTR meta edits can pass without admitting new medical claims. (Currently meta edits are rejected when they generalize past the measured points — V2 lets meta restate what's already on the page.)
 
 ## Gate
-- [ ] Full suite green + `npm run build` clean.
-- [ ] Live dry-run: at least one grounded edit passes, and re-confirm every laundering attempt is rejected.
-- [ ] Commit; then decide cloud-routine scheduling.
+- [x] Full suite green (77/77) + `npm run build` clean.
+- [x] Live dry-run: a grounded edit passes; every laundering attempt rejected (H1 confirmed on real data).
+- [x] Commits: bafd3d0 (promote fix), 0f1f7cd (H1-H5 hardening), a918da2 (V1 scale). Pushed to github.com/samynym/groundskeeper (private).
+- [x] Cloud routine scheduled: trig_01QF18ZdwvYcTdGeXkqgee7a, daily 07:00 UTC, dry-run mode, PushNotification digest. Test-fired 2026-07-02.
 
 ## Review
-(to fill in)
+- Fable-5 review paid for itself: found 3 HIGH holes I missed (esp. H1, same laundering class as the promote bug through prose/meta).
+- Correct ordering was harden-then-enrich (Fable's call), not enrich-first (mine).
+- Remaining: V2 (meta restatement mode) for CTR edits; dossier wiring (blocked on H4 fix first); flip routine to PR mode once the daily digest is trusted.
