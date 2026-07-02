@@ -14,4 +14,17 @@ describe("loadConfig", () => {
   it("throws on missing required var", () => {
     expect(() => loadConfig({})).toThrow(/TARGET_REPO_PATH/);
   });
+  it("defaults llmMode to sdk", () => {
+    const c = loadConfig({ TARGET_REPO_PATH: "/x", TARGET_ORIGIN: "https://x.io", ANTHROPIC_API_KEY: "sk-ant-x" });
+    expect(c.llmMode).toBe("sdk");
+  });
+  it("cli mode needs no API key and no GSC creds", () => {
+    const c = loadConfig({ TARGET_REPO_PATH: "/x", TARGET_ORIGIN: "https://x.io", GROUNDSKEEPER_LLM: "cli" });
+    expect(c.llmMode).toBe("cli");
+    expect(c.anthropicApiKey).toBe("");
+    expect(c.gscSaJson).toBe("");
+  });
+  it("sdk mode without an API key throws a clear error", () => {
+    expect(() => loadConfig({ TARGET_REPO_PATH: "/x", TARGET_ORIGIN: "https://x.io" })).toThrow(/ANTHROPIC_API_KEY/);
+  });
 });

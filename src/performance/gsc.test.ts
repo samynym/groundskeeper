@@ -92,6 +92,24 @@ describe("PerformanceSignal", () => {
     expect(args).not.toContain("--json");
   });
 
+  it("returns {} when the loop script errors (e.g. GSC creds absent)", async () => {
+    const perf = new PerformanceSignal({
+      targetRepoPath: "/tmp/steady", targetOrigin: "https://growsteady.me",
+      gscSaJson: "", gscProperty: "",
+      runner: async () => { throw new Error("seo-loop failed"); },
+    });
+    expect(await perf.snapshot()).toEqual({});
+  });
+
+  it("returns {} when the loop output is not valid JSON", async () => {
+    const perf = new PerformanceSignal({
+      targetRepoPath: "/tmp/steady", targetOrigin: "https://growsteady.me",
+      gscSaJson: "", gscProperty: "",
+      runner: async () => ({ stdout: "not json at all", stderr: "" }),
+    });
+    expect(await perf.snapshot()).toEqual({});
+  });
+
   it("resolves relative page paths against targetOrigin", async () => {
     const relativeJson = JSON.stringify({
       generatedAt: "t",
