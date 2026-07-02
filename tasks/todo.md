@@ -12,8 +12,8 @@
 - [x] **H4** Document the whole-point basis-flip hazard in applyOps; keep promote inert; mark as a HARD prerequisite before any dossier-backed structured facts. (steady.ts comment) — memory note pending.
 
 ## Phase 3 — value unlock (after Phase 1)
-- [ ] **V1** Surface `nativeScale` into measured-fact claimText + numbers so "5.2/10"-style phrasing is backed. (expand-curve.ts, retriever.ts) — VERIFY real Steady painBand points actually carry nativeScale first.
-- [ ] **V2** updateMeta restatement mode: feed the page's CURRENT PROSE into the judge passage (labeled) and allow numbers in prose ∪ facts, so CTR meta edits can pass without admitting new medical claims.
+- [x] **V1** Surface `nativeScale` into fact claimText + numbers so "5.2/10"-style phrasing is backed. (expand-curve.ts, retriever.ts) — real points DO carry nativeScale ("VAS/NRS 0-10 …"). LIVE RESULT: first grounded edit passed the guard; estimate-laundering meta rejected by the basis-aware judge.
+- [ ] **V2** updateMeta restatement mode: feed the page's CURRENT PROSE into the judge passage (labeled) and allow numbers in prose ∪ facts, so CTR meta edits can pass without admitting new medical claims. (Currently meta edits are rejected when they generalize past the measured points — V2 lets meta restate what's already on the page.)
 
 ## Gate
 - [ ] Full suite green + `npm run build` clean.

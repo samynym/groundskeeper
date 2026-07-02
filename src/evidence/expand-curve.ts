@@ -16,6 +16,7 @@ export interface CurvePoint {
   value: number;
   basis: string;
   sourceUrl: string;
+  nativeScale?: string;
 }
 
 /** A curve object with at least a painBand array (plus optional slug). */
@@ -34,9 +35,10 @@ export function expandPainBand(curve: CurveWithPainBand): CurvePoint[] {
   const result: CurvePoint[] = [];
   for (const pt of curve.painBand) {
     const { week, low, typical, high, basis, sourceUrl } = pt;
-    result.push({ week, band: "low",     value: low,     basis, sourceUrl });
-    result.push({ week, band: "typical", value: typical, basis, sourceUrl });
-    result.push({ week, band: "high",    value: high,    basis, sourceUrl });
+    const nativeScale = typeof pt.nativeScale === "string" ? pt.nativeScale : undefined;
+    result.push({ week, band: "low",     value: low,     basis, sourceUrl, nativeScale });
+    result.push({ week, band: "typical", value: typical, basis, sourceUrl, nativeScale });
+    result.push({ week, band: "high",    value: high,    basis, sourceUrl, nativeScale });
   }
   return result;
 }
