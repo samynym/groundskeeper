@@ -2,7 +2,7 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
-import { Project, SyntaxKind } from "ts-morph";
+import { Project, SyntaxKind, type Node } from "ts-morph";
 import type { Basis, EditOp, PageRef, Source } from "../types.js";
 import type { ContentSource, ReadContent } from "./index.js";
 
@@ -127,15 +127,33 @@ export class SteadyContentSource implements ContentSource {
         const objLit = sf.getFirstDescendantByKindOrThrow(SyntaxKind.ObjectLiteralExpression);
         const parts = op.field.split(".");
 
+        // Guard against replacing a sentence other than the one that was judged: the current text
+        // at the target node must equal op.oldText, or the page has drifted since the draft was made.
+        const currentString = (node: Node): string => {
+          const sl = node.asKind(SyntaxKind.StringLiteral);
+          if (sl) return sl.getLiteralText();
+          const tl = node.asKind(SyntaxKind.NoSubstitutionTemplateLiteral);
+          if (tl) return tl.getLiteralText();
+          throw new Error(`replaceProse target is not a plain string literal: ${op.field}`);
+        };
+        const assertOldText = (current: string): void => {
+          if (current !== op.oldText) {
+            throw new Error(`replaceProse oldText mismatch at ${op.field}: the current content differs from the draft's oldText, refusing to overwrite`);
+          }
+        };
+
         if (parts.length === 1) {
           // metaTitle or metaDescription
-          objLit.getPropertyOrThrow(parts[0]).asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(JSON.stringify(op.newText));
+          const prop = objLit.getPropertyOrThrow(parts[0]).asKindOrThrow(SyntaxKind.PropertyAssignment);
+          assertOldText(currentString(prop.getInitializerOrThrow()));
+          prop.setInitializer(JSON.stringify(op.newText));
         } else if (parts[0] === "heroIntro" || parts[0] === "whatShapesRecovery") {
           const idx = parseInt(parts[1], 10);
           const arr = objLit.getPropertyOrThrow(parts[0]).asKindOrThrow(SyntaxKind.PropertyAssignment)
             .getInitializerIfKindOrThrow(SyntaxKind.ArrayLiteralExpression);
           const el = arr.getElements()[idx];
           if (!el) throw new Error(`replaceProse index out of range: ${op.field}`);
+          assertOldText(currentString(el));
           el.replaceWithText(JSON.stringify(op.newText));
         } else if (parts[0] === "phase") {
           // phase.<id>.body.<i>
@@ -154,6 +172,7 @@ export class SteadyContentSource implements ContentSource {
             .getInitializerIfKindOrThrow(SyntaxKind.ArrayLiteralExpression);
           const bodyEl = body.getElements()[bodyIdx];
           if (!bodyEl) throw new Error(`replaceProse index out of range: ${op.field}`);
+          assertOldText(currentString(bodyEl));
           bodyEl.replaceWithText(JSON.stringify(op.newText));
         } else if (parts[0] === "faq") {
           // faq.<i>.q or faq.<i>.a
@@ -163,8 +182,10 @@ export class SteadyContentSource implements ContentSource {
             .getInitializerIfKindOrThrow(SyntaxKind.ArrayLiteralExpression);
           const faqEl = faqs.getElements()[idx];
           if (!faqEl) throw new Error(`replaceProse index out of range: ${op.field}`);
-          faqEl.asKindOrThrow(SyntaxKind.ObjectLiteralExpression)
-            .getPropertyOrThrow(propName).asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(JSON.stringify(op.newText));
+          const faqProp = faqEl.asKindOrThrow(SyntaxKind.ObjectLiteralExpression)
+            .getPropertyOrThrow(propName).asKindOrThrow(SyntaxKind.PropertyAssignment);
+          assertOldText(currentString(faqProp.getInitializerOrThrow()));
+          faqProp.setInitializer(JSON.stringify(op.newText));
         } else {
           throw new Error(`unknown replaceProse field: ${op.field}`);
         }
@@ -230,6 +251,15 @@ export class SteadyContentSource implements ContentSource {
 
         if (!pt) throw new Error(`painBand point week=${op.week} not found in ${op.procedureSlug}`);
 
+        // HAZARD (H4): basis/sourceUrl are WHOLE-POINT in Steady's schema, but the guard only validates
+        // ONE band. Flipping basis→"measured" here also upgrades this week's OTHER bands (still site
+        // estimates) and reattributes them to op.sourceUrl — corruption that would re-feed as
+        // [measured study value] next cycle. This is safe TODAY only because promoteToMeasured is
+        // currently inert: with curve-only facts, a measured backing fact at (week,band) implies the
+        // point's basis is already "measured", so the guard's "current basis must be interpolated"
+        // rule rejects every promote. DO NOT enable dossier-backed structured facts (which would make
+        // promote reachable) until basis is per-band OR the guard requires measured backing for all
+        // three bands. See tasks/todo.md H4.
         pt.getPropertyOrThrow(op.band).asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(String(op.value));
         pt.getPropertyOrThrow("basis").asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(JSON.stringify("measured"));
         pt.getPropertyOrThrow("sourceUrl").asKindOrThrow(SyntaxKind.PropertyAssignment).setInitializer(JSON.stringify(op.sourceUrl));
