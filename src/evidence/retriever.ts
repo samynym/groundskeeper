@@ -1,4 +1,4 @@
-import type { EvidenceItem, EvidenceSet, PageRef, Source } from "../types.js";
+import type { Basis, EvidenceItem, EvidenceSet, PageRef, Source } from "../types.js";
 import type { ReadContent } from "../content-source/index.js";
 
 const URL_RE = /https?:\/\/[^\s)]+/g;
@@ -31,7 +31,10 @@ export class EvidenceRetriever {
       if (!p.sourceUrl) continue;
       const title = sources.find((s) => s.url === p.sourceUrl)?.title ?? p.sourceUrl;
       const claimText = `week ${p.week} ${p.band} = ${p.value}`;
-      facts.push({ claimText, sourceUrl: p.sourceUrl, sourceTitle: title, numbers: extractNumbers(claimText) });
+      facts.push({
+        claimText, sourceUrl: p.sourceUrl, sourceTitle: title, numbers: extractNumbers(claimText),
+        week: p.week, band: p.band as "low" | "typical" | "high", value: p.value, basis: p.basis as Basis,
+      });
     }
     for (const line of dossier.split(/\n+/)) {
       const url = line.match(URL_RE)?.[0];

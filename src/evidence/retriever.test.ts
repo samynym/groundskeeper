@@ -21,4 +21,15 @@ describe("EvidenceRetriever", () => {
     const dossierFact = ev.facts.find((f) => f.claimText.includes("return to sport"));
     expect(dossierFact?.numbers).toContain(87);
   });
+  it("carries structured week/band/value/basis on curve facts (for promote grounding)", async () => {
+    const ev = await retriever.retrieve(ref);
+    const curveFact = ev.facts.find((f) => f.sourceUrl === "https://pmc.ncbi.nlm.nih.gov/articles/PMC5721367/");
+    expect(curveFact).toMatchObject({ week: 0, band: "typical", value: 5.2, basis: "measured" });
+  });
+  it("leaves structured fields undefined on free-text dossier facts", async () => {
+    const ev = await retriever.retrieve(ref);
+    const dossierFact = ev.facts.find((f) => f.claimText.includes("return to sport"));
+    expect(dossierFact?.basis).toBeUndefined();
+    expect(dossierFact?.week).toBeUndefined();
+  });
 });

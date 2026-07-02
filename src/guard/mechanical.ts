@@ -38,7 +38,20 @@ export async function mechanicalGuard(op: EditOp, ev: EvidenceSet, deps: Mechani
 
   if (op.type === "promoteToMeasured") {
     if (!ev.knownSourceUrls.has(op.sourceUrl)) failures.push(`promote sourceUrl unknown: ${op.sourceUrl}`);
-    if (!numbersBackedBySource([op.value], op.sourceUrl, ev)) failures.push(`promote value ${op.value} not found in that source's facts`);
+    // A promote asserts "a source MEASURED this value at this week/band". That is only
+    // grounded if the cited source contributes a fact that (a) is itself measured and
+    // (b) matches the same week, band, and value. Matching the bare number anywhere in
+    // the source's facts is NOT enough — it would launder the curve's own interpolated
+    // point (or a coincidental value from another week) into a fabricated "measured" claim.
+    const backed = ev.facts.some(
+      (f) =>
+        f.sourceUrl === op.sourceUrl &&
+        f.basis === "measured" &&
+        f.week === op.week &&
+        f.band === op.band &&
+        f.value === op.value,
+    );
+    if (!backed) failures.push(`promote not backed by a measured fact for ${op.sourceUrl} at week ${op.week} ${op.band}=${op.value}`);
     const basis = await deps.currentBasis(op.procedureSlug, op.week, op.band);
     if (basis !== "interpolated") failures.push(`refusing to promote: current basis is ${basis}, not interpolated`);
   }
