@@ -81,6 +81,20 @@ describe("SteadyContentSource applyOps", () => {
     expect(src).toMatch(/week: 12[^}]*basis: "interpolated"/s);
   });
 
+  it("replaceProse refuses to overwrite when oldText no longer matches", async () => {
+    await expect(cs.applyOps([{
+      type: "replaceProse",
+      procedureSlug: "hip-arthroscopy-fai",
+      field: "heroIntro.0",
+      oldText: "This is NOT what the file currently says.",
+      newText: "Recovery is gradual and measured in weeks.",
+      claims: [],
+    }])).rejects.toThrow(/oldText mismatch/);
+    // and the file must be unchanged
+    const src = readFileSync(join(repo, "lib/benchmarks/content/hip-arthroscopy-fai.ts"), "utf8");
+    expect(src).toContain("FAI is gradual.");
+  });
+
   it("replaceProse on unknown field throws", async () => {
     await expect(cs.applyOps([{
       type: "replaceProse",

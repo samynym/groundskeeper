@@ -19,6 +19,20 @@ describe("mechanicalGuard", () => {
     }
   });
 
+  it("rejects a claimless prose edit (even with no numbers)", async () => {
+    const op = {
+      type: "replaceProse" as const,
+      procedureSlug: goldenEvidence.ref.procedureSlug,
+      field: "outlook",
+      oldText: "x",
+      newText: "Most people are safely back at work within a short time.",
+      claims: [],
+    };
+    const v = await mechanicalGuard(op, goldenEvidence, deps);
+    expect(v.ok).toBe(false);
+    expect(v.failures.some((f) => /at least one cited claim/i.test(f))).toBe(true);
+  });
+
   it("rejects a promote backed only by an interpolated fact (no laundering)", async () => {
     // week 4/typical=2 exists in the evidence but its basis is "interpolated".
     const op = {

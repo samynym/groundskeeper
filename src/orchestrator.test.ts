@@ -52,6 +52,18 @@ describe("Orchestrator", () => {
     expect(r.status).toBe("nothing-passed");
     expect(r.passedOps.length).toBe(0);
   });
+  it("surfaces rejected ops with reasons and the drafter rationale", async () => {
+    const rejectedOp = groundedOps[0];
+    const o = new Orchestrator(baseDeps({
+      drafter: { draft: async () => ({ ref: goldenEvidence.ref, ops: [rejectedOp], rationale: "why I tried this" }) },
+      guard: { check: async () => ({ verdicts: [{ op: rejectedOp, ok: false, failures: ["judge rejected prose: nope"] }], passedOps: [], allPassed: false }) },
+    }));
+    const r = await o.runOnce({ dryRun: true });
+    expect(r.status).toBe("nothing-passed");
+    expect(r.rejected?.[0].failures).toContain("judge rejected prose: nope");
+    expect(r.rationale).toBe("why I tried this");
+    expect(r.target).toBe(goldenEvidence.ref.procedureSlug);
+  });
   it("aborts and re-throws if applyOps throws", async () => {
     let aborted = false;
     const base = baseDeps();

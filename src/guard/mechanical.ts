@@ -22,18 +22,32 @@ export async function mechanicalGuard(op: EditOp, ev: EvidenceSet, deps: Mechani
 
   if (op.type === "replaceProse" || op.type === "updateMeta") {
     const text = op.type === "replaceProse" ? op.newText : op.value;
+    // Every prose/meta edit must cite at least one claim. A claimless edit would otherwise
+    // sail past the number gate and reach the judge with an empty passage — a fabrication path.
+    if (op.claims.length === 0) failures.push("prose/meta edit must carry at least one cited claim");
     const nums = extractNumbers(text);
     if (nums.length > 0) {
       // each number must be backed by at least one cited source in the claims
       const citedUrls = op.claims.map((c) => c.sourceUrl);
       const backed = nums.every((n) => citedUrls.some((u) => numbersBackedBySource([n], u, ev)));
       if (!backed) failures.push(`prose contains number(s) not backed by a cited fact: ${nums.join(", ")}`);
-      if (op.claims.length === 0) failures.push("prose asserts numbers but carries no claims");
     }
   }
 
   if (op.type === "addSource") {
-    if (!ev.knownSourceUrls.has(op.source.url)) failures.push(`addSource url not in evidence base: ${op.source.url}`);
+    // The drafter's title/tier/reliabilityScore are free text with no fact-checker (addSource has no
+    // judge). A real URL + a fabricated title ("RCT: pain-free at 6 weeks") would be a misattributed
+    // YMYL claim. So the whole record must match a canonical source already in the evidence base.
+    const canonical = ev.sources.find((s) => s.url === op.source.url);
+    if (!canonical) {
+      failures.push(`addSource has no canonical source record in the evidence base: ${op.source.url}`);
+    } else if (
+      canonical.title !== op.source.title ||
+      canonical.tier !== op.source.tier ||
+      canonical.reliabilityScore !== op.source.reliabilityScore
+    ) {
+      failures.push(`addSource metadata does not match the canonical record for ${op.source.url}`);
+    }
   }
 
   if (op.type === "promoteToMeasured") {

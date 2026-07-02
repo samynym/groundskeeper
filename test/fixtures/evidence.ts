@@ -8,7 +8,10 @@ export const KNOWN_C = "https://pmc.ncbi.nlm.nih.gov/articles/PMC9999999/";
 
 export const goldenEvidence: EvidenceSet = {
   ref,
-  sources: [{ title: "Cunningham 2017", url: KNOWN_A, tier: "cohort", reliabilityScore: 7.5 }],
+  sources: [
+    { title: "Cunningham 2017", url: KNOWN_A, tier: "cohort", reliabilityScore: 7.5 },
+    { title: "Memon 2019", url: KNOWN_B, tier: "meta-analysis", reliabilityScore: 8.0 },
+  ],
   knownSourceUrls: new Set([KNOWN_A, KNOWN_B, KNOWN_C]),
   facts: [
     // A real MEASURED curve point — the only kind that may back a promote.
@@ -37,6 +40,8 @@ export const fabricatedOps: EditOp[] = [
   { type: "replaceProse", procedureSlug: ref.procedureSlug, field: "outlook", oldText: "x", newText: "95% return to sport by 12 months.", claims: [{ text: "95% return to sport by 12 months", sourceUrl: KNOWN_B }] },
   // why: addSource with an invented URL
   { type: "addSource", procedureSlug: ref.procedureSlug, source: { title: "Fake study", url: "https://example.com/nope", tier: "cohort", reliabilityScore: 9 } },
+  // why: real (known) URL but a FABRICATED title/tier/score — misattribution with no judge to catch it
+  { type: "addSource", procedureSlug: ref.procedureSlug, source: { title: "RCT: pain-free at 6 weeks", url: KNOWN_A, tier: "rct", reliabilityScore: 9.9 } },
   // why: promote cites a sourceUrl not in knownSourceUrls
   { type: "promoteToMeasured", procedureSlug: ref.procedureSlug, week: 0, band: "typical", value: 5.2, sourceUrl: "https://example.com/made-up", nativeScale: "x" },
   // why: promote value 99 is not present in KNOWN_A's facts
