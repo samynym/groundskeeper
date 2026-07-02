@@ -72,7 +72,9 @@ export async function main(argv: string[]): Promise<void> {
   console.log(JSON.stringify(result, null, 2));
 }
 
-// Only run when executed directly.
-if (process.argv[1] && process.argv[1].endsWith("cli.js")) {
+// Only run when executed directly — matches both the built entry (cli.js) and
+// the tsx entry (cli.ts). Production runs under tsx so it can import the target
+// site's TypeScript data modules at runtime.
+if (process.argv[1] && /cli\.(js|ts|mts|cts)$/.test(process.argv[1])) {
   main(process.argv.slice(2)).catch((e) => { console.error(e); process.exit(1); });
 }
