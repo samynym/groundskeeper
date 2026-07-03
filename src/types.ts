@@ -80,11 +80,6 @@ export interface GuardResult {
   allPassed: boolean;
 }
 
-export const isReplaceProse = (o: EditOp): o is Extract<EditOp, { type: "replaceProse" }> => o.type === "replaceProse";
-export const isAddSource = (o: EditOp): o is Extract<EditOp, { type: "addSource" }> => o.type === "addSource";
-export const isUpdateMeta = (o: EditOp): o is Extract<EditOp, { type: "updateMeta" }> => o.type === "updateMeta";
-export const isPromote = (o: EditOp): o is Extract<EditOp, { type: "promoteToMeasured" }> => o.type === "promoteToMeasured";
-
 /** Claims carried by an op (for guard iteration). promoteToMeasured/addSource carry an implicit claim. */
 export function claimsOf(op: EditOp): ClaimRef[] {
   switch (op.type) {
