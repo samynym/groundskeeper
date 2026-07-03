@@ -6,7 +6,7 @@ export interface ReadContent {
 }
 
 export interface ContentSource {
-  /** All public pages (pillars + week pages). */
+  /** All public pages (currently pillar pages; week pages when an adapter exposes them). */
   listPages(): Promise<PageRef[]>;
   /** Prose fields + sources for a procedure. */
   readContent(ref: PageRef): Promise<ReadContent>;
