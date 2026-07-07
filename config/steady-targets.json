@@ -1,0 +1,12 @@
+{
+  "brandDomain": "growsteady.me",
+  "brandPhrases": ["growsteady", "growsteady.me", "Steady recovery"],
+  "items": [
+    { "pageUrl": "https://growsteady.me/acl-recovery-timeline", "procedureSlug": "acl-reconstruction", "control": false,
+      "questions": ["how long does acl surgery recovery take", "when can i walk after acl reconstruction", "acl recovery timeline week by week"] },
+    { "pageUrl": "https://growsteady.me/knee-replacement-recovery-timeline", "procedureSlug": "total-knee-replacement", "control": false,
+      "questions": ["how long to recover from total knee replacement", "knee replacement recovery timeline"] },
+    { "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline", "procedureSlug": "rotator-cuff-repair", "control": true,
+      "questions": ["how long does rotator cuff surgery recovery take", "rotator cuff repair recovery timeline"] }
+  ]
+}
