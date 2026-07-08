@@ -48,4 +48,18 @@ describe("snapshotGeo", () => {
     const g = await snapshotGeo(targets, [engine], { runs: 2 });
     expect(g.targetScore.citationRate).toBe(1);
   });
+  it("scores over measured questions only — a fully-failed question is 'no data', not 0", async () => {
+    const t: TargetSet = {
+      brandDomain: "growsteady.me", brandPhrases: ["growsteady"],
+      items: [{ pageUrl: "u", procedureSlug: "a", control: false, questions: ["q1", "q2"] }],
+    };
+    // runs=1: q1 -> cited (ok), q2 -> engine fails. targetScore must be 1 (q2 excluded), not 0.5.
+    const engine = new FakeEngine("e", [
+      cited("https://growsteady.me/1"),
+      { answerText: "", citedUrls: [], ok: false },
+    ]);
+    const g = await snapshotGeo(t, [engine], { runs: 1 });
+    expect(g.targetScore.citationRate).toBe(1);
+    expect(g.results.find((r) => r.question === "q2")?.measured).toBe(false);
+  });
 });

@@ -23,6 +23,8 @@ export interface EngineResult { citationRate: number; mentionRate: number; runs:
 export interface QuestionResult {
   question: string;
   control: boolean;
+  /** true iff at least one engine returned at least one ok run for this question. */
+  measured: boolean;
   perEngine: Record<string, EngineResult>;
   citationRate: number;
   mentionRate: number;
@@ -58,15 +60,18 @@ export async function snapshotGeo(
       }
       const active = Object.values(perEngine).filter((e) => e.runs.some((r) => r.ok));
       results.push({
-        question, control: item.control, perEngine,
+        question, control: item.control, measured: active.length > 0, perEngine,
         citationRate: mean(active.map((e) => e.citationRate)),
         mentionRate: mean(active.map((e) => e.mentionRate)),
       });
     }
   }
 
-  const nonControl = results.filter((r) => !r.control);
-  const control = results.filter((r) => r.control);
+  // Score only questions we could actually measure. A fully-unmeasurable question
+  // (every engine failed all runs) is "no data", NOT "not cited" — including its 0
+  // would wrongly drag the score down.
+  const nonControl = results.filter((r) => !r.control && r.measured);
+  const control = results.filter((r) => r.control && r.measured);
   return {
     results,
     targetScore: { citationRate: mean(nonControl.map((r) => r.citationRate)), mentionRate: mean(nonControl.map((r) => r.mentionRate)) },

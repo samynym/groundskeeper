@@ -48,7 +48,9 @@ export async function main(argv: string[]): Promise<void> {
 
   if (cmd === "baseline") {
     const perf = new PerformanceSignal({ targetRepoPath: repo, targetOrigin: origin, gscSaJson: process.env.GSC_SA_JSON ?? "", gscProperty: process.env.GSC_PROPERTY ?? "" });
-    const { path } = await takeBaseline({ now: () => new Date().toISOString(), targetsPath, snapshotDir, perf, engines: buildEngines(process.env), runs: Number(process.env.GEO_RUNS ?? 3) });
+    const runsEnv = Number(process.env.GEO_RUNS ?? 3);
+    const runs = Number.isFinite(runsEnv) && runsEnv > 0 ? runsEnv : 3; // guard: malformed GEO_RUNS must not silently zero out GEO
+    const { path } = await takeBaseline({ now: () => new Date().toISOString(), targetsPath, snapshotDir, perf, engines: buildEngines(process.env), runs });
     console.log(`baseline written: ${path}`);
     return;
   }

@@ -1,5 +1,7 @@
 export interface GeoAnswer {
   answerText: string;
+  /** Absolute URLs. Real engine adapters MUST normalize to absolute (scheme + host);
+   *  citation detection is host-based and treats a scheme-less string as not cited. */
   citedUrls: string[];
   ok: boolean;
 }
