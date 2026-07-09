@@ -6,18 +6,9 @@ import { snapshotSeo } from "./seo-snapshot.js";
 import { snapshotGeo } from "./geo-tracker.js";
 import { writeSnapshot, diffSnapshots, type Snapshot } from "./snapshot.js";
 import { renderReport } from "./report.js";
+import { buildEngines } from "./claude-search-engine.js";
 import type { GeoEngineClient } from "./geo-engine.js";
 import type { GscRow } from "../types.js";
-
-/**
- * Credential-gated real engines. v1 wires none — real HTTP adapters
- * (Perplexity / OpenAI-search / Claude-search) are the follow-on, built
- * against each API's verified live schema, NOT guessed. GEO logic is fully
- * covered by unit tests via FakeEngine.
- */
-export function buildEngines(_env: NodeJS.ProcessEnv): GeoEngineClient[] {
-  return [];
-}
 
 export interface CliDeps {
   now: () => string;
