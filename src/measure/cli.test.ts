@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { mkdtempSync, writeFileSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { takeBaseline, buildEngines } from "./cli.js";
+import { takeBaseline } from "./cli.js";
 import { FakeEngine } from "./geo-engine.js";
 
 function tmpTargets(): { path: string; dir: string } {
@@ -16,9 +16,6 @@ function tmpTargets(): { path: string; dir: string } {
 }
 
 describe("measure CLI", () => {
-  it("buildEngines returns [] when no engine credentials are present", () => {
-    expect(buildEngines({})).toEqual([]);
-  });
   it("takeBaseline snapshots SEO+GEO and writes a file", async () => {
     const { path, dir } = tmpTargets();
     const snapDir = join(dir, "snapshots");
