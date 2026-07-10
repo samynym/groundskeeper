@@ -49,7 +49,7 @@ export async function snapshotGeo(
         const raw: GeoAnswer[] = [];
         for (let k = 0; k < runs; k++) {
           try { raw.push(await engine.ask(question)); }
-          catch { raw.push({ answerText: "", citedUrls: [], ok: false }); }
+          catch { raw.push({ answerText: "", citedUrls: [], retrievedUrls: null, engineQueries: null, ok: false }); }
         }
         const ok = raw.filter((a) => a.ok);
         perEngine[engine.name] = {

@@ -49,9 +49,35 @@ export class ClaudeSearchEngine implements GeoEngineClient {
           if (c.type === "web_search_result_location" && typeof c.url === "string") urls.push(c.url);
         }
       }
-      return { answerText, citedUrls: [...new Set(urls)], ok: true };
+      // Retrieval set + issued queries: read defensively via property checks so an
+      // SDK type bump can't break parsing. null = the block type never appeared.
+      let sawResults = false;
+      const retrieved: string[] = [];
+      let sawToolUse = false;
+      const queries: string[] = [];
+      for (const raw of (res.content ?? []) as unknown as Array<Record<string, unknown>>) {
+        if (raw.type === "web_search_tool_result") {
+          sawResults = true;
+          if (Array.isArray(raw.content)) {
+            for (const r of raw.content as Array<Record<string, unknown>>) {
+              if (r.type === "web_search_result" && typeof r.url === "string") retrieved.push(r.url);
+            }
+          }
+        } else if (raw.type === "server_tool_use") {
+          sawToolUse = true;
+          const input = raw.input as Record<string, unknown> | undefined;
+          if (input && typeof input.query === "string") queries.push(input.query);
+        }
+      }
+      return {
+        answerText,
+        citedUrls: [...new Set(urls)],
+        retrievedUrls: sawResults ? [...new Set(retrieved)] : null,
+        engineQueries: sawToolUse ? queries : null,
+        ok: true,
+      };
     } catch {
-      return { answerText: "", citedUrls: [], ok: false };
+      return { answerText: "", citedUrls: [], retrievedUrls: null, engineQueries: null, ok: false };
     }
   }
 }

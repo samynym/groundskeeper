@@ -3,6 +3,11 @@ export interface GeoAnswer {
   /** Absolute URLs. Real engine adapters MUST normalize to absolute (scheme + host);
    *  citation detection is host-based and treats a scheme-less string as not cited. */
   citedUrls: string[];
+  /** Full retrieval set (every result the search backend returned, cited or not).
+   *  null = this engine cannot report retrieval. NEVER use [] to mean "unknown". */
+  retrievedUrls: string[] | null;
+  /** Search queries the engine actually issued. null = engine cannot report them. */
+  engineQueries: string[] | null;
   ok: boolean;
 }
 
