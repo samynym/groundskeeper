@@ -48,10 +48,10 @@ function decodeEntities(s: string): string {
     lt: "<",
     gt: ">",
     nbsp: " ",
-    rsquo: "'",
-    lsquo: "'",
-    ldquo: '"',
-    rdquo: '"',
+    rsquo: String.fromCodePoint(0x2019), // U+2019 = RIGHT SINGLE QUOTATION MARK
+    lsquo: String.fromCodePoint(0x2018), // U+2018 = LEFT SINGLE QUOTATION MARK
+    ldquo: String.fromCodePoint(0x201c), // U+201C = LEFT DOUBLE QUOTATION MARK
+    rdquo: String.fromCodePoint(0x201d), // U+201D = RIGHT DOUBLE QUOTATION MARK
     mdash: "—",
     ndash: "–",
     hellip: "…"

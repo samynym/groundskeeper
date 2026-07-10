@@ -38,7 +38,7 @@ describe("extractPhrase", () => {
     const html = "<p>Recovery isn&rsquo;t linear and after hip surgery rehabilitation usually takes weeks or months to see meaningful progress.</p>";
     const phrase = extractPhrase(html);
     expect(phrase).toBeTruthy();
-    expect(phrase).toContain("isn't");
+    expect(phrase).toContain("isn’t"); // U+2019 = RIGHT SINGLE QUOTATION MARK (curly apostrophe)
   });
   it("decodes decimal numeric entities like &#8217;", () => {
     const html = "<p>Recovery isn&#8217;t linear and after hip surgery rehabilitation usually takes weeks or months to see meaningful progress.</p>";
@@ -60,14 +60,27 @@ describe("extractPhrase", () => {
     expect(phrase).toContain("&#39;");
     expect(phrase).not.toContain("isn't");
   });
-  it("allows curly quotes from &ldquo; and &rdquo; (only straight quotes break the query template)", () => {
+  it("allows curly quotes from &ldquo; and &rdquo; entities (only straight quotes break the query template)", () => {
+    const html = "<p>The doctor said &ldquo;you are healing well&rdquo; and it motivated me to push harder during the long recovery period after my hip surgery.</p>";
+    const phrase = extractPhrase(html);
+    expect(phrase).toBeTruthy();
+    expect(phrase).toContain("“"); // U+201C = LEFT DOUBLE QUOTATION MARK
+    expect(phrase).toContain("”"); // U+201D = RIGHT DOUBLE QUOTATION MARK
+  });
+  it("allows literal curly quotes that are not entities", () => {
     const LONG = "The doctor said “you are healing well” and it motivated me to push harder during the long recovery period after my hip surgery.";
     const html = `<p>${LONG}</p>`;
     expect(extractPhrase(html)).toBe(LONG);
   });
+  it("preserves invalid numeric entities as literal text in the returned phrase", () => {
+    const html = "<p>Recovery is complex&#99999999999999; and takes weeks or months to see meaningful progress after hip surgery or any major procedure.</p>";
+    const phrase = extractPhrase(html);
+    expect(phrase).toBeTruthy();
+    expect(phrase).toContain("&#99999999999999;");
+  });
   it("still rejects straight double quotes even with typographic entities present", () => {
     const quoted = 'The doctor said "you are healing well" and it motivated me during rehab.';
-    const LONG = "Recovery isn't linear and after hip surgery rehabilitation usually takes weeks or months to see meaningful progress."; // rsquo decoded to U+2019
+    const LONG = "Recovery isn’t linear and after hip surgery rehabilitation usually takes weeks or months to see meaningful progress.";
     expect(extractPhrase(`<p>${quoted}</p><p>Recovery isn&rsquo;t linear and after hip surgery rehabilitation usually takes weeks or months to see meaningful progress.</p>`)).toBe(LONG);
   });
 });
