@@ -34,4 +34,40 @@ describe("extractPhrase", () => {
     const html = "<p>Recovery isn&#39;t linear and the first weeks after surgery are usually the hardest part of the whole rehabilitation journey.</p>";
     expect(extractPhrase(html)).toContain("isn't");
   });
+  it("decodes typographic entities like &rsquo; to their Unicode equivalents", () => {
+    const html = "<p>Recovery isn&rsquo;t linear and after hip surgery rehabilitation usually takes weeks or months to see meaningful progress.</p>";
+    const phrase = extractPhrase(html);
+    expect(phrase).toBeTruthy();
+    expect(phrase).toContain("isn't");
+  });
+  it("decodes decimal numeric entities like &#8217;", () => {
+    const html = "<p>Recovery isn&#8217;t linear and after hip surgery rehabilitation usually takes weeks or months to see meaningful progress.</p>";
+    const phrase = extractPhrase(html);
+    expect(phrase).toBeTruthy();
+    expect(phrase).toContain("isn’t"); // U+2019 = RIGHT SINGLE QUOTATION MARK
+  });
+  it("decodes hex numeric entities like &#x2019;", () => {
+    const html = "<p>Recovery isn&#x2019;t linear and after hip surgery rehabilitation usually takes weeks or months to see meaningful progress.</p>";
+    const phrase = extractPhrase(html);
+    expect(phrase).toBeTruthy();
+    expect(phrase).toContain("isn’t"); // U+2019 = RIGHT SINGLE QUOTATION MARK
+  });
+  it("treats &amp;#39; (double-encoded) as literal &#39; text, not an apostrophe", () => {
+    // This represents actual page text that shows "&#39;" literally
+    const html = "<p>Recovery isn&amp;#39;t linear and after hip surgery rehabilitation usually takes weeks or months to see meaningful progress.</p>";
+    const phrase = extractPhrase(html);
+    expect(phrase).toBeTruthy();
+    expect(phrase).toContain("&#39;");
+    expect(phrase).not.toContain("isn't");
+  });
+  it("allows curly quotes from &ldquo; and &rdquo; (only straight quotes break the query template)", () => {
+    const LONG = "The doctor said “you are healing well” and it motivated me to push harder during the long recovery period after my hip surgery.";
+    const html = `<p>${LONG}</p>`;
+    expect(extractPhrase(html)).toBe(LONG);
+  });
+  it("still rejects straight double quotes even with typographic entities present", () => {
+    const quoted = 'The doctor said "you are healing well" and it motivated me during rehab.';
+    const LONG = "Recovery isn't linear and after hip surgery rehabilitation usually takes weeks or months to see meaningful progress."; // rsquo decoded to U+2019
+    expect(extractPhrase(`<p>${quoted}</p><p>Recovery isn&rsquo;t linear and after hip surgery rehabilitation usually takes weeks or months to see meaningful progress.</p>`)).toBe(LONG);
+  });
 });
