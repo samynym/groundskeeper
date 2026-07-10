@@ -8,7 +8,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "dev": "tsx src/cli.ts",
-    "measure": "tsx src/measure/cli.ts"
+    "measure": "tsx src/measure/cli.ts",
+    "presence": "tsx src/presence/cli.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.0",
