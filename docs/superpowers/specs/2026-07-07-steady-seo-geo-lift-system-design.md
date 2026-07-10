@@ -2,6 +2,7 @@
 
 **Date:** 2026-07-07
 **Status:** Approved shape (2026-07-07), detailed design for Sub-Project 1.
+**Revised 2026-07-10:** a live retrievability probe (5 escalating queries, 87 retrieved URLs, including an engine-issued `site:growsteady.me`) found `growsteady.me` entirely absent from the answer engine's retrieval corpus, while the site itself is technically indexable (200s, index/follow, SSR prose, healthy sitemap, AI crawlers served). Citation requires retrieval; content shape cannot be tested against an index that has never seen the domain. Sub-Project 2 is therefore now the **presence probe + experiment log** (`docs/superpowers/specs/2026-07-10-steady-presence-probe-design.md`); the improvement engine moves to Sub-Project 3 and the prove/report loop to Sub-Project 4.
 
 ## Goal
 
@@ -16,11 +17,12 @@ Both require a measurement instrument that can snapshot a baseline and be re-run
 
 ## Full-system shape (context)
 
-Three components, built in order:
+Four components, built in order *(renumbered 2026-07-10 — see Status note)*:
 
-1. **Measurement harness** — snapshots SEO + GEO visibility for a defined target set. *(This spec.)*
-2. **Improvement engine** — grounded content refresh (Groundskeeper, already built) + GEO-specific edits (answer-shaped content, on-page citations, schema, freshness), all human-approved PRs. Coordinates with, does not duplicate, Steady's existing structural SEO loop. *(Sub-Project 2, later spec.)*
-3. **Prove/report loop** — baseline → apply improvements → re-measure → before/after report, target vs control. The report is the validation and the sales case study. *(Sub-Project 3, later spec.)*
+1. **Measurement harness** — snapshots SEO + GEO visibility for a defined target set. *(This spec. Built; baseline committed 2026-07-09.)*
+2. **Presence probe + experiment log** — establishes whether the domain is in each answer engine's retrieval corpus at all, and tracks dated presence interventions (IndexNow, manual links/mentions) with the probe as oracle. Prerequisite discovered by the 2026-07-10 probe: `growsteady.me` is absent from the corpus, so shape-level work is currently unfalsifiable. *(Sub-Project 2, spec `2026-07-10-steady-presence-probe-design.md`.)*
+3. **Improvement engine** — grounded content refresh (Groundskeeper, already built) + GEO-specific edits (answer-shaped content, on-page citations, schema, freshness), all human-approved PRs. Coordinates with, does not duplicate, Steady's existing structural SEO loop. Unblocked once the probe reports `INDEXED_NOT_MATCHED` or better. *(Sub-Project 3, later spec.)*
+4. **Prove/report loop** — baseline → apply improvements → re-measure → before/after report, target vs control. The report is the validation and the sales case study. Note: domain-level presence interventions lift control pages too, so only page-level content edits can be attributed against controls. *(Sub-Project 4, later spec.)*
 
 Groundskeeper stays the content brain (the actual claims/prose); Steady's existing every-2-days loop keeps structural SEO/GEO (llms.txt, JSON-LD, robots). The measurement harness is new and shared.
 
@@ -100,4 +102,4 @@ Every external call is a signal, not a requirement. A failing engine or missing 
 
 ### Out of scope (this spec)
 
-The improvement engine (Sub-Project 2), the multi-week validation study orchestration (Sub-Project 3), any dashboard/product UI, and any auto-shipping of changes. This spec builds only the instrument that makes validation possible.
+The presence probe (Sub-Project 2), the improvement engine (Sub-Project 3), the multi-week validation study orchestration (Sub-Project 4), any dashboard/product UI, and any auto-shipping of changes. This spec builds only the instrument that makes validation possible.
