@@ -1,0 +1,848 @@
+{
+  "takenAt": "2026-07-10T17:57:27.143Z",
+  "verdicts": [
+    {
+      "pageUrl": "https://growsteady.me/acl-recovery-timeline",
+      "procedureSlug": "acl-reconstruction",
+      "control": false,
+      "perEngine": [
+        {
+          "engine": "claude-search",
+          "verdict": "ABSENT",
+          "reasons": [
+            "brand at no rung"
+          ]
+        }
+      ],
+      "best": "ABSENT"
+    },
+    {
+      "pageUrl": "https://growsteady.me/knee-replacement-recovery-timeline",
+      "procedureSlug": "total-knee-replacement",
+      "control": false,
+      "perEngine": [
+        {
+          "engine": "claude-search",
+          "verdict": "ABSENT",
+          "reasons": [
+            "brand at no rung"
+          ]
+        }
+      ],
+      "best": "ABSENT"
+    },
+    {
+      "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+      "procedureSlug": "rotator-cuff-repair",
+      "control": true,
+      "perEngine": [
+        {
+          "engine": "claude-search",
+          "verdict": "ABSENT",
+          "reasons": [
+            "brand at no rung"
+          ]
+        }
+      ],
+      "best": "ABSENT"
+    }
+  ],
+  "raw": [
+    {
+      "rung": {
+        "id": "R0_DOMAIN_LITERAL",
+        "scope": "domain",
+        "pageUrl": null,
+        "query": "growsteady.me"
+      },
+      "runs": [
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I wasn't able to find specific information about **growsteady.me** (with the `.me` domain) in the search results. The search returned results for similar but different websites, such as:\n\n- **growsteady.net** – A behavioral health therapy practice run by **Sherry Allen** in Dickson, Tennessee, specializing in life transitions, grief, anxiety, depression, trauma, and family relationships.\n- **growsteady.ai** – A marketing/campaigns-focused site.\n- **growsteady.app** – A habit tracker app.\n- **growandsteady.digital** – A web design service near Albany, NY.\n\nIt's possible that **growsteady.me** is:\n- A new or low-traffic website not yet indexed by search engines.\n- A private or under-construction site.\n- Mistyped or no longer active.\n\nCould you provide more context about what you're looking for? For example, are you trying to:\n1. **Visit** the website?\n2. **Find information** about a specific product or service associated with it?\n3. **Check if the domain is available** for purchase?\n\nI'm happy to help once I know more! 😊",
+            "citedUrls": [],
+            "retrievedUrls": [
+              "https://www.growsteady.net/",
+              "http://www.growingsteady.com/",
+              "https://www.zoominfo.com/c/growsteady/529352325",
+              "https://growsteady.ai/",
+              "https://growsteady.app/",
+              "https://soundcloud.com/toddchamp/growsteady",
+              "https://www.linkedin.com/in/sherryallen/",
+              "https://growandsteady.digital",
+              "https://www.zoominfo.com/pic/growsteady/529352325",
+              "https://www.facebook.com/grownsteady/"
+            ],
+            "engineQueries": [
+              "growsteady.me"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I wasn't able to find specific information about **growsteady.me** (with the `.me` domain) in the search results. The search returned several similarly named but distinct websites:\n\nHere's a summary of what was found under related \"Grow Steady\" names:\n\n1. **growsteady.net** – A behavioral health therapy practice specializing in life transitions, grief, anxiety, depression, trauma, and family relationships, run by a focused and intentional listener who carefully matches techniques with the struggles presented. The company is headquartered in Dickson, Tennessee.\n\n2. **growsteady.ai** – A marketing-focused platform with the tagline \"Grow with intention, not intensity,\" creating unique campaigns to help businesses grow.\n\n3. **growsteady.app** – A minimal habit tracker app with challenges and analytics to keep users consistent with their habits, offering one of the cheapest premium plans or a free option.\n\n4. **growandsteady.digital** – A simple website design service near Albany, NY, backed by over 20 years of experience in websites, marketing, and digital strategy.\n\n---\n\nIt's possible that **growsteady.me** is a new, private, or low-profile website that doesn't yet appear in search indexes. Could you provide more context about what you're looking for? For example:\n- Are you trying to **visit** or **learn about** the site?\n- Are you looking to **register** that domain?\n- Do you have any additional details about what the site is related to?\n\nThat way I can better assist you! 😊",
+            "citedUrls": [
+              "https://www.growsteady.net/",
+              "https://www.zoominfo.com/c/growsteady/529352325",
+              "https://growsteady.ai/",
+              "https://growsteady.app/",
+              "https://growandsteady.digital"
+            ],
+            "retrievedUrls": [
+              "https://www.growsteady.net/",
+              "http://www.growingsteady.com/",
+              "https://www.zoominfo.com/c/growsteady/529352325",
+              "https://growsteady.ai/",
+              "https://growsteady.app/",
+              "https://soundcloud.com/toddchamp/growsteady",
+              "https://www.linkedin.com/in/sherryallen/",
+              "https://growandsteady.digital",
+              "https://www.zoominfo.com/pic/growsteady/529352325",
+              "https://www.facebook.com/grownsteady/"
+            ],
+            "engineQueries": [
+              "growsteady.me"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R1_BRAND_PHRASE",
+        "scope": "domain",
+        "pageUrl": null,
+        "query": "growsteady"
+      },
+      "runs": [
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "It looks like \"Grow Steady\" (or **GrowSteady**) could refer to a few different things. Here's a summary of what came up:\n\n---\n\n### 🌱 1. **Steadygrow Farms**\n**Steadygrow Farms** is a small-scale regenerative farm local to Omaha and Lincoln, providing food raised as nature intended. They have an online shop and can be reached at **steadygrowfarms.com**.\n\n---\n\n### 📚 2. **Ready, Steady, Grow! (Cambridge University Press)**\n**Ready, Steady, Grow!** is a three-level pre-primary course that builds a foundation in English along with the social skills and confidence children will need for success at school. It fosters children's social and emotional skills like resilience, self-awareness, and independence through a focus on school readiness and a complete wellbeing syllabus.\n\n---\n\n### 🌿 3. **Holganix with Steady Grow (Lawn/Plant Care Product)**\n**Holganix with Steady Grow** is an enhancement of the Holganix Lawn product, known for its unique ability to support root growth and create sustainable turf. With the Steady Grow formulation, it focuses the plant on fostering root growth while promoting a steady growth pattern, without surge growth.\n\n---\n\n### 🐄 4. **Steady Grow (Livestock Feed)**\n**Steady Grow** is also a pelleted livestock feed for cattle, great for calves, stockers, cows, or bulls — an economical blend of commodities with no wheat midds.\n\n---\n\nCould you clarify what you're looking for? Are you referring to a specific **brand, product, farm, or concept**? I'd be happy to dive deeper! 😊",
+            "citedUrls": [
+              "https://steadygrowfarms.com/",
+              "https://www.cambridge.org/us/cambridgeenglish/catalog/pre-primary/ready-steady-grow",
+              "https://www.holganix.com/blog/bid/70444/the-science-behind-holganix-meet-holganix-with-steady-grow",
+              "https://www.cfcfarmhome.com/product/steady-grow/"
+            ],
+            "retrievedUrls": [
+              "https://www.readysteadygrowedu.com/",
+              "https://view.ceros.com/cambridge/ready-steady-grow",
+              "https://www.facebook.com/p/Ready-Steady-Grow-Edu-Lindsey-Williams-MEd-100094360201428/",
+              "https://www.collinsdictionary.com/dictionary/english/steady-growth",
+              "https://steadygrowfarms.com/shop",
+              "https://dictionary.cambridge.org/us/example/english/steady-growth",
+              "https://steadygrowfarms.com/",
+              "https://www.cfcfarmhome.com/product/steady-grow/",
+              "https://www.holganix.com/blog/bid/70444/the-science-behind-holganix-meet-holganix-with-steady-grow",
+              "https://www.cambridge.org/us/cambridgeenglish/catalog/pre-primary/ready-steady-grow"
+            ],
+            "engineQueries": [
+              "Grow Steady"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "It looks like \"Grow Steady\" (or \"Growsteady\") could refer to a few different things. Here's a summary of what came up:\n\n---\n\n### 🌱 1. **Steadygrow Farms**\nSteadygrow is a small-scale regenerative farm local to Omaha and Lincoln, providing food raised as nature intended. You can visit their farm shop or contact them for locally sourced products.\n\n---\n\n### 📚 2. **Ready, Steady, Grow! (Cambridge)**\n*Ready, Steady, Grow!* is a three-level pre-primary course that builds a foundation in English along with the social skills and confidence children will need for success at school. It fosters children's social and emotional skills like resilience, self-awareness, and independence through a focus on school readiness and a complete wellbeing syllabus.\n\n---\n\n### 🌾 3. **Holganix with Steady Grow (Lawn & Turf Product)**\nWith the Steady Grow formulation, Holganix focuses the plant on fostering root growth while promoting a steady growth pattern, without surge growth. It improves the Carbon:Nitrogen ratio in the soil, allowing nitrogen to be available to the plant gradually over an extended time, letting the plant grow at a natural pace.\n\n---\n\n### 🐄 4. **Steady Grow (Livestock Feed)**\nSteady Grow is a pelleted livestock feed for cattle — great for calves, stockers, cows, or bulls — and is an economical blend of commodities.\n\n---\n\nCould you clarify which **\"Growsteady\"** you're referring to? For example:\n- A specific **brand or company**?\n- A **product**?\n- A **concept** (like steady business/personal growth)?\n\nI'm happy to dive deeper! 😊",
+            "citedUrls": [
+              "https://steadygrowfarms.com/",
+              "https://www.cambridge.org/us/cambridgeenglish/catalog/pre-primary/ready-steady-grow",
+              "https://www.holganix.com/blog/bid/70444/the-science-behind-holganix-meet-holganix-with-steady-grow",
+              "https://www.cfcfarmhome.com/product/steady-grow/"
+            ],
+            "retrievedUrls": [
+              "https://www.readysteadygrowedu.com/",
+              "https://view.ceros.com/cambridge/ready-steady-grow",
+              "https://www.facebook.com/p/Ready-Steady-Grow-Edu-Lindsey-Williams-MEd-100094360201428/",
+              "https://www.collinsdictionary.com/dictionary/english/steady-growth",
+              "https://steadygrowfarms.com/shop",
+              "https://dictionary.cambridge.org/us/example/english/steady-growth",
+              "https://steadygrowfarms.com/",
+              "https://www.cfcfarmhome.com/product/steady-grow/",
+              "https://www.holganix.com/blog/bid/70444/the-science-behind-holganix-meet-holganix-with-steady-grow",
+              "https://www.cambridge.org/us/cambridgeenglish/catalog/pre-primary/ready-steady-grow"
+            ],
+            "engineQueries": [
+              "Grow Steady"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R2_SITE_SCOPED",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/acl-recovery-timeline",
+        "query": "site:growsteady.me acl-reconstruction"
+      },
+      "runs": [
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I was unable to find any results from **growsteady.me** related to ACL reconstruction. The search did not return any pages from that specific domain. It's possible that:\n\n1. **The website doesn't exist or has no indexed content** on that topic.\n2. **The URL or domain name may be misspelled** — for example, it could be a different TLD (e.g., `.com`, `.org`, `.io`) or a slightly different domain name.\n3. **The page may not be indexed** by search engines yet.\n\nCould you double-check the website address? If you have the correct URL, you can visit it directly in your browser. Alternatively, if you're looking for general information about **ACL reconstruction**, I'd be happy to help with that using other reliable sources!",
+            "citedUrls": [],
+            "retrievedUrls": [
+              "https://www.physio-pedia.com/Anterior_Cruciate_Ligament_(ACL)_Reconstruction",
+              "https://orthopedicreviews.openmedicalpublishing.org/article/143767-what-are-the-graft-options-for-anterior-cruciate-ligament-acl-reconstruction",
+              "https://wexnermedical.osu.edu/orthopedics/knee/knee-surgery-and-preservation/acl-reconstruction",
+              "https://drrobertlaprademd.com/acl-reconstruction/",
+              "https://www.omgtb.com/acl-graft/",
+              "https://www.arthrex.com/knee/acl-reconstruction",
+              "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-acl.pdf",
+              "https://journaloei.scholasticahq.com/article/137260-acl-reconstruction-augmented-with-a-novel-reinforced-bioinductive-implant-a-case-report-with-18-month-follow-up",
+              "https://adamcohenmd.com/acl-reconstruction-nyc",
+              "https://www.sportsmed.org/membership/sports-medicine-update/spring-2024/evolving-concepts-in-acl-surgery"
+            ],
+            "engineQueries": [
+              "site:growsteady.me acl-reconstruction"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I wasn't able to find any results specifically from **growsteady.me** about ACL reconstruction. The search did not return any pages from that domain. It's possible that:\n\n1. **The page doesn't exist** – There may not be an ACL reconstruction article published at `growsteady.me`.\n2. **The site isn't indexed** – The page may exist but hasn't been indexed by search engines yet.\n3. **The URL or domain may be slightly different** – There could be a typo in the domain name.\n\n**What you can try:**\n- Visit [https://www.growsteady.me](https://www.growsteady.me) directly and search for \"ACL reconstruction\" on the site.\n- Double-check the domain spelling (e.g., could it be `growsteadily.me`, `growsteady.com`, etc.?).\n- If you're looking for a specific article, try providing the full URL and I can help you with that.\n\nWould you like me to search for ACL reconstruction information from a different source?",
+            "citedUrls": [],
+            "retrievedUrls": [
+              "https://www.physio-pedia.com/Anterior_Cruciate_Ligament_(ACL)_Reconstruction",
+              "https://orthopedicreviews.openmedicalpublishing.org/article/143767-what-are-the-graft-options-for-anterior-cruciate-ligament-acl-reconstruction",
+              "https://wexnermedical.osu.edu/orthopedics/knee/knee-surgery-and-preservation/acl-reconstruction",
+              "https://drrobertlaprademd.com/acl-reconstruction/",
+              "https://www.omgtb.com/acl-graft/",
+              "https://www.arthrex.com/knee/acl-reconstruction",
+              "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-acl.pdf",
+              "https://journaloei.scholasticahq.com/article/137260-acl-reconstruction-augmented-with-a-novel-reinforced-bioinductive-implant-a-case-report-with-18-month-follow-up",
+              "https://adamcohenmd.com/acl-reconstruction-nyc",
+              "https://www.sportsmed.org/membership/sports-medicine-update/spring-2024/evolving-concepts-in-acl-surgery"
+            ],
+            "engineQueries": [
+              "site:growsteady.me acl-reconstruction"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R3_VERBATIM",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/acl-recovery-timeline",
+        "query": "Which website says the following, word for word? \"The University of Virginia protocol allows hamstring/allograft patients to take partial weight-bearing through week 6 if the surgeon prefers, but BPTB patients are typically off crutches earlier.\""
+      },
+      "runs": [
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I was unable to find any website that contains the exact quote you provided, word for word: *\"The University of Virginia protocol allows hamstring/allograft patients to take partial weight-bearing through week 6 if the surgeon prefers, but BPTB patients are typically off crutches earlier.\"*\n\nWhile my searches did turn up the **University of Virginia's actual ACL Reconstruction Post-operative Rehabilitation Protocol** (hosted at `med.virginia.edu`), that document does not appear to contain the quoted sentence. Additionally, no other website in the search results contains that exact wording either.\n\nIt's possible that:\n1. The quote comes from a **third-party website** that references or discusses the UVA protocol (rather than UVA's own page), and that page may not be prominently indexed.\n2. The page may have been **taken down, updated, or paywalled** since it was written.\n3. The quote may have been **slightly paraphrased** from a source, making an exact match difficult to locate.\n\nIf you have additional context about where you encountered this quote (e.g., a physical therapy blog, a medical review site, etc.), I'd be happy to search more specifically. Otherwise, I cannot confirm the exact source with the searches available.",
+            "citedUrls": [],
+            "retrievedUrls": [
+              "https://internal_medicine.cureus.com/articles/433400-functional-outcome-of-arthroscopic-anterior-cruciate-ligament-reconstruction-using-a-quadrupled-hamstring-autograft-a-prospective-study.pdf?email=",
+              "https://cdn.clinicaltrials.gov/large-docs/15/NCT03340415/Prot_SAP_000.pdf",
+              "https://hoosierpt.com/files/pdf/Anterior%20Cruciate%20Ligament%20Reconstruction(ACLR)%20protocol.pdf",
+              "https://spectrumtherapynj.com/blogs/news/knee-replacement-recovery-wayne-nj-complete-guide",
+              "https://cdn.clinicaltrials.gov/large-docs/22/NCT06376422/Prot_000.pdf",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC7233711/",
+              "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11759322",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547478/",
+              "https://clinicaltrials.gov/study/NCT04872296",
+              "https://www.bradleysmithmd.com/pdf/rehab-acl-reconstruction.pdf",
+              "https://www.massgeneral.org/assets/MGH/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-ACL.pdf",
+              "https://www.aoaortho.com/wp-content/uploads/2024/05/ACL-Hamstring-Protocol-3_SCA.pdf",
+              "https://www.brighamandwomens.org/assets/BWH/patients-and-families/pdfs/knee---acl-hamstring-tendon-autograft--protocol.pdf",
+              "https://www.brighamandwomens.org/assets/BWH/patients-and-families/pdfs/knee---acl-patella-tendon-autograft--protocol.pdf",
+              "https://william-beaumont.tricare.mil/Portals/149/ACL%20HS%20WB08.pdf",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10730494/",
+              "https://med.virginia.edu/orthopaedic-surgery/wp-content/uploads/sites/242/2021/06/ACL-Reconstruction-1.pdf",
+              "https://www.orthovirginia.com/wp-content/uploads/2023/01/January-2023-ACL-PT-Protocol.pdf",
+              "https://bpb-us-w2.wpmucdn.com/sites.udel.edu/dist/c/3448/files/2016/01/UDPT-ACL-Rehab-Guideline-REVISED.pdf",
+              "https://www.jeremyburnhammd.com/acl-surgery-recovery-timeline/",
+              "https://prepperformancecenter.com/acl-surgery-how-long-do-i-need-to-use-my-crutches-brace/",
+              "https://www.sportssurgeryclinic.com/wp-content/uploads/2021/09/ACL-Protocol-New-2021-Patellar-tendon-graft-BPTB.pdf",
+              "https://universityorthopedics.com/assets/knee/ACL-revision-protocol.pdf",
+              "https://www.drbrentlawrence.com/pdf/acl-post-op-protocol.pdf"
+            ],
+            "engineQueries": [
+              "The University of Virginia protocol allows hamstring/allograft patients to take partial weight-bearing through week 6 if the surgeon prefers but BPTB patients are typically off crutches earlier",
+              "\"University of Virginia protocol\" ACL hamstring allograft BPTB crutches weight-bearing",
+              "\"University of Virginia\" ACL protocol \"partial weight-bearing\" \"week 6\" BPTB crutches"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I was unable to find any website that contains that exact quote word for word. The search results did not return any page containing the precise sentence: *\"The University of Virginia protocol allows hamstring/allograft patients to take partial weight-bearing through week 6 if the surgeon prefers, but BPTB patients are typically off crutches earlier.\"*\n\nThis quote may come from:\n- A **private or paywalled website** not indexed by search engines\n- A **PDF document** that is not fully crawled or indexed\n- A **forum, blog, or discussion board** post that has since been removed or is not easily searchable\n- A **secondary source** that paraphrases or summarizes the University of Virginia's ACL rehabilitation protocol\n\nIt's also worth noting that while the University of Virginia's orthopaedic surgery department does publish rehabilitation protocols on their website (e.g., for osteochondral allograft, MACI, HTO/DFO), the specific ACL/BPTB protocol containing this exact language did not surface in the search results.\n\nIf you're trying to verify the source of this quote, I'd recommend:\n1. Searching directly on the **University of Virginia Department of Orthopaedic Surgery** website (med.virginia.edu/orthopaedic-surgery)\n2. Checking **physical therapy or sports medicine forums** where rehab protocols are often discussed\n3. Looking at **ACL-specific rehabilitation guides or textbooks** that reference the UVA protocol",
+            "citedUrls": [],
+            "retrievedUrls": [
+              "https://www.bradleysmithmd.com/pdf/rehab-acl-reconstruction.pdf",
+              "https://med.virginia.edu/orthopaedic-surgery/wp-content/uploads/sites/242/2024/12/MACI-PT-protocol.pdf",
+              "https://med.virginia.edu/orthopaedic-surgery/wp-content/uploads/sites/242/2021/06/HTO-DFO-Protocol-1.pdf",
+              "https://med.virginia.edu/orthopaedic-surgery/wp-content/uploads/sites/242/2021/06/osteochondral-allograft-protocol-1.pdf",
+              "https://hoosierpt.com/files/pdf/Anterior%20Cruciate%20Ligament%20Reconstruction(ACLR)%20protocol.pdf",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547478/",
+              "https://william-beaumont.tricare.mil/Portals/149/ACL%20HS%20WB08.pdf",
+              "https://clinicaltrials.gov/study/NCT04070430",
+              "https://cdn.clinicaltrials.gov/large-docs/15/NCT03340415/Prot_SAP_000.pdf",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC7233711/",
+              "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-acl.pdf",
+              "https://clinicaltrials.gov/study/NCT01470833"
+            ],
+            "engineQueries": [
+              "University of Virginia protocol hamstring allograft partial weight-bearing week 6 BPTB crutches",
+              "\"University of Virginia protocol\" \"hamstring\" \"allograft\" \"partial weight-bearing\" \"week 6\" \"BPTB\" \"crutches earlier\""
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R4_NATURAL",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/acl-recovery-timeline",
+        "query": "how long does acl surgery recovery take"
+      },
+      "runs": [
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "## ACL Surgery Recovery Time\n\nACL surgery recovery varies depending on the individual and their goals, but here is a comprehensive breakdown:\n\n---\n\n### ⏱️ Overall Timeline\nThe recovery process typically spans **9 to 12 months**, following a phased, criterion-based approach to monitor milestones, restore function, and promote return to sport. However, it usually takes **six to nine months** to recover from a torn ACL, with competitive athletes potentially needing a little longer before being cleared to return to their sport.\n\n---\n\n### 📅 Week-by-Week / Phase Breakdown\n\n**🏥 Days 0–3 (Immediately After Surgery)**\nYou'll be on crutches, with pain controlled by medication, and wearing a post-operative ACL brace. Ice and elevation are non-negotiable, and a compression sleeve helps keep swelling down. Most patients are non-weight bearing for the first few days.\n\n**🦽 First 1–2 Weeks**\nThe first week after ACL surgery is critical. During this time, you'll focus on managing pain and swelling. Your knee will be bandaged with a brace to keep it stable. Ice packs and elevation help reduce swelling. You'll likely start physical therapy almost immediately, with very gentle exercises focusing on regaining motion and activating your quadriceps.\n\nIt typically takes **seven to ten days** after the procedure until the patient is comfortable without the assistance of a crutch.\n\n**🚶 Weeks 6–8**\nThe early phase (weeks 0–6) focuses on reducing pain and swelling while restoring knee range of motion and quadriceps strength. After the first two months or so, you'll start walking without an assistance device and may return to some light activities.\n\n**🏃 Month 3**\nFor most people, full recovery of normal daily life can happen relatively quickly — \"typically, by the 3-month mark you're pretty much back to your normal daily life.\" However, for athletes and those looking to get back to a sport, recovery can take more time.\n\n**⚽ Month 6**\nSix months after the operation, you should be able to return to more intense athletic activities, such as jumping and running.\n\n**🏆 9–12 Months (Full Return to Sport)**\nThe typical timeline from surgery to full unrestricted return to sport is **9–12 months** for most patients, with some returning earlier and others needing additional time based on their graft choice, commitment to rehabilitation, and functional demands of their sport.\n\nAt a year from the surgery, you should be back at your pre-injury training level, even for sports that involve fast cutting and pivoting, though you should always be careful to avoid re-injuring your knee.\n\n---\n\n### ⚠️ Factors That Affect Recovery Time\n\nWhether the tear is partial or complete, as well as other injuries like a torn meniscus, can directly impact recovery — combined injuries often prolong the rehabilitation timeline. Older patients or those with preexisting health conditions may experience slower healing, while younger individuals with robust physical health often recover faster.\n\nRecovery times are also longer for athletes who play high-risk sports like soccer, basketball, or football than for those who participate in lower-risk sports like rowing or cycling.\n\n---\n\n### ⚡ Key Takeaway\nAthletes who follow criteria-based milestones recover fully and rarely re-injure. Those who try to rush the process or use a calendar instead of objective testing often end up back in the clinic with complaints of instability or re-injury. Always follow the guidance of your surgeon and physical therapist!",
+            "citedUrls": [
+              "https://pubmed.ncbi.nlm.nih.gov/41314701/",
+              "https://my.clevelandclinic.org/health/diseases/16576-acl-tear",
+              "https://www.jeremyburnhammd.com/acl-surgery-recovery-timeline/",
+              "https://www.mdorthospecialists.com/2024/09/13/recovery-timeline-after-acl-tear-surgery-what-to-expect/",
+              "https://www.emoryhealthcare.org/centers-programs/acl-program/recovery/rehab-timeline",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/knee/acl-injuries/acl-reconstruction-surgery",
+              "https://www.hss.edu/health-library/move-better/acl-surgery-recovery",
+              "https://alexanderorthopaedics.com/blog/acl-surgery-recovery-time/"
+            ],
+            "retrievedUrls": [
+              "https://www.emoryhealthcare.org/centers-programs/acl-program/recovery/rehab-timeline",
+              "https://www.mdorthospecialists.com/2024/09/13/recovery-timeline-after-acl-tear-surgery-what-to-expect/",
+              "https://www.jeremyburnhammd.com/acl-surgery-recovery-timeline/",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/knee/acl-injuries/acl-reconstruction-surgery",
+              "https://pubmed.ncbi.nlm.nih.gov/41314701/",
+              "https://my.clevelandclinic.org/health/diseases/16576-acl-tear",
+              "https://www.hss.edu/health-library/move-better/acl-surgery-recovery",
+              "https://alexanderorthopaedics.com/blog/acl-surgery-recovery-time/",
+              "https://myhealth.alberta.ca/Health/aftercareinformation/pages/conditions.aspx?hwid=ug3484",
+              "https://austinoi.com/blog/recovering-from-acl-surgery-what-to-expect/"
+            ],
+            "engineQueries": [
+              "ACL surgery recovery time"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "## ACL Surgery Recovery Time\n\nACL surgery recovery varies depending on your goals, health, and activity level. Here is a comprehensive breakdown:\n\n---\n\n### ⏱️ Overall Timeline\nThe recovery process typically spans **9 to 12 months**, following a phased, criterion-based approach to monitor milestones, restore function and confidence, and promote return to sport. However, it usually takes **six to nine months** to recover from a torn ACL, with competitive athletes potentially needing a little longer before being cleared to return to their sport.\n\n---\n\n### 📅 Week-by-Week / Phase-by-Phase Breakdown\n\n**🔹 Days 0–3 (Immediately After Surgery)**\nYou'll be on crutches, with pain controlled by medication, and wearing a post-operative brace. Ice and elevation are non-negotiable, and a compression sleeve keeps swelling down. Most patients are non-weight bearing for the first few days.\n\n**🔹 Weeks 1–2**\nThe first two weeks after surgery concentrate on decreasing swelling in the knee and regaining knee extension. You'll likely start physical therapy almost immediately, with initial exercises being very gentle, focusing on regaining motion in your knee and activating your quadriceps muscles.\n\n**🔹 Weeks 1–6 (Early Phase)**\nThe early phase (weeks 0–6) focuses on reducing pain and swelling while restoring knee range of motion and quadriceps strength, with the use of modalities such as neuromuscular electrical stimulation.\n\n**🔹 Weeks 7–9 (Intermediate Phase)**\nThe intermediate phase commences when the early-phase goals of knee range of motion of 0° to 115°, reduced swelling, and a normalized gait pattern are achieved.\n\n**🔹 Around 2 Months**\nAfter the first two months or so, you'll start walking without an assistance device and may return to some light activities.\n\n**🔹 Around 4–6 Weeks**\nWhile most patients will return to basic functions (such as walking, climbing stairs, etc.) within 4 to 6 weeks, an athlete involved in active physical competition in sports such as soccer, football, or basketball may take 9 to 12 months for a full recovery.\n\n**🔹 Around 6 Months**\nSix months after the operation, you should be able to return to more intense athletic activities, such as jumping and running.\n\n**🔹 Around 12 Months**\nAt a year from the surgery, you should be back at your pre-injury training level, even for sports that involve fast cutting and pivoting, though you should always be careful to avoid re-injuring your knee.\n\n---\n\n### 🔑 Factors That Affect Recovery Time\n\nSeveral things can impact how long your recovery takes:\n\n- Whether the tear is partial or complete, as well as other injuries like a torn meniscus, can directly impact recovery — combined injuries often prolong the rehabilitation timeline.\n- Older patients or those with preexisting health conditions may experience slower healing, while younger individuals with robust physical health often recover faster.\n- The quality and source of the graft (autograft vs. allograft) can also influence the recovery timeline.\n- Recovery times are longer for athletes who play high-risk sports like soccer, basketball, or football than for those who participate in lower-risk sports like rowing or cycling.\n\n---\n\n### ⚠️ Important Reminder\nIt takes time for your body to incorporate your new ACL. Returning to full activity too early can damage the new ACL. Always follow the guidance of your surgeon and physical therapist before resuming any activities.",
+            "citedUrls": [
+              "https://pubmed.ncbi.nlm.nih.gov/41314701/",
+              "https://my.clevelandclinic.org/health/diseases/16576-acl-tear",
+              "https://www.jeremyburnhammd.com/acl-surgery-recovery-timeline/",
+              "https://www.emoryhealthcare.org/centers-programs/acl-program/recovery/rehab-timeline",
+              "https://www.mdorthospecialists.com/2024/09/13/recovery-timeline-after-acl-tear-surgery-what-to-expect/",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/knee/acl-injuries/acl-reconstruction-surgery",
+              "https://alexanderorthopaedics.com/blog/acl-surgery-recovery-time/"
+            ],
+            "retrievedUrls": [
+              "https://www.emoryhealthcare.org/centers-programs/acl-program/recovery/rehab-timeline",
+              "https://www.mdorthospecialists.com/2024/09/13/recovery-timeline-after-acl-tear-surgery-what-to-expect/",
+              "https://www.jeremyburnhammd.com/acl-surgery-recovery-timeline/",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/knee/acl-injuries/acl-reconstruction-surgery",
+              "https://pubmed.ncbi.nlm.nih.gov/41314701/",
+              "https://my.clevelandclinic.org/health/diseases/16576-acl-tear",
+              "https://www.hss.edu/health-library/move-better/acl-surgery-recovery",
+              "https://alexanderorthopaedics.com/blog/acl-surgery-recovery-time/",
+              "https://myhealth.alberta.ca/Health/aftercareinformation/pages/conditions.aspx?hwid=ug3484",
+              "https://austinoi.com/blog/recovering-from-acl-surgery-what-to-expect/"
+            ],
+            "engineQueries": [
+              "ACL surgery recovery time"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R2_SITE_SCOPED",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/knee-replacement-recovery-timeline",
+        "query": "site:growsteady.me total-knee-replacement"
+      },
+      "runs": [
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I'm sorry, but the search did not return any results from **growsteady.me** specifically. The `site:growsteady.me` search operator did not surface any pages from that domain related to total knee replacement. This could mean:\n\n1. **The page doesn't exist** – There may not be a page about total knee replacement on growsteady.me.\n2. **The site isn't indexed** – The site or that specific page may not be indexed by search engines.\n3. **The URL structure is different** – The page might exist under a different URL slug than \"total-knee-replacement.\"\n\n### What you can try:\n- Visit **growsteady.me** directly and use its internal search or navigation to look for total knee replacement content.\n- Try a broader search like `site:growsteady.me knee` to see if any knee-related pages appear.\n- Check if the site has a sitemap (e.g., `growsteady.me/sitemap.xml`) to browse available content.\n\nWould you like me to try a broader search for that site, or can I help you with general information about total knee replacement from other reputable sources?",
+            "citedUrls": [],
+            "retrievedUrls": [
+              "https://orthoinfo.aaos.org/en/treatment/total-knee-replacement",
+              "https://orthoinfo.aaos.org/en/treatment/revision-total-knee-replacement/",
+              "https://www.floridaortho.com/specialties/knee-leg/total-knee-replacement-surgery/",
+              "https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/minimally-invasive-total-knee-replacement",
+              "https://www.webmd.com/osteoarthritis/knee-replacement-surgery",
+              "https://pubmed.ncbi.nlm.nih.gov/15160414/",
+              "https://www.choosept.com/guide/physical-therapy-guide-total-knee-replacement",
+              "https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/knee-replacement-surgery-procedure",
+              "https://medlineplus.gov/ency/article/002974.htm",
+              "https://www.emoryhealthcare.org/centers-programs/orthopedic-spine-center/treatments/total-knee-replacement"
+            ],
+            "engineQueries": [
+              "site:growsteady.me total-knee-replacement"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I was unable to find any results from the website **growsteady.me** specifically. The search did not return any pages from that domain. It's possible that:\n\n1. **The website doesn't exist** or is not indexed by search engines.\n2. **The URL or domain name may be misspelled** — for example, it might be a different TLD (`.com`, `.org`, `.net`, etc.) or a slightly different domain name.\n3. **The page may not be publicly accessible** or may have been taken down.\n\nIf you're looking for information about **total knee replacement** in general, I found results from reputable medical sources. Here are some key highlights:\n\n- A total knee arthroplasty (TKA) or knee joint replacement surgery involves replacing the worn-out, diseased knee cartilage with metal and plastic materials designed to restore knee motion and function.\n\n- If nonsurgical treatments are no longer managing your arthritis symptoms, you may want to consider total knee replacement. It's a safe, effective procedure to relieve pain, correct leg deformity, and help you resume normal activities.\n\n- The results of a total knee replacement are often excellent. The operation relieves pain for most people. Most people do not need help walking after they fully recover, and over 90% of artificial knee joints last over 15 years.\n\nWould you like me to search for total knee replacement information from a different source, or did you mean a different website?",
+            "citedUrls": [
+              "https://www.floridaortho.com/specialties/knee-leg/total-knee-replacement-surgery/",
+              "https://orthoinfo.aaos.org/en/treatment/total-knee-replacement",
+              "https://medlineplus.gov/ency/article/002974.htm"
+            ],
+            "retrievedUrls": [
+              "https://orthoinfo.aaos.org/en/treatment/total-knee-replacement",
+              "https://orthoinfo.aaos.org/en/treatment/revision-total-knee-replacement/",
+              "https://www.floridaortho.com/specialties/knee-leg/total-knee-replacement-surgery/",
+              "https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/minimally-invasive-total-knee-replacement",
+              "https://www.webmd.com/osteoarthritis/knee-replacement-surgery",
+              "https://pubmed.ncbi.nlm.nih.gov/15160414/",
+              "https://www.choosept.com/guide/physical-therapy-guide-total-knee-replacement",
+              "https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/knee-replacement-surgery-procedure",
+              "https://medlineplus.gov/ency/article/002974.htm",
+              "https://www.emoryhealthcare.org/centers-programs/orthopedic-spine-center/treatments/total-knee-replacement"
+            ],
+            "engineQueries": [
+              "site:growsteady.me total-knee-replacement"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R3_VERBATIM",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/knee-replacement-recovery-timeline",
+        "query": "Which website says the following, word for word? \"The Mass General Brigham protocol uses an 80%-of-the-other-leg gate around weeks 8-12, by which point most people are doing single-leg work and full range squat to chair height.\""
+      },
+      "runs": [
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I was unable to find the exact quote — **\"The Mass General Brigham protocol uses an 80%-of-the-other-leg gate around weeks 8-12, by which point most people are doing single-leg work and full range squat to chair height\"** — on any website through my searches.\n\nHere is what I can tell you:\n\n- This phrasing does **not** appear to come from any official Mass General Brigham (MGB) website or protocol document. The actual MGB ACL rehabilitation protocols (available at massgeneral.org) use language like \">80% on the Functional Assessment\" as a criterion for progression, but they do not use the specific phrasing \"80%-of-the-other-leg gate\" or describe it occurring \"around weeks 8-12\" in that way.\n\n- The quote reads like a **third-party summary or commentary** about the MGB protocol — the kind of informal paraphrase you might find on a forum (such as Reddit), a blog, or a discussion board, rather than in an official clinical document.\n\n- My searches did not surface any website that contains this sentence **word for word**.\n\nIf you encountered this quote somewhere specific, it may be on a platform not well-indexed by search engines (e.g., a Reddit thread, a private forum, a Substack, or a social media post). If you can share where you saw it, I'd be happy to help you investigate further!",
+            "citedUrls": [],
+            "retrievedUrls": [
+              "https://www.brighamandwomens.org/assets/BWH/patients-and-families/rehabilitation-services/pdfs/acl-protocol.pdf",
+              "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/pediatric-acl-reconstruction-protocol.pdf",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/knee/acl-injuries/treatment",
+              "https://www.massgeneral.org/assets/MGH/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-non-operative-ACL-repair.pdf",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/knee/acl-injuries/acl-reconstruction-surgery",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11421483/",
+              "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-acl.pdf",
+              "https://wsrehabandperformance.com/how-to-optimize-recovery-from-acl-surgery-weeks-6-to-12/",
+              "https://e3rehab.com/acl-rehab-phase-2-8-to-16-weeks/",
+              "https://inmotionptny.com/3-months-post-acl-surgery-exercises/",
+              "https://compedgept.com/blog/acl-rehab-timeline-month-three/",
+              "https://pubmed.ncbi.nlm.nih.gov/31633995/",
+              "https://acltear.info/anterior-cruciate-ligament-rehabilitation/acl-rehabilitation-phase-3/",
+              "https://www.texaschildrens.org/sites/tc/files/uploads/documents/sports/PO1.%20Isolated%20ACLR%20Rehabilitation%20Guideline.pdf",
+              "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-meniscus-repair.pdf",
+              "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-meniscectomy.pdf",
+              "https://www.massgeneral.org/assets/MGH/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-ACL.pdf",
+              "https://hoosierpt.com/files/pdf/Anterior%20Cruciate%20Ligament%20Reconstruction(ACLR)%20protocol.pdf",
+              "https://www.studocu.com/en-us/document/brigham-young-university-idaho/construction-safty/rehabilitation-protocol-for-acl/146789112",
+              "https://sportmed.com/wp-content/uploads/ACL_Rehab_Protocol1.pdf",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11539197/",
+              "https://clinicaltrials.gov/study/NCT07308431",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10985895/",
+              "https://www.jeremyburnhammd.com/acl-surgery-recovery-week-by-week/",
+              "https://fl.hughston.com/wp-content/uploads/sites/7/2022/01/2.1-ACL-Rehab.pdf",
+              "https://www.altru.org/sites/default/files/2024-02/acl-protocol-3.pdf",
+              "https://www.orthovirginia.com/wp-content/uploads/2023/01/January-2023-ACL-PT-Protocol.pdf",
+              "https://www.mattdriscollmd.com/pdf/aclr-updated.pdf"
+            ],
+            "engineQueries": [
+              "\"Mass General Brigham protocol\" \"80%-of-the-other-leg\" ACL",
+              "\"80%-of-the-other-leg\" \"gate\" \"weeks 8-12\" ACL squat",
+              "\"80%-of-the-other-leg gate\" \"Mass General Brigham\" ACL \"single-leg\" \"squat to chair\"",
+              "\"80%-of-the-other-leg gate\" \"weeks 8-12\" ACL protocol discussion forum"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I was unable to find the exact quote you provided — *\"The Mass General Brigham protocol uses an 80%-of-the-other-leg gate around weeks 8-12, by which point most people are doing single-leg work and full range squat to chair height\"* — on any website through my searches.\n\nThis specific phrasing does **not** appear to come from any official Mass General Brigham documentation (such as their published rehabilitation PDFs), nor does it appear in any other indexed web page that my searches could find.\n\nA few possibilities worth noting:\n\n1. **It may be from a forum, Reddit thread, or blog post** (such as a patient or physical therapist discussing the MGB protocol in their own words) that is not prominently indexed or has since been deleted/changed.\n2. **It may be a paraphrase or summary** written by someone who read the MGB ACL protocol and described it in their own terms, rather than a direct quote from MGB itself.\n3. **It may be behind a paywall or login wall**, such as a private community, forum, or subscription site.\n\nIf you're trying to verify the source, I'd recommend searching directly on Reddit (e.g., r/ACL), patient forums, or physical therapy discussion boards, as this type of language sounds more like a community explanation of the protocol rather than official clinical documentation.",
+            "citedUrls": [],
+            "retrievedUrls": [
+              "https://www.massgeneral.org/assets/MGH/pdf/orthopaedics/sports-medicine/physical-therapy/Pediatric-Rehabilitation-Protocol-for-Osgood-Schlatter-Disease.pdf",
+              "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-acl.pdf",
+              "https://www.brighamandwomens.org/assets/BWH/patients-and-families/rehabilitation-services/pdfs/acl-protocol.pdf",
+              "https://www.massgeneral.org/assets/MGH/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-ankle-sprain.pdf",
+              "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-meniscectomy.pdf",
+              "https://cdn.clinicaltrials.gov/large-docs/79/NCT04285879/Prot_SAP_001.pdf",
+              "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10888571",
+              "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-total-knee-arthroplasty.pdf",
+              "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-posterior-cruciate-ligament-pclr.pdf",
+              "https://cdn.clinicaltrials.gov/large-docs/63/NCT06342063/ICF_001.pdf",
+              "https://www.hybridcalisthenics.com/one-leg-chair-squats",
+              "https://hw.qld.gov.au/physical-activity/chair-single-leg-squats/",
+              "https://www.burnthefatinnercircle.com/public/Single-Leg-Squat-To-Box.cfm",
+              "https://us.physitrack.com/home-exercise-video/eccentric-single-leg-squat-to-chair",
+              "https://hw.qld.gov.au/blog/exercise/chair-single-leg-squats-2/",
+              "https://www.topendsports.com/fitness/technique/squats-single-leg.htm",
+              "https://www.topendsports.com/testing/tests/home-squat.htm",
+              "https://www.hingehealth.com/resources/articles/single-leg-squat/",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/knee/acl-injuries/acl-reconstruction-surgery",
+              "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/pediatric-acl-reconstruction-protocol.pdf",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/knee/acl-injuries/treatment",
+              "https://www.allcaretherapygt.com/post/anterior-cruciate-ligament-acl-reconstruction-return-to-sport-guidelines",
+              "https://www.massgeneral.org/assets/MGH/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-non-operative-ACL-repair.pdf",
+              "https://www.studocu.com/en-us/document/brigham-young-university-idaho/construction-safty/rehabilitation-protocol-for-acl/146789112",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11421483/"
+            ],
+            "engineQueries": [
+              "\"Mass General Brigham protocol\" \"80%-of-the-other-leg\" \"weeks 8-12\"",
+              "\"80%-of-the-other-leg\" \"gate\" \"weeks 8-12\" \"single-leg\" \"squat to chair height\"",
+              "\"Mass General Brigham\" \"80% of the other leg\" \"gate\" ACL rehabilitation forum"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R4_NATURAL",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/knee-replacement-recovery-timeline",
+        "query": "how long to recover from total knee replacement"
+      },
+      "runs": [
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "# Total Knee Replacement Recovery: What to Expect\n\nRecovery from a total knee replacement (TKR) varies from person to person, but here is a comprehensive breakdown:\n\n---\n\n## ⏱️ Overall Recovery Timeline\n\n- **Short-term recovery (first ~12 weeks):** Short-term recovery requires the patient to walk with minimal or no aid and to give up major pain medications in favor of over-the-counter pain relief. This generally occurs within twelve weeks after surgery.\n\n- **Return to most normal activities:** Full recovery can take up to a year, but many patients return to their normal activities within 3 to 6 months.\n\n- **Full recovery:** It usually takes around a year to recover fully after a knee replacement. Some sources note a full recovery can take up to 18 months.\n\n---\n\n## 📅 Week-by-Week / Stage-by-Stage Breakdown\n\n### 🏥 Days 1–3: Hospital Stay\nIn the first 24 hours, as the anesthesia begins to wear off, you will slowly regain feeling in your legs. You may be asked to take a few steps with assistive devices, like walkers, crutches, and canes, with the assistance of a physical therapist. Most patients stay in the hospital for one to three days.\n\n### 🏠 Weeks 1–2: Home Recovery Begins\nThe first two weeks following knee replacement surgery are often the most difficult. During this phase, patients experience significant pain, swelling, and limited mobility as the body begins the initial stages of healing.\n\nWhile you may experience pain and swelling following surgery, there is no bed rest period. Instead, you may begin moving around with an assistive device, such as a walker, and performing physical therapy exercises to improve your mobility and range of motion.\n\n### 🚶 Weeks 3–6: Increasing Independence\nYou can begin to reintroduce some light activities such as cooking or light household chores. Continue to monitor your knee's response to activity and adjust your routine as necessary.\n\nYou should be able to do many everyday activities 3 to 6 weeks after your surgery.\n\n### 💼 Weeks 4–16: Return to Work\nYou will probably need to take 4 to 16 weeks off from work. When you can go back to work depends on the type of work you do and how you feel.\n\n### ✅ By 6 Weeks: Reduced Pain\nBy six weeks, most patients experience minimal pain at rest and during light activities. However, prolonged weight-bearing activities such as standing for long periods or walking long distances may still trigger mild swelling or tenderness.\n\n### 🏋️ 3–6 Months: Long-Term Recovery\nLong-term recovery involves the complete healing of surgical wounds and internal soft tissues. When a patient can return to work and the activities of daily living, they are on the way to achieving the full term of recovery.\n\n### 🏌️ 6–12 Months: Full Recovery\nWhile many patients feel significantly better within a few months, full recovery can take up to a year. By this time, most people return to their normal activities, although some may still experience minor stiffness.\n\n---\n\n## 🔑 Tips to Speed Up Recovery\n\n1. Always adhere to the post-operative care plan provided by your orthopedic surgeon, including wound care, medication usage, and follow-up appointments.\n2. Physical therapy is a very important component of getting through the recovery process. It is important to continually work on range of motion under the guidance of a physical therapist in order to get your knee back in working order.\n3. While rest is important, avoid prolonged inactivity as it can lead to stiffness and delayed healing. Focus on low-impact activities like walking or swimming after being cleared by your doctor.\n\n---\n\n## ⚠️ Factors That Affect Recovery Time\n\nRecovery time after knee replacement varies significantly depending on the type of knee replacement surgery, the patient's age, and the patient's general health.\n\nIt is important to remember that the recovery process for a total knee replacement is not linear. You may have days with more discomfort, but each week should show an overall upward trajectory in your recovery.\n\n---\n\n> ⚕️ **Always consult your surgeon or orthopedic specialist** for a recovery plan tailored to your specific situation, as individual experiences can vary significantly.",
+            "citedUrls": [
+              "https://bonesmart.org/knee/recovery-total-knee-replacement-surgery/",
+              "https://www.nghs.com/2025/03/26/how-long-does-it-take-to-recover-from-total-knee-replacement",
+              "https://my.clevelandclinic.org/health/treatments/8512-knee-replacement",
+              "https://practiceplusgroup.com/knowledge-hub/knee-replacement-recovery-guide/",
+              "https://www.orthoohio.com/how-long-does-a-knee-replacement-take-to-heal/",
+              "https://www.integrity-orthopedics.com/blog/the-phases-of-recovery-after-knee-replacement-surgery",
+              "https://www.healthline.com/health/total-knee-replacement-surgery/rehabilitation-timeline",
+              "https://popb.md/2024/07/19/total-knee-replacement-recovery-timeline-what-to-know-week-by-week/",
+              "https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.total-knee-replacement-what-to-expect-at-home.ug3879",
+              "https://venturaortho.com/knee-surgery-recovery-time/"
+            ],
+            "retrievedUrls": [
+              "https://my.clevelandclinic.org/health/treatments/8512-knee-replacement",
+              "https://www.nghs.com/2025/03/26/how-long-does-it-take-to-recover-from-total-knee-replacement",
+              "https://www.healthline.com/health/total-knee-replacement-surgery/rehabilitation-timeline",
+              "https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.total-knee-replacement-what-to-expect-at-home.ug3879",
+              "https://venturaortho.com/knee-surgery-recovery-time/",
+              "https://www.integrity-orthopedics.com/blog/the-phases-of-recovery-after-knee-replacement-surgery",
+              "https://www.orthoohio.com/how-long-does-a-knee-replacement-take-to-heal/",
+              "https://popb.md/2024/07/19/total-knee-replacement-recovery-timeline-what-to-know-week-by-week/",
+              "https://bonesmart.org/knee/recovery-total-knee-replacement-surgery/",
+              "https://practiceplusgroup.com/knowledge-hub/knee-replacement-recovery-guide/"
+            ],
+            "engineQueries": [
+              "total knee replacement recovery time"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "# Total Knee Replacement Recovery Time\n\nRecovery from a total knee replacement (TKR) is a gradual process with several distinct phases. Here's a comprehensive breakdown:\n\n---\n\n## ⏱️ Overall Timeline\n\n- Full recovery can take **up to a year**, but many patients return to their normal activities within **3 to 6 months**.\n- Most patients will see a significant improvement in their knee function by **12 weeks**, though a full recovery can take up to **18 months** in some cases.\n\n---\n\n## 📅 Week-by-Week / Phase-by-Phase Recovery\n\n### 🏥 Days 1–3: Hospital Stay\n- In the first 24 hours, as anesthesia wears off, you slowly regain feeling. You may be asked to take a few steps with assistive devices like walkers or crutches. Most patients stay in the hospital for **one to three days**.\n- There is no bed rest period — instead, you may begin moving around with an assistive device like a walker and performing physical therapy exercises to improve your mobility and range of motion.\n\n### 🏠 Weeks 1–2: Home Recovery Begins\n- The **first two weeks** following knee replacement surgery are often the most difficult. During this phase, patients experience significant pain, swelling, and limited mobility as the body begins the initial stages of healing.\n- You'll want to take it easy for the first 2–3 weeks, and avoid heavy lifting, squatting, kneeling, and excessive stairs.\n\n### 🚶 Weeks 3–6: Increasing Mobility\n- You will probably use a walker for some time after surgery. When you are ready, you can use a cane. You may be able to walk without support after a couple of weeks, or when you are comfortable.\n- Physical therapy becomes a critical component of recovery, with patients performing gentle exercises to improve flexibility and mobility. Stretching and bending exercises help increase the knee's range of motion.\n\n### ✅ 6 Weeks: Light Activities Resume\n- By six weeks, most patients experience **minimal pain at rest and during light activities**. However, prolonged weight-bearing activities such as standing for long periods or walking long distances may still trigger mild swelling or tenderness.\n- You should be able to do many **everyday activities** 3 to 6 weeks after your surgery.\n- In most cases, patients can start **driving again six weeks** after surgery.\n\n### 💼 Weeks 6–12: Returning to Work\n- You will probably need to take **4 to 16 weeks off from work**. When you can go back depends on the type of work you do and how you feel.\n- The average **short-term recovery** time for a total knee replacement is about **12 weeks**.\n\n### 🏃 3–6 Months: Return to Normal Life\n- **Long-term recovery** involves the complete healing of surgical wounds and internal soft tissues. When a patient can return to work and the activities of daily living, they are on their way to achieving full recovery.\n- While many patients feel significantly better within a few months, **full recovery can take up to a year**. By this time, most people return to their normal activities, although some may still experience minor stiffness.\n\n---\n\n## 🔑 Factors That Affect Recovery\n\nRecovery time after knee replacement varies significantly depending on the **type of knee replacement surgery**, the **patient's age**, and the **patient's general health**.\n\nOther important factors include:\n- Following your doctor's post-operative care plan, including wound care, medication usage, and follow-up appointments. Physical therapy is a very important component of getting through the recovery process, and it is important to continually work on range of motion under the guidance of a physical therapist.\n- While rest is important, avoid prolonged inactivity as it can lead to stiffness and delayed healing. Focus on low-impact activities like walking or swimming after being cleared by your doctor.\n\n---\n\n## 🦵 Long-Term Outlook\n\nA knee replacement usually lasts a long time — almost everyone who has one has improved knee function for at least **10 to 15 years**, and you may live with the prosthetic implants for the rest of your life.\n\n> **Note:** Always follow the specific guidance of your surgeon and physical therapist, as every patient's recovery is unique.",
+            "citedUrls": [
+              "https://www.nghs.com/2025/03/26/how-long-does-it-take-to-recover-from-total-knee-replacement",
+              "https://practiceplusgroup.com/knowledge-hub/knee-replacement-recovery-guide/",
+              "https://www.orthoohio.com/how-long-does-a-knee-replacement-take-to-heal/",
+              "https://www.healthline.com/health/total-knee-replacement-surgery/rehabilitation-timeline",
+              "https://www.integrity-orthopedics.com/blog/the-phases-of-recovery-after-knee-replacement-surgery",
+              "https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.total-knee-replacement-what-to-expect-at-home.ug3879",
+              "https://bonesmart.org/knee/recovery-total-knee-replacement-surgery/",
+              "https://venturaortho.com/knee-surgery-recovery-time/",
+              "https://my.clevelandclinic.org/health/treatments/8512-knee-replacement"
+            ],
+            "retrievedUrls": [
+              "https://my.clevelandclinic.org/health/treatments/8512-knee-replacement",
+              "https://www.nghs.com/2025/03/26/how-long-does-it-take-to-recover-from-total-knee-replacement",
+              "https://www.healthline.com/health/total-knee-replacement-surgery/rehabilitation-timeline",
+              "https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.total-knee-replacement-what-to-expect-at-home.ug3879",
+              "https://venturaortho.com/knee-surgery-recovery-time/",
+              "https://www.integrity-orthopedics.com/blog/the-phases-of-recovery-after-knee-replacement-surgery",
+              "https://www.orthoohio.com/how-long-does-a-knee-replacement-take-to-heal/",
+              "https://popb.md/2024/07/19/total-knee-replacement-recovery-timeline-what-to-know-week-by-week/",
+              "https://bonesmart.org/knee/recovery-total-knee-replacement-surgery/",
+              "https://practiceplusgroup.com/knowledge-hub/knee-replacement-recovery-guide/"
+            ],
+            "engineQueries": [
+              "total knee replacement recovery time"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R2_SITE_SCOPED",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+        "query": "site:growsteady.me rotator-cuff-repair"
+      },
+      "runs": [
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I'm sorry, but the search did not return any results from **growsteady.me** for the \"rotator-cuff-repair\" page. The `site:` search operator specifically limits results to a particular domain, and no pages from `growsteady.me` appeared in the search results.\n\nHere are a few possible reasons:\n\n1. **The page may not be indexed** by search engines yet (new or recently published content).\n2. **The URL or domain may be incorrect** — perhaps the site name or article slug is slightly different.\n3. **The page may have been removed or is behind a login/paywall**, making it inaccessible to search engines.\n\n**What you can try:**\n- Visit [growsteady.me](https://growsteady.me) directly and search for \"rotator cuff repair\" on the site.\n- Double-check the exact URL of the article you're looking for.\n- Try a slightly different query, such as `site:growsteady.me rotator cuff` (without the hyphen).\n\nWould you like me to search for rotator cuff repair information from other reputable sources, or help with something else?",
+            "citedUrls": [],
+            "retrievedUrls": [
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery",
+              "https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/rotator-cuff-repair",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC11580759/",
+              "https://www.pennmedicine.org/treatments/rotator-cuff-repair",
+              "https://www.mayoclinic.org/diseases-conditions/rotator-cuff-injury/multimedia/vid-20078220",
+              "https://myhealth.alberta.ca/Health/aftercareinformation/pages/conditions.aspx?hwid=ug3498",
+              "https://my.clevelandclinic.org/health/diseases/8291-rotator-cuff-tear",
+              "https://www.lakewashingtonpt.com/shoulder-what-is-the-rotator-cuff-healing-timeline",
+              "https://www.mayoclinic.org/diseases-conditions/rotator-cuff-injury/diagnosis-treatment/drc-20350231",
+              "https://nysportsandjoints.com/specialties/shoulder/rotator-cuff-repair/"
+            ],
+            "engineQueries": [
+              "site:growsteady.me rotator-cuff-repair"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I'm sorry, but the search did not return any results from **growsteady.me** for a \"rotator-cuff-repair\" page. The `site:` search operator specifically limits results to a particular domain, and no pages from `growsteady.me` appeared in the results.\n\nHere's what this could mean:\n\n1. **The page doesn't exist** – There may not be a page at `growsteady.me/rotator-cuff-repair` (or a similarly structured URL).\n2. **The page isn't indexed** – The page may exist but hasn't been crawled or indexed by search engines yet.\n3. **The domain may be new or low-authority** – Newer or smaller websites are sometimes not fully indexed.\n4. **The URL structure may be different** – The actual slug or path might differ from `rotator-cuff-repair`.\n\n**Suggestions:**\n- Try visiting `https://growsteady.me/rotator-cuff-repair` directly in your browser to check if the page exists.\n- Try a broader search like `site:growsteady.me` to see if *any* pages from that site are indexed.\n- Contact the site owner/administrator if you're looking for a specific piece of content.\n\nWould you like me to try a broader search of the `growsteady.me` domain, or help you find rotator cuff repair information from other sources?",
+            "citedUrls": [],
+            "retrievedUrls": [
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery",
+              "https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/rotator-cuff-repair",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC11580759/",
+              "https://www.pennmedicine.org/treatments/rotator-cuff-repair",
+              "https://www.mayoclinic.org/diseases-conditions/rotator-cuff-injury/multimedia/vid-20078220",
+              "https://myhealth.alberta.ca/Health/aftercareinformation/pages/conditions.aspx?hwid=ug3498",
+              "https://my.clevelandclinic.org/health/diseases/8291-rotator-cuff-tear",
+              "https://www.lakewashingtonpt.com/shoulder-what-is-the-rotator-cuff-healing-timeline",
+              "https://www.mayoclinic.org/diseases-conditions/rotator-cuff-injury/diagnosis-treatment/drc-20350231",
+              "https://nysportsandjoints.com/specialties/shoulder/rotator-cuff-repair/"
+            ],
+            "engineQueries": [
+              "site:growsteady.me rotator-cuff-repair"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R3_VERBATIM",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+        "query": "Which website says the following, word for word? \"Arthroscopic rotator cuff repair is one of the slower shoulder recoveries — six weeks in a sling, three months before overhead reaching, six to nine months before the strength reliably returns.\""
+      },
+      "runs": [
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I was unable to find the exact quote — *\"Arthroscopic rotator cuff repair is one of the slower shoulder recoveries — six weeks in a sling, three months before overhead reaching, six to nine months before the strength reliably returns\"* — verbatim on any website through my searches. None of the search results returned that precise wording or attributed it to a specific source.\n\nHere's what I can tell you:\n\n- The **general information** in the quote is consistent with what many medical websites say. For example, Johns Hopkins Medicine notes that \"it takes the repaired rotator cuff tendons about six weeks to heal initially to the bone, three months to form a relatively strong attachment to the bone, and about six to nine months before the tendon is completely healed to the bone.\"\n- The **specific phrasing** — particularly \"one of the slower shoulder recoveries,\" \"three months before overhead reaching,\" and \"the strength reliably returns\" — did not appear in any of the sources I found.\n\nIt's possible the quote originates from:\n1. A **paywalled or less-indexed website** not surfaced by my search,\n2. A **blog, article, or forum post** that has since been taken down or updated,\n3. A **slightly paraphrased or misremembered version** of content from a medical site.\n\nIf you need to verify the exact source, I'd recommend copying the full sentence and searching for it directly in Google with quotation marks around the entire phrase, which may surface pages that my search didn't capture.",
+            "citedUrls": [],
+            "retrievedUrls": [
+              "https://pubmed.ncbi.nlm.nih.gov/20655763/",
+              "https://orthop.washington.edu/patient-care/articles/sports/arthroscopic-shoulder-surgery-for-the-treatment-of-rotator-cuff-tears",
+              "https://clinicaltrials.gov/study/NCT01333527",
+              "https://www.gomberamd.com/blog/what-to-expect-after-your-shoulder-arthroscopy-and-rotator-cuff-repair-12931.html",
+              "https://fla-ortho.com/how-long-is-rotator-cuff-surgery-recovery/",
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery",
+              "https://www.hisoi.com/procedure-documents/post-procedure-rotator-cuff-repair",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8245973/",
+              "https://cdn.clinicaltrials.gov/large-docs/78/NCT01706978/Prot_SAP_000.pdf",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9227479/",
+              "https://spectrumtherapynj.com/blogs/news/rotator-cuff-surgery-recovery-timeline-complete-guide",
+              "https://intecorept.com/rotator-cuff-surgery-recovery/",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC7475399/",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/shoulder/rotator-cuff-injuries/rotator-cuff-surgery",
+              "https://www.ortho.wustl.edu/content/Patient-Care/3416/Services/Shoulder-Elbow/Overview/Rotator-Cuff/Postoperative-Care.aspx",
+              "https://clinicaltrials.gov/study/NCT01741272",
+              "https://www.comprehensiveorthopediccenter.com/health-articles/rotator-cuff-surgery-recovery-complete-timeline-rehabilitation-guide",
+              "https://www.michaelcusickmd.com/how-long-do-you-have-to-wear-a-sling-after-a-shoulder-injury/",
+              "https://www.cosmc.org/blog/returning-to-sports-after-rotator-cuff-surgery",
+              "https://sportsmedtexas.com/blog/rotator-cuff-surgery-recovery-timeline",
+              "https://wrightpt.com/shoulder-rotator-cuff-surgery-rehabilitation/",
+              "https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/failed-rotator-cuff-repairs",
+              "https://www.healthline.com/health/rotator-cuff-surgery-recovery-timeline",
+              "https://thejacksonclinics.com/regaining-strength-after-a-rotator-cuff-repair/",
+              "https://trinity-rehab.com/physical-therapy-conditions/rotator-cuff-surgery-recovery/",
+              "https://www.chrisbaileyorthopaedics.com/blog/how-long-to-recover-from-rotator-cuff-surgery/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12002080/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12490589/",
+              "https://alexanderorthopaedics.com/blog/shoulder-surgery-recovery-time-week-by-week/",
+              "https://orthosportandspine.com/blog/what-is-recovery-like-after-shoulder-arthroscopy-for-rotator-cuff-repairs/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11483788/",
+              "https://www.dr-meyer-orthopaedics.com/operations/shoulder/painful-shoulder/rotator-cuff-repair/"
+            ],
+            "engineQueries": [
+              "Arthroscopic rotator cuff repair one of the slower shoulder recoveries six weeks sling",
+              "\"slower shoulder recoveries\" \"six weeks in a sling\" \"three months before overhead\" rotator cuff",
+              "\"six to nine months before the strength reliably returns\" rotator cuff",
+              "\"arthroscopic rotator cuff repair is one of the slower shoulder recoveries\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "I was unable to locate the exact source of that precise, word-for-word quote through my searches. My searches returned many websites discussing rotator cuff repair recovery timelines with similar information — such as six weeks in a sling, restrictions on overhead reaching around three months, and strength returning between six to nine months — but none of them contained that **exact** phrasing: *\"Arthroscopic rotator cuff repair is one of the slower shoulder recoveries — six weeks in a sling, three months before overhead reaching, six to nine months before the strength reliably returns.\"*\n\nHere's what I can tell you:\n\n- The closest thematically related content I found comes from sources like **Johns Hopkins Medicine** (hopkinsmedicine.org), which notes that it takes \"about six to nine months before the tendon is completely healed to the bone,\" and that strength may not fully return until nine months post-surgery.\n- **ScienceInsights.org** and **SpectrumTherapyNJ.com** discuss similar recovery phases (sling use, restricted overhead reaching at ~3 months, gradual strength return).\n- None of the search results returned that specific sentence with that exact wording.\n\nIt's possible the quote originates from:\n- A **paywalled or subscription-based** article (e.g., a newspaper, magazine, or medical journal),\n- A **book or PDF** not indexed in my search results,\n- A **now-deleted or restructured webpage**, or\n- A source that simply didn't appear in my search results.\n\nIf you can provide any additional context — such as where you came across this quote (a book, article, social media, etc.) — I may be able to help narrow it down further.",
+            "citedUrls": [],
+            "retrievedUrls": [
+              "https://orthop.washington.edu/patient-care/articles/sports/arthroscopic-shoulder-surgery-for-the-treatment-of-rotator-cuff-tears",
+              "https://clinicaltrials.gov/study/NCT01333527",
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery",
+              "https://fla-ortho.com/how-long-is-rotator-cuff-surgery-recovery/",
+              "https://www.hisoi.com/procedure-documents/post-procedure-rotator-cuff-repair",
+              "https://www.healthline.com/health/rotator-cuff-surgery-recovery-timeline",
+              "https://cdn.clinicaltrials.gov/large-docs/78/NCT01706978/Prot_SAP_000.pdf",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9227479/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8245973/",
+              "https://clinicaltrials.gov/study/NCT01741272",
+              "https://scienceinsights.org/what-to-expect-after-shoulder-surgery-recovery-timeline/",
+              "https://momentarylab.com/blog/surgery-and-procedures/week-by-week-shoulder-replacement-recovery",
+              "https://spectrumtherapynj.com/blogs/news/rotator-cuff-surgery-recovery-timeline-complete-guide",
+              "https://www.ucsfhealth.org/health-articles/recovering-from-shoulder-replacement-surgery",
+              "https://www.totalorthosportsmed.com/go-back-to-work-after-shoulder-surgery/",
+              "https://blog.gameready.com/blog/typical-shoulder-surgery-recovery-timeline",
+              "https://alexanderorthopaedics.com/blog/shoulder-surgery-recovery-time-week-by-week/",
+              "https://www.joionline.net/library/shoulder-surgery-timeline/",
+              "https://www.totalorthosportsmed.com/wear-a-sling-after-shoulder-surgery/",
+              "https://fla-ortho.com/what-is-the-shoulder-surgery-recovery-time/",
+              "https://intecorept.com/rotator-cuff-surgery-recovery/",
+              "https://www.sciencedirect.com/science/article/pii/S2666639121000304",
+              "https://www.totalorthosportsmed.com/can-i-climb-after-full-rotator-tear-repair/",
+              "https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/failed-rotator-cuff-repairs",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC10426574/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9852377/",
+              "https://trinity-rehab.com/physical-therapy-conditions/rotator-cuff-surgery-recovery/",
+              "https://thejacksonclinics.com/regaining-strength-after-a-rotator-cuff-repair/",
+              "https://www.michaelcusickmd.com/how-long-do-you-have-to-wear-a-sling-after-a-shoulder-injury/",
+              "https://www.orthobethesda.com/blog/the-ultimate-guide-for-shoulder-recovery-surgery/",
+              "https://www.totalorthosportsmed.com/throw-after-shoulder-surgery/",
+              "https://www.totalshouldermd.com/2025/02/07/how-long-does-it-take-to-recover-from-shoulder-dislocation-surgery/"
+            ],
+            "engineQueries": [
+              "Arthroscopic rotator cuff repair one of the slower shoulder recoveries six weeks in a sling",
+              "\"slower shoulder recoveries\" \"six weeks in a sling\" \"three months before overhead reaching\" \"six to nine months\"",
+              "\"strength reliably returns\" rotator cuff repair \"six to nine months\" \"overhead reaching\"",
+              "\"one of the slower shoulder recoveries\" \"six weeks in a sling\" rotator cuff site:verywellhealth.com OR site:nytimes.com OR site:theatlantic.com OR site:webmd.com",
+              "\"one of the slower shoulder recoveries\" \"six weeks in a sling\" \"three months before overhead\""
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R4_NATURAL",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+        "query": "how long does rotator cuff surgery recovery take"
+      },
+      "runs": [
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "Here is a comprehensive overview of rotator cuff surgery recovery time:\n\n---\n\n## 🏥 Rotator Cuff Surgery Recovery Time\n\n### Overall Timeline\nRecovering from rotator cuff surgery is a gradual process, typically taking **four to six months**. Full recovery can take **up to a year**, depending on the tear's severity and individual healing rates.\n\n### Recovery by Tear Size\nComplete rotator cuff surgery recovery time varies by the size of the tear:\n- **Small tears:** ~4 months for full recovery\n- **Large tears:** ~6 months\n- **Severe/massive tears:** anywhere from **6 to 12 months**\n\n---\n\n### Week-by-Week / Phase-by-Phase Breakdown\n\nRecovery is generally broken into **five phases**: immediate post-op, early (weeks 1–6), intermediate (weeks 6–12), late (months 3–6), and long-term (up to 12 months).\n\n**🔹 Immediately After Surgery:**\nMost rotator cuff surgeries are done on an **outpatient basis**. The immediate focus is on managing post-surgical pain and protecting the surgical site. You'll likely wear a **sling** to immobilize your shoulder, reducing strain on the repaired rotator cuff. Pain medication, ice, and elevation can help manage discomfort.\n\n**🔹 Weeks 1–6 (Early Phase):**\nGenerally, a patient wears a sling for the **first two to three weeks** and begins physical therapy **one week after surgery**. During the first four weeks, the focus will be on **passive exercises**, meaning your physical therapist will move your arm for you to prevent stiffness and promote healing.\n\n**🔹 Weeks 6–12 (Intermediate Phase):**\nThe biological foundation for these timelines is that rotator cuff tendons must reattach to the upper arm bone through scar tissue formation, which requires **8–12 weeks** to become mechanically strong. Strengthening exercises begin after the **6- to 10-week** healing period.\n\n**🔹 Months 3–6 (Late Phase):**\nPatients can often return to most activities after about **12 weeks** after surgery, but participation in vigorous sports may be restricted for **four to six months**.\n\n**🔹 Long-Term (Up to 12 Months):**\nLong-term recovery after rotator cuff surgery is a marathon, not a sprint. It typically spans **4–6 months** and involves several key elements to ensure you regain full strength, endurance, and functionality in your shoulder.\n\n---\n\n### Return to Work\nIf your job involves mostly sedentary work, like typing or answering phone calls, you might be able to return to work sooner. Typically, you can expect to return to a **desk job within 1–2 weeks** after surgery. Full clearance for **heavy lifting** usually comes **6–10 months** after surgery.\n\n---\n\n### Factors That Affect Recovery\nYour recovery generally depends on factors like the type of procedure, the extent of the damage, and your overall health. Most people who have rotator cuff surgery regain their strength and mobility within four to six months. Recovery times tend to be longer if you're **over 65** or don't adhere to your surgeon's post-surgery rehabilitation instructions.\n\n**Smokers** and people with certain health conditions, such as **diabetes**, may experience slower healing. The complexity of the surgery also matters, as larger rotator cuff tears or revision surgeries usually require longer recovery periods.\n\n---\n\n### The Role of Physical Therapy\nHigh-quality physical therapy is one of the strongest predictors of successful recovery after rotator cuff repair surgery. Therapy typically begins within **1–2 weeks** and continues for **3–6 months**.\n\nPatients who commit to therapy usually experience faster progress and better outcomes compared to those who skip or delay rehabilitation.\n\n---\n\n> ⚠️ **Note:** Every patient's recovery is different. Always follow your surgeon's and physical therapist's personalized instructions for the best outcome.",
+            "citedUrls": [
+              "https://www.chesapeakehand.com/2025/11/28/recovering-from-rotator-cuff-surgery-a-week-by-week-timeline/",
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery",
+              "https://trinity-rehab.com/physical-therapy-conditions/rotator-cuff-surgery-recovery/",
+              "https://venturaortho.com/rotator-cuff-surgery-recovery-time-off-work/",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/shoulder/rotator-cuff-injuries/rotator-cuff-surgery",
+              "https://www.toaeasttn.com/how-long-does-it-take-to-recover-from-shoulder-surgery/"
+            ],
+            "retrievedUrls": [
+              "https://www.chesapeakehand.com/2025/11/28/recovering-from-rotator-cuff-surgery-a-week-by-week-timeline/",
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery",
+              "https://myhealth.alberta.ca/Health/aftercareinformation/pages/conditions.aspx?hwid=ug3498",
+              "https://trinity-rehab.com/physical-therapy-conditions/rotator-cuff-surgery-recovery/",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC3094637/",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/shoulder/rotator-cuff-injuries/rotator-cuff-surgery",
+              "https://venturaortho.com/rotator-cuff-surgery-recovery-time-off-work/",
+              "https://www.toaeasttn.com/how-long-does-it-take-to-recover-from-shoulder-surgery/",
+              "https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.rotator-cuff-repair-what-to-expect-at-home.ug3498"
+            ],
+            "engineQueries": [
+              "rotator cuff surgery recovery time"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "answer": {
+            "answerText": "Here is a comprehensive overview of rotator cuff surgery recovery:\n\n---\n\n## 🦴 Rotator Cuff Surgery Recovery Timeline\n\n### Overall Recovery Time\nRecovering from rotator cuff surgery is a gradual process, typically taking **four to six months**. Full recovery can take up to **a year**, depending on the tear's severity and individual healing rates.\n\nMore specifically, complete rotator cuff surgery recovery time varies by size of the tear. For small tears, full recovery time is about **4 months**; for large tears, **6 months**; and for severe, massive tears, a complete recovery can take anywhere from **6 to 12 months**.\n\n---\n\n### Week-by-Week / Phase-by-Phase Breakdown\n\nRecovery is a gradual process typically broken into **five phases**: immediate post-op, early (weeks 1–6), intermediate (weeks 6–12), late (months 3–6), and long-term (up to 12 months).\n\n1. **Immediately After Surgery:**\nMost rotator cuff surgeries are done on an **outpatient basis**. The immediate focus is on managing post-surgical pain and protecting the surgical site. You'll likely wear a **sling** to immobilize your shoulder, reducing strain on the repaired rotator cuff. Pain medication, ice, and elevation can help manage discomfort.\n\n2. **Weeks 1–6 (Early Phase):**\nGenerally, a patient wears a sling for the first **two to three weeks** and begins physical therapy **one week** after surgery. You'll have a limited range of motion for the first two to six weeks after surgery. Your physician or physical therapist may recommend stretching exercises involving your elbow, wrist, and hand, but you won't be able to move your arm forward, back, or away from your body.\n\n3. **Weeks 6–12 (Intermediate Phase):**\nThe biological foundation for these timelines is that rotator cuff tendons must reattach to the upper arm bone through scar tissue formation, which requires **8–12 weeks** to become mechanically strong. Strengthening exercises begin after the **6- to 10-week** healing period.\n\n4. **Months 3–6 (Late Phase):**\nPatients can often return to most activities after about **12 weeks** after surgery, but participation in vigorous sports may be restricted for **four to six months**.\n\n5. **Up to 12 Months (Long-Term):**\nFull clearance for **heavy lifting** usually comes **6–10 months** after surgery.\n\n---\n\n### Physical Therapy\nHigh-quality physical therapy is one of the strongest predictors of successful recovery after rotator cuff repair surgery. Therapy typically begins within **1–2 weeks** and continues for **3–6 months**.\n\n---\n\n### Returning to Work\nIf you have a **desk job**, you may be able to go back to work in **1 to 2 weeks**. If you have a more **active job**, you may be away from work for a **few months**.\n\n---\n\n### Factors That Affect Recovery\n\nThe functional recovery period may depend on the patient's **age**, absence or presence of **stiffness**, and **size of tears**. Patients who are younger, have no stiffness, and have smaller tears may have shorter functional recovery periods.\n\nSmokers and people with certain health conditions, such as **diabetes**, may experience slower healing. The complexity of the surgery also matters, as larger rotator cuff tears or revision surgeries usually require longer recovery periods.\n\n---\n\n### Key Tips for Recovery\n- Adhere to your surgeon's **post-operative instructions**, including wound care, activity restrictions, and medication schedules, which is crucial for a successful recovery and minimizes complications.\n- Patients who commit to **physical therapy** usually experience faster progress and better outcomes compared to those who skip or delay rehabilitation.\n- Eating a balanced diet, getting enough sleep, and managing stress can contribute to a smoother recovery process.\n\n---\n\n> ⚠️ **Disclaimer:** This is general information only. Always follow the personalized advice of your surgeon and physical therapist, as every case is different.",
+            "citedUrls": [
+              "https://www.chesapeakehand.com/2025/11/28/recovering-from-rotator-cuff-surgery-a-week-by-week-timeline/",
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery",
+              "https://trinity-rehab.com/physical-therapy-conditions/rotator-cuff-surgery-recovery/",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/shoulder/rotator-cuff-injuries/rotator-cuff-surgery",
+              "https://venturaortho.com/rotator-cuff-surgery-recovery-time-off-work/",
+              "https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.rotator-cuff-repair-what-to-expect-at-home.ug3498",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC3094637/",
+              "https://www.toaeasttn.com/how-long-does-it-take-to-recover-from-shoulder-surgery/"
+            ],
+            "retrievedUrls": [
+              "https://www.chesapeakehand.com/2025/11/28/recovering-from-rotator-cuff-surgery-a-week-by-week-timeline/",
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery",
+              "https://myhealth.alberta.ca/Health/aftercareinformation/pages/conditions.aspx?hwid=ug3498",
+              "https://trinity-rehab.com/physical-therapy-conditions/rotator-cuff-surgery-recovery/",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC3094637/",
+              "https://www.massgeneralbrigham.org/en/patient-care/services-and-specialties/sports-medicine/conditions/shoulder/rotator-cuff-injuries/rotator-cuff-surgery",
+              "https://venturaortho.com/rotator-cuff-surgery-recovery-time-off-work/",
+              "https://www.toaeasttn.com/how-long-does-it-take-to-recover-from-shoulder-surgery/",
+              "https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.rotator-cuff-repair-what-to-expect-at-home.ug3498"
+            ],
+            "engineQueries": [
+              "rotator cuff surgery recovery time"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    }
+  ]
+}
