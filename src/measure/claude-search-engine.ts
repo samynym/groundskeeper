@@ -93,9 +93,13 @@ export function anthropicCreate(apiKey: string): MessagesCreate {
  * engine is wired today (the only key we have); Perplexity / OpenAI-search
  * are follow-ons behind their own keys. No key -> [] -> GEO stays empty
  * rather than fabricated.
+ *
+ * GEO_ENGINE_API_KEY is a fallback for cloud environments (e.g. claude.ai
+ * routines) that reserve ANTHROPIC_API_KEY for the agent's own auth and strip
+ * it from the process env — set the non-reserved name there instead.
  */
 export function buildEngines(env: NodeJS.ProcessEnv): GeoEngineClient[] {
-  const key = env.ANTHROPIC_API_KEY;
+  const key = env.ANTHROPIC_API_KEY ?? env.GEO_ENGINE_API_KEY;
   if (!key) return [];
   const model = env.GEO_ENGINE_MODEL ?? "claude-sonnet-4-6";
   return [new ClaudeSearchEngine(anthropicCreate(key), { model })];

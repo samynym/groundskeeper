@@ -103,4 +103,12 @@ describe("buildEngines", () => {
     const engines = buildEngines({ ANTHROPIC_API_KEY: "sk-test" } as unknown as NodeJS.ProcessEnv);
     expect(engines.map((e) => e.name)).toEqual(["claude-search"]);
   });
+  it("falls back to GEO_ENGINE_API_KEY when ANTHROPIC_API_KEY is absent (cloud envs reserve the latter)", () => {
+    const engines = buildEngines({ GEO_ENGINE_API_KEY: "sk-test" } as unknown as NodeJS.ProcessEnv);
+    expect(engines.map((e) => e.name)).toEqual(["claude-search"]);
+  });
+  it("prefers ANTHROPIC_API_KEY over the fallback when both are set", () => {
+    const engines = buildEngines({ ANTHROPIC_API_KEY: "a", GEO_ENGINE_API_KEY: "b" } as unknown as NodeJS.ProcessEnv);
+    expect(engines.map((e) => e.name)).toEqual(["claude-search"]);
+  });
 });
