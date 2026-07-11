@@ -49,10 +49,45 @@ describe("ClaudeSearchEngine", () => {
     expect(a.citedUrls).toEqual([]);
   });
 
+  it("captures the full retrieval set and engine queries from tool blocks", async () => {
+    const create = async () =>
+      msg([
+        { type: "server_tool_use", id: "s1", name: "web_search", input: { query: "acl recovery site:growsteady.me" } },
+        { type: "web_search_tool_result", tool_use_id: "s1", content: [
+          { type: "web_search_result", url: "https://hss.edu/acl", title: "t", encrypted_content: "e", page_age: null },
+          { type: "web_search_result", url: "https://growsteady.me/acl-recovery-timeline", title: "t", encrypted_content: "e", page_age: null },
+          { type: "web_search_result", url: "https://hss.edu/acl", title: "dupe", encrypted_content: "e", page_age: null },
+        ] },
+        { type: "text", text: "answer", citations: [webCite("https://hss.edu/acl")] },
+      ]);
+    const a = await new ClaudeSearchEngine(create, { model: "m" }).ask("q");
+    expect(a.retrievedUrls).toEqual(["https://hss.edu/acl", "https://growsteady.me/acl-recovery-timeline"]);
+    expect(a.engineQueries).toEqual(["acl recovery site:growsteady.me"]);
+  });
+
+  it("returns retrievedUrls: null (NOT []) when no web_search_tool_result blocks exist", async () => {
+    const create = async () => msg([{ type: "text", text: "no search ran", citations: null }]);
+    const a = await new ClaudeSearchEngine(create, { model: "m" }).ask("q");
+    expect(a.retrievedUrls).toBeNull();
+    expect(a.engineQueries).toBeNull();
+  });
+
+  it("returns retrievedUrls: [] when the search ran but returned nothing", async () => {
+    const create = async () =>
+      msg([
+        { type: "server_tool_use", id: "s1", name: "web_search", input: { query: "q" } },
+        { type: "web_search_tool_result", tool_use_id: "s1", content: [] },
+        { type: "text", text: "nothing found", citations: null },
+      ]);
+    const a = await new ClaudeSearchEngine(create, { model: "m" }).ask("q");
+    expect(a.retrievedUrls).toEqual([]);
+    expect(a.engineQueries).toEqual(["q"]);
+  });
+
   it("fails safe (ok:false) when the API call throws", async () => {
     const create = async () => { throw new Error("529 overloaded"); };
     const a = await new ClaudeSearchEngine(create, { model: "m" }).ask("q");
-    expect(a).toEqual({ answerText: "", citedUrls: [], ok: false });
+    expect(a).toEqual({ answerText: "", citedUrls: [], retrievedUrls: null, engineQueries: null, ok: false });
   });
 
   it("names itself claude-search for per-engine attribution", () => {
