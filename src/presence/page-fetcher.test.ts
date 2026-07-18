@@ -11,17 +11,32 @@ describe("BROWSER_HEADERS", () => {
 });
 
 describe("fetchPage", () => {
-  it("returns status and html on 200", async () => {
-    const f = async () => ({ status: 200, text: async () => "<p>hi</p>" });
-    expect(await fetchPage("https://x.test/p", f)).toEqual({ status: 200, html: "<p>hi</p>" });
+  const ok = (body: string): (() => Promise<{ status: number; text(): Promise<string> }>) =>
+    async () => ({ status: 200, text: async () => body });
+  const code = (status: number) =>
+    async () => ({ status, text: async () => { throw new Error("body should not be read"); } });
+  const boom = async () => { throw new Error("ECONNREFUSED"); };
+  const neverCalled = async () => { throw new Error("proxy should not be called on a direct 200"); };
+
+  it("uses the direct fetch on 200 and never hits the proxy", async () => {
+    expect(await fetchPage("https://x.test/p", ok("<p>hi</p>"), neverCalled))
+      .toEqual({ status: 200, html: "<p>hi</p>" });
   });
-  it("returns empty html on non-200 without reading the body", async () => {
-    const f = async () => ({ status: 404, text: async () => { throw new Error("should not read"); } });
-    expect(await fetchPage("https://x.test/p", f)).toEqual({ status: 404, html: "" });
+  it("falls back to the proxy when the direct fetch is blocked (403)", async () => {
+    expect(await fetchPage("https://x.test/p", code(403), ok("<p>proxied</p>")))
+      .toEqual({ status: 200, html: "<p>proxied</p>" });
   });
-  it("degrades a network error to status 0, never throws", async () => {
-    const f = async () => { throw new Error("ECONNREFUSED"); };
-    expect(await fetchPage("https://x.test/p", f)).toEqual({ status: 0, html: "" });
+  it("falls back to the proxy when the direct fetch throws", async () => {
+    expect(await fetchPage("https://x.test/p", boom, ok("<p>proxied</p>")))
+      .toEqual({ status: 200, html: "<p>proxied</p>" });
+  });
+  it("stays not-live (reports the status) when both direct and proxy fail", async () => {
+    expect(await fetchPage("https://x.test/p", code(403), code(403)))
+      .toEqual({ status: 403, html: "" });
+  });
+  it("degrades a proxy network error to status 0, never throws", async () => {
+    expect(await fetchPage("https://x.test/p", code(403), boom))
+      .toEqual({ status: 0, html: "" });
   });
 });
 

@@ -49,7 +49,10 @@ describe("probeCommand", () => {
     const engine = new FakeEngine("claude-search", [NEG, NEG, NEG]);
     const { snap } = await probeCommand({
       now: () => "t", targetsPath, presenceDir: join(dir, "p"), engines: [engine], runs: 1,
+      // Both direct and proxy dead -> stays PAGE_NOT_LIVE (proxy injected so the
+      // fallback never touches the network in a unit test).
       pageFetch: async () => ({ status: 404, text: async () => "" }),
+      pageProxyFetch: async () => ({ status: 404, text: async () => "" }),
     });
     expect(snap.verdicts[0].best).toBe("INCONCLUSIVE");
     expect(snap.verdicts[0].perEngine[0].reasons[0]).toContain("PAGE_NOT_LIVE");
