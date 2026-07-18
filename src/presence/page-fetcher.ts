@@ -22,15 +22,46 @@ export const BROWSER_HEADERS: Record<string, string> = {
 const defaultFetch: PageFetch = (url) =>
   fetch(url, { headers: BROWSER_HEADERS, redirect: "follow" });
 
+/**
+ * Reader-proxy fallback. BROWSER_HEADERS alone can't beat Vercel's block — from
+ * the cloud egress IP it 403s at the WAF/IP level regardless of User-Agent
+ * (a residential IP is served 200 with no UA at all). The reader fetches the
+ * page from its OWN clean IP and returns the visible text, so liveness + phrase
+ * extraction reflect the site rather than the egress. Used ONLY when the direct
+ * fetch is blocked, so a normal (unblocked) run never takes the third-party hop.
+ */
+const READER_PROXY = "https://r.jina.ai/";
+const proxyFetch: PageFetch = (url) =>
+  fetch(`${READER_PROXY}${url}`, {
+    headers: { ...BROWSER_HEADERS, "X-Return-Format": "text" },
+    redirect: "follow",
+  });
+
 /** Never throws: a network failure is status 0 (classified PAGE_NOT_LIVE), not an abort. */
-export async function fetchPage(url: string, fetchImpl: PageFetch = defaultFetch): Promise<FetchedPage> {
+async function attempt(url: string, impl: PageFetch): Promise<FetchedPage> {
   try {
-    const res = await fetchImpl(url);
+    const res = await impl(url);
     if (res.status !== 200) return { status: res.status, html: "" };
     return { status: 200, html: await res.text() };
   } catch {
     return { status: 0, html: "" };
   }
+}
+
+/**
+ * Direct fetch first; if it doesn't return 200 (e.g. Vercel 403s the egress
+ * IP), fall back to the reader proxy. The proxy's result is final — a 200
+ * means live, anything else stays PAGE_NOT_LIVE. Both impls are injectable so
+ * the fallback is unit-tested with no network.
+ */
+export async function fetchPage(
+  url: string,
+  fetchImpl: PageFetch = defaultFetch,
+  proxyImpl: PageFetch = proxyFetch,
+): Promise<FetchedPage> {
+  const direct = await attempt(url, fetchImpl);
+  if (direct.status === 200) return direct;
+  return attempt(url, proxyImpl);
 }
 
 const MIN_LEN = 80;

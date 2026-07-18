@@ -22,6 +22,7 @@ export interface PresenceCliDeps {
   engines: GeoEngineClient[];
   runs: number;
   pageFetch?: PageFetch;
+  pageProxyFetch?: PageFetch;
 }
 
 export async function probeCommand(d: PresenceCliDeps): Promise<{ snap: PresenceSnapshot; path: string }> {
@@ -29,7 +30,7 @@ export async function probeCommand(d: PresenceCliDeps): Promise<{ snap: Presence
   const statuses: PageStatus[] = [];
   const phrases: Record<string, string | null> = {};
   for (const item of targets.items) {
-    const { status, html } = await fetchPage(item.pageUrl, d.pageFetch);
+    const { status, html } = await fetchPage(item.pageUrl, d.pageFetch, d.pageProxyFetch);
     const phrase = status === 200 ? extractPhrase(html) : null;
     statuses.push({ pageUrl: item.pageUrl, httpStatus: status, phrase });
     phrases[item.pageUrl] = phrase;
