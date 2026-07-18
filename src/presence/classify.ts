@@ -76,11 +76,13 @@ export function classifyPage(
     return { engine, verdict: "RETRIEVED_NOT_CITED", reasons: ["brand retrieved but not cited at R4_NATURAL"] };
   }
   if (!r4.measured) return { engine, verdict: "INCONCLUSIVE", reasons: ["R4_NATURAL failed all runs"] };
-  if (r4.retrieved === null) {
-    return { engine, verdict: "INCONCLUSIVE", reasons: ["R4_NATURAL retrieval unreportable (retrievedUrls null)"] };
-  }
 
-  // R4 is a trustworthy negative from here on.
+  // R4 neither cited nor retrieved the brand (its retrieval set may be reportable
+  // or null). A positive citation at R0/R1/R3 is conclusive proof the page is
+  // indexed regardless of whether R4's retrieval set is reportable, so it is
+  // consulted BEFORE the null-retrieval short-circuit below — otherwise a
+  // citation-only engine (e.g. openai-search, which never reports retrievedUrls)
+  // could never reach INDEXED_NOT_MATCHED despite a verbatim-phrase hit.
   const r0 = evalFor("R0_DOMAIN_LITERAL");
   const r1 = evalFor("R1_BRAND_PHRASE"); // undefined when no distinct brand phrase configured
   const r3 = evalFor("R3_VERBATIM");     // undefined when R3 was skipped (no extractable phrase)
@@ -99,7 +101,17 @@ export function classifyPage(
     return { engine, verdict: "INDEXED_NOT_MATCHED", reasons: [`brand present at ${at.join(", ")}; absent at R4_NATURAL`] };
   }
 
-  // No positives anywhere: ABSENT only if every needed rung is a trustworthy negative.
+  // No positive citation anywhere. If R4's retrieval set is unreportable we cannot
+  // tell "absent" from "not retrieved" — INCONCLUSIVE, never ABSENT.
+  if (r4.retrieved === null) {
+    return {
+      engine, verdict: "INCONCLUSIVE",
+      reasons: ["R4_NATURAL retrieval unreportable (retrievedUrls null); no positive citation at R0/R1/R3"],
+    };
+  }
+
+  // R4 is a trustworthy negative from here on.
+  // ABSENT only if every needed rung is a trustworthy negative.
   // Needed = R0 always; R1/R3 only if they were built (a skipped rung is not "needed" —
   // R3-skipped is fine here precisely because the domain rungs are negative).
   const reasons: string[] = [];

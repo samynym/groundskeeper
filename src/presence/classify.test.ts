@@ -67,6 +67,17 @@ describe("classifyPage — verdict table", () => {
     rs[2] = rr("R3_VERBATIM", PAGE, [a({ retrievedUrls: ["https://growsteady.me/acl"] })]);
     expect(classifyPage(item, live, rs, "e", BRAND).verdict).toBe("INDEXED_NOT_MATCHED");
   });
+  it("INDEXED_NOT_MATCHED: citation-only engine (R4 retrieval null) with R3 cited by URL", () => {
+    // openai-search shape: retrievedUrls is always null, but citedUrls is reported.
+    // A verbatim-phrase citation proves the page is indexed even though R4's
+    // retrieval set is unreportable — it must not short-circuit to INCONCLUSIVE.
+    const rs = allNegative();
+    rs[2] = rr("R3_VERBATIM", PAGE, [a({ citedUrls: ["https://growsteady.me/acl"], retrievedUrls: null })]);
+    rs[3] = rr("R4_NATURAL", PAGE, [a({ citedUrls: [], retrievedUrls: null })]);
+    const v = classifyPage(item, live, rs, "e", BRAND);
+    expect(v.verdict).toBe("INDEXED_NOT_MATCHED");
+    expect(v.reasons[0]).toContain("R3_VERBATIM");
+  });
   it("ABSENT: every needed rung a trustworthy negative", () => {
     expect(classifyPage(item, live, allNegative(), "e", BRAND).verdict).toBe("ABSENT");
   });
