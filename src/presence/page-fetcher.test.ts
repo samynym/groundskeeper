@@ -1,5 +1,14 @@
 import { describe, it, expect } from "vitest";
-import { fetchPage, extractPhrase } from "./page-fetcher.js";
+import { fetchPage, extractPhrase, BROWSER_HEADERS } from "./page-fetcher.js";
+
+describe("BROWSER_HEADERS", () => {
+  // Regression guard: a bare (UA-less) liveness fetch is 403'd by Vercel from
+  // the cloud egress, which false-fails the whole probe as PAGE_NOT_LIVE.
+  it("presents a real browser User-Agent", () => {
+    expect(BROWSER_HEADERS["User-Agent"]).toMatch(/Mozilla\/5\.0/);
+    expect(BROWSER_HEADERS.Accept).toContain("text/html");
+  });
+});
 
 describe("fetchPage", () => {
   it("returns status and html on 200", async () => {

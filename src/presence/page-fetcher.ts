@@ -3,7 +3,24 @@ export interface FetchedPage { status: number; html: string }
 /** Narrow injectable slice of fetch — enough to get a status and a body. */
 export type PageFetch = (url: string) => Promise<{ status: number; text(): Promise<string> }>;
 
-const defaultFetch: PageFetch = (url) => fetch(url);
+/**
+ * Browser-like headers for the liveness fetch. growsteady.me is fronted by
+ * Vercel, which 403s an obvious bot fetch (no/`node` User-Agent, no Accept)
+ * from a datacenter IP — exactly the cloud-routine egress. A bare fetch there
+ * turns every page into a false PAGE_NOT_LIVE and collapses the whole probe to
+ * INCONCLUSIVE. Present as a real browser so page-liveness reflects the site,
+ * not the bot filter. (A normal residential IP is served 200 regardless, which
+ * is why a hand-run probe never hit this.)
+ */
+export const BROWSER_HEADERS: Record<string, string> = {
+  "User-Agent":
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+  Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+  "Accept-Language": "en-US,en;q=0.9",
+};
+
+const defaultFetch: PageFetch = (url) =>
+  fetch(url, { headers: BROWSER_HEADERS, redirect: "follow" });
 
 /** Never throws: a network failure is status 0 (classified PAGE_NOT_LIVE), not an abort. */
 export async function fetchPage(url: string, fetchImpl: PageFetch = defaultFetch): Promise<FetchedPage> {
