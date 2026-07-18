@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { GeoAnswer, GeoEngineClient } from "./geo-engine.js";
+import { OpenAiSearchEngine, openaiCreate } from "./openai-search-engine.js";
 
 /**
  * The one SDK call this adapter depends on, narrowed to the non-streaming
@@ -89,18 +90,42 @@ export function anthropicCreate(apiKey: string): MessagesCreate {
 }
 
 /**
- * Credential-gated real engines. Only the ANTHROPIC-backed Claude-search
- * engine is wired today (the only key we have); Perplexity / OpenAI-search
- * are follow-ons behind their own keys. No key -> [] -> GEO stays empty
- * rather than fabricated.
+ * Credential-gated real engines, selectable via GEO_ENGINE. No key -> [] ->
+ * GEO stays empty rather than fabricated.
  *
- * GEO_ENGINE_API_KEY is a fallback for cloud environments (e.g. claude.ai
- * routines) that reserve ANTHROPIC_API_KEY for the agent's own auth and strip
- * it from the process env — set the non-reserved name there instead.
+ * GEO_ENGINE (lowercased) picks the backend:
+ *   "openai" -> ChatGPT/OpenAI-search only (if its key present)
+ *   "claude" -> Claude-search only (if its key present)
+ *   "both"   -> every engine whose key is present
+ *   unset    -> auto: prefer OpenAI when its key is present (so "try ChatGPT
+ *               first" is just a matter of providing the OpenAI key); else
+ *               fall back to Claude when the Anthropic key is present.
+ *
+ * OpenAI key = OPENAI_API_KEY ?? GEO_ENGINE_OPENAI_KEY.
+ * Anthropic key = ANTHROPIC_API_KEY ?? GEO_ENGINE_API_KEY. The *_ENGINE_*
+ * fallbacks exist for cloud environments (e.g. claude.ai routines) that
+ * reserve the provider-native name for the agent's own auth and strip it from
+ * the process env — set the non-reserved name there instead.
  */
 export function buildEngines(env: NodeJS.ProcessEnv): GeoEngineClient[] {
-  const key = env.ANTHROPIC_API_KEY ?? env.GEO_ENGINE_API_KEY;
-  if (!key) return [];
-  const model = env.GEO_ENGINE_MODEL ?? "claude-sonnet-4-6";
-  return [new ClaudeSearchEngine(anthropicCreate(key), { model })];
+  const openaiKey = env.OPENAI_API_KEY ?? env.GEO_ENGINE_OPENAI_KEY;
+  const claudeKey = env.ANTHROPIC_API_KEY ?? env.GEO_ENGINE_API_KEY;
+  const openaiModel = env.GEO_ENGINE_OPENAI_MODEL ?? "gpt-4o";
+  const claudeModel = env.GEO_ENGINE_MODEL ?? "claude-sonnet-4-6";
+  const mkOpenai = () => new OpenAiSearchEngine(openaiCreate(openaiKey!), { model: openaiModel });
+  const mkClaude = () => new ClaudeSearchEngine(anthropicCreate(claudeKey!), { model: claudeModel });
+
+  const selection = (env.GEO_ENGINE ?? "").toLowerCase();
+  if (selection === "openai") return openaiKey ? [mkOpenai()] : [];
+  if (selection === "claude") return claudeKey ? [mkClaude()] : [];
+  if (selection === "both") {
+    const engines: GeoEngineClient[] = [];
+    if (openaiKey) engines.push(mkOpenai());
+    if (claudeKey) engines.push(mkClaude());
+    return engines;
+  }
+  // Auto: prefer OpenAI, then fall back to Claude.
+  if (openaiKey) return [mkOpenai()];
+  if (claudeKey) return [mkClaude()];
+  return [];
 }
