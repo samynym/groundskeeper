@@ -1,0 +1,434 @@
+{
+  "takenAt": "2026-07-23T07:10:35.363Z",
+  "verdicts": [
+    {
+      "pageUrl": "https://growsteady.me/acl-recovery-timeline",
+      "procedureSlug": "acl-reconstruction",
+      "control": false,
+      "perEngine": [
+        {
+          "engine": "openai-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL, R3_VERBATIM; absent at R4_NATURAL"
+          ]
+        }
+      ],
+      "best": "INDEXED_NOT_MATCHED"
+    },
+    {
+      "pageUrl": "https://growsteady.me/knee-replacement-recovery-timeline",
+      "procedureSlug": "total-knee-replacement",
+      "control": false,
+      "perEngine": [
+        {
+          "engine": "openai-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL; absent at R4_NATURAL"
+          ]
+        }
+      ],
+      "best": "INDEXED_NOT_MATCHED"
+    },
+    {
+      "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+      "procedureSlug": "rotator-cuff-repair",
+      "control": true,
+      "perEngine": [
+        {
+          "engine": "openai-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL; absent at R4_NATURAL"
+          ]
+        }
+      ],
+      "best": "INDEXED_NOT_MATCHED"
+    }
+  ],
+  "raw": [
+    {
+      "rung": {
+        "id": "R0_DOMAIN_LITERAL",
+        "scope": "domain",
+        "pageUrl": null,
+        "query": "growsteady.me"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Steady, accessible at [growsteady.me](https://growsteady.me), is a recovery tracking platform designed to help individuals monitor their rehabilitation progress following medical procedures. By inputting details such as the specific procedure, surgery date, and current pain levels, users can visualize their position on a typical recovery curve and anticipate key milestones like driving, running, and returning to sports. ([growsteady.me](https://growsteady.me/?utm_source=openai))\n\n**Key Features:**\n\n- **Free Recovery Calculator:** Provides an immediate assessment of where users stand in their recovery journey based on the entered information.\n\n- **Steady Plus Tracker:** Offers a comprehensive, week-by-week analysis of recovery progress, including pain tracking, milestone achievements, and personalized insights, all linked to relevant studies. This subscription service is priced at $99 per year or $14.99 per month.\n\nSteady emphasizes evidence-based recovery paths, utilizing data from numerous studies to present clear, cited benchmarks for various procedures. The platform is also available as an iPhone app, ensuring users can conveniently access their recovery information on the go. ([growsteady.me](https://growsteady.me/?utm_source=openai)) ",
+            "citedUrls": [
+              "https://growsteady.me/?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "growsteady.me"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Steady is a recovery tracking platform designed to help individuals monitor their rehabilitation progress following medical procedures. By inputting details such as the specific procedure, surgery date, and current pain levels, users can visualize their position on a typical recovery curve and anticipate key milestones like driving, running, and returning to sports. The platform offers a free calculator for an initial assessment and a premium tracker that provides weekly updates, personalized insights, and references to relevant studies. Steady is also available as an iPhone app, ensuring users can access their recovery information conveniently. ([growsteady.me](https://growsteady.me/?utm_source=openai)) ",
+            "citedUrls": [
+              "https://growsteady.me/?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "growsteady.me"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R1_BRAND_PHRASE",
+        "scope": "domain",
+        "pageUrl": null,
+        "query": "growsteady"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Could you provide more context or details about what you mean by \"growsteady\"? Are you referring to a company, a concept, or something else?",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": null,
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Could you provide more context about what you're referring to with \"Growsteady\"? Are you talking about a business, service, concept, or something else?",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": null,
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R2_SITE_SCOPED",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/acl-recovery-timeline",
+        "query": "site:growsteady.me acl-reconstruction"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Steady is a recovery tracking platform that offers personalized insights for individuals undergoing ACL reconstruction. By inputting your procedure, surgery date, and current pain level, Steady provides a clear view of your recovery progress, benchmarks, and upcoming milestones, all supported by relevant studies. ([growsteady.me](https://growsteady.me/?utm_source=openai))\n\nFor a detailed, week-by-week ACL recovery timeline, Steady outlines typical milestones:\n\n- **Weeks 0–2**: Focus on managing pain and achieving full passive extension.\n- **Weeks 2–6**: Transition off crutches as gait normalizes.\n- **Weeks 6–12**: Begin strength training; return to work typically occurs during this phase.\n- **Weeks 12–26**: Start running and progressively increase load.\n- **Weeks 26–52**: Prepare for return to sport, adhering to criteria-based guidelines.\n\nEach phase includes specific goals and is backed by evidence-based protocols. ([growsteady.me](https://growsteady.me/acl-recovery-timeline?utm_source=openai))\n\nSteady offers a free calculator for an initial assessment and a premium tracker for ongoing, weekly insights throughout your recovery journey. ([growsteady.me](https://growsteady.me/?utm_source=openai)) ",
+            "citedUrls": [
+              "https://growsteady.me/?utm_source=openai",
+              "https://growsteady.me/acl-recovery-timeline?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me ACL reconstruction"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Steady is a recovery tracking platform that offers personalized insights for individuals undergoing ACL reconstruction. By inputting your procedure, surgery date, and current pain level, Steady provides a clear view of your recovery progress, benchmarks, and upcoming milestones, all supported by relevant studies. ([growsteady.me](https://growsteady.me/?utm_source=openai))\n\nFor a detailed, week-by-week ACL recovery timeline, Steady outlines typical milestones:\n\n- **Weeks 0–2**: Full weight-bearing as tolerated, often with crutches.\n- **Week 3**: Transition off crutches as gait normalizes.\n- **Weeks 7–8**: Begin pool or unweighted treadmill running.\n- **Weeks 11–12**: Return to work, depending on graft type and job demands.\n- **Week 39**: Return to sport, based on strength and hop-test criteria.\n\nThese milestones are approximate and can vary based on individual factors. ([growsteady.me](https://growsteady.me/acl-recovery-timeline?utm_source=openai))\n\nSteady offers a free calculator for an initial assessment and a premium tracker for ongoing, weekly insights throughout your recovery journey. ([growsteady.me](https://growsteady.me/?utm_source=openai)) ",
+            "citedUrls": [
+              "https://growsteady.me/?utm_source=openai",
+              "https://growsteady.me/acl-recovery-timeline?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me ACL reconstruction"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R3_VERBATIM",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/acl-recovery-timeline",
+        "query": "Which website says the following, word for word? \"The University of Virginia protocol allows hamstring/allograft patients to take partial weight-bearing through week 6 if the surgeon prefers, but BPTB patients are typically off crutches earlier.\""
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "The exact phrase you provided appears on the website \"Steady\" in their article titled \"ACL recovery timeline, week by week.\" ([growsteady.me](https://growsteady.me/acl-recovery-timeline?utm_source=openai)) ",
+            "citedUrls": [
+              "https://growsteady.me/acl-recovery-timeline?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"The University of Virginia protocol allows hamstring/allograft patients to take partial weight-bearing through week 6 if the surgeon prefers, but BPTB patients are typically off crutches earlier.\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "The website \"Steady\" (https://growsteady.me/acl-recovery-timeline) includes the exact sentence: \"The University of Virginia protocol allows hamstring/allograft patients to take partial weight-bearing through week 6 if the surgeon prefers, but BPTB patients are typically off crutches earlier.\" ([growsteady.me](https://growsteady.me/acl-recovery-timeline?utm_source=openai)) ",
+            "citedUrls": [
+              "https://growsteady.me/acl-recovery-timeline?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"The University of Virginia protocol allows hamstring/allograft patients to take partial weight-bearing through week 6 if the surgeon prefers, but BPTB patients are typically off crutches earlier.\""
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R4_NATURAL",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/acl-recovery-timeline",
+        "query": "how long does acl surgery recovery take"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "ACL surgery recovery can vary, but generally follows this timeline:\n\n1. **Initial Recovery (1-2 weeks):** Focus on reducing swelling and pain. You'll start with gentle exercises and may use crutches.\n\n2. **Early Rehabilitation (2-6 weeks):** Begin physical therapy to restore range of motion and strength.\n\n3. **Strengthening Phase (6 weeks to 3 months):** Increase exercises to build muscle strength around the knee.\n\n4. **Advanced Activity (3-6 months):** Gradual return to activities that require more knee stability.\n\n5. **Full Recovery (6-12 months):** May return to high-impact sports once the knee is strong and stable.\n\nIndividual recovery times can vary based on factors like age, fitness level, and adherence to rehabilitation protocols. Always follow your surgeon's and physical therapist's guidance.",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": null,
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "ACL surgery recovery typically takes about 6 to 9 months, although it can vary depending on individual factors such as the specific surgical technique used, the patient's overall health, and their commitment to rehabilitation. Some athletes may take up to a year to return to their pre-injury level of performance. It's important to follow a structured physical therapy program to ensure the best possible outcome.",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": null,
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R2_SITE_SCOPED",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/knee-replacement-recovery-timeline",
+        "query": "site:growsteady.me total-knee-replacement"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Steady offers a free recovery benchmarking tool that allows you to track your progress following various surgical procedures, including total knee replacement. By selecting your procedure, surgery date, and current pain level, you can compare your recovery against typical milestones and pain levels supported by medical literature. To access your personalized recovery curve, milestones, and the research behind them, you can create a free account on their platform. ([growsteady.me](https://growsteady.me/recovery?utm_source=openai)) ",
+            "citedUrls": [
+              "https://growsteady.me/recovery?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me total knee replacement"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Steady offers a free recovery benchmarking tool that allows you to track your progress after various surgical procedures, including total knee replacement. By selecting your procedure, surgery date, and current pain level, you can compare your recovery against typical milestones and pain levels documented in medical literature. To access your personalized recovery curve, milestones, and the supporting research, you can create a free account on their platform. ([growsteady.me](https://growsteady.me/recovery?utm_source=openai)) ",
+            "citedUrls": [
+              "https://growsteady.me/recovery?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me total-knee-replacement"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R3_VERBATIM",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/knee-replacement-recovery-timeline",
+        "query": "Which website says the following, word for word? \"The Mass General Brigham protocol uses an 80%-of-the-other-leg gate around weeks 8-12, by which point most people are doing single-leg work and full range squat to chair height.\""
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "I'm unable to locate a website that contains the exact phrase you provided. It's possible that the content is from a specific document, presentation, or internal resource that isn't publicly accessible online. If you can provide more context or details about where you encountered this text, I may be able to assist you further. ",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"The Mass General Brigham protocol uses an 80%-of-the-other-leg gate around weeks 8-12, by which point most people are doing single-leg work and full range squat to chair height.\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "I'm unable to locate a website that contains the exact phrase you provided. It's possible that the content is from a document, presentation, or internal resource not indexed by search engines. If you have more context or details about where you encountered this text, I can assist further in identifying its source. ",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"The Mass General Brigham protocol uses an 80%-of-the-other-leg gate around weeks 8-12, by which point most people are doing single-leg work and full range squat to chair height.\""
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R4_NATURAL",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/knee-replacement-recovery-timeline",
+        "query": "how long to recover from total knee replacement"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Recovery from a total knee replacement typically takes several weeks to a few months. Here's a general timeline:\n\n1. **Hospital Stay**: Most patients spend 1-3 days in the hospital.\n\n2. **Initial Weeks (0-3 weeks)**: \n   - You may start physical therapy immediately or within a day after surgery.\n   - Use of a walker or crutches is common.\n   - Focus is on managing pain and swelling, and beginning gentle range-of-motion exercises.\n\n3. **Intermediate Recovery (4-6 weeks)**:\n   - You should see improvement in mobility and can usually transition from a walker to a cane.\n   - Physical therapy continues, focusing on strengthening and increasing flexibility.\n\n4. **Later Recovery (7-12 weeks)**:\n   - Many people can resume most daily activities and are encouraged to walk regularly.\n   - Ongoing physical therapy and exercises to enhance knee function are essential.\n\n5. **Full Recovery (3-6 months)**:\n   - Most patients can return to normal activities, although some swelling and discomfort may linger.\n   - High-impact activities might still be restricted.\n\nRecovery time can vary based on individual health, the type of surgery, and adherence to rehabilitation protocols. Always follow your healthcare provider’s advice for the best outcomes.",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": null,
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Recovery from a total knee replacement typically takes around 6 to 12 weeks for most people to resume normal activities. However, full recovery can take up to 6 months to a year. The timeline can vary depending on factors such as age, physical condition, and adherence to rehabilitation exercises.\n\n#### General Recovery Timeline:\n\n- **First Few Days:**\n  - Hospital stay for 1-3 days.\n  - Begin physical therapy immediately to start regaining mobility.\n\n- **Weeks 1-3:**\n  - Use of a walker or crutches for support.\n  - Continuous physical therapy to improve range of motion and strength.\n\n- **Weeks 4-6:**\n  - Gradually increase activities and start driving (if approved by a doctor).\n  - Transition from walker to cane.\n\n- **Weeks 6-12:**\n  - Return to normal daily activities and low-impact exercises like swimming or cycling.\n  - Many return to work within this period if it’s not physically demanding.\n\n- **6 Months to 1 Year:**\n  - Full recovery with improvement in knee function and reduction in pain.\n\nIt's crucial to follow your healthcare provider's guidance and attend all prescribed physical therapy sessions to ensure the best possible outcome.",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": null,
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R2_SITE_SCOPED",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+        "query": "site:growsteady.me rotator-cuff-repair"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Steady offers detailed, evidence-based recovery timelines for various surgical procedures, including arthroscopic rotator cuff repair. Their platform provides week-by-week insights into typical pain levels, milestones, and rehabilitation expectations.\n\nFor instance, at week 8 post-surgery, patients typically experience a pain level of around 3.7 out of 10, with a range between 1.9 and 5.5. This period often involves transitioning out of the sling and beginning active motion exercises. It's common for the shoulder to feel stiff and weak during this phase. Pain usually decreases steadily, with a notable reduction by the three-month mark. Overhead reaching exercises are typically introduced around the twelve-week point, though achieving full overhead motion by then is uncommon. ([growsteady.me](https://growsteady.me/rotator-cuff-surgery-recovery-timeline/week/8?utm_source=openai))\n\nSteady also offers a free recovery benchmark tool where you can input your procedure, surgery date, and current pain level to visualize your recovery curve and milestones. Creating a free account grants access to your personalized recovery timeline and the supporting research. ([growsteady.me](https://growsteady.me/recovery?utm_source=openai))\n\nPlease note that these timelines are based on typical recovery patterns and should not replace personalized medical advice from your healthcare provider. ",
+            "citedUrls": [
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline/week/8?utm_source=openai",
+              "https://growsteady.me/recovery?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me rotator-cuff-repair"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Steady provides detailed, evidence-based recovery timelines for various surgical procedures, including arthroscopic rotator cuff repair. Their platform offers week-by-week insights into typical pain levels, milestones, and rehabilitation phases.\n\nFor instance, at week 8 post-surgery, patients typically experience a pain level of around 3.7 out of 10. This period often involves transitioning out of the sling and beginning active range of motion exercises. It's common for the shoulder to feel stiff and weak during this phase. Pain usually decreases steadily, with the character of the pain shifting from constant to soreness after activity. Overhead reaching is typically introduced around the 12-week mark, serving as a milestone for progressing towards full overhead motion. ([growsteady.me](https://growsteady.me/rotator-cuff-surgery-recovery-timeline/week/8?utm_source=openai))\n\nSteady also offers a free recovery benchmark tool where you can input your procedure, surgery date, and current pain level to see a typical recovery path. This tool provides a personalized recovery curve, milestones, and the research supporting them. ([growsteady.me](https://growsteady.me/recovery?utm_source=openai))\n\nPlease note that these timelines are general estimates and should not replace medical advice from your surgeon or clinician. ",
+            "citedUrls": [
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline/week/8?utm_source=openai",
+              "https://growsteady.me/recovery?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me rotator-cuff-repair"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R3_VERBATIM",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+        "query": "Which website says the following, word for word? \"Arthroscopic rotator cuff repair is one of the slower shoulder recoveries — six weeks in a sling, three months before overhead reaching, six to nine months before the strength reliably returns.\""
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "The exact phrase you provided does not appear verbatim in the search results. However, the information aligns with general recovery timelines for arthroscopic rotator cuff repair. Typically, patients are advised to wear a sling for about six weeks, avoid overhead reaching for approximately three months, and expect strength to return reliably within six to nine months. For specific guidance tailored to your situation, it's best to consult with your orthopedic surgeon or physical therapist. ",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"Arthroscopic rotator cuff repair is one of the slower shoulder recoveries — six weeks in a sling, three months before overhead reaching, six to nine months before the strength reliably returns.\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "I couldn't locate a website that contains the exact phrase you provided. However, the recovery timeline you've mentioned aligns with general guidelines for arthroscopic rotator cuff repair. Typically, patients wear a sling for about six weeks, avoid overhead reaching for approximately three months, and may experience a return of strength over six to nine months. For more detailed information, you might consider consulting reputable medical sources or speaking with a healthcare professional. ",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"Arthroscopic rotator cuff repair is one of the slower shoulder recoveries — six weeks in a sling, three months before overhead reaching, six to nine months before the strength reliably returns.\""
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R4_NATURAL",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+        "query": "how long does rotator cuff surgery recovery take"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Rotator cuff surgery recovery can vary depending on several factors, including the extent of the injury, the specific surgical technique used, and the individual's overall health. Generally, here’s a rough breakdown:\n\n1. **Immediate Post-Surgery (First Few Days):** \n   - Pain and swelling are common; pain management and rest are important.\n\n2. **First Few Weeks (0-6 Weeks):**\n   - The arm may be in a sling. \n   - Passive range-of-motion exercises under supervision may begin to prevent stiffness.\n\n3. **6-12 Weeks:**\n   - Gradual increase in activity; physical therapy focuses on improving range of motion.\n\n4. **3-6 Months:**\n   - Strengthening exercises begin to rebuild shoulder strength and function.\n\n5. **6-12 Months:**\n   - Many patients achieve full recovery and return to normal activities, but some may take a bit longer.\n\nIndividual recovery times can vary, and following a physical therapist's and doctor's guidance is crucial for optimal recovery.",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": null,
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "answer": {
+            "answerText": "Rotator cuff surgery recovery can vary depending on the individual and the specific procedure performed, but generally, recovery involves several stages:\n\n1. **Immediate Post-Surgery (1-2 Weeks):** Focus on pain management and initial healing. The arm is usually in a sling, and movement is limited.\n\n2. **Early Recovery (3-6 Weeks):** Start gentle passive exercises to improve range of motion, usually under the guidance of a physical therapist.\n\n3. **Intermediate Recovery (6-12 Weeks):** Begin active exercises to gradually regain strength and flexibility.\n\n4. **Advanced Recovery (3-6 Months):** Continue strengthening exercises and return to normal activities as advised by a healthcare provider. Full strength and function may take longer to achieve.\n\n5. **Full Recovery (6-12 Months):** Some people may take up to a year to fully recover, especially athletes or those with physically demanding jobs.\n\nAlways follow your surgeon's and physical therapist's specific recommendations for recovery.",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": null,
+            "ok": true
+          }
+        }
+      ]
+    }
+  ]
+}
