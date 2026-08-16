@@ -33,6 +33,11 @@ export class OpenAiSearchEngine implements GeoEngineClient {
   readonly name = "openai-search";
   constructor(private create: ResponsesCreate, private opts: OpenAiSearchOpts) {}
 
+  /** Which model answered. See GeoEngineClient.model for why this is separate from `name`. */
+  get model(): string {
+    return this.opts.model;
+  }
+
   async ask(question: string): Promise<GeoAnswer> {
     try {
       const res = await this.create({

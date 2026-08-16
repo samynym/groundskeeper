@@ -24,4 +24,19 @@ describe("runProbe", () => {
     const out = await runProbe([rung], [e], { runs: 0 });
     expect(out[0].runs).toHaveLength(1);
   });
+  // A floating model alias can change under a running experiment. Recording the
+  // model per run makes that visible in the data instead of looking like a
+  // content effect. It must survive a throw too, or the failed runs of a swapped
+  // model are the ones that lose their label.
+  it("records which model answered, on success and on throw", async () => {
+    const e = new FakeEngine("e1", [ans("a")], "claude-sonnet-5");
+    const out = await runProbe([rung], [e], { runs: 2 });
+    expect(out[0].runs.map((r) => r.model)).toEqual(["claude-sonnet-5", "claude-sonnet-5"]);
+    expect(out[0].runs[1].answer.ok).toBe(false);
+  });
+  it("leaves model undefined when the engine cannot report one", async () => {
+    const e = new FakeEngine("e1", [ans("a")]);
+    const out = await runProbe([rung], [e], { runs: 1 });
+    expect(out[0].runs[0].model).toBeUndefined();
+  });
 });
