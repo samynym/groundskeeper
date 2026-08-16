@@ -1,0 +1,62 @@
+{
+  "_comment": "Experiment 1 — passage shape. See docs/experiments/2026-08-16-passage-shape-experiment.md. Question set is FROZEN: editing it invalidates every prior measurement. 'arm' is documentation for humans; the loader ignores it.",
+  "_controlNote": "control is false on every page ON PURPOSE. The control in this experiment is 'content not rewritten', not 'submission withheld'. Phase 0 submits all five pages through every channel so indexing is equal before arm A changes. Withholding submission from one arm would measure the submission instead of the writing.",
+  "brandDomain": "growsteady.me",
+  "brandPhrases": ["growsteady", "growsteady.me", "Steady recovery"],
+  "items": [
+    {
+      "arm": "A",
+      "pageUrl": "https://growsteady.me/pao-recovery-timeline",
+      "procedureSlug": "periacetabular-osteotomy-pao",
+      "control": false,
+      "questions": [
+        "how long does recovery take after periacetabular osteotomy",
+        "when can i walk without crutches after pao surgery",
+        "pao recovery timeline week by week pain data"
+      ]
+    },
+    {
+      "arm": "A",
+      "pageUrl": "https://growsteady.me/meniscus-surgery-recovery-timeline",
+      "procedureSlug": "knee-arthroscopy-meniscus",
+      "control": false,
+      "questions": [
+        "how long does meniscus surgery recovery take",
+        "when can i drive after knee arthroscopy",
+        "meniscus surgery pain week by week"
+      ]
+    },
+    {
+      "arm": "B",
+      "pageUrl": "https://growsteady.me/microdiscectomy-recovery-timeline",
+      "procedureSlug": "lumbar-microdiscectomy",
+      "control": false,
+      "questions": [
+        "how long does microdiscectomy recovery take",
+        "when can i return to work after microdiscectomy",
+        "microdiscectomy recovery timeline week by week"
+      ]
+    },
+    {
+      "arm": "B",
+      "pageUrl": "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+      "procedureSlug": "shoulder-labral-repair",
+      "control": false,
+      "questions": [
+        "how long does shoulder labral repair recovery take",
+        "when can i lift my arm after labral repair",
+        "shoulder labral repair recovery timeline week by week"
+      ]
+    },
+    {
+      "arm": "C",
+      "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+      "procedureSlug": "rotator-cuff-repair",
+      "control": false,
+      "questions": [
+        "how long does rotator cuff surgery recovery take",
+        "rotator cuff repair recovery timeline"
+      ]
+    }
+  ]
+}
