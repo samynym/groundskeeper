@@ -1,7 +1,12 @@
 import type { GeoAnswer, GeoEngineClient } from "../measure/geo-engine.js";
 import type { Rung } from "./ladder.js";
 
-export interface RungRun { engine: string; answer: GeoAnswer }
+export interface RungRun {
+  engine: string;
+  /** Exact model that answered. undefined = the engine cannot report it. */
+  model?: string;
+  answer: GeoAnswer;
+}
 export interface RungResult { rung: Rung; runs: RungRun[] }
 
 /**
@@ -19,10 +24,11 @@ export async function runProbe(
     for (const engine of engines) {
       for (let i = 0; i < k; i++) {
         try {
-          runs.push({ engine: engine.name, answer: await engine.ask(rung.query) });
+          runs.push({ engine: engine.name, model: engine.model, answer: await engine.ask(rung.query) });
         } catch {
           runs.push({
             engine: engine.name,
+            model: engine.model,
             answer: { answerText: "", citedUrls: [], retrievedUrls: null, engineQueries: null, ok: false },
           });
         }

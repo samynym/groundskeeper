@@ -32,6 +32,11 @@ export class ClaudeSearchEngine implements GeoEngineClient {
   readonly name = "claude-search";
   constructor(private create: MessagesCreate, private opts: ClaudeSearchOpts) {}
 
+  /** Which model answered. See GeoEngineClient.model for why this is separate from `name`. */
+  get model(): string {
+    return this.opts.model;
+  }
+
   async ask(question: string): Promise<GeoAnswer> {
     try {
       const res = await this.create({
@@ -110,8 +115,12 @@ export function anthropicCreate(apiKey: string): MessagesCreate {
 export function buildEngines(env: NodeJS.ProcessEnv): GeoEngineClient[] {
   const openaiKey = env.OPENAI_API_KEY ?? env.GEO_ENGINE_OPENAI_KEY;
   const claudeKey = env.ANTHROPIC_API_KEY ?? env.GEO_ENGINE_API_KEY;
-  const openaiModel = env.GEO_ENGINE_OPENAI_MODEL ?? "gpt-4o";
-  const claudeModel = env.GEO_ENGINE_MODEL ?? "claude-sonnet-4-6";
+  // Defaults track the current generation on purpose. A stale default silently
+  // measures a model nobody uses, and which model answers is part of what a
+  // citation probe measures: the search backend is identical across a provider's
+  // models, but WHICH retrieved source gets cited is model behaviour.
+  const openaiModel = env.GEO_ENGINE_OPENAI_MODEL ?? "gpt-5.5-2026-04-23";
+  const claudeModel = env.GEO_ENGINE_MODEL ?? "claude-sonnet-5";
   const mkOpenai = () => new OpenAiSearchEngine(openaiCreate(openaiKey!), { model: openaiModel });
   const mkClaude = () => new ClaudeSearchEngine(anthropicCreate(claudeKey!), { model: claudeModel });
 
