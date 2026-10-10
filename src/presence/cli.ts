@@ -7,6 +7,7 @@ import type { GeoEngineClient } from "../measure/geo-engine.js";
 import { buildLadder } from "./ladder.js";
 import { classifyPresence, type PageStatus } from "./classify.js";
 import { extractPhrase, fetchPage, type PageFetch } from "./page-fetcher.js";
+import { collectMentions } from "./mention.js";
 import { runProbe } from "./prober.js";
 import { readPresenceSnapshot, writePresenceSnapshot, type PresenceSnapshot } from "./snapshot.js";
 import {
@@ -30,6 +31,7 @@ export async function probeCommand(d: PresenceCliDeps): Promise<{ snap: Presence
   const statuses: PageStatus[] = [];
   const phrases: Record<string, string | null> = {};
   for (const item of targets.items) {
+    if (item.pageUrl in phrases) continue; // items may share a page: fetch it once
     const { status, html } = await fetchPage(item.pageUrl, d.pageFetch, d.pageProxyFetch);
     const phrase = status === 200 ? extractPhrase(html) : null;
     statuses.push({ pageUrl: item.pageUrl, httpStatus: status, phrase });
@@ -38,7 +40,10 @@ export async function probeCommand(d: PresenceCliDeps): Promise<{ snap: Presence
   const rungs = buildLadder(targets, phrases);
   const raw = await runProbe(rungs, d.engines, { runs: d.runs });
   const verdicts = classifyPresence(targets, statuses, raw, d.engines.map((e) => e.name));
-  const snap: PresenceSnapshot = { takenAt: d.now(), verdicts, raw };
+  const snap: PresenceSnapshot = {
+    takenAt: d.now(), verdicts, raw,
+    ...(targets.discovery ? { mentions: collectMentions(targets, raw) } : {}),
+  };
   const path = writePresenceSnapshot(d.presenceDir, snap);
   return { snap, path };
 }
@@ -56,8 +61,13 @@ export async function main(argv: string[]): Promise<void> {
       targetsPath, presenceDir, engines: buildEngines(process.env), runs,
     });
     for (const v of snap.verdicts) {
-      console.log(`${v.best}  ${v.pageUrl}${v.control ? " [control]" : ""}`);
+      console.log(`${v.best}  ${v.pageUrl}${v.question ? ` "${v.question}"` : ""}${v.control ? " [control]" : ""}`);
       for (const p of v.perEngine) console.log(`  ${p.engine}: ${p.verdict} — ${p.reasons.join("; ")}`);
+      for (const m of snap.mentions?.filter((x) => x.question === v.question && x.pageUrl === v.pageUrl) ?? []) {
+        const said = !m.ok ? "call failed" : m.named ? `named (${m.matched.join(", ")})` : "not named";
+        const flags = m.falseClaims.length ? ` FALSE CLAIM? ${m.falseClaims.join(", ")}` : "";
+        console.log(`  ${m.engine} run ${m.run}: ${said}${flags}`);
+      }
     }
     console.log(`presence snapshot written: ${path}`);
     return;

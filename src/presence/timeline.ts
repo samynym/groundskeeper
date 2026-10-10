@@ -36,7 +36,8 @@ export function renderTimeline(snapshots: PresenceSnapshot[], experiments: Prese
       lines.push(`- ${s.takenAt} · snapshot${domainInterventionSeen ? " ⚠ (post-domain-intervention window)" : ""}`);
       for (const v of s.verdicts) {
         const per = v.perEngine.map((p) => `${p.engine}: ${p.verdict}`).join(", ");
-        lines.push(`  - ${v.pageUrl}${v.control ? " [control]" : ""} → **${v.best}**${per ? ` (${per})` : ""}`);
+        const q = v.question ? ` "${v.question}"` : "";
+        lines.push(`  - ${v.pageUrl}${q}${v.control ? " [control]" : ""} → **${v.best}**${per ? ` (${per})` : ""}`);
       }
     }
   }

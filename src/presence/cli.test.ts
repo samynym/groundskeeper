@@ -69,4 +69,45 @@ describe("probeCommand", () => {
     });
     expect(snap.verdicts[0].best).toBe("INCONCLUSIVE");
   });
+  it("discovery set: fetches a shared page once, one R4 per question, records mentions", async () => {
+    const targetsPath = join(dir, "targets.json");
+    writeFileSync(targetsPath, JSON.stringify({
+      discovery: true, brandDomain: "growsteady.me", brandPhrases: ["growsteady.me"],
+      items: [
+        { pageUrl: "https://growsteady.me/about", procedureSlug: "", questions: ["best recovery app?"] },
+        { pageUrl: "https://growsteady.me/about", procedureSlug: "", questions: ["acl tracker app?"] },
+      ],
+    }));
+    const fetched: string[] = [];
+    // Rungs: R0 + R3(about) + R4 x2 = 4 (no R1: only phrase is the domain; no R2: empty slug).
+    const named: GeoAnswer = { ...NEG, answerText: "Try **Steady**, which compares you with other patients." };
+    const engine = new FakeEngine("openai-search", [NEG, NEG, named, NEG]);
+    const { snap } = await probeCommand({
+      now: () => "t", targetsPath, presenceDir: join(dir, "p"), engines: [engine], runs: 1,
+      pageFetch: async (url) => {
+        fetched.push(url);
+        return { status: 200, text: async () => "<p>Steady is a recovery tracker that reflects your own daily check-ins back to you.</p>" };
+      },
+    });
+    expect(fetched).toEqual(["https://growsteady.me/about"]);
+    expect(snap.raw.map((r) => r.rung.id)).toEqual(["R0_DOMAIN_LITERAL", "R3_VERBATIM", "R4_NATURAL", "R4_NATURAL"]);
+    expect(snap.verdicts.map((v) => v.question)).toEqual(["best recovery app?", "acl tracker app?"]);
+    expect(snap.mentions?.map((m) => [m.question, m.named, m.falseClaims])).toEqual([
+      ["best recovery app?", true, ["COMPARES_WITH_OTHER_PATIENTS"]],
+      ["acl tracker app?", false, []],
+    ]);
+  });
+  it("non-discovery sets keep the old snapshot shape (no mentions)", async () => {
+    const targetsPath = join(dir, "targets.json");
+    writeFileSync(targetsPath, JSON.stringify({
+      brandDomain: "growsteady.me", brandPhrases: [],
+      items: [{ pageUrl: "https://growsteady.me/acl", procedureSlug: "a", control: false, questions: ["q"] }],
+    }));
+    const { snap } = await probeCommand({
+      now: () => "t", targetsPath, presenceDir: join(dir, "p"), engines: [], runs: 1,
+      pageFetch: async () => ({ status: 200, text: async () => "<p>x</p>" }),
+    });
+    expect("mentions" in snap).toBe(false);
+  });
 });
+

@@ -1,0 +1,93 @@
+{
+  "_comment": "Product-discovery set: do assistants recommend Steady when people ask for an app? Question set is FROZEN for longitudinal comparison: editing, rewording, reordering or removing a question breaks comparison with every earlier snapshot. To ask something new, add a new item at the end and note the date it was added. Write snapshots to PRESENCE_DIR=presence/discovery, never to presence/ (exp1 history). See docs/discovery-probe.md.",
+  "_itemsNote": "The ladder asks only questions[0] of each item, so there is one item per question. Items share a pageUrl on purpose: R3 (verbatim) runs once per page, R4 once per question. procedureSlug is empty on purpose, so R2 is skipped. pageUrl decides which page is checked for liveness and R3; citation of ANY growsteady.me URL counts at R4. /recovery holds the questions whose honest answer is the free calculator; /about holds the 'which app' questions.",
+  "discovery": true,
+  "brandDomain": "growsteady.me",
+  "brandPhrases": [
+    "Steady: Post Surgery Tracker",
+    "growsteady",
+    "growsteady.me"
+  ],
+  "items": [
+    {
+      "pageUrl": "https://growsteady.me/about",
+      "procedureSlug": "",
+      "control": false,
+      "questions": [
+        "What are the best apps for tracking recovery after surgery?"
+      ]
+    },
+    {
+      "pageUrl": "https://growsteady.me/about",
+      "procedureSlug": "",
+      "control": false,
+      "questions": [
+        "Is there an app that compares my recovery after surgery with medical research?"
+      ]
+    },
+    {
+      "pageUrl": "https://growsteady.me/about",
+      "procedureSlug": "",
+      "control": false,
+      "questions": [
+        "What's a good app for tracking hip arthroscopy recovery?"
+      ]
+    },
+    {
+      "pageUrl": "https://growsteady.me/recovery",
+      "procedureSlug": "",
+      "control": false,
+      "questions": [
+        "How can I tell if my hip arthroscopy recovery is progressing as expected?"
+      ]
+    },
+    {
+      "pageUrl": "https://growsteady.me/recovery",
+      "procedureSlug": "",
+      "control": false,
+      "questions": [
+        "Is there an app that compares current pain after surgery with published research?"
+      ]
+    },
+    {
+      "pageUrl": "https://growsteady.me/about",
+      "procedureSlug": "",
+      "control": false,
+      "questions": [
+        "What apps provide research-based recovery tracking?"
+      ]
+    },
+    {
+      "pageUrl": "https://growsteady.me/recovery",
+      "procedureSlug": "",
+      "control": false,
+      "questions": [
+        "How can I compare my surgery recovery with published patient outcomes?"
+      ]
+    },
+    {
+      "pageUrl": "https://growsteady.me/about",
+      "procedureSlug": "",
+      "control": false,
+      "questions": [
+        "What's the best post-surgery recovery tracker?"
+      ]
+    },
+    {
+      "pageUrl": "https://growsteady.me/about",
+      "procedureSlug": "",
+      "control": false,
+      "questions": [
+        "Is there an ACL reconstruction recovery tracker app?"
+      ]
+    },
+    {
+      "pageUrl": "https://growsteady.me/about",
+      "procedureSlug": "",
+      "control": false,
+      "questions": [
+        "What app can I use to track knee replacement recovery?"
+      ]
+    }
+  ]
+}
