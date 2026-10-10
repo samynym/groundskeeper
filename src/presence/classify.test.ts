@@ -151,3 +151,26 @@ describe("classifyPresence — aggregation", () => {
     expect(out[0].perEngine).toEqual([]);
   });
 });
+
+describe("classifyPresence — items sharing a pageUrl", () => {
+  it("each item reads its own R4 (matched by question), and the verdict carries the question", () => {
+    const t: TargetSet = {
+      brandDomain: BRAND, brandPhrases: [],
+      items: [
+        { pageUrl: PAGE, procedureSlug: "", control: false, questions: ["q-one"] },
+        { pageUrl: PAGE, procedureSlug: "", control: false, questions: ["q-two"] },
+      ],
+    };
+    const r4 = (query: string, answer: GeoAnswer): RungResult =>
+      ({ rung: { id: "R4_NATURAL", scope: "page", pageUrl: PAGE, query }, runs: [{ engine: "e", answer }] });
+    const rs: RungResult[] = [
+      rr("R0_DOMAIN_LITERAL", null, [a({ retrievedUrls: ["https://other.com/x"] })]),
+      rr("R3_VERBATIM", PAGE, [a({})]),
+      r4("q-one", a({ retrievedUrls: ["https://other.com/x"] })),
+      r4("q-two", a({ citedUrls: ["https://growsteady.me/about"] })),
+    ];
+    const out = classifyPresence(t, [live], rs, ["e"]);
+    expect(out.map((v) => [v.question, v.best])).toEqual([["q-one", "ABSENT"], ["q-two", "CITED"]]);
+  });
+});
+
