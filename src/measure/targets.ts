@@ -11,6 +11,8 @@ export interface TargetSet {
   brandDomain: string;
   brandPhrases: string[];
   items: TargetItem[];
+  /** Product-discovery set: also record whether each R4 answer names the brand (see presence/mention.ts). */
+  discovery?: boolean;
 }
 
 export function loadTargets(path: string): TargetSet {
@@ -28,5 +30,5 @@ export function loadTargets(path: string): TargetSet {
       control: Boolean(it.control),
     };
   });
-  return { brandDomain: raw.brandDomain, brandPhrases, items };
+  return { brandDomain: raw.brandDomain, brandPhrases, items, ...(raw.discovery === true ? { discovery: true } : {}) };
 }

@@ -22,17 +22,27 @@ export function buildLadder(targets: TargetSet, phrases: Record<string, string |
     (p) => p !== "" && p.toLowerCase() !== targets.brandDomain.toLowerCase(),
   );
   if (namePhrase) rungs.push({ id: "R1_BRAND_PHRASE", scope: "domain", pageUrl: null, query: namePhrase });
+  // Several items may share one pageUrl (a discovery set asks many questions
+  // about one product page). R2/R3 are facts about the PAGE, so they run once
+  // per pageUrl; R4 is a fact about the QUESTION, so it runs once per item.
+  const pageRungsBuilt = new Set<string>();
   for (const item of targets.items) {
-    rungs.push({
-      id: "R2_SITE_SCOPED", scope: "page", pageUrl: item.pageUrl,
-      query: `site:${targets.brandDomain} ${item.procedureSlug}`,
-    });
-    const phrase = phrases[item.pageUrl] ?? null;
-    if (phrase) {
-      rungs.push({
-        id: "R3_VERBATIM", scope: "page", pageUrl: item.pageUrl,
-        query: `Which website says the following, word for word? "${phrase}"`,
-      });
+    if (!pageRungsBuilt.has(item.pageUrl)) {
+      pageRungsBuilt.add(item.pageUrl);
+      // R2 is corroborating-only; with no procedure slug it would just repeat R0. Skip it.
+      if (item.procedureSlug) {
+        rungs.push({
+          id: "R2_SITE_SCOPED", scope: "page", pageUrl: item.pageUrl,
+          query: `site:${targets.brandDomain} ${item.procedureSlug}`,
+        });
+      }
+      const phrase = phrases[item.pageUrl] ?? null;
+      if (phrase) {
+        rungs.push({
+          id: "R3_VERBATIM", scope: "page", pageUrl: item.pageUrl,
+          query: `Which website says the following, word for word? "${phrase}"`,
+        });
+      }
     }
     if (item.questions[0]) {
       rungs.push({ id: "R4_NATURAL", scope: "page", pageUrl: item.pageUrl, query: item.questions[0] });
