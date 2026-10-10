@@ -90,6 +90,13 @@ describe("ClaudeSearchEngine", () => {
     expect(a).toEqual({ answerText: "", citedUrls: [], retrievedUrls: null, engineQueries: null, ok: false });
   });
 
+  it("forces a web search on every call", async () => {
+    let params: Anthropic.MessageCreateParamsNonStreaming | undefined;
+    const create = async (p: Anthropic.MessageCreateParamsNonStreaming) => { params = p; return msg([]); };
+    await new ClaudeSearchEngine(create, { model: "m" }).ask("q");
+    expect(params?.tool_choice).toEqual({ type: "tool", name: "web_search" });
+  });
+
   it("names itself claude-search for per-engine attribution", () => {
     expect(new ClaudeSearchEngine(async () => msg([]), { model: "m" }).name).toBe("claude-search");
   });

@@ -43,6 +43,9 @@ export class ClaudeSearchEngine implements GeoEngineClient {
         model: this.opts.model,
         max_tokens: this.opts.maxTokens ?? 2048,
         tools: [{ type: "web_search_20250305", name: "web_search", max_uses: this.opts.maxUses ?? 5 }],
+        // Force a search on every call. Without it the model can answer from
+        // memory, and a no-search answer would read as ABSENT.
+        tool_choice: { type: "tool", name: "web_search" },
         messages: [{ role: "user", content: question }],
       });
       const textBlocks = (res.content ?? []).filter(
@@ -119,7 +122,7 @@ export function buildEngines(env: NodeJS.ProcessEnv): GeoEngineClient[] {
   // measures a model nobody uses, and which model answers is part of what a
   // citation probe measures: the search backend is identical across a provider's
   // models, but WHICH retrieved source gets cited is model behaviour.
-  const openaiModel = env.GEO_ENGINE_OPENAI_MODEL ?? "gpt-5.5-2026-04-23";
+  const openaiModel = env.GEO_ENGINE_OPENAI_MODEL ?? "gpt-5.4";
   const claudeModel = env.GEO_ENGINE_MODEL ?? "claude-sonnet-5";
   const mkOpenai = () => new OpenAiSearchEngine(openaiCreate(openaiKey!), { model: openaiModel });
   const mkClaude = () => new ClaudeSearchEngine(anthropicCreate(claudeKey!), { model: claudeModel });
