@@ -45,4 +45,25 @@ describe("buildLadder", () => {
     const rungs = buildLadder(targets, {});
     expect(rungs.find((r) => r.id === "R4_NATURAL")!.query).toBe("when can i walk after acl");
   });
+  it("items sharing a pageUrl get one R3 for the page and one R4 per question; empty slug skips R2", () => {
+    const t: TargetSet = {
+      brandDomain: "growsteady.me", brandPhrases: ["Steady: Post Surgery Tracker"],
+      items: [
+        { pageUrl: "https://growsteady.me/about", procedureSlug: "", control: false, questions: ["best recovery app?"] },
+        { pageUrl: "https://growsteady.me/about", procedureSlug: "", control: false, questions: ["acl tracker app?"] },
+        { pageUrl: "https://growsteady.me/recovery", procedureSlug: "", control: false, questions: ["compare my pain?"] },
+      ],
+    };
+    const rungs = buildLadder(t, { "https://growsteady.me/about": "About sentence.", "https://growsteady.me/recovery": "Calc sentence." });
+    expect(rungs.map((r) => `${r.id}:${r.pageUrl ?? "-"}:${r.id === "R4_NATURAL" ? r.query : ""}`)).toEqual([
+      "R0_DOMAIN_LITERAL:-:",
+      "R1_BRAND_PHRASE:-:",
+      "R3_VERBATIM:https://growsteady.me/about:",
+      "R4_NATURAL:https://growsteady.me/about:best recovery app?",
+      "R4_NATURAL:https://growsteady.me/about:acl tracker app?",
+      "R3_VERBATIM:https://growsteady.me/recovery:",
+      "R4_NATURAL:https://growsteady.me/recovery:compare my pain?",
+    ]);
+  });
 });
+

@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import type { PageVerdict, Verdict } from "./classify.js";
+import type { MentionRecord } from "./mention.js";
 import type { RungResult } from "./prober.js";
 
 /** raw keeps every GeoAnswer for audit — same discipline as GeoSnapshot. */
@@ -8,6 +9,8 @@ export interface PresenceSnapshot {
   takenAt: string;
   verdicts: PageVerdict[];
   raw: RungResult[];
+  /** Discovery sets only (targets.discovery): brand named / false claims per R4 answer. */
+  mentions?: MentionRecord[];
 }
 
 export function writePresenceSnapshot(dir: string, snap: PresenceSnapshot): string {

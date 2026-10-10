@@ -11,6 +11,8 @@ export interface EngineVerdict { engine: string; verdict: Verdict; reasons: stri
 export interface PageVerdict {
   pageUrl: string;
   procedureSlug: string;
+  /** The R4 question this verdict answers. Tells apart items that share a pageUrl. */
+  question?: string;
   control: boolean;
   perEngine: EngineVerdict[];
   /** Highest-ranked evidential verdict across engines; INCONCLUSIVE only if no engine produced evidence. */
@@ -63,7 +65,9 @@ export function classifyPage(
 
   const evalFor = (id: RungId): RungEval | undefined => {
     const rr = rungResults.find(
-      (r) => r.rung.id === id && (r.rung.scope === "domain" || r.rung.pageUrl === item.pageUrl),
+      (r) => r.rung.id === id && (r.rung.scope === "domain" || r.rung.pageUrl === item.pageUrl)
+        // R4 is per question: items sharing a pageUrl must not read each other's R4.
+        && (id !== "R4_NATURAL" || r.rung.query === item.questions[0]),
     );
     if (!rr) return undefined;
     return evalRung(rr.runs.filter((x) => x.engine === engine).map((x) => x.answer), brandDomain);
@@ -145,6 +149,10 @@ export function classifyPresence(
     const best: Verdict = evidential.length === 0
       ? "INCONCLUSIVE"
       : evidential.reduce((x, y) => (RANK[y.verdict] > RANK[x.verdict] ? y : x)).verdict;
-    return { pageUrl: item.pageUrl, procedureSlug: item.procedureSlug, control: item.control, perEngine, best };
+    return {
+      pageUrl: item.pageUrl, procedureSlug: item.procedureSlug,
+      ...(item.questions[0] ? { question: item.questions[0] } : {}),
+      control: item.control, perEngine, best,
+    };
   });
 }
