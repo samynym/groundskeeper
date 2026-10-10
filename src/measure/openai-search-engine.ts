@@ -10,6 +10,7 @@ import type { GeoAnswer, GeoEngineClient } from "./geo-engine.js";
 export type ResponsesCreate = (params: {
   model: string;
   tools: Array<Record<string, unknown>>;
+  tool_choice: "required";
   input: string;
 }) => Promise<Record<string, unknown>>;
 
@@ -43,6 +44,9 @@ export class OpenAiSearchEngine implements GeoEngineClient {
       const res = await this.create({
         model: this.opts.model,
         tools: [{ type: "web_search_preview" }],
+        // Force a search on every call. Without it the model can answer from
+        // memory, and a no-search answer would read as ABSENT.
+        tool_choice: "required",
         input: question,
       });
       // Read everything defensively via property checks so an SDK type bump
