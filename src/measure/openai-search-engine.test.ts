@@ -66,6 +66,13 @@ describe("OpenAiSearchEngine", () => {
     expect(a).toEqual({ answerText: "", citedUrls: [], retrievedUrls: null, engineQueries: null, ok: false });
   });
 
+  it("forces a web search on every call", async () => {
+    let params: Parameters<ResponsesCreate>[0] | undefined;
+    const create: ResponsesCreate = async (p) => { params = p; return res([]); };
+    await new OpenAiSearchEngine(create, { model: "m" }).ask("q");
+    expect(params?.tool_choice).toBe("required");
+  });
+
   it("names itself openai-search for per-engine attribution", () => {
     expect(new OpenAiSearchEngine(async () => res([]), { model: "m" }).name).toBe("openai-search");
   });
