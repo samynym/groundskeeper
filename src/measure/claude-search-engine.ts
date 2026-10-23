@@ -25,8 +25,8 @@ export interface ClaudeSearchOpts {
  * set. If the answer cites nothing, citedUrls is [] and that is the honest
  * result (the engine did not cite you), never a fabricated hit.
  *
- * Fails safe: any API error yields {ok:false}, which snapshotGeo excludes
- * from the denominator (no data, not "not cited").
+ * Fails safe: any API error yields {ok:false} with the error message, which
+ * snapshotGeo excludes from the denominator (no data, not "not cited").
  */
 export class ClaudeSearchEngine implements GeoEngineClient {
   readonly name = "claude-search";
@@ -37,58 +37,97 @@ export class ClaudeSearchEngine implements GeoEngineClient {
     return this.opts.model;
   }
 
+  /**
+   * Some models (e.g. claude-opus-5-5) reject a forced tool_choice with a 400.
+   * Once seen, later calls go straight to the fallback instead of failing first.
+   */
+  private forcedChoiceRejected = false;
+
   async ask(question: string): Promise<GeoAnswer> {
     try {
-      const res = await this.create({
-        model: this.opts.model,
-        max_tokens: this.opts.maxTokens ?? 2048,
-        tools: [{ type: "web_search_20250305", name: "web_search", max_uses: this.opts.maxUses ?? 5 }],
-        // Force a search on every call. Without it the model can answer from
-        // memory, and a no-search answer would read as ABSENT.
-        tool_choice: { type: "tool", name: "web_search" },
-        messages: [{ role: "user", content: question }],
-      });
-      const textBlocks = (res.content ?? []).filter(
-        (b): b is Anthropic.TextBlock => b.type === "text",
-      );
-      const answerText = textBlocks.map((b) => b.text).join("");
-      const urls: string[] = [];
-      for (const b of textBlocks) {
-        for (const c of b.citations ?? []) {
-          if (c.type === "web_search_result_location" && typeof c.url === "string") urls.push(c.url);
+      if (!this.forcedChoiceRejected) {
+        try {
+          return parse(await this.create(this.params(question, true)), false);
+        } catch (err) {
+          if (!isForcedChoiceRejection(err)) throw err;
+          this.forcedChoiceRejected = true;
         }
       }
-      // Retrieval set + issued queries: read defensively via property checks so an
-      // SDK type bump can't break parsing. null = the block type never appeared.
-      let sawResults = false;
-      const retrieved: string[] = [];
-      let sawToolUse = false;
-      const queries: string[] = [];
-      for (const raw of (res.content ?? []) as unknown as Array<Record<string, unknown>>) {
-        if (raw.type === "web_search_tool_result") {
-          sawResults = true;
-          if (Array.isArray(raw.content)) {
-            for (const r of raw.content as Array<Record<string, unknown>>) {
-              if (r.type === "web_search_result" && typeof r.url === "string") retrieved.push(r.url);
-            }
-          }
-        } else if (raw.type === "server_tool_use") {
-          sawToolUse = true;
-          const input = raw.input as Record<string, unknown> | undefined;
-          if (input && typeof input.query === "string") queries.push(input.query);
-        }
-      }
-      return {
-        answerText,
-        citedUrls: [...new Set(urls)],
-        retrievedUrls: sawResults ? [...new Set(retrieved)] : null,
-        engineQueries: sawToolUse ? queries : null,
-        ok: true,
-      };
-    } catch {
-      return { answerText: "", citedUrls: [], retrievedUrls: null, engineQueries: null, ok: false };
+      return parse(await this.create(this.params(question, false)), true);
+    } catch (err) {
+      return { ...failed(), error: err instanceof Error ? err.message : String(err) };
     }
   }
+
+  private params(question: string, forced: boolean): Anthropic.MessageCreateParamsNonStreaming {
+    return {
+      model: this.opts.model,
+      max_tokens: this.opts.maxTokens ?? 2048,
+      tools: [{ type: "web_search_20250305", name: "web_search", max_uses: this.opts.maxUses ?? 5 }],
+      // Force a search on every call. Without it the model can answer from
+      // memory, and a no-search answer would read as ABSENT. Models that reject
+      // a forced choice get the nearest equivalent: auto + an instruction.
+      ...(forced
+        ? { tool_choice: { type: "tool" as const, name: "web_search" } }
+        : { tool_choice: { type: "auto" as const }, system: SEARCH_FIRST }),
+      messages: [{ role: "user", content: question }],
+    };
+  }
+}
+
+const SEARCH_FIRST = "Search the web before you answer.";
+
+function failed(): GeoAnswer {
+  return { answerText: "", citedUrls: [], retrievedUrls: null, engineQueries: null, ok: false };
+}
+
+function isForcedChoiceRejection(err: unknown): boolean {
+  return err instanceof Error && /tool_choice/.test(err.message) && /not supported/.test(err.message);
+}
+
+/**
+ * `requireSearch`: when the search was not forced, an answer that ran no search
+ * is no data (ok:false), not "not cited" — the same honesty rule as an API error.
+ */
+function parse(res: Anthropic.Message, requireSearch: boolean): GeoAnswer {
+  const textBlocks = (res.content ?? []).filter(
+    (b): b is Anthropic.TextBlock => b.type === "text",
+  );
+  const answerText = textBlocks.map((b) => b.text).join("");
+  const urls: string[] = [];
+  for (const b of textBlocks) {
+    for (const c of b.citations ?? []) {
+      if (c.type === "web_search_result_location" && typeof c.url === "string") urls.push(c.url);
+    }
+  }
+  // Retrieval set + issued queries: read defensively via property checks so an
+  // SDK type bump can't break parsing. null = the block type never appeared.
+  let sawResults = false;
+  const retrieved: string[] = [];
+  let sawToolUse = false;
+  const queries: string[] = [];
+  for (const raw of (res.content ?? []) as unknown as Array<Record<string, unknown>>) {
+    if (raw.type === "web_search_tool_result") {
+      sawResults = true;
+      if (Array.isArray(raw.content)) {
+        for (const r of raw.content as Array<Record<string, unknown>>) {
+          if (r.type === "web_search_result" && typeof r.url === "string") retrieved.push(r.url);
+        }
+      }
+    } else if (raw.type === "server_tool_use") {
+      sawToolUse = true;
+      const input = raw.input as Record<string, unknown> | undefined;
+      if (input && typeof input.query === "string") queries.push(input.query);
+    }
+  }
+  if (requireSearch && !sawToolUse) return { ...failed(), error: "model answered without searching" };
+  return {
+    answerText,
+    citedUrls: [...new Set(urls)],
+    retrievedUrls: sawResults ? [...new Set(retrieved)] : null,
+    engineQueries: sawToolUse ? queries : null,
+    ok: true,
+  };
 }
 
 /** Builds the create fn from a key. `new Anthropic()` makes no network call. */

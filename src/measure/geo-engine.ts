@@ -9,6 +9,8 @@ export interface GeoAnswer {
   /** Search queries the engine actually issued. null = engine cannot report them. */
   engineQueries: string[] | null;
   ok: boolean;
+  /** Why ok is false, so a failed run says what failed instead of failing silently. */
+  error?: string;
 }
 
 export interface GeoEngineClient {

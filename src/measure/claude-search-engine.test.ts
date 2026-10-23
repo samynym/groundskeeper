@@ -87,7 +87,7 @@ describe("ClaudeSearchEngine", () => {
   it("fails safe (ok:false) when the API call throws", async () => {
     const create = async () => { throw new Error("529 overloaded"); };
     const a = await new ClaudeSearchEngine(create, { model: "m" }).ask("q");
-    expect(a).toEqual({ answerText: "", citedUrls: [], retrievedUrls: null, engineQueries: null, ok: false });
+    expect(a).toEqual({ answerText: "", citedUrls: [], retrievedUrls: null, engineQueries: null, ok: false, error: "529 overloaded" });
   });
 
   it("forces a web search on every call", async () => {
@@ -95,6 +95,45 @@ describe("ClaudeSearchEngine", () => {
     const create = async (p: Anthropic.MessageCreateParamsNonStreaming) => { params = p; return msg([]); };
     await new ClaudeSearchEngine(create, { model: "m" }).ask("q");
     expect(params?.tool_choice).toEqual({ type: "tool", name: "web_search" });
+  });
+
+  it("falls back to auto + a search instruction when the model rejects a forced tool_choice", async () => {
+    const seen: Anthropic.MessageCreateParamsNonStreaming[] = [];
+    const create = async (p: Anthropic.MessageCreateParamsNonStreaming) => {
+      seen.push(p);
+      if (p.tool_choice?.type === "tool") {
+        throw new Error('400 tool_choice: type "tool" and "any" are not supported for this model.');
+      }
+      return msg([
+        { type: "server_tool_use", id: "s1", name: "web_search", input: { query: "q" } },
+        { type: "text", text: "answer", citations: null },
+      ]);
+    };
+    const engine = new ClaudeSearchEngine(create, { model: "m" });
+    expect((await engine.ask("q")).ok).toBe(true);
+    expect(seen.map((p) => p.tool_choice?.type)).toEqual(["tool", "auto"]);
+    expect(seen[1].system).toBeTruthy();
+    // Remembered: the next question skips the doomed forced call.
+    await engine.ask("q2");
+    expect(seen.map((p) => p.tool_choice?.type)).toEqual(["tool", "auto", "auto"]);
+  });
+
+  it("treats a no-search answer under the fallback as no data (ok:false), not ABSENT", async () => {
+    const create = async (p: Anthropic.MessageCreateParamsNonStreaming) => {
+      if (p.tool_choice?.type === "tool") throw new Error("400 tool_choice: type \"tool\" is not supported for this model.");
+      return msg([{ type: "text", text: "from memory", citations: null }]);
+    };
+    const a = await new ClaudeSearchEngine(create, { model: "m" }).ask("q");
+    expect(a.ok).toBe(false);
+    expect(a.error).toMatch(/without searching/);
+  });
+
+  it("does not fall back on unrelated errors", async () => {
+    let calls = 0;
+    const create = async () => { calls++; throw new Error("401 invalid x-api-key"); };
+    const a = await new ClaudeSearchEngine(create, { model: "m" }).ask("q");
+    expect(calls).toBe(1);
+    expect(a.error).toBe("401 invalid x-api-key");
   });
 
   it("names itself claude-search for per-engine attribution", () => {
