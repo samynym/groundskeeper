@@ -1,0 +1,1847 @@
+{
+  "takenAt": "2026-11-23T07:19:24.448Z",
+  "verdicts": [
+    {
+      "pageUrl": "https://growsteady.me/pao-recovery-timeline",
+      "procedureSlug": "periacetabular-osteotomy-pao",
+      "question": "how long does recovery take after periacetabular osteotomy",
+      "control": false,
+      "perEngine": [
+        {
+          "engine": "openai-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL, R1_BRAND_PHRASE, R3_VERBATIM; absent at R4_NATURAL"
+          ]
+        },
+        {
+          "engine": "claude-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL, R3_VERBATIM; absent at R4_NATURAL"
+          ]
+        }
+      ],
+      "best": "INDEXED_NOT_MATCHED"
+    },
+    {
+      "pageUrl": "https://growsteady.me/meniscus-surgery-recovery-timeline",
+      "procedureSlug": "knee-arthroscopy-meniscus",
+      "question": "how long does meniscus surgery recovery take",
+      "control": false,
+      "perEngine": [
+        {
+          "engine": "openai-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL, R1_BRAND_PHRASE, R3_VERBATIM; absent at R4_NATURAL"
+          ]
+        },
+        {
+          "engine": "claude-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL, R3_VERBATIM; absent at R4_NATURAL"
+          ]
+        }
+      ],
+      "best": "INDEXED_NOT_MATCHED"
+    },
+    {
+      "pageUrl": "https://growsteady.me/microdiscectomy-recovery-timeline",
+      "procedureSlug": "lumbar-microdiscectomy",
+      "question": "how long does microdiscectomy recovery take",
+      "control": false,
+      "perEngine": [
+        {
+          "engine": "openai-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL, R1_BRAND_PHRASE, R3_VERBATIM; absent at R4_NATURAL"
+          ]
+        },
+        {
+          "engine": "claude-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL, R3_VERBATIM; absent at R4_NATURAL"
+          ]
+        }
+      ],
+      "best": "INDEXED_NOT_MATCHED"
+    },
+    {
+      "pageUrl": "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+      "procedureSlug": "shoulder-labral-repair",
+      "question": "how long does shoulder labral repair recovery take",
+      "control": false,
+      "perEngine": [
+        {
+          "engine": "openai-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL, R1_BRAND_PHRASE, R3_VERBATIM; absent at R4_NATURAL"
+          ]
+        },
+        {
+          "engine": "claude-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL, R3_VERBATIM; absent at R4_NATURAL"
+          ]
+        }
+      ],
+      "best": "INDEXED_NOT_MATCHED"
+    },
+    {
+      "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+      "procedureSlug": "rotator-cuff-repair",
+      "question": "how long does rotator cuff surgery recovery take",
+      "control": false,
+      "perEngine": [
+        {
+          "engine": "openai-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL, R1_BRAND_PHRASE, R3_VERBATIM; absent at R4_NATURAL"
+          ]
+        },
+        {
+          "engine": "claude-search",
+          "verdict": "INDEXED_NOT_MATCHED",
+          "reasons": [
+            "brand present at R0_DOMAIN_LITERAL, R3_VERBATIM; absent at R4_NATURAL"
+          ]
+        }
+      ],
+      "best": "INDEXED_NOT_MATCHED"
+    }
+  ],
+  "raw": [
+    {
+      "rung": {
+        "id": "R0_DOMAIN_LITERAL",
+        "scope": "domain",
+        "pageUrl": null,
+        "query": "growsteady.me"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "`growsteady.me` appears to be **Steady**, a private recovery-tracking app focused on post-surgery or long rehab check-ins. Based on its site, it offers a free recovery calculator and a premium daily voice/text journaling feature. It explicitly says it is **not medical advice**. ([growsteady.me](https://growsteady.me/support?utm_source=openai))\n\nA few notable details:\n- Support/contact: `hello@growsteady.me`. ([growsteady.me](https://growsteady.me/support?utm_source=openai))\n- Terms and Privacy pages are dated **May 24, 2026**. ([growsteady.me](https://growsteady.me/terms?utm_source=openai))\n- The site says user check-ins are private, content is not used to train AI models, and account deletion can be requested by email, with removal within 30 days. ([growsteady.me](https://growsteady.me/terms?utm_source=openai))\n- It also appears to have an iPhone/iPad App Store listing as “Steady: Post Surgery Tracker.” ([apps.apple.com](https://apps.apple.com/cy/app/steady-post-surgery-tracker/id6773054410?platform=watch&utm_source=openai))\n\nIf you want, I can also:\n1. review the site for legitimacy/trust signals,  \n2. summarize the privacy policy in plain English, or  \n3. help you figure out who owns/runs it.",
+            "citedUrls": [
+              "https://growsteady.me/support?utm_source=openai",
+              "https://growsteady.me/terms?utm_source=openai",
+              "https://apps.apple.com/cy/app/steady-post-surgery-tracker/id6773054410?platform=watch&utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "growsteady.me"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "`growsteady.me` appears to be **Steady**, a private recovery-tracking app focused on post-surgery / rehab check-ins. Its own terms describe it as a **daily voice check-in app** for athletes or people in long recovery, and explicitly say it is **not medical advice or a medical device**. ([growsteady.me](https://growsteady.me/terms?utm_source=openai))\n\nA few key details from the site:\n- Support/contact email: **hello@growsteady.me**. ([growsteady.me](https://growsteady.me/support?utm_source=openai))\n- The site says your entries are private, and it claims it does **not use your content to train AI models**. ([growsteady.me](https://growsteady.me/terms?utm_source=openai))\n- Its privacy policy says it uses third parties including **Supabase, OpenAI, Vercel, Google, and Stripe** depending on the feature used. ([growsteady.me](https://growsteady.me/privacy?utm_source=openai))\n- Terms and privacy pages both show **last updated: May 24, 2026**. ([growsteady.me](https://growsteady.me/terms?utm_source=openai))\n\nIf you want, I can also:\n1. summarize the whole site,\n2. assess whether it looks legit/safe,\n3. review the privacy policy in plain English, or\n4. help you find the owner/company behind it.",
+            "citedUrls": [
+              "https://growsteady.me/terms?utm_source=openai",
+              "https://growsteady.me/support?utm_source=openai",
+              "https://growsteady.me/privacy?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "growsteady.me"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "**growsteady.me** is the website for **Steady**, an app for tracking recovery after surgery. Steady is a post-surgery recovery tracker. It places your recent pain against published recovery data for your procedure and week, and links every figure to the study it came from. It's on the App Store as \"Steady: Post Surgery Tracker\".\n\n**What's on the site:**\n\n- **Week-by-week recovery guides** for specific surgeries, including:\n  - **Knee replacement:** typical pain, when you're off crutches, back to driving and work, and the slow tail to expect. For example, it reports that VAS pain on day one averages 6/10 (range 4-8).\n  - **Hip replacement:** walking unaided, driving, work, and long-term registry data. Typical return to work is desk ~4 weeks; manual labor 3-6 months (wide, job-dependent).\n  - **PAO (periacetabular osteotomy):** includes return to work at a median 16 weeks, IQR 12-22 (n=242).\n- **Open recovery data index:** 72 measured pain points, 88 milestones and 73 cited sources across 15 orthopaedic procedures. It covers weeks 0 to 104 after surgery and was last reviewed 2026-08-09. The data is also available as JSON, and anyone can reuse it. The one thing we ask is a link back to this page, so the next person can check the sources for themselves.\n- **Contact:** hello@growsteady.me\n\n**Don't mix it up with:** growsteady.**net**, which is a different business. That's a trusted counseling and consulting practice located in Dickson, TN, run by counselor Sherry Allen.\n\nDo you want help with something specific, like a particular procedure's timeline, the app itself, or the dataset?",
+            "citedUrls": [
+              "https://growsteady.me/pao-recovery-timeline",
+              "https://apps.apple.com/gb/app/steady-post-surgery-tracker/id6773054410",
+              "https://growsteady.me/knee-replacement-recovery-timeline",
+              "https://growsteady.me/hip-replacement-recovery-timeline",
+              "https://growsteady.me/recovery-data",
+              "https://www.mapquest.com/us/north-carolina/growsteady-counselor-grantwriter-420942817"
+            ],
+            "retrievedUrls": [
+              "https://apps.apple.com/gb/app/steady-post-surgery-tracker/id6773054410",
+              "https://www.zoominfo.com/pic/growsteady/529352325",
+              "https://www.mapquest.com/us/north-carolina/growsteady-counselor-grantwriter-420942817",
+              "https://growsteady.me/pao-recovery-timeline",
+              "https://growsteady.me/recovery-data",
+              "https://www.facebook.com/grownsteady/",
+              "https://growsteady.me/knee-replacement-recovery-timeline",
+              "https://growsteady.me/hip-replacement-recovery-timeline",
+              "https://www.growsteady.net/"
+            ],
+            "engineQueries": [
+              "growsteady.me"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "**growsteady.me** is the website for **Steady**, an app that tracks recovery after surgery.\n\n**What it does:** According to the site, Steady is a post-surgery recovery tracker. It places your recent pain against published recovery data for your procedure and week, and links every figure to the study it came from. It's on the App Store as \"Steady: Post Surgery Tracker\".\n\n**What's on the website:**\n- **Week-by-week recovery timelines** for specific surgeries, including total knee replacement, total hip replacement and periacetabular osteotomy (PAO). For example, the knee replacement page says VAS of 6/10 on day one, falling to about 4.7/10 by day eight, with a temporary plateau or even a small rebound in the second week. The hip page says some centers send patients home the same day, but most stay 1-3 days.\n- **A free recovery data index** with 72 measured pain points, 88 milestones and 73 cited sources across 15 orthopaedic procedures, covering Weeks 0 to 104 after surgery. It's also available as JSON, and you're allowed to reuse it. The one thing we ask is a link back to this page, so the next person can check the sources for themselves. The index was last reviewed 2026-08-09.\n- **Contact:** hello@growsteady.me\n\n**Don't confuse it with growsteady.net.** That's a different business: a counseling and consulting practice located in Dickson, TN run by therapist Sherry Allen.\n\nI can go into more detail on a specific surgery's timeline, the data sources or the app.",
+            "citedUrls": [
+              "https://growsteady.me/pao-recovery-timeline",
+              "https://apps.apple.com/gb/app/steady-post-surgery-tracker/id6773054410",
+              "https://growsteady.me/knee-replacement-recovery-timeline",
+              "https://growsteady.me/hip-replacement-recovery-timeline",
+              "https://growsteady.me/recovery-data",
+              "https://www.mapquest.com/us/north-carolina/growsteady-counselor-grantwriter-420942817"
+            ],
+            "retrievedUrls": [
+              "https://apps.apple.com/gb/app/steady-post-surgery-tracker/id6773054410",
+              "https://www.zoominfo.com/pic/growsteady/529352325",
+              "https://www.mapquest.com/us/north-carolina/growsteady-counselor-grantwriter-420942817",
+              "https://growsteady.me/pao-recovery-timeline",
+              "https://growsteady.me/recovery-data",
+              "https://www.facebook.com/grownsteady/",
+              "https://growsteady.me/knee-replacement-recovery-timeline",
+              "https://growsteady.me/hip-replacement-recovery-timeline",
+              "https://www.growsteady.net/"
+            ],
+            "engineQueries": [
+              "growsteady.me"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R1_BRAND_PHRASE",
+        "scope": "domain",
+        "pageUrl": null,
+        "query": "growsteady"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "“Growsteady” could refer to a few different things. I found at least these:\n\n1. **GrowSteady counseling practice** in Dickson, Tennessee, run by Sherry Allen. ([growsteady.net](https://www.growsteady.net/?utm_source=openai))  \n2. **Steady habit tracker app** at growsteady.app for iPhone and Android. ([growsteady.app](https://growsteady.app/?utm_source=openai))  \n3. **Steady recovery tracker app** at growsteady.me, described as a private voice check-in tool for athletes in rehab/recovery. ([growsteady.me](https://growsteady.me/terms?utm_source=openai))  \n4. A few unrelated trademark/company listings also use the name. ([furm.com](https://furm.com/trademarks/growsteady-98079392?utm_source=openai))\n\nIf you want, I can:\n- identify the specific Growsteady you mean,\n- summarize one of these,\n- find the official website/app,\n- or help you evaluate whether it’s legit.",
+            "citedUrls": [
+              "https://www.growsteady.net/?utm_source=openai",
+              "https://growsteady.app/?utm_source=openai",
+              "https://growsteady.me/terms?utm_source=openai",
+              "https://furm.com/trademarks/growsteady-98079392?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "growsteady"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "“Growsteady” could refer to a few different things. The most prominent search hits I found were:\n\n- **GrowSteady / Sherry Allen** — a behavioral health therapy practice in Dickson, Tennessee. ([growsteady.net](https://www.growsteady.net/?utm_source=openai))\n- **Steady** at **growsteady.app** — a habit tracker app for iPhone and Android. ([growsteady.app](https://growsteady.app/?utm_source=openai))\n- **Steady** at **growsteady.me** — a daily voice check-in / recovery tracking app with terms and privacy pages published in 2026. ([growsteady.me](https://growsteady.me/terms?utm_source=openai))\n- There are also unrelated uses like trademarks and finance/company names. ([furm.com](https://furm.com/trademarks/growsteady-98079392?utm_source=openai))\n\nIf you want, I can:\n1. identify **which Growsteady you mean**,  \n2. summarize the website/app, or  \n3. help you find login, pricing, reviews, or contact info.",
+            "citedUrls": [
+              "https://www.growsteady.net/?utm_source=openai",
+              "https://growsteady.app/?utm_source=openai",
+              "https://growsteady.me/terms?utm_source=openai",
+              "https://furm.com/trademarks/growsteady-98079392?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "growsteady"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I found a few different things called \"GrowSteady.\" Here are the main ones:\n\n**1. GrowSteady counseling practice (Tennessee)**\nThis is probably the best-known one. It's a counseling and consulting practice in Dickson, TN. It helps people with life transitions, anxiety and depression, trauma, and family relationships. Sherry Allen, a licensed professional counselor, runs it and uses methods like Cognitive Behavioral Therapy and Motivational Interviewing.\n- Address: 404 E College St Ste A, Dickson, Tennessee, 37055\n- Phone: (615) 323-3114\n- Website: www.growsteady.net\n- Listings also call it \"GrowSteady Counselor Grantwriter,\" so grant writing may be part of the business too.\n\n**2. GrowSteady trading signal (MetaTrader 4)**\nThis is a copy-trading signal on MQL5 run by Retnalogan Thirujana Sambanthan. It costs 30 USD per month and started on 2026.10.24. So far it shows 27 trades, 23 of them profitable (85.18%). That's a very short track record, so be careful before paying for it.\n\n**3. Growsteady Finserv Private Limited (India)**\nThis brokerage applied to resign its membership of the BSE (Bombay Stock Exchange), according to a notice dated 04 Apr 2025.\n\n**4. Other matches**\n- \"grow/steady,\" a track by ToddChamp on SoundCloud\n- \"Growing Steady,\" a plant-themed apparel brand based in Lexington, VA\n\nWhich one did you mean? Tell me and I can look into it further.",
+            "citedUrls": [
+              "https://www.mapquest.com/us/north-carolina/growsteady-counselor-grantwriter-420942817",
+              "https://www.zoominfo.com/pic/growsteady/529352325",
+              "https://www.mql5.com/en/signals/2396944",
+              "https://www.publicnow.com/view/5EBE4CA094DB497EFAB0B68B52A9C6F56437BB33?1743767277=",
+              "https://www.facebook.com/getgrowingsteady/"
+            ],
+            "retrievedUrls": [
+              "https://www.zoominfo.com/pic/growsteady/529352325",
+              "https://www.mql5.com/en/signals/2396944",
+              "https://www.linkedin.com/in/sherryallen/",
+              "https://soundcloud.com/toddchamp/growsteady?in=ryandwash%2Fsets%2Fthe-upload-160543648",
+              "https://www.mapquest.com/us/north-carolina/growsteady-counselor-grantwriter-420942817",
+              "https://soundcloud.com/toddchamp/growsteady",
+              "https://www.publicnow.com/view/5EBE4CA094DB497EFAB0B68B52A9C6F56437BB33?1743767277=",
+              "https://en.wikipedia.org/wiki/Growbag",
+              "https://www.facebook.com/getgrowingsteady/"
+            ],
+            "engineQueries": [
+              "growsteady"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I found several different things called \"GrowSteady.\" Here are the main ones:\n\n**1. GrowSteady counseling practice (Dickson, Tennessee)**\n- **Location:** 404 E College St Ste A, Dickson, Tennessee, 37055. The phone number is (615) 323-3114, and the website is www.growsteady.net.\n- **What it offers:** It's a counseling and consulting practice that helps people with life changes, anxiety and depression, healing from trauma, and family relationships.\n- **Who runs it:** The licensed professional counselor is Sherry Allen. She uses methods like Cognitive Behavioral Therapy and Motivational Interviewing.\n- The practice is also listed as \"GrowSteady Counselor Grantwriter,\" so grant-writing appears to be part of the business too.\n\n**2. GrowSteady trading signal (MQL5 / MetaTrader 4)**\n- This is a copy-trading service by Retnalogan Thirujana Sambanthan that costs 30 USD per month.\n- It's very new. It started on 2026.10.24 and has only 6 trading days so far, with 23 of 27 trades (85.18%) making a profit.\n- That's far too little history to judge how well it really performs.\n\n**3. Growsteady Finserv Private Limited (India)**\n- This was a stock-trading firm on India's BSE exchange. It applied to give up its exchange membership in April 2025.\n\n**4. Other uses of the name**\n- \"grow/steady\" is a set of tracks the musician ToddChamp made during a Twitch stream and posted on SoundCloud.\n- \"Growing Steady\" is a small Facebook brand in Lexington, VA that sells funny clothing for plant lovers.\n\nWhich one did you mean? I can look up more about it.",
+            "citedUrls": [
+              "https://www.zoominfo.com/pic/growsteady/529352325",
+              "https://www.mapquest.com/us/north-carolina/growsteady-counselor-grantwriter-420942817",
+              "https://www.mql5.com/en/signals/2396944",
+              "https://www.publicnow.com/view/5EBE4CA094DB497EFAB0B68B52A9C6F56437BB33?1743767277=",
+              "https://soundcloud.com/toddchamp/growsteady",
+              "https://www.facebook.com/getgrowingsteady/"
+            ],
+            "retrievedUrls": [
+              "https://www.zoominfo.com/pic/growsteady/529352325",
+              "https://www.mql5.com/en/signals/2396944",
+              "https://www.linkedin.com/in/sherryallen/",
+              "https://soundcloud.com/toddchamp/growsteady?in=ryandwash%2Fsets%2Fthe-upload-160543648",
+              "https://www.mapquest.com/us/north-carolina/growsteady-counselor-grantwriter-420942817",
+              "https://soundcloud.com/toddchamp/growsteady",
+              "https://www.publicnow.com/view/5EBE4CA094DB497EFAB0B68B52A9C6F56437BB33?1743767277=",
+              "https://en.wikipedia.org/wiki/Growbag",
+              "https://www.facebook.com/getgrowingsteady/"
+            ],
+            "engineQueries": [
+              "growsteady"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R2_SITE_SCOPED",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/pao-recovery-timeline",
+        "query": "site:growsteady.me periacetabular-osteotomy-pao"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "The main matching page is:\n\n- **Periacetabular osteotomy (PAO) recovery data: 7 measured pain points and 7 milestones · Steady** ([growsteady.me](https://growsteady.me/recovery-data/periacetabular-osteotomy-pao?utm_source=openai))\n\nOther relevant pages on the same site:\n\n- **PAO recovery timeline, week by week** ([growsteady.me](https://growsteady.me/pao-recovery-timeline?utm_source=openai))\n- **Return to work after PAO surgery: the documented timelines** ([growsteady.me](https://growsteady.me/pao-recovery-timeline/return-to-work?utm_source=openai))\n- **PAO recovery setbacks: when pain rises before it settles** ([growsteady.me](https://growsteady.me/pao-recovery-timeline/setbacks?utm_source=openai))\n\nIf you want, I can also:\n1. summarize the PAO page,\n2. extract key recovery milestones, or\n3. compare Steady’s PAO timeline with published studies.",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data/periacetabular-osteotomy-pao?utm_source=openai",
+              "https://growsteady.me/pao-recovery-timeline?utm_source=openai",
+              "https://growsteady.me/pao-recovery-timeline/return-to-work?utm_source=openai",
+              "https://growsteady.me/pao-recovery-timeline/setbacks?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me periacetabular-osteotomy-pao"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "I found the page you’re likely looking for:\n\n**Periacetabular osteotomy (PAO) recovery data: 7 measured pain points and 7 milestones · Steady** ([growsteady.me](https://growsteady.me/recovery-data/periacetabular-osteotomy-pao?utm_source=openai))\n\nRelated pages on the same site:\n- **PAO recovery timeline, week by week** ([growsteady.me](https://growsteady.me/pao-recovery-timeline?utm_source=openai))\n- **Return to work after PAO surgery: the documented timelines** ([growsteady.me](https://growsteady.me/pao-recovery-timeline/return-to-work?utm_source=openai))\n- **PAO recovery setbacks: when pain rises before it settles** ([growsteady.me](https://growsteady.me/pao-recovery-timeline/setbacks?utm_source=openai))\n\nIf you want, I can also:\n1. summarize the PAO page,\n2. extract the key recovery milestones, or\n3. compare Steady’s PAO timeline with published medical literature.",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data/periacetabular-osteotomy-pao?utm_source=openai",
+              "https://growsteady.me/pao-recovery-timeline?utm_source=openai",
+              "https://growsteady.me/pao-recovery-timeline/return-to-work?utm_source=openai",
+              "https://growsteady.me/pao-recovery-timeline/setbacks?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me periacetabular-osteotomy-pao"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I couldn't find a page at exactly `growsteady.me/periacetabular-osteotomy-pao` in the search results. Other pages on the site link to a \"Periacetabular osteotomy (PAO)\" page, so it may exist but just isn't indexed. The closest match is the site's **PAO recovery timeline** page (growsteady.me/pao-recovery-timeline). Here's what it says:\n\n**What the page covers:** PAO recovery week by week: typical pain, crutch and weight-bearing milestones, return to work and sport, and gaps in the data.\n\n**Overall recovery time:** Based on the studies it cites, the page says it takes nine to twelve months before the hip stops being a daily thought, and up to two years for the last few percent of recovery. It also says PAO is a different animal from the keyhole hip surgeries.\n\n**Common questions it answers:**\n- **Driving:** The only published brake-reaction-time study in PAO patients found most were not yet safe to drive at six weeks but had returned to baseline by twelve.\n- **Pain months later:** It says some pain is normal, especially with activity.\n- **Running:** A North American expert consensus (Delphi) puts the start of running at weeks 20–26. It depends on hip strength returning to normal, functional tasks and the surgeon's sign-off, not a fixed date.\n- **Return to sport:** Across 26 studies, full return to sport after PAO averaged 8.9 months.\n\nThe site has similar timelines for hip arthroscopy and hip replacement, and both link to the PAO page. If you have the exact URL, try opening it directly, since it may just be missing from search results.",
+            "citedUrls": [
+              "https://growsteady.me/pao-recovery-timeline"
+            ],
+            "retrievedUrls": [
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10797643/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12051862/",
+              "https://arxiv.org/pdf/1909.10443",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10622391/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9377214/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5302880/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4775500/",
+              "https://growsteady.me/hip-arthroscopy-recovery-timeline",
+              "https://growsteady.me/pao-recovery-timeline",
+              "https://growsteady.me/hip-replacement-recovery-timeline"
+            ],
+            "engineQueries": [
+              "site:growsteady.me periacetabular-osteotomy-pao"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I couldn't find a page at growsteady.me with the exact slug \"periacetabular-osteotomy-pao\". Other pages on the site do link to a \"Periacetabular osteotomy (PAO)\" source page, though. The hip arthroscopy timeline and the hip replacement timeline both list it under \"What this page is built from.\" That's probably the page you're after, but it didn't come up in the search.\n\nThe closest match I found is Steady's **PAO recovery timeline** page (growsteady.me/pao-recovery-timeline). Here's what it says:\n\n- **Total recovery time:** The cited literature puts periacetabular osteotomy (PAO) recovery at nine to twelve months before the hip stops being a daily thought, and up to two years for the last few percent.\n- **What it covers:** Typical pain, crutch and weight-bearing milestones, return to work and sport, and the honest data gaps. The page also says that periacetabular osteotomy is a different animal from the keyhole hip surgeries.\n- **Driving:** The only published brake-reaction-time study in PAO patients found most were not yet safe at six weeks but had returned to baseline by twelve.\n- **Pain months later:** The page says some pain is normal, especially with activity.\n- **Running:** The North American Delphi consensus puts running initiation after periacetabular osteotomy (PAO) at weeks 20-26, gated on normalized hip strength, functional tasks and the surgeon's sign-off rather than a fixed date.\n- **Return to sport:** Across 26 studies, full return to sport after PAO averaged 8.9 months.\n\nTo find the exact page, try going to growsteady.me/periacetabular-osteotomy-pao directly, or click the \"Periacetabular osteotomy (PAO)→\" link on one of the timeline pages.",
+            "citedUrls": [
+              "https://growsteady.me/hip-arthroscopy-recovery-timeline",
+              "https://growsteady.me/hip-replacement-recovery-timeline",
+              "https://growsteady.me/pao-recovery-timeline"
+            ],
+            "retrievedUrls": [
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10797643/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12051862/",
+              "https://arxiv.org/pdf/1909.10443",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10622391/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9377214/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5302880/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4775500/",
+              "https://growsteady.me/hip-arthroscopy-recovery-timeline",
+              "https://growsteady.me/pao-recovery-timeline",
+              "https://growsteady.me/hip-replacement-recovery-timeline"
+            ],
+            "engineQueries": [
+              "site:growsteady.me periacetabular-osteotomy-pao"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R3_VERBATIM",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/pao-recovery-timeline",
+        "query": "Which website says the following, word for word? \"Studies also document a real shift toward lower-impact sport afterward, so the honest framing is a return to athletic life, not a guaranteed return to your exact pre-dysplasia sport at the same level.\""
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "That exact sentence appears on **Steady** in the page **“PAO recovery timeline, week by week”**. ([growsteady.me](https://growsteady.me/pao-recovery-timeline?utm_source=openai))\n\nIf you want, I can also give you the page title and a short excerpt showing where it appears.",
+            "citedUrls": [
+              "https://growsteady.me/pao-recovery-timeline?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"Studies also document a real shift toward lower-impact sport afterward, so the honest framing is a return to athletic life, not a guaranteed return to your exact pre-dysplasia sport at the same level.\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "The quote appears on **Steady** (domain: **growsteady.me**), on the page **“PAO recovery timeline, week by week.”** ([growsteady.me](https://growsteady.me/pao-recovery-timeline?utm_source=openai))\n\nIf you want, I can also help find:\n- the exact page section,\n- whether it appears anywhere else,\n- or the original studies the sentence is summarizing.",
+            "citedUrls": [
+              "https://growsteady.me/pao-recovery-timeline?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"Studies also document a real shift toward lower-impact sport afterward, so the honest framing is a return to athletic life, not a guaranteed return to your exact pre-dysplasia sport at the same level.\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "Try another search.That exact sentence comes from **Steady** (growsteady.me), on a page called **\"PAO recovery timeline, week by week\"**: https://growsteady.me/pao-recovery-timeline\n\nIt sits in the page's \"Common questions\" section, under the question \"Will I get back to sport?\" The answer starts by saying most likely yes, but on a long clock: the published average is just under nine months, with return rates of 63-91% across series. Then it continues word for word: \"Studies also document a real shift toward lower-impact sport afterward, so the honest framing is a return to athletic life, not a guaranteed return to your exact pre-dysplasia sport at the same level.\"\n\nThe page is about recovery after periacetabular osteotomy (PAO), a hip dysplasia surgery. Earlier on the same page, a similar but differently worded line makes the same point: \"most people get back to being athletes, not always to the exact same athletics.\"",
+            "citedUrls": [
+              "https://growsteady.me/pao-recovery-timeline"
+            ],
+            "retrievedUrls": [
+              "https://www.mdpi.com/2077-0383/15/16/6336",
+              "https://nyboneandjoint.com/returning-to-sports-after-orthopedic-injury/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10057626/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6890902/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4169614/",
+              "https://steventhorntonmd.com/blog/can-you-return-to-sports-after-shoulder-instability-surgery/",
+              "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11181428",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9540195/",
+              "https://www.sportsinjurybulletin.com/diagnose--treat/hip-hip-hooray-athletes-dont-have-to-call-it-a-day",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150059/",
+              "https://doi.org/10.1093/jhps/hnaf072",
+              "https://arthroscopyjournals.onlinelibrary.wiley.com/doi/10.1002/arj.70523",
+              "https://www.sciencedirect.com/science/article/abs/pii/S0749806322008222",
+              "https://www.researchgate.net/publication/399537075_Return_to_activities_of_daily_living_in_adults_after_periacetabular_osteotomy_a_systematic_review",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC11272631/",
+              "https://www.americanhipinstitute.com/periacetabular-osteotomy-in-athletes-with-symptomatic-hip-dysplasia-allows-for-participation-in-low/",
+              "https://ijspt.scholasticahq.com/article/38043-rehabilitation-guidelines-for-use-following-a-periacetabular-osteotomy-pao-a-north-american-based-delphi-consensus",
+              "https://growsteady.me/pao-recovery-timeline",
+              "https://cdn.clinicaltrials.gov/large-docs/71/NCT03941171/SAP_001.pdf",
+              "https://www.sciencedirect.com/science/article/abs/pii/S187705682600246X",
+              "https://www.researchgate.net/publication/356565643_Return_to_Sport_in_Athletes_With_Borderline_Hip_Dysplasia_After_Hip_Arthroscopy_for_Femoroacetabular_Impingement_Syndrome",
+              "https://www.americanhipinstituteresearchfoundation.org/periacetabular-osteotomy-in-athletes-with-symptomatic-hip-dysplasia-allows-for-participation-in-low-moderate-and-high-impact-sports/",
+              "https://hipdysplasia.org/wp-content/uploads/2020/08/Return-After-PAO.pdf",
+              "https://doi.org/10.1177/03635465231217736",
+              "https://ijspt.org/wp-content/uploads/2022/10/4-Disantis.pdf",
+              "https://www.americanhipinstitute.com/periacetabular-osteotomy-in-athletes-with-symptomatic-hip-dysplasia-allows-for-participation-in-low-moderate-and-high-impact-sports/"
+            ],
+            "engineQueries": [
+              "\"return to athletic life, not a guaranteed return to your exact pre-dysplasia sport\"",
+              "\"shift toward lower-impact sport\" periacetabular osteotomy return to athletic life",
+              "PAO hip dysplasia \"return to athletic life\" lower-impact sport honest framing"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "That exact sentence is on **Steady (growsteady.me)**, on a page called \"PAO recovery timeline, week by week\" at https://growsteady.me/pao-recovery-timeline. It's in the page's \"Common questions about periacetabular osteotomy (PAO) recovery\" section. The page is about recovering from periacetabular osteotomy (PAO), a hip surgery for dysplasia. The search result shows your sentence word for word in that section. Near the top of the page, the same sentence appears again, with \"honest framing is a return to athletic life\" in bold.\n\nOther parts of the same page say that return to sport averages just under nine months across the published series, with return rates between 63% and 91% depending on the sport and the series. It also says studies measure a real shift from high-impact toward lower-impact sport after PAO.",
+            "citedUrls": [
+              "https://growsteady.me/pao-recovery-timeline"
+            ],
+            "retrievedUrls": [
+              "https://www.mdpi.com/2077-0383/15/16/6336",
+              "https://nyboneandjoint.com/returning-to-sports-after-orthopedic-injury/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10057626/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6890902/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4169614/",
+              "https://steventhorntonmd.com/blog/can-you-return-to-sports-after-shoulder-instability-surgery/",
+              "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11181428",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9540195/",
+              "https://www.sportsinjurybulletin.com/diagnose--treat/hip-hip-hooray-athletes-dont-have-to-call-it-a-day",
+              "https://doi.org/10.1093/jhps/hnaf072",
+              "https://doi.org/10.1177/03635465251391182",
+              "https://www.researchgate.net/publication/366296769_Periacetabular_Osteotomy_in_Athletes_with_Symptomatic_Hip_Dysplasia_Allows_for_Participation_in_Low_Moderate_and_High_Impact_Sports_With_Greater_than_70_Return_to_Sport_for_Competitive_Athletes_A_Syst",
+              "https://arthroscopyjournals.onlinelibrary.wiley.com/doi/10.1002/arj.70523",
+              "https://pubmed.ncbi.nlm.nih.gov/42036087/",
+              "https://hipdysplasia.org/wp-content/uploads/2020/08/Return-After-PAO.pdf",
+              "https://growsteady.me/pao-recovery-timeline",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11272631/",
+              "https://clinicaltrials.gov/study/NCT07590882"
+            ],
+            "engineQueries": [
+              "\"return to athletic life, not a guaranteed return to your exact pre-dysplasia sport\"",
+              "\"return to athletic life\" periacetabular osteotomy lower-impact sport honest framing"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R4_NATURAL",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/pao-recovery-timeline",
+        "query": "how long does recovery take after periacetabular osteotomy"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Recovery after a **periacetabular osteotomy (PAO)** is usually measured in **months, not weeks**. A typical timeline is:\n\n- **Hospital stay:** often **1–5 days** after surgery. ([yalemedicine.org](https://www.yalemedicine.org/conditions/periacetabular-osteotomy-pao?utm_source=openai))\n- **Crutches / limited weight-bearing:** commonly about **6–8 weeks**, sometimes longer depending on X-rays and healing. ([link.springer.com](https://link.springer.com/article/10.1007/s12178-026-10049-4?utm_source=openai))\n- **More normal walking / full weight-bearing:** often around **8–12 weeks** if healing is going well. ([link.springer.com](https://link.springer.com/article/10.1007/s12178-026-10049-4?utm_source=openai))\n- **Return to desk-type work or school:** many people can return in some form by **6–12 weeks**, though fatigue and pain can still be significant. One center notes return to work around **3 months** as tolerated; standing jobs may take **12–16 weeks**. ([healthcare.utah.edu](https://healthcare.utah.edu/orthopaedics/specialties/hip-pain/periacetabular-osteotomy?utm_source=openai))\n- **Fuller recovery:** many patients need about **6 months** for substantial recovery, and **up to 9–12 months** to feel close to their “final” result, especially for higher-level activity. This last part is a general clinical pattern/inference from rehab timelines and the fact that bone healing, strength, gait, and endurance recover gradually. ([link.springer.com](https://link.springer.com/article/10.1007/s12178-026-10049-4?utm_source=openai))\n\nA simple way to think about it:\n- **First 2 weeks:** pain control, swelling, getting around safely\n- **Weeks 6–12:** gradual increase in weight-bearing and PT\n- **Months 3–6:** strength and walking improve a lot\n- **Months 6–12:** ongoing return to sports and endurance, if cleared by surgeon ([link.springer.com](https://link.springer.com/article/10.1007/s12178-026-10049-4?utm_source=openai))\n\nRecovery can be **longer** if:\n- you had **additional procedures** at the same time, like hip arthroscopy or femoral osteotomy,\n- healing is slower on imaging,\n- your job is physically demanding,\n- or you have ongoing muscle weakness/pain. ([ortho.wustl.edu](https://www.ortho.wustl.edu/mm/files/Patient%20Education/Hip%20and%20Knee/PAOSurgery.pdf?utm_source=openai))\n\nIf you want, I can also give you a **week-by-week PAO recovery timeline** or explain **when people can drive, work, or exercise again**.",
+            "citedUrls": [
+              "https://www.yalemedicine.org/conditions/periacetabular-osteotomy-pao?utm_source=openai",
+              "https://link.springer.com/article/10.1007/s12178-026-10049-4?utm_source=openai",
+              "https://healthcare.utah.edu/orthopaedics/specialties/hip-pain/periacetabular-osteotomy?utm_source=openai",
+              "https://www.ortho.wustl.edu/mm/files/Patient%20Education/Hip%20and%20Knee/PAOSurgery.pdf?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "periacetabular osteotomy recovery time patient education hospital"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Recovery after a **periacetabular osteotomy (PAO)** is usually measured in **months, not weeks**.\n\nTypical timeline:\n\n- **Hospital stay:** about **2–4 days**\n- **Crutches / limited weight-bearing:** usually **6–8 weeks**, sometimes longer\n- **Driving:** often around **6–8 weeks**, depending on which side was operated on, pain control, and surgeon clearance\n- **Return to desk-type work or school:** often **6–12 weeks**\n- **More normal walking and daily activity:** often **2–3 months**\n- **Higher-impact exercise / sports:** commonly **4–6 months**, sometimes **6–12 months**\n- **Full recovery:** many people say **6–12 months** before they feel close to their “new normal”\n\nA lot depends on:\n- whether it was **one hip or both**\n- your **bone healing** on X-rays\n- muscle strength and limp recovery\n- whether there were other procedures done too, like **hip arthroscopy** or femoral osteoplasty\n- your age and overall health\n\nA realistic short version:\n- **First 6 weeks:** protect the bone, manage pain, use crutches\n- **6–12 weeks:** gradual increase in weight-bearing and physical therapy\n- **3–6 months:** strength and function improve a lot\n- **6–12 months:** continued recovery, endurance, and confidence return\n\nIf you want, I can also give you a **week-by-week PAO recovery timeline** or tell you what recovery is like for **sleeping, sitting, stairs, work, and exercise**.",
+            "citedUrls": [],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "periacetabular osteotomy recovery timeline hospital patient guide"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "Most people feel fully recovered from a periacetabular osteotomy (PAO) **9 to 12 months** after surgery. It usually takes 9–12 months to feel fully recovered. Some take longer: most patients are fully recovered from PAO, but it may take as long as 24 months for certain individuals.\n\n**Typical timeline**\n\n- **Hospital stay:** usually two to three days. You will start physical therapy the day after surgery. Plan on having someone to take care of you 24/7 for the first week.\n- **Weeks 0–6:** Walk with crutches (partial weight bearing), and keep your wound clean. One clinic limits weight on the operated leg to ~30-lbs) on the operated side for about 6 weeks.\n- **Weeks 6–12:** Transition to one cane or crutch as instructed by your provider. Full weight bearing without crutches usually comes at 8-12 weeks.\n- **About 3 months:** Return to work part time or full time as tolerated. Pain will most likely be gone within four months after the operation.\n- **3–6 months:** Most patients are able to resume most daily activity.\n- **6 months and later:** You may return to full activity (when the bone cuts are completely healed) except for running/jumping activities.\n\n**Long-term improvement:** A 2026 study that followed patients for 24 months found that most patients achieve clinically meaningful improvement within the first postoperative year, with further recovery into the second.\n\n**Don't rush putting weight on the hip.** One study found that an accelerated rehab protocol had people walking without support at 4.2 months and 6.9 months in patients with the accelerated and standard rehabilitation protocols, respectively. However, postoperative pelvic fracture rates were unacceptably high in patients with this protocol. Follow your surgeon's weight-bearing limits.\n\nYour own timeline will depend on your age, fitness, whether you have other procedures at the same time (such as hip arthroscopy), and how well you stick to physical therapy. Your surgeon will check how the bone is healing with X-rays at follow-up visits, usually around 6 weeks, 3 months, 6 months, and 1 year.",
+            "citedUrls": [
+              "https://healthcare.utah.edu/orthopaedics/specialties/hip-pain/periacetabular-osteotomy",
+              "https://www.understandortho.com/hip/periacetabular-osteotomy-pao/",
+              "https://www.chicagohipdoctor.com/procedures/periacetabular-osteotomy-pao-hip-socket-realignment-for-chicago-patients",
+              "https://iuhealth.org/find-medical-services/periacetabular-osteotomy-pao",
+              "https://boneandjoint.org.uk/Article/10.1302/0301-620X.108B5.BJJ-2025-1450.R1",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4100493/"
+            ],
+            "retrievedUrls": [
+              "https://healthcare.utah.edu/orthopaedics/specialties/hip-pain/periacetabular-osteotomy",
+              "https://boneandjoint.org.uk/Article/10.1302/0301-620X.108B5.BJJ-2025-1450.R1",
+              "https://william-beaumont.tricare.mil/Portals/149/UW%20Hip%20Periacetabular%20Osteotomy.pdf",
+              "https://iuhealth.org/find-medical-services/periacetabular-osteotomy-pao",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4100493/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8023930/",
+              "https://www.yalemedicine.org/conditions/periacetabular-osteotomy-pao",
+              "https://www.chicagohipdoctor.com/procedures/periacetabular-osteotomy-pao-hip-socket-realignment-for-chicago-patients",
+              "https://www.understandortho.com/hip/periacetabular-osteotomy-pao/"
+            ],
+            "engineQueries": [
+              "periacetabular osteotomy recovery timeline"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "Full recovery from a periacetabular osteotomy (PAO) usually takes **9 to 12 months**, though some people need up to 2 years. It usually takes 9–12 months to feel fully recovered. It may take as long as 24 months for certain individuals to fully recover from the procedure.\n\n**Typical timeline**\n\n- **In the hospital (1–4 days):** The hospital stay is usually two to three days. You will start physical therapy the day after surgery. At home, plan on having someone to take care of you 24/7 for the first week.\n- **Weeks 0–6:** Walk with crutches (partial weight bearing), and keep your wound clean. Some surgeons limit you to about 30 lbs of weight on that leg for about 6 weeks. You'll usually have a check-up two weeks after surgery, then again at six weeks for X-rays.\n- **Weeks 6–12:** Transition to one cane or crutch as instructed by your provider. You may start gentle stretching or strengthening exercises. Full weight bearing without crutches usually comes at 8-12 weeks.\n- **Around 3 months:** Return to work part time or full time as tolerated. Pain will most likely be gone within four months after the operation.\n- **3–6 months:** Most patients are able to resume most daily activity.\n- **After 6 months:** You may return to full activity (when the bone cuts are completely healed) except for running/jumping activities.\n\n**Long-term recovery:** A 2026 study of 24-month outcomes found that most patients achieve clinically meaningful improvement within the first postoperative year, with further recovery into the second.\n\n**Don't rush putting weight on the hip.** In one study, an accelerated rehab plan helped patients walk without support sooner (4.2 months vs. 6.9 months), but postoperative pelvic fracture rates were unacceptably high in patients with this protocol. Stick to your surgeon's weight-bearing limits. Timelines differ between surgeons and patients, so your own care team's instructions come first.",
+            "citedUrls": [
+              "https://healthcare.utah.edu/orthopaedics/specialties/hip-pain/periacetabular-osteotomy",
+              "https://www.understandortho.com/hip/periacetabular-osteotomy-pao/",
+              "https://www.chicagohipdoctor.com/procedures/periacetabular-osteotomy-pao-hip-socket-realignment-for-chicago-patients",
+              "https://iuhealth.org/find-medical-services/periacetabular-osteotomy-pao",
+              "https://boneandjoint.org.uk/Article/10.1302/0301-620X.108B5.BJJ-2025-1450.R1",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4100493/"
+            ],
+            "retrievedUrls": [
+              "https://healthcare.utah.edu/orthopaedics/specialties/hip-pain/periacetabular-osteotomy",
+              "https://boneandjoint.org.uk/Article/10.1302/0301-620X.108B5.BJJ-2025-1450.R1",
+              "https://william-beaumont.tricare.mil/Portals/149/UW%20Hip%20Periacetabular%20Osteotomy.pdf",
+              "https://iuhealth.org/find-medical-services/periacetabular-osteotomy-pao",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4100493/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8023930/",
+              "https://www.yalemedicine.org/conditions/periacetabular-osteotomy-pao",
+              "https://www.chicagohipdoctor.com/procedures/periacetabular-osteotomy-pao-hip-socket-realignment-for-chicago-patients",
+              "https://www.understandortho.com/hip/periacetabular-osteotomy-pao/"
+            ],
+            "engineQueries": [
+              "periacetabular osteotomy recovery timeline"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R2_SITE_SCOPED",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/meniscus-surgery-recovery-timeline",
+        "query": "site:growsteady.me knee-arthroscopy-meniscus"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Here’s the matching page on that site:\n\n- **Knee arthroscopy / meniscus recovery data: 4 measured pain points and 5 milestones · Steady** ([growsteady.me](https://growsteady.me/recovery-data/knee-arthroscopy-meniscus?utm_source=openai))\n\nRelated pages on the same site:\n- **Meniscus surgery recovery timeline, week by week** ([growsteady.me](https://growsteady.me/meniscus-surgery-recovery-timeline?utm_source=openai))\n- **Recovery data index** ([growsteady.me](https://growsteady.me/recovery-data?utm_source=openai))\n\nIf you want, I can also:\n1. summarize the knee-arthroscopy/meniscus page, or\n2. extract the key recovery milestones from it.",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data/knee-arthroscopy-meniscus?utm_source=openai",
+              "https://growsteady.me/meniscus-surgery-recovery-timeline?utm_source=openai",
+              "https://growsteady.me/recovery-data?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me knee-arthroscopy-meniscus"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Found it: **Knee arthroscopy / meniscus recovery data: 4 measured pain points and 5 milestones · Steady**. ([growsteady.me](https://growsteady.me/recovery-data/knee-arthroscopy-meniscus?utm_source=openai))\n\nRelated pages on the same site:\n- **Meniscus surgery recovery timeline, week by week** ([growsteady.me](https://growsteady.me/meniscus-surgery-recovery-timeline?utm_source=openai))\n- **Recovery data index** ([growsteady.me](https://growsteady.me/recovery-data?utm_source=openai))\n- **Week 6 timeline page** ([growsteady.me](https://growsteady.me/meniscus-surgery-recovery-timeline/week/6?utm_source=openai))\n- **Week 12 timeline page** ([growsteady.me](https://growsteady.me/meniscus-surgery-recovery-timeline/week/12?utm_source=openai))\n\nIf you want, I can also:\n1. summarize the knee arthroscopy/meniscus page,\n2. extract the milestones and pain timeline, or\n3. compare it with typical meniscus repair vs meniscectomy recovery.",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data/knee-arthroscopy-meniscus?utm_source=openai",
+              "https://growsteady.me/meniscus-surgery-recovery-timeline?utm_source=openai",
+              "https://growsteady.me/recovery-data?utm_source=openai",
+              "https://growsteady.me/meniscus-surgery-recovery-timeline/week/6?utm_source=openai",
+              "https://growsteady.me/meniscus-surgery-recovery-timeline/week/12?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me knee-arthroscopy-meniscus"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I couldn't find a page at the exact path /knee-arthroscopy-meniscus. On growsteady.me, the closest match is the **Meniscus surgery recovery timeline** page (growsteady.me/meniscus-surgery-recovery-timeline), which covers the clinical procedure \"Knee arthroscopy / meniscus.\" Other recovery pages on the site link to it as a source using the label \"Knee arthroscopy / meniscus.\" Here's a summary:\n\n**What it covers:** Knee arthroscopy and meniscus surgery recovery, week by week: typical pain, milestones, and how meniscectomy and meniscus repair differ. It was last reviewed 2026-06-05.\n\n**Pain:** The Four-Week Pain Profile study reported median NRS of 3/10 on the day of surgery, 2/10 through the first week, and 1/10 by day 28 in the knee arthroscopy subgroup. Six-week pain in the measured cohort was 0.7/10 for standard arthroscopic meniscectomy, 0.4/10 for needle-arthroscopy.\n\n**Milestones** (from the site's recovery data index):\n- Off crutches / full weight-bearing after partial meniscectomy: immediate to about 1 week\n- Return to light or sedentary work: about 1-2 weeks; job-dependent\n- Full weight-bearing after meniscus repair: about 4 weeks; tear-pattern dependent\n- Return to running after partial meniscectomy: 6-8 weeks, criteria-based\n- Return to sport after partial meniscectomy: roughly 7-16 weeks, criteria-based\n\n**Common questions it answers:**\n- *Running after a repair:* Running typically opens around week 12-14 for a stable vertical repair, around week 16-20 for a complex pattern, criteria-based on full ROM, no effusion, and quadriceps symmetry.\n- *Why a repair takes longer than a meniscectomy:* Because the repair has to heal — sutures hold the torn meniscus together but the tissue itself takes 4-6 months to develop the strength to handle deep flexion under load.\n- *Driving:* There is no meta-analysis or society guideline that fixes a driving milestone for knee arthroscopy.\n\n**Sources it uses** include the EU-US Meniscus Rehabilitation 2024 Consensus society guideline · reliability 9.5/10 and a Norway 2010-2020 registry of arthroscopic meniscal surgery · reliability 9/10. The site gives the data a confidence rating of medium.\n\nYour own recovery may differ from these averages, so check timelines with your surgeon.",
+            "citedUrls": [
+              "https://growsteady.me/meniscus-surgery-recovery-timeline",
+              "https://growsteady.me/recovery-data"
+            ],
+            "retrievedUrls": [
+              "https://growsteady.me/achilles-surgery-recovery-timeline",
+              "https://growsteady.me/recovery-data",
+              "https://growsteady.me/knee-replacement-recovery-timeline",
+              "https://growsteady.me/meniscus-surgery-recovery-timeline",
+              "https://growsteady.me/acl-recovery-timeline",
+              "https://growsteady.me/ankle-ligament-surgery-recovery-timeline",
+              "https://en.wikipedia.org/wiki/Meniscus_(anatomy)",
+              "https://growsteady.me/hip-replacement-recovery-timeline",
+              "https://growsteady.me/hip-arthroscopy-recovery-timeline"
+            ],
+            "engineQueries": [
+              "site:growsteady.me knee-arthroscopy-meniscus"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I couldn't find a page at the exact slug \"knee-arthroscopy-meniscus\" on growsteady.me. The site does cover that procedure, though, mainly on its **Meniscus surgery recovery timeline** page (growsteady.me/meniscus-surgery-recovery-timeline). Steady seems to use \"Knee arthroscopy / meniscus\" as a procedure label rather than a page address.\n\n**What the page covers**\nIt describes knee arthroscopy and meniscus surgery recovery, week by week: typical pain, milestones, and how meniscectomy and meniscus repair differ. Meniscectomy means trimming out the torn part; repair means stitching it back together.\n\n**Pain levels reported**\n- The Four-Week Pain Profile study reported median NRS of 3/10 on the day of surgery, 2/10 through the first week, and 1/10 by day 28 in the knee arthroscopy subgroup. (NRS is a 0–10 pain rating.)\n- Six-week pain in the measured cohort was 0.7/10 for standard arthroscopic meniscectomy, 0.4/10 for needle-arthroscopy.\n\n**Milestones** (from the site's Recovery Data index, confidence medium · last reviewed 2026-06-05)\n- Off crutches / full weight-bearing after partial meniscectomy: immediate to about 1 week\n- Return to light or sedentary work: about 1-2 weeks; job-dependent\n- Full weight-bearing after meniscus repair: about 4 weeks; tear-pattern dependent\n- Return to running after partial meniscectomy: 6-8 weeks, criteria-based\n- Return to sport after partial meniscectomy: roughly 7-16 weeks, criteria-based\n\n**From the FAQ**\n- **Why repair is slower than meniscectomy:** the repair has to heal — sutures hold the torn meniscus together but the tissue itself takes 4-6 months to develop the strength to handle deep flexion under load.\n- **When you can drive:** There is no meta-analysis or society guideline that fixes a driving milestone for knee arthroscopy.\n\n**Sources the page lists** include the EU-US Meniscus Rehabilitation 2024 Consensus society guideline · reliability 9.5/10 and a Pain after knee arthroscopy subgroup prospective cohort · reliability 7/10.\n\n**Related pages** that link to the knee arthroscopy/meniscus data include the ACL, knee replacement, Achilles and ankle ligament recovery timelines. The ACL page says a vertical longitudinal repair can hold up your weight-bearing for several extra weeks; a meniscectomy doesn't change anything.\n\nThese are general timelines. Your surgeon's instructions for your own surgery should come first.",
+            "citedUrls": [
+              "https://growsteady.me/meniscus-surgery-recovery-timeline",
+              "https://growsteady.me/recovery-data",
+              "https://growsteady.me/acl-recovery-timeline"
+            ],
+            "retrievedUrls": [
+              "https://growsteady.me/meniscus-surgery-recovery-timeline",
+              "https://growsteady.me/recovery-data",
+              "https://growsteady.me/achilles-surgery-recovery-timeline",
+              "https://growsteady.me/knee-replacement-recovery-timeline",
+              "https://en.wikipedia.org/wiki/Kevin_R._Stone",
+              "https://growsteady.me/acl-recovery-timeline",
+              "https://growsteady.me/ankle-ligament-surgery-recovery-timeline",
+              "https://growsteady.me/hip-replacement-recovery-timeline",
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline"
+            ],
+            "engineQueries": [
+              "site:growsteady.me knee arthroscopy meniscus"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R3_VERBATIM",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/meniscus-surgery-recovery-timeline",
+        "query": "Which website says the following, word for word? \"A repair patient — particularly a vertical longitudinal tear — is gated by tissue healing: FWB at about four weeks, no deep flexion under load for sixteen weeks, return to sport closer to six months.\""
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "That exact sentence appears on **Steady** in the article **“Meniscus surgery recovery timeline, week by week”**. ([growsteady.me](https://growsteady.me/meniscus-surgery-recovery-timeline?utm_source=openai))\n\nIf you want, I can also help you find:\n- the exact page title and publisher details,\n- whether another site copied it,\n- or the original sources behind that claim.",
+            "citedUrls": [
+              "https://growsteady.me/meniscus-surgery-recovery-timeline?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"A repair patient — particularly a vertical longitudinal tear — is gated by tissue healing: FWB at about four weeks, no deep flexion under load for sixteen weeks, return to sport closer to six months.\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "The exact wording appears on **Steady** in the page titled **“Meniscus surgery recovery timeline, week by week.”** ([growsteady.me](https://growsteady.me/meniscus-surgery-recovery-timeline?utm_source=openai))\n\nIf you want, I can also give you:\n- the direct page title and publisher,\n- a short excerpt around that sentence,\n- or help verify whether it was copied from an original source.",
+            "citedUrls": [
+              "https://growsteady.me/meniscus-surgery-recovery-timeline?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"A repair patient — particularly a vertical longitudinal tear — is gated by tissue healing: FWB at about four weeks, no deep flexion under load for sixteen weeks, return to sport closer to six months.\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I found the exact sentence on Steady (growsteady.me), in an article called \"Meniscus surgery recovery timeline, week by week.\" It's at https://growsteady.me/meniscus-surgery-recovery-timeline.\n\nThe page has the sentence word for word: \"A repair patient — particularly a vertical longitudinal tear — is gated by tissue healing: FWB at about four weeks, no deep flexion under load for sixteen weeks, return to sport closer to six months.\" It appears in a section called \"what shapes recovery here.\" (\"FWB\" means full weight-bearing.)\n\nThe same article gives the source of the four-week figure: vertical longitudinal repairs are full weight-bearing by week four per the pooled mean (3.9 weeks). For return to sport, it says the Bensa secondary summary reports pooled time of 5.6-5.8 months for repair; stable vertical tears clear at 4-6 months.\n\nThe other search results talk about vertical longitudinal tears too, but none of them contain this sentence.",
+            "citedUrls": [
+              "https://growsteady.me/meniscus-surgery-recovery-timeline"
+            ],
+            "retrievedUrls": [
+              "https://www.sciencedirect.com/science/article/pii/S1877056817303286",
+              "https://www.researchgate.net/publication/353356829_All-Inside_Double-Sided_Suture_Repair_for_Longitudinal_Meniscal_Tears",
+              "https://cdn.clinicaltrials.gov/large-docs/06/NCT04903106/Prot_000.pdf",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC13383924/",
+              "https://growsteady.me/meniscus-surgery-recovery-timeline",
+              "https://arthroscopyjournals.onlinelibrary.wiley.com/doi/10.1002/atn2.70038",
+              "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10653412",
+              "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10441273",
+              "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10905412"
+            ],
+            "engineQueries": [
+              "\"repair patient\" \"vertical longitudinal tear\" \"gated by tissue healing\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I found the source. The sentence appears word for word on a page called **\"Meniscus surgery recovery timeline, week by week\"** from a site called **Steady** (growsteady.me/meniscus-surgery-recovery-timeline).\n\nThe page says: \"A repair patient — particularly a vertical longitudinal tear — is gated by tissue healing: FWB at about four weeks, no deep flexion under load for sixteen weeks, return to sport closer to six months.\" It sits in the section titled \"what shapes recovery here.\" The page goes on to note that vertical longitudinal tears are the most repairable and get the most permissive timeline.\n\nThe page also says where its numbers come from. The four-week full weight-bearing (FWB) figure is based on a pooled mean: vertical longitudinal repairs are full weight-bearing by week four per the pooled mean (3.9 weeks); complex, horizontal, radial, or root repairs hold partial weight-bearing through week six. The six-month return to sport is based on a secondary summary by Bensa, which reports a pooled time of 5.6-5.8 months for repair; stable vertical tears clear at 4-6 months, while unstable radial or root repairs can extend to 9 months.",
+            "citedUrls": [
+              "https://growsteady.me/meniscus-surgery-recovery-timeline"
+            ],
+            "retrievedUrls": [
+              "https://www.sciencedirect.com/science/article/pii/S1877056817303286",
+              "https://www.researchgate.net/publication/353356829_All-Inside_Double-Sided_Suture_Repair_for_Longitudinal_Meniscal_Tears",
+              "https://cdn.clinicaltrials.gov/large-docs/06/NCT04903106/Prot_000.pdf",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC13383924/",
+              "https://growsteady.me/meniscus-surgery-recovery-timeline",
+              "https://arthroscopyjournals.onlinelibrary.wiley.com/doi/10.1002/atn2.70038",
+              "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10653412",
+              "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10441273",
+              "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10905412"
+            ],
+            "engineQueries": [
+              "\"repair patient\" \"vertical longitudinal tear\" \"gated by tissue healing\""
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R4_NATURAL",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/meniscus-surgery-recovery-timeline",
+        "query": "how long does meniscus surgery recovery take"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "It depends a lot on **which meniscus surgery you had**:\n\n- **Partial meniscectomy / trim:** often **2 to 6 weeks** for basic recovery, with some people returning to sports closer to **4 to 8 weeks**. ([my.clevelandclinic.org](https://my.clevelandclinic.org/health/treatments/21508-meniscus-surgery?utm_source=openai))\n- **Meniscus repair:** usually **longer**, often **3 to 6 months** or more, because the meniscus has to actually heal back together. Return to sports is often around **4 to 7 months**. ([orthoinfo.org](https://www.orthoinfo.org/bodypart/kneelower-leg/meniscus-tears/?utm_source=openai))\n\nA rough timeline:\n- **Walking/basic daily activity:** days to a few weeks, depending on the procedure and surgeon’s restrictions. After repair, weight-bearing may be limited for **0 to 6 weeks**. ([healthy.kaiserpermanente.org](https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.meniscus-surgery-recovery-time.te7372?utm_source=openai))\n- **Driving:** often about **1 to 3 weeks**, especially depending on whether it’s the right or left knee and whether you’re off narcotic pain meds. ([hss.edu](https://www.hss.edu/health-library/conditions-and-treatments/meniscus-surgery-meniscectomy?utm_source=openai))\n- **Desk work:** sometimes **1 to 2 weeks**, but longer if pain/swelling is significant.\n- **Heavy labor or sports:** usually **weeks to months**, especially after a repair. AAOS notes averages around **37 days off work after partial meniscectomy** and **55 days after meniscus repair**, though this varies a lot. ([aaos.org](https://www.aaos.org/globalassets/quality-and-practice-resources/acute-meniscal-pathology/plain-language-summary_amp.pdf?utm_source=openai))\n\nRecovery is slower if you also had:\n- **ACL surgery**\n- a **larger or more complex tear**\n- significant **arthritis**\n- ongoing swelling or limited motion\n\n**Call your surgeon promptly** if you have fever, worsening redness, calf pain, chest pain, trouble breathing, or pain/swelling that is suddenly getting worse, since those can be signs of complications after knee surgery. This is general educational info, not a diagnosis.  \n\nIf you want, I can give you a **procedure-specific timeline** for either:\n1. **meniscus repair**, or  \n2. **meniscus trim/meniscectomy**.",
+            "citedUrls": [
+              "https://my.clevelandclinic.org/health/treatments/21508-meniscus-surgery?utm_source=openai",
+              "https://www.orthoinfo.org/bodypart/kneelower-leg/meniscus-tears/?utm_source=openai",
+              "https://healthy.kaiserpermanente.org/health-wellness/health-encyclopedia/he.meniscus-surgery-recovery-time.te7372?utm_source=openai",
+              "https://www.hss.edu/health-library/conditions-and-treatments/meniscus-surgery-meniscectomy?utm_source=openai",
+              "https://www.aaos.org/globalassets/quality-and-practice-resources/acute-meniscal-pathology/plain-language-summary_amp.pdf?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "meniscus surgery recovery time official orthopedic guidance"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Recovery time depends a lot on **which meniscus surgery you had**:\n\n- **Partial meniscectomy**: often about **6 weeks** to recover, though some sources say **6 to 12 weeks** depending on the person and rehab. ([my.clevelandclinic.org](https://my.clevelandclinic.org/health/treatments/21508-meniscus-surgery?utm_source=openai))\n- **Meniscus repair**: usually longer, often **around 3 months**, and sometimes **up to 6 months** for fuller recovery or return to sports. ([my.clevelandclinic.org](https://my.clevelandclinic.org/health/treatments/21508-meniscus-surgery?utm_source=openai))\n- **Meniscus replacement/transplant**: recovery is typically **several months**, and return to intense sports can take **up to a year**. ([my.clevelandclinic.org](https://my.clevelandclinic.org/health/treatments/21508-meniscus-surgery?utm_source=openai))\n\nTypical milestones after surgery:\n- You may go home the **same day** after surgery. ([my.clevelandclinic.org](https://my.clevelandclinic.org/health/treatments/21508-meniscus-surgery?utm_source=openai))\n- After a **meniscectomy**, some weight-bearing may be possible **right away**, with gradual return to walking and light activity over the next few weeks. ([my.clevelandclinic.org](https://my.clevelandclinic.org/health/treatments/21508-meniscus-surgery?utm_source=openai))\n- After a **repair**, you’ll often need **crutches for at least a few weeks** and physical therapy for **several months**. ([my.clevelandclinic.org](https://my.clevelandclinic.org/health/treatments/21508-meniscus-surgery?utm_source=openai))\n\nSo the short answer is: **anywhere from a few weeks to a few months**, with **repair taking much longer than trimming/removal**. ([my.clevelandclinic.org](https://my.clevelandclinic.org/health/treatments/21508-meniscus-surgery?utm_source=openai))\n\nIf you want, I can also break it down by:\n1. **walking**,  \n2. **driving**,  \n3. **returning to work**, or  \n4. **returning to gym/sports**.",
+            "citedUrls": [
+              "https://my.clevelandclinic.org/health/treatments/21508-meniscus-surgery?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "AAOS meniscus surgery recovery timeline official"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "How long recovery takes mostly comes down to which surgery you have: trimming the torn part (partial meniscectomy) or stitching it back together (meniscus repair).\n\n**Partial meniscectomy (trimming): about 3–6 weeks**\n- The American Academy of Orthopaedic Surgeons estimates approximately 3 to 6 weeks of healing.\n- It typically allows immediate weight-bearing.\n- Patients often return to desk work within 1–2 weeks. Standing jobs typically take two to six weeks.\n- Driving is typically possible one to two weeks after surgery on the right knee, and sooner for the left knee if you drive an automatic.\n\n**Meniscus repair (stitching): about 3–6 months**\n- Rehab for a repair takes about 3 to 6 months.\n- Weight-bearing is usually restricted for two to six weeks to protect the stitches, so expect to use crutches for a month or more.\n- Driving usually takes four to six weeks or more, and standing jobs usually take two to three months.\n\n**Returning to sports**\n- A 2026 meta-analysis of athletes reported an average return to sport of about 2.1 months after meniscectomy and 5.8 months after repair.\n- For cutting and pivoting sports like basketball, soccer and tennis, players typically return at 3-4 months after meniscectomy, 6-9 months after repair.\n\n**Why a repair can be worth the wait:** Repair keeps the meniscus and lowers the risk of arthritis but takes longer to recover from. Removal gives a faster recovery but may increase the risk of joint wear over time.\n\nYour own timeline will also depend on how big the tear is, your age, whether you already have arthritis in the knee, and how closely you follow your physical therapy. Your surgeon and physiotherapist will clear you based on strength, swelling and confidence, not just time.",
+            "citedUrls": [
+              "https://www.wrs.group/latest/meniscus-surgery-recovery-repair-vs-meniscectomy/",
+              "https://spireknee.com.sg/recovery-timeline-after-meniscus-surgery-what-to-expect/",
+              "https://acibademinternational.com/blog/meniscus-surgery-recovery-time-repair-vs-removal-changes-everything/",
+              "https://pathwaysurgery.com/resources/blog/meniscus-surgery-recovery-time/",
+              "https://search.mskdoctors.com/doctors/ella-mcaleese/articles/meniscus-repair-vs-meniscus-removal-which-is-right-for-you"
+            ],
+            "retrievedUrls": [
+              "https://acibademinternational.com/blog/meniscus-surgery-recovery-time-repair-vs-removal-changes-everything/",
+              "https://search.mskdoctors.com/doctors/ella-mcaleese/articles/meniscus-repair-vs-meniscus-removal-which-is-right-for-you",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10931753/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10423315/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9926294/",
+              "https://www.wrs.group/latest/meniscus-surgery-recovery-repair-vs-meniscectomy/",
+              "https://spireknee.com.sg/recovery-timeline-after-meniscus-surgery-what-to-expect/",
+              "https://pathwaysurgery.com/resources/blog/meniscus-surgery-recovery-time/",
+              "https://www.jointbooklet.com/meniscus-surgery-recovery"
+            ],
+            "engineQueries": [
+              "meniscus surgery recovery time repair vs meniscectomy"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "How long it takes mostly depends on which surgery you have. If the surgeon trims out the torn piece (a partial meniscectomy), recovery takes weeks. If they stitch the tear back together (a meniscus repair), it takes months.\n\n**Partial meniscectomy (trimming)**\n- **Overall:** The American Academy of Orthopaedic Surgeons says healing takes approximately 3 to 6 weeks.\n- **Walking:** It typically allows immediate weight-bearing. People often use crutches only for comfort.\n- **Work:** People often return to desk work within 1-2 weeks. Standing jobs typically take two to six weeks.\n- **Driving:** Typically one to two weeks after a meniscectomy on the right knee, sooner for the left knee with an automatic.\n- **Sports:** Cycling and swimming typically resume fully by 6-8 weeks. Sports with cutting and pivoting, like basketball, soccer and tennis, usually resume at 3-4 months after meniscectomy.\n\n**Meniscus repair (stitching)**\n- **Overall:** Rehabilitation time for a meniscus repair is about 3 to 6 months.\n- **Walking:** Weight-bearing is usually restricted for two to six weeks to protect the stitches, so expect crutches for a month or more.\n- **Driving:** Four to six weeks or more.\n- **Work:** Physical jobs usually take two to three months after a repair.\n- **Sports:** Pivoting sports usually resume 6-9 months after repair. A 2026 analysis of athletes found the average return to sport was about 2.1 months after meniscectomy and 5.8 months after meniscal repair.\n\n**Why repair takes longer:** Stitched meniscus tissue mends slowly and must be protected while it does. The benefit is that repair offers the benefit of preserving the meniscus and reducing the risk of arthritis. Trimming means a faster recovery but may increase the risk of joint degeneration over time.\n\nThese numbers are averages. Your own timeline will also depend on how big the tear is, whether you have arthritis, other knee surgery done at the same time (like an ACL reconstruction), and how well you keep up with physical therapy. Your surgeon and physiotherapist clear you based on strength, swelling and confidence, as well as time.",
+            "citedUrls": [
+              "https://www.wrs.group/latest/meniscus-surgery-recovery-repair-vs-meniscectomy/",
+              "https://spireknee.com.sg/recovery-timeline-after-meniscus-surgery-what-to-expect/",
+              "https://acibademinternational.com/blog/meniscus-surgery-recovery-time-repair-vs-removal-changes-everything/",
+              "https://pathwaysurgery.com/resources/blog/meniscus-surgery-recovery-time/",
+              "https://search.mskdoctors.com/doctors/ella-mcaleese/articles/meniscus-repair-vs-meniscus-removal-which-is-right-for-you"
+            ],
+            "retrievedUrls": [
+              "https://acibademinternational.com/blog/meniscus-surgery-recovery-time-repair-vs-removal-changes-everything/",
+              "https://search.mskdoctors.com/doctors/ella-mcaleese/articles/meniscus-repair-vs-meniscus-removal-which-is-right-for-you",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10931753/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10423315/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9926294/",
+              "https://www.wrs.group/latest/meniscus-surgery-recovery-repair-vs-meniscectomy/",
+              "https://spireknee.com.sg/recovery-timeline-after-meniscus-surgery-what-to-expect/",
+              "https://pathwaysurgery.com/resources/blog/meniscus-surgery-recovery-time/",
+              "https://www.jointbooklet.com/meniscus-surgery-recovery"
+            ],
+            "engineQueries": [
+              "meniscus surgery recovery time repair vs meniscectomy"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R2_SITE_SCOPED",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/microdiscectomy-recovery-timeline",
+        "query": "site:growsteady.me lumbar-microdiscectomy"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Here’s the result for `site:growsteady.me lumbar-microdiscectomy`:\n\n**Most relevant page**\n- **Lumbar microdiscectomy recovery data: 4 measured pain points and 6 milestones · Steady** ([growsteady.me](https://growsteady.me/recovery-data/lumbar-microdiscectomy?utm_source=openai))\n\n**Other relevant Growsteady pages**\n- **Return to work after microdiscectomy: the documented timelines** ([growsteady.me](https://growsteady.me/microdiscectomy-recovery-timeline/return-to-work?utm_source=openai))\n- **Microdiscectomy recovery timeline — week 8** ([growsteady.me](https://growsteady.me/microdiscectomy-recovery-timeline/week/8?utm_source=openai))\n- **Microdiscectomy recovery timeline — week 26** ([growsteady.me](https://growsteady.me/microdiscectomy-recovery-timeline/week/26?utm_source=openai))\n- **Microdiscectomy recovery timeline — week 52** ([growsteady.me](https://growsteady.me/microdiscectomy-recovery-timeline/week/52?utm_source=openai))\n- **Recovery data index: Lumbar microdiscectomy section** ([growsteady.me](https://growsteady.me/recovery-data?utm_source=openai))\n\nIf you want, I can also:\n1. summarize the lumbar microdiscectomy page,\n2. extract all recovery milestones, or\n3. turn it into SEO keywords/meta titles.",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data/lumbar-microdiscectomy?utm_source=openai",
+              "https://growsteady.me/microdiscectomy-recovery-timeline/return-to-work?utm_source=openai",
+              "https://growsteady.me/microdiscectomy-recovery-timeline/week/8?utm_source=openai",
+              "https://growsteady.me/microdiscectomy-recovery-timeline/week/26?utm_source=openai",
+              "https://growsteady.me/microdiscectomy-recovery-timeline/week/52?utm_source=openai",
+              "https://growsteady.me/recovery-data?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me lumbar-microdiscectomy"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Here are the main results I found for `site:growsteady.me lumbar-microdiscectomy`:\n\n- **Lumbar microdiscectomy recovery data: 4 measured pain points and 6 milestones** — a Steady page summarizing published recovery data and rehab milestones for lumbar microdiscectomy. ([growsteady.me](https://growsteady.me/recovery-data/lumbar-microdiscectomy?utm_source=openai))\n- **Steady recovery page** — includes a link/path for **Lumbar microdiscectomy**. ([growsteady.me](https://growsteady.me/recovery?utm_source=openai))\n- **Steady homepage** — mentions a **microdiscectomy recovery timeline** among its procedure-specific timelines. ([growsteady.me](https://growsteady.me/?utm_source=openai))\n- **Recovery data index** — includes a **Lumbar microdiscectomy** section. ([growsteady.me](https://growsteady.me/recovery-data?utm_source=openai))\n- **Return to work after microdiscectomy** — a Steady page focused on documented return-to-work timelines. ([growsteady.me](https://growsteady.me/microdiscectomy-recovery-timeline/return-to-work?utm_source=openai))\n\nIf you want, I can also:\n1. summarize the **lumbar microdiscectomy page**,\n2. extract the **recovery timeline week by week**, or\n3. pull out **return-to-work / driving / lifting milestones** from the site.",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data/lumbar-microdiscectomy?utm_source=openai",
+              "https://growsteady.me/recovery?utm_source=openai",
+              "https://growsteady.me/?utm_source=openai",
+              "https://growsteady.me/recovery-data?utm_source=openai",
+              "https://growsteady.me/microdiscectomy-recovery-timeline/return-to-work?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me lumbar-microdiscectomy"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I found two pages on growsteady.me (a site called \"Steady\") about lumbar microdiscectomy recovery:\n\n**1. Microdiscectomy recovery timeline, week by week** (growsteady.me/microdiscectomy-recovery-timeline)\nThis page covers the typical leg pain trajectory, lifting restrictions, and when people get back to work and sport. It says that leg pain often goes away within hours of waking from anaesthesia. It also notes that back pain at the incision site is normal for the first 2-4 weeks and is usually well controlled with paracetamol and a short course of anti-inflammatories. Its FAQ answers:\n- **Driving:** Most protocols allow driving 1-2 weeks after surgery, as long as you're off narcotic pain medication and can sit comfortably for the trip.\n- **Lifting:** Most protocols don't allow lifting more than 5-10 lb for the first 6-8 weeks, then gradually add load back.\n- **Work:** People with desk jobs return at a pooled average of 3.9-5.7 weeks, according to a meta-analysis.\n\n**2. Recovery data index** (growsteady.me/recovery-data)\nThe microdiscectomy entry is rated confidence high, last reviewed 2026-06-08.\n- **Typical pain scores (out of 10):** 6.7 at week 0, 1 at week 8, 0.8 at week 26 and 1.1 at week 52.\n- **Milestones:** a walking program built up to 20-30 minutes (0-6 weeks), lifting restrictions lifted (6-8 weeks), return to running or sport (8-12 weeks, based on criteria), and full return to your original job (median 14-16 weeks, 85% by 26 weeks).\n- **Main source:** a systematic review and meta-analysis on return to work after lumbar microdiscectomy, which the site gives a reliability rating of 8/10.\n\nThese are average figures. Your surgeon's instructions for your own recovery should come first.",
+            "citedUrls": [
+              "https://growsteady.me/microdiscectomy-recovery-timeline",
+              "https://growsteady.me/recovery-data"
+            ],
+            "retrievedUrls": [
+              "https://growsteady.me/recovery-data",
+              "https://growsteady.me/microdiscectomy-recovery-timeline",
+              "https://en.wikipedia.org/wiki/Discectomy",
+              "https://en.wikipedia.org/wiki/Microsurgical_lumbar_laminoplasty",
+              "https://www.ncbi.nlm.nih.gov/books/NBK555984/",
+              "https://www.semanticscholar.org/topic/microdiscectomy/16242",
+              "https://www.voices.com/profile/southernrootsvo/medical-narration-micro-lumbar-disectomy",
+              "https://www.neurosurgery.columbia.edu/node/342",
+              "https://www.ldh.la.gov/assets/medicaid/MCPP/6.14.24/2/1884_LHCC_Lumbar_Spine_Surgery_2024_July_redlines.pdf"
+            ],
+            "engineQueries": [
+              "site:growsteady.me lumbar-microdiscectomy"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I couldn't find a page at the exact path growsteady.me/lumbar-microdiscectomy. The site does cover the surgery on two other pages: **/microdiscectomy-recovery-timeline** and the **/recovery-data** index.\n\n**1. Microdiscectomy recovery timeline (growsteady.me/microdiscectomy-recovery-timeline)**\nThis page describes lumbar microdiscectomy recovery, week by week: typical leg pain trajectory, the lifting restrictions, when you're back to work and sport. Main points:\n- **Leg pain:** It often goes away quickly. The leg pain often resolves within hours of waking from anaesthesia.\n- **Back pain at the incision:** Back pain at the incision site is a normal feature of the first 2-4 weeks and is usually well-controlled with paracetamol and a short course of anti-inflammatories.\n- **Driving:** Most protocols allow driving 1-2 weeks post-op, contingent on being off narcotic pain medication and being able to sit comfortably for the trip.\n- **Lifting:** Most protocols prohibit lifting more than 5-10 lb for the first 6-8 weeks, then progressively reintroduce loading.\n- **Work:** Sedentary work returns at a pooled mean of 3.9-5.7 weeks per the meta-analysis.\n\n**2. Recovery data index (growsteady.me/recovery-data)**\nThis page lists the lumbar microdiscectomy data with a rating of confidence high · last reviewed 2026-06-08.\n\nTypical pain by week (0–10 scale): Week 0: 6.7/10; Week 8: 1/10; Week 26: 0.8/10; Week 52: 1.1/10.\n\nMilestones:\n- Driving at about 1.5 weeks\n- A walking program that builds to 20–30 minutes\n- Return to work at about 3.9–5.7 weeks, depending on the job\n- Lifting restrictions lifted at 6–8 weeks\n- Running or sport at 8–12 weeks, once you meet set criteria\n- Full return to your original job at a median 14-16 weeks; 85% by 26 weeks\n\nThe return-to-work numbers come from a systematic review and meta-analysis, which the site rates 8/10 for reliability.\n\nThese are average timelines. Your surgeon's instructions should come first.",
+            "citedUrls": [
+              "https://growsteady.me/microdiscectomy-recovery-timeline",
+              "https://growsteady.me/recovery-data"
+            ],
+            "retrievedUrls": [
+              "https://growsteady.me/recovery-data",
+              "https://growsteady.me/microdiscectomy-recovery-timeline",
+              "https://en.wikipedia.org/wiki/Discectomy",
+              "https://en.wikipedia.org/wiki/Microsurgical_lumbar_laminoplasty",
+              "https://www.ncbi.nlm.nih.gov/books/NBK555984/",
+              "https://www.semanticscholar.org/topic/microdiscectomy/16242",
+              "https://www.voices.com/profile/southernrootsvo/medical-narration-micro-lumbar-disectomy",
+              "https://www.neurosurgery.columbia.edu/node/342",
+              "https://www.ldh.la.gov/assets/medicaid/MCPP/6.14.24/2/1884_LHCC_Lumbar_Spine_Surgery_2024_July_redlines.pdf"
+            ],
+            "engineQueries": [
+              "site:growsteady.me lumbar-microdiscectomy"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R3_VERBATIM",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/microdiscectomy-recovery-timeline",
+        "query": "Which website says the following, word for word? \"Microdiscectomy recovery timeline, week by week · Steady Steady Sign in recovery timeline · pain figures checked 2026-08-10 · last reviewed 2026-06-08 Microdiscectomy recovery timeline, week by week.\""
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "The wording appears on **Steady**, specifically its **Microdiscectomy recovery timeline** content on the `growsteady.me` website. The strongest match is the **Recovery Data / Lumbar microdiscectomy** page, which shows the same distinctive text fragments, including “Steady,” “Sign in,” “pain figures checked 2026-08-10,” “last reviewed 2026-06-08,” and “Microdiscectomy recovery timeline.” ([growsteady.me](https://growsteady.me/recovery-data/lumbar-microdiscectomy?utm_source=openai))\n\nSo the website is:\n\n**Steady (`growsteady.me`)** — likely the **Lumbar microdiscectomy recovery data** / **Microdiscectomy recovery timeline** page. ([growsteady.me](https://growsteady.me/recovery-data/lumbar-microdiscectomy?utm_source=openai))\n\nIf you want, I can also try to identify the **exact URL/page title** that contains that phrase word-for-word, or check whether it was pulled from a search snippet rather than visible page text.",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data/lumbar-microdiscectomy?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"Microdiscectomy recovery timeline, week by week · Steady Steady Sign in recovery timeline · pain figures checked 2026-08-10 · last reviewed 2026-06-08 Microdiscectomy recovery timeline, week by week.\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "The website appears to be **Steady**, specifically its **Lumbar microdiscectomy recovery data / Microdiscectomy recovery timeline** pages on `growsteady.me`. The exact phrasing is strongly matched by Steady’s microdiscectomy pages and index listings, which include:\n\n- “**Microdiscectomy recovery timeline**”\n- “**pain figures checked 2026-08-10**”\n- “**last reviewed 2026-06-08**” ([growsteady.me](https://growsteady.me/recovery-data/lumbar-microdiscectomy?utm_source=openai))\n\nMost likely source:\n- **Steady — Lumbar microdiscectomy recovery data** ([growsteady.me](https://growsteady.me/recovery-data/lumbar-microdiscectomy?utm_source=openai))\n\nRelated page in the same site/section:\n- **Steady — Recovery data index** listing “Microdiscectomy recovery timeline” under Lumbar microdiscectomy ([growsteady.me](https://growsteady.me/recovery-data?utm_source=openai))\n\nIf you want, I can also try to find the **exact page URL containing that full string verbatim** rather than the best match.",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data/lumbar-microdiscectomy?utm_source=openai",
+              "https://growsteady.me/recovery-data?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"Microdiscectomy recovery timeline, week by week\" \"pain figures checked 2026-08-10\" \"last reviewed 2026-06-08\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "That text comes from **Steady** (growsteady.me), on its page at https://growsteady.me/microdiscectomy-recovery-timeline.\n\nThe page title is \"Microdiscectomy recovery timeline, week by week.\" That matches the start of your quote, and \"· Steady\" is the site name added to the title. The page says lumbar microdiscectomy is one of the more visually dramatic recoveries on this site, because the leg pain often resolves within hours of waking from anaesthesia. It also lists weekly pain levels, for example around week 1, the typical band sits at 4.8/10 (range 3.9-5.8).\n\nI couldn't check the exact wording of the \"Sign in,\" \"pain figures checked 2026-08-10,\" and \"last reviewed 2026-06-08\" parts, because the search preview didn't show them. Those look like the page's navigation and date stamps. The title, heading and content all match, so this is almost certainly the source, but you can open the link to confirm the exact wording.",
+            "citedUrls": [
+              "https://growsteady.me/microdiscectomy-recovery-timeline"
+            ],
+            "retrievedUrls": [
+              "https://acibademinternational.com/blog/microdiscectomy-recovery-what-the-first-weeks-after-disc-surgery-look-like/",
+              "https://lispine.com/blog/microdiscectomy-recovery-guide/",
+              "https://growsteady.me/microdiscectomy-recovery-timeline",
+              "https://internationalspineandsports.com/microdiscectomy-recovery-timeline/",
+              "https://www.osistl.com/blog/29-life-after-microdiscectomy-a-realistic-timeline-for-your-recovery",
+              "https://michaelwheelermd.com/blog/microdiscectomy-recovery-timeline/",
+              "https://drnabajborah.com/3-weeks-post-microdiscectomy/",
+              "https://pathwaysurgery.com/resources/blog/herniated-disc-surgery-recovery-time/",
+              "https://www.osistl.com/blog/49-planning-your-comeback-what-to-really-expect-after-a-microdiscectomy"
+            ],
+            "engineQueries": [
+              "\"Microdiscectomy recovery timeline, week by week\" Steady"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "The text appears to come from **Steady**, at growsteady.me/microdiscectomy-recovery-timeline.\n\n**What matches:** The page title is \"Microdiscectomy recovery timeline, week by week\" followed by \"· Steady,\" which is the start of your passage. The page covers lumbar microdiscectomy recovery and gives typical pain levels by week. For example, it says \"Around week 1, the typical band sits at 4.8/10 (range 3.9-5.8).\" Those week-by-week pain numbers are probably the \"pain figures\" your text says were checked.\n\n**What I couldn't check:** The search result didn't show the middle of your text: the \"Sign in\" link, the \"recovery timeline\" label, or the dates \"pain figures checked 2026-08-10 · last reviewed 2026-06-08.\" That wording looks like page navigation and date labels, which search previews often leave out. So I can't confirm the full passage matches word for word. To be sure, open the page and look at the top.",
+            "citedUrls": [
+              "https://growsteady.me/microdiscectomy-recovery-timeline"
+            ],
+            "retrievedUrls": [
+              "https://acibademinternational.com/blog/microdiscectomy-recovery-what-the-first-weeks-after-disc-surgery-look-like/",
+              "https://lispine.com/blog/microdiscectomy-recovery-guide/",
+              "https://growsteady.me/microdiscectomy-recovery-timeline",
+              "https://internationalspineandsports.com/microdiscectomy-recovery-timeline/",
+              "https://www.osistl.com/blog/29-life-after-microdiscectomy-a-realistic-timeline-for-your-recovery",
+              "https://michaelwheelermd.com/blog/microdiscectomy-recovery-timeline/",
+              "https://drnabajborah.com/3-weeks-post-microdiscectomy/",
+              "https://pathwaysurgery.com/resources/blog/herniated-disc-surgery-recovery-time/",
+              "https://www.osistl.com/blog/49-planning-your-comeback-what-to-really-expect-after-a-microdiscectomy"
+            ],
+            "engineQueries": [
+              "\"Microdiscectomy recovery timeline, week by week\" Steady"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R4_NATURAL",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/microdiscectomy-recovery-timeline",
+        "query": "how long does microdiscectomy recovery take"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Recovery after a **microdiscectomy** is often measured in stages:\n\n- **Same day to 1 day:** many people go home the same day or the next day. ([roh.nhs.uk](https://roh.nhs.uk/services-information/spines/microdiscectomy-2?utm_source=openai))\n- **First 1–2 weeks:** walking is usually encouraged early, but soreness, fatigue, and stiffness are common. ([uclh.nhs.uk](https://www.uclh.nhs.uk/patients-and-visitors/patient-information-pages/single-level-lumbar-microdiscectomy?utm_source=openai))\n- **About 4–6 weeks:** many people can return to desk/light work around this point, depending on pain control and surgeon guidance. ([uclh.nhs.uk](https://www.uclh.nhs.uk/patients-and-visitors/patient-information-pages/single-level-lumbar-microdiscectomy?utm_source=openai))\n- **About 6 weeks:** many patients are back to a lot of normal daily activity. ([roh.nhs.uk](https://roh.nhs.uk/services-information/spines/microdiscectomy-2?utm_source=openai))\n- **Up to ~12 weeks:** fuller recovery and return to usual activities can take this long, especially for bending, lifting, sports, or physical jobs. ([nhs.uk](https://www.nhs.uk/tests-and-treatments/lumbar-decompression-surgery/?utm_source=openai))\n\nA simple rule of thumb: **initial recovery is usually a few weeks, but full recovery commonly takes 6–12 weeks.** ([uclh.nhs.uk](https://www.uclh.nhs.uk/patients-and-visitors/patient-information-pages/single-level-lumbar-microdiscectomy?utm_source=openai))\n\nRecovery can be longer if:\n- your job is physically demanding,\n- more than one spinal level was treated,\n- you had an open rather than minimally invasive procedure,\n- you still have nerve irritation before surgery. ([roh.nhs.uk](https://roh.nhs.uk/services-information/spines/microdiscectomy-2?utm_source=openai))\n\n**Call your surgeon urgently** if after surgery you develop worsening leg weakness, new numbness, fever, wound drainage/redness, or trouble controlling your bladder or bowels. ([nhs.uk](https://www.nhs.uk/tests-and-treatments/lumbar-decompression-surgery/?utm_source=openai))\n\nIf you want, I can also give you a **week-by-week microdiscectomy recovery timeline** or explain **when people usually drive, work out, or return to work**.",
+            "citedUrls": [
+              "https://roh.nhs.uk/services-information/spines/microdiscectomy-2?utm_source=openai",
+              "https://www.uclh.nhs.uk/patients-and-visitors/patient-information-pages/single-level-lumbar-microdiscectomy?utm_source=openai",
+              "https://www.nhs.uk/tests-and-treatments/lumbar-decompression-surgery/?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "microdiscectomy recovery time official hospital patient guide"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "A **typical microdiscectomy recovery** is:\n\n- **Same day to 1 day:** many people go home the same day or the next day. ([roh.nhs.uk](https://roh.nhs.uk/services-information/spines/microdiscectomy-2?utm_source=openai))\n- **First 1–2 weeks:** incision soreness and fatigue are common; walking is usually encouraged early. ([roh.nhs.uk](https://roh.nhs.uk/services-information/spines/microdiscectomy-2?utm_source=openai))\n- **About 4–6 weeks:** many people can return to work, especially if the job is not very physical. ([nhs.uk](https://www.nhs.uk/tests-and-treatments/lumbar-decompression-surgery/?utm_source=openai))\n- **Up to ~12 weeks:** many people are back to most usual activities by around 3 months. ([nhs.uk](https://www.nhs.uk/tests-and-treatments/lumbar-decompression-surgery/?utm_source=openai))\n\nA few important caveats:\n\n- Recovery depends on **how physical your job is**, your overall health, and whether you had any complications. ([nhs.uk](https://www.nhs.uk/tests-and-treatments/lumbar-decompression-surgery/?utm_source=openai))\n- **Leg pain** often improves quickly, sometimes right after surgery, but **numbness/tingling or weakness** can take longer and may improve gradually. ([uclh.nhs.uk](https://www.uclh.nhs.uk/patients-and-visitors/patient-information-pages/single-level-lumbar-microdiscectomy?utm_source=openai))\n- Follow your surgeon’s restrictions on **lifting, bending, twisting, driving, and exercise**, because that changes the timeline. ([nhs.uk](https://www.nhs.uk/tests-and-treatments/lumbar-decompression-surgery/?utm_source=openai))\n\n**Call your surgeon urgently** if you get new or worsening leg weakness, severe increasing pain, fever, wound redness/drainage, or trouble controlling your bladder or bowels. ([nhs.uk](https://www.nhs.uk/tests-and-treatments/lumbar-decompression-surgery/?utm_source=openai))\n\nIf you want, I can also give you a **week-by-week recovery timeline** or a **return-to-work / gym / driving guide**.",
+            "citedUrls": [
+              "https://roh.nhs.uk/services-information/spines/microdiscectomy-2?utm_source=openai",
+              "https://www.nhs.uk/tests-and-treatments/lumbar-decompression-surgery/?utm_source=openai",
+              "https://www.uclh.nhs.uk/patients-and-visitors/patient-information-pages/single-level-lumbar-microdiscectomy?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "microdiscectomy recovery timeline official patient education"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "Most people get back to normal daily activities **about 6 weeks** after a microdiscectomy. Heavy work and sports usually take **around 12 weeks**, and nerve symptoms like numbness can take months to fully clear.\n\n**Typical timeline**\n- **Day of surgery:** It's usually done as an outpatient procedure, so you go home the same day and walk that afternoon. The sharp leg pain (sciatica) that led to surgery is often much better within days.\n- **Weeks 1–2:** Expect some pain and fatigue in the days immediately following surgery. Your doctor may advise against driving for a week or two.\n- **Weeks 2–4:** About two weeks after a lumbar microdiscectomy, most patients begin to feel significantly less pain and have more energy. Desk or light work often returns in about two to four weeks. Physical therapy usually begins 2–4 weeks after surgery to strengthen core muscles and improve posture.\n- **Around 6 weeks:** Most everyday activities by around six weeks.\n- **Around 12 weeks:** Heavy labor or sports closer to twelve weeks.\n- **3–6 months:** Full nerve recovery, including leftover numbness and tingling, can take three to six months. If you had weakness going in, that's the slowest to come back. Slow nerve recovery doesn't mean the surgery failed.\n\n**Restrictions while you heal**\nThe main early rule is to limit bending, lifting, and twisting for the first 3–6 weeks. During that time, you should also avoid prolonged sitting longer than 20 to 30 minutes at a time, heavy lifting, repetitive bending and twisting, and high-impact activity. Even if you are feeling fine, it is crucial not to push yourself too hard until you've fully healed.\n\nHow fast you recover depends on your overall health, the kind of work you do, and how closely you stick to your rehab plan. Your surgeon's instructions should come before any general timeline.",
+            "citedUrls": [
+              "https://empirespineandpain.com/pain-management/microdiscectomy-procedure-recovery-success/",
+              "https://www.hoagorthopedicinstitute.com/care-services/clinical-specialties/spine/treatments/microdiscectomy/",
+              "https://www.osistl.com/blog/realistic-recovery-time-after-microdiscectomy-surgery",
+              "https://michaelwheelermd.com/blog/microdiscectomy-recovery-timeline/"
+            ],
+            "retrievedUrls": [
+              "https://www.hoagorthopedicinstitute.com/care-services/clinical-specialties/spine/treatments/microdiscectomy/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12434636/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10467023/",
+              "https://www.osistl.com/blog/realistic-recovery-time-after-microdiscectomy-surgery",
+              "https://www.osistl.com/blog/recovery-time-after-microdiscectomy-what-to-expect",
+              "https://empirespineandpain.com/pain-management/microdiscectomy-procedure-recovery-success/",
+              "https://www.osistl.com/blog/29-life-after-microdiscectomy-a-realistic-timeline-for-your-recovery",
+              "https://www.osistl.com/blog/how-long-does-recovery-take-after-microdiscectomy-",
+              "https://michaelwheelermd.com/blog/microdiscectomy-recovery-timeline/"
+            ],
+            "engineQueries": [
+              "microdiscectomy recovery time"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "Most people get back to normal daily activities in about **6 to 8 weeks**. Heavy physical work and sports usually take about 3 months, and any leftover nerve symptoms can take longer to clear. A rough timeline:\n\n**The first few days**\n- It's usually done as an outpatient surgery, so you go home the same day and walk that afternoon.\n- The sharp leg pain (sciatica) that led to surgery is often much better within days. Soreness around the incision is normal.\n\n**Weeks 1–4**\n- Your doctor may advise against driving for a week or two.\n- For about the first four to six weeks, avoid sitting for more than 20 to 30 minutes at a time, heavy lifting, repeated bending and twisting, and high-impact activity.\n- About two weeks after surgery, most patients begin to feel significantly less pain and have more energy.\n- Physical therapy usually begins 2–4 weeks after surgery to strengthen core muscles and improve posture.\n- Desk or light work often resumes in about two to four weeks.\n\n**Around 6 weeks**\n- It normally takes about six weeks to recover completely from a microdiscectomy, and most everyday activities are back by this point.\n\n**Around 12 weeks**\n- Heavy labor or sports usually come back closer to twelve weeks. Some sources say full recovery, including high-impact activities, usually occurs by 3–6 months.\n\n**Nerve symptoms can take longer**\n- Full nerve recovery, including leftover numbness and tingling, can take three to six months. If you had weakness before surgery, that's usually the slowest to come back. Slow nerve recovery isn't a sign the surgery failed.\n\nYour own timeline depends on your overall health, how physical your job is, and how well you stick to the restrictions and rehab. Follow your surgeon's specific instructions. Even if you feel fine early on, don't push it too soon, because overdoing it can lead to re-herniation.",
+            "citedUrls": [
+              "https://empirespineandpain.com/pain-management/microdiscectomy-procedure-recovery-success/",
+              "https://www.hoagorthopedicinstitute.com/care-services/clinical-specialties/spine/treatments/microdiscectomy/",
+              "https://michaelwheelermd.com/blog/microdiscectomy-recovery-timeline/",
+              "https://www.osistl.com/blog/realistic-recovery-time-after-microdiscectomy-surgery",
+              "https://www.osistl.com/blog/29-life-after-microdiscectomy-a-realistic-timeline-for-your-recovery"
+            ],
+            "retrievedUrls": [
+              "https://www.hoagorthopedicinstitute.com/care-services/clinical-specialties/spine/treatments/microdiscectomy/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12434636/",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10467023/",
+              "https://www.osistl.com/blog/realistic-recovery-time-after-microdiscectomy-surgery",
+              "https://www.osistl.com/blog/recovery-time-after-microdiscectomy-what-to-expect",
+              "https://empirespineandpain.com/pain-management/microdiscectomy-procedure-recovery-success/",
+              "https://www.osistl.com/blog/29-life-after-microdiscectomy-a-realistic-timeline-for-your-recovery",
+              "https://www.osistl.com/blog/how-long-does-recovery-take-after-microdiscectomy-",
+              "https://michaelwheelermd.com/blog/microdiscectomy-recovery-timeline/"
+            ],
+            "engineQueries": [
+              "microdiscectomy recovery time"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R2_SITE_SCOPED",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+        "query": "site:growsteady.me shoulder-labral-repair"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Here are the relevant results I found on **growsteady.me** for **shoulder-labral-repair**:\n\n- **Shoulder labral repair recovery timeline** — the main timeline page. ([growsteady.me](https://growsteady.me/shoulder-labral-repair-recovery-timeline?utm_source=openai))\n- **Shoulder labral / Bankart repair recovery data** — data page with measured pain points and milestones from cited studies. ([growsteady.me](https://growsteady.me/recovery-data/shoulder-labral-repair?utm_source=openai))\n- **Labral repair return to work: desk at 2.5 weeks** — a specific return-to-work page. ([growsteady.me](https://growsteady.me/shoulder-labral-repair-recovery-timeline/return-to-work?utm_source=openai))\n- **Recovery data index** — includes the shoulder labral / Bankart repair entry within the broader dataset. ([growsteady.me](https://growsteady.me/recovery-data?utm_source=openai))\n\nIf you want, I can also:\n1. summarize the **shoulder labral repair timeline**,  \n2. extract the **return-to-work / return-to-sport milestones**, or  \n3. pull out the **study-backed pain/recovery numbers** from those pages.",
+            "citedUrls": [
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline?utm_source=openai",
+              "https://growsteady.me/recovery-data/shoulder-labral-repair?utm_source=openai",
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline/return-to-work?utm_source=openai",
+              "https://growsteady.me/recovery-data?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me shoulder-labral-repair"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Here’s the main result for `site:growsteady.me shoulder-labral-repair`:\n\n- **Shoulder labral / Bankart repair recovery data** — growsteady.me/recovery-data/shoulder-labral-repair. It appears to be Steady’s structured recovery-data page for shoulder labral repair, with measured pain points, milestones, cited studies, and a citation block. ([growsteady.me](https://growsteady.me/recovery-data/shoulder-labral-repair?utm_source=openai))\n- There is also a **Shoulder labral repair recovery timeline** page at growsteady.me/shoulder-labral-repair-recovery-timeline. ([growsteady.me](https://growsteady.me/shoulder-labral-repair-recovery-timeline?utm_source=openai))\n\nRelated pages on the same site:\n- **Return to work** subpage for shoulder labral repair. ([growsteady.me](https://growsteady.me/shoulder-labral-repair-recovery-timeline/return-to-work?utm_source=openai))\n- The site homepage and recovery hub both list **Shoulder labral repair recovery timeline** among procedures. ([growsteady.me](https://growsteady.me/?utm_source=openai))\n\nIf you want, I can also:\n1. summarize the shoulder labral repair page,\n2. extract the milestones/pain timeline, or\n3. compare it with standard post-op protocols.",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data/shoulder-labral-repair?utm_source=openai",
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline?utm_source=openai",
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline/return-to-work?utm_source=openai",
+              "https://growsteady.me/?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me shoulder-labral-repair"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "The closest match on growsteady.me is the **Shoulder labral repair recovery timeline** page: https://growsteady.me/shoulder-labral-repair-recovery-timeline\n\n**What's on it:**\n- It's a week-by-week guide to arthroscopic Bankart and shoulder labral repair recovery: typical pain, sling and ER restrictions, return to sport. It was last reviewed 2026-06-08.\n- The page says that Arthroscopic Bankart and labral repairs sit in a slightly thinner part of the evidence base than the larger shoulder operations. The site's data index rates its confidence for this procedure as medium.\n- **What changes the timeline:** One factor is whether the repair was for primary instability or revision — primary repairs follow the schedule below; revisions and complex labral patterns often get a longer protected phase.\n- **Sling:** You typically wear it for about 4-6 weeks.\n- **External rotation (turning the arm outward):** External rotation is the dominant restriction in this window, because forced external rotation directly stresses the anterior labral repair.\n- **Sources listed:** NSAIDs vs opioids after arthroscopic Bankart repair: RCT (n=80, VAS trajectory), a review of 30 physical therapy protocols for Bankart repair, and a prospective study on returning to work.\n- The page also links to a separate article on returning to work after labral repair.\n\n**Related pages on the site:**\n- The recovery data index (https://growsteady.me/recovery-data) has tables of pain by week for this procedure and others.\n- There are similar timelines for rotator cuff repair and shoulder replacement.\n\nFor the exact week-by-week pain numbers and milestones, open the page directly. Your surgeon's own rehab plan should come before these general timelines.",
+            "citedUrls": [
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+              "https://growsteady.me/recovery-data"
+            ],
+            "retrievedUrls": [
+              "https://growsteady.me/shoulder-replacement-recovery-timeline",
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+              "https://growsteady.me/recovery-data",
+              "https://en.wikipedia.org/wiki/Bankart_repair",
+              "https://growsteady.me/hip-arthroscopy-recovery-timeline",
+              "https://growsteady.me/gluteus-medius-repair-recovery-timeline",
+              "https://pure.psu.edu/en/publications/biomechanics-of-the-bankart-repair-the-relationship-between-gleno/",
+              "https://patents.justia.com/patent/5624446"
+            ],
+            "engineQueries": [
+              "site:growsteady.me shoulder-labral-repair"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I found the shoulder labral repair page on growsteady.me: **[Shoulder labral repair recovery timeline · Steady](https://growsteady.me/shoulder-labral-repair-recovery-timeline)**\n\n**What the page covers:** It describes week-by-week recovery after arthroscopic Bankart and shoulder labral repair, including typical pain, sling and ER restrictions, and return to sport. The site says that Arthroscopic Bankart and labral repairs sit in a slightly thinner part of the evidence base than the larger shoulder operations.\n\n**Main points:**\n- **Primary repair vs. revision:** primary repairs follow the schedule below; revisions and complex labral patterns often get a longer protected phase.\n- **Sling:** You wear it for about 4-6 weeks.\n- **Passive range of motion:** This typically begins in the first one or two weeks per most protocols, with a physiotherapist supervising.\n- **Limits on external rotation (turning the arm outward):** These last a long time because forced external rotation directly stresses the anterior labral repair.\n- **Pain in the first week:** The site's recovery data index lists typical pain of 5.6/10 at week 0, 3.9/10 around day 4, and 2.7/10 by week 1, measured on a 0–10 scale. The data is marked confidence medium · last reviewed 2026-06-08.\n- **Sources:** These include a review of 30 physical therapy protocols for arthroscopic Bankart repair (the site rates its reliability 7.5/10) and a prospective study tracking return to work after the surgery (rated 7/10).\n\nThe page also links to a related article on return to work after shoulder labral repair. The full milestone table and later-phase details, like the return-to-sport timing, weren't in the search results, so you'd need to open the page for those.\n\nThis is general information. Your surgeon's own protocol should come first.",
+            "citedUrls": [
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+              "https://growsteady.me/recovery-data"
+            ],
+            "retrievedUrls": [
+              "https://growsteady.me/shoulder-replacement-recovery-timeline",
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+              "https://growsteady.me/recovery-data",
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+              "https://growsteady.me/hip-arthroscopy-recovery-timeline",
+              "https://growsteady.me/gluteus-medius-repair-recovery-timeline",
+              "https://growsteady.me/acl-recovery-timeline",
+              "https://growsteady.me/achilles-surgery-recovery-timeline",
+              "https://growsteady.me/meniscus-surgery-recovery-timeline"
+            ],
+            "engineQueries": [
+              "site:growsteady.me shoulder labral repair"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R3_VERBATIM",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+        "query": "Which website says the following, word for word? \"Shoulder labral repair recovery timeline · Steady Steady Sign in recovery timeline · pain figures checked 2026-08-10 · last reviewed 2026-06-08 Shoulder labral repair recovery timeline, week by week.\""
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "The wording appears on **Steady**’s website, on its **“Shoulder labral repair recovery timeline”** page at growsteady.me. Search results and Steady’s indexed recovery pages show the same distinctive text string, including “pain figures checked 2026-08-10,” “last reviewed 2026-06-08,” and “Shoulder labral repair recovery timeline, week by week.” ([growsteady.me](https://growsteady.me/shoulder-labral-repair-recovery-timeline/return-to-work?utm_source=openai))\n\nIf you want, I can also help identify the **exact page title and URL path** that matches that snippet most closely.",
+            "citedUrls": [
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline/return-to-work?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"Shoulder labral repair recovery timeline · Steady Steady Sign in recovery timeline · pain figures checked 2026-08-10 · last reviewed 2026-06-08 Shoulder labral repair recovery timeline, week by week.\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "The quoted text appears to be from **Steady**, on its page **“Shoulder labral repair recovery timeline”** at **growsteady.me**. The search results show that exact page title and matching surrounding text, including “pain figures checked 2026-08-10,” “last reviewed 2026-06-08,” and “Shoulder labral repair recovery timeline, week by week.” ([growsteady.me](https://growsteady.me/shoulder-labral-repair-recovery-timeline?utm_source=openai))\n\nIf you want, I can also help identify the **exact URL** or check whether that wording appears anywhere else verbatim.",
+            "citedUrls": [
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"Shoulder labral repair recovery timeline · Steady Steady Sign in recovery timeline · pain figures checked 2026-08-10 · last reviewed 2026-06-08 Shoulder labral repair recovery timeline, week by week.\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "The text appears to come from **Steady (growsteady.me)**, on its page at https://growsteady.me/shoulder-labral-repair-recovery-timeline.\n\nTwo parts of your quote match the page exactly. The page title is \"Shoulder labral repair recovery timeline, week by week.\", and the browser title is \"Shoulder labral repair recovery timeline · Steady\". The rest of your text (\"Sign in,\" \"recovery timeline,\" and the \"pain figures checked 2026-08-10 · last reviewed 2026-06-08\" date stamps) looks like menu and header text from the same page. Those lines weren't in the search results I got back, so I can't confirm them word for word.\n\nThe page covers arthroscopic Bankart and shoulder labral repair recovery, week by week: typical pain, sling and ER restrictions, return to sport. If you need an exact match for the date stamps, open the link and check.",
+            "citedUrls": [
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline"
+            ],
+            "retrievedUrls": [
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+              "https://plancherortho.com/specialties/labral-repair/",
+              "https://orthopedicnewjersey.com/labral-tear-surgery-recovery-a-complete-timeline-and-patient-guide/",
+              "https://raleighboneandjoint.com/news/how-long-does-labrum-tear-recovery-take/",
+              "https://www.surgerycenterdirectory.com/blog/shoulder-arthroscopy-recovery-timeline/",
+              "https://evolveny.com/blogposts/labrum-tear-recovery-guide-2026-2",
+              "https://josephlamplotmd.com/wp-content/uploads/2025/08/Patient-Pathway-Bankart-Repair-8-2-25.pdf",
+              "https://www.contemporaryrehabservices.com/post/shoulder-labrum-physical-therapy",
+              "https://brainscape.com/flashcards/post-op-shoulder-8820502/packs/14865536"
+            ],
+            "engineQueries": [
+              "\"Steady\" shoulder labral repair recovery timeline week by week"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "The text comes from **Steady** (growsteady.me), on its page at https://growsteady.me/shoulder-labral-repair-recovery-timeline.\n\nThe page title is \"Shoulder labral repair recovery timeline, week by week.\", and its browser tab reads \"Shoulder labral repair recovery timeline · Steady.\" Both match your quote. The page covers the usual recovery milestones, including a sling for about five weeks (the protocol-pooled mean across 30 published Bankart protocols is 4.8 weeks); a no-forced-external-rotation restriction for roughly three months.\n\nThe search result didn't show the \"Steady Sign in,\" \"pain figures checked 2026-08-10,\" or \"last reviewed 2026-06-08\" parts of your quote. Those look like the site's navigation bar and review-date labels, which often don't show up in search snippets. The page title and heading match exactly, so this is almost certainly the source, but I couldn't confirm the full string word for word. You can open the link to check those dates.",
+            "citedUrls": [
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline"
+            ],
+            "retrievedUrls": [
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+              "https://www.physiodc.com/managing-expectations-when-recovering-from-a-labral-repair/",
+              "https://orthopedicnewjersey.com/labral-tear-surgery-recovery-a-complete-timeline-and-patient-guide/",
+              "https://www.jointpreservationinstitute.com/pdf/shoulder-labral-protocol.pdf",
+              "https://www.mdorthospecialists.com/procedures/arthroscopic-labral-repair/",
+              "https://josephlamplotmd.com/wp-content/uploads/2025/08/Patient-Pathway-Bankart-Repair-8-2-25.pdf",
+              "https://evolveny.com/blogposts/labrum-tear-recovery-guide-2026",
+              "https://jo.institute/recovery/shoulder-stabilization",
+              "https://www.armdocs.com/rehab/guidelines-for-rehabilitation-after-labral-repair"
+            ],
+            "engineQueries": [
+              "\"Shoulder labral repair recovery timeline\" Steady"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R4_NATURAL",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+        "query": "how long does shoulder labral repair recovery take"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Typically, **shoulder labral repair recovery takes about 4 to 6 months for basic recovery**, and **6 to 12 months for full recovery**, especially if you play sports or do overhead work. ([opti-prod.hss.edu](https://opti-prod.hss.edu/health-library/conditions-and-treatments/shoulder-labrum-tear?utm_source=openai))\n\nA common timeline looks like this:\n\n- **First 4 to 6 weeks:** sling most of the time; focus is protecting the repair. ([opti-prod.hss.edu](https://opti-prod.hss.edu/health-library/conditions-and-treatments/shoulder-labrum-tear?utm_source=openai))\n- **Weeks 2 to 6:** physical therapy usually starts early, with mostly passive motion at first. ([hss.edu](https://www.hss.edu/files/pre-op-preparing-for-your-shoulder-labrum-repair.pdf?utm_source=openai))\n- **Weeks 6 to 12:** more active motion, then light strengthening. ([hss.edu](https://www.hss.edu/files/pre-op-preparing-for-your-shoulder-labrum-repair.pdf?utm_source=openai))\n- **Around 3 to 4 months:** many people can do more normal daily activity, but not full sport yet. This is an inference from rehab milestones and general recovery guidance. ([hss.edu](https://www.hss.edu/files/pre-op-preparing-for-your-shoulder-labrum-repair.pdf?utm_source=openai))\n- **Around 6 months:** many patients are close to recovered; some athletes return around this point. ([hss.edu](https://www.hss.edu/files/pre-op-preparing-for-your-shoulder-labrum-repair.pdf?utm_source=openai))\n- **6 to 12 months:** full return to overhead/throwing sports may take this long, with overhead throwers often taking the longest. ([opti-prod.hss.edu](https://opti-prod.hss.edu/health-library/conditions-and-treatments/shoulder-labrum-tear?utm_source=openai))\n\nRecovery depends on:\n- **Type of tear** (SLAP vs. Bankart, etc.). ([opti-prod.hss.edu](https://opti-prod.hss.edu/health-library/conditions-and-treatments/shoulder-labrum-tear?utm_source=openai))\n- **Arthroscopic vs. open surgery**; arthroscopic repair usually has shorter recovery and less pain. ([opti-prod.hss.edu](https://opti-prod.hss.edu/health-library/conditions-and-treatments/shoulder-labrum-tear?utm_source=openai))\n- **Your age, tissue quality, and whether this was from dislocation/instability.** ([opti-prod.hss.edu](https://opti-prod.hss.edu/health-library/conditions-and-treatments/shoulder-labrum-tear?utm_source=openai))\n- **How closely you follow PT restrictions.** ([hss.edu](https://www.hss.edu/files/pre-op-preparing-for-your-shoulder-labrum-repair.pdf?utm_source=openai))\n\nIf you want, I can also give you a **week-by-week recovery timeline** or explain **when people can drive, work, lift, sleep normally, and return to the gym**.",
+            "citedUrls": [
+              "https://opti-prod.hss.edu/health-library/conditions-and-treatments/shoulder-labrum-tear?utm_source=openai",
+              "https://www.hss.edu/files/pre-op-preparing-for-your-shoulder-labrum-repair.pdf?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "AAOS shoulder labral repair recovery timeline"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Usually **basic recovery takes a few months, and full recovery often takes 4–6 months** after shoulder labral repair, though it varies by the type of tear repaired, whether it was a SLAP vs. Bankart/posterior repair, your age, tissue quality, and how rehab progresses. Multiple orthopedic and hospital sources describe recovery in the **3–5 month** range, with many patients needing **about 6 weeks in a sling** and then gradual physical therapy. ([durhamhandtoshoulder.com](https://www.durhamhandtoshoulder.com/pdf/pre-op-protocols/arthroscopic-labral-repair.pdf?utm_source=openai))\n\nA typical timeline looks like this:\n- **0–6 weeks:** sling/immobilization, protect the repair, limited shoulder use. ([wexnermedical.osu.edu](https://wexnermedical.osu.edu/orthopedics/shoulder/slap-tear?utm_source=openai))\n- **2–6 weeks:** start gentle or passive PT, depending on surgeon protocol. ([wexnermedical.osu.edu](https://wexnermedical.osu.edu/orthopedics/shoulder/slap-tear?utm_source=openai))\n- **6–12 weeks:** gradually regain motion and begin more active strengthening. ([jeffreybergmd.com](https://www.jeffreybergmd.com/patient-documents/Shoulder/Labral-Repair/Shoulder-Repair-Recovery-Timeline.pdf?utm_source=openai))\n- **Around 3–4 months:** many people are doing normal daily activities much better, but still are not “100%.” ([rileywilliamsmd.com](https://rileywilliamsmd.com/our-patients/page/6/?utm_source=openai))\n- **Around 4–6 months:** many patients are cleared for heavier lifting, sports, or more demanding activity if strength and range of motion have returned. ([hopkinsmedicine.org](https://www.hopkinsmedicine.org/health/conditions-and-diseases/shoulder-labrum-tear?utm_source=openai))\n\nA few important caveats:\n- **Return to desk work** may be as soon as **1–2 weeks**, depending on pain, sling use, and whether it’s your dominant arm.\n- **Manual labor, overhead work, weight training, and contact sports** often take **4–6+ months**.\n- If you also had other procedures done—like **biceps tenodesis, remplissage, or rotator cuff work**—recovery can be longer. This is an inference based on how added procedures increase protection/rehab needs. ([smogshoulder.com](https://www.smogshoulder.com/faqs.html?utm_source=openai))\n\nIf you want, I can give you a **week-by-week recovery timeline** or tailor it to **SLAP repair, Bankart repair, or posterior labral repair**.",
+            "citedUrls": [
+              "https://www.durhamhandtoshoulder.com/pdf/pre-op-protocols/arthroscopic-labral-repair.pdf?utm_source=openai",
+              "https://wexnermedical.osu.edu/orthopedics/shoulder/slap-tear?utm_source=openai",
+              "https://www.jeffreybergmd.com/patient-documents/Shoulder/Labral-Repair/Shoulder-Repair-Recovery-Timeline.pdf?utm_source=openai",
+              "https://rileywilliamsmd.com/our-patients/page/6/?utm_source=openai",
+              "https://www.hopkinsmedicine.org/health/conditions-and-diseases/shoulder-labrum-tear?utm_source=openai",
+              "https://www.smogshoulder.com/faqs.html?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "shoulder labral repair recovery timeline postoperative rehabilitation patient information"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "Most people get back to full normal activity **about 4 to 6 months** after shoulder labral repair. Athletes, especially those in overhead or contact sports, often need **6 to 12 months**. Full recovery after shoulder labrum surgery takes 4-6 months for most patients, with athletes often requiring 6-12 months depending on their sport's demands.\n\n**Typical timeline**\n\n- **Weeks 0–6 (protection):** The shoulder is immobilized in a sling for 4-6 weeks to protect the surgical repair while the labrum heals to the bone. In this phase you only do passive range of motion, which means you should not reach in any direction or use your arm to assist with lifting or daily activities. Physical therapy often begins 3-4 days post-op with gentle exercises.\n- **Around 6 weeks:** This is when you begin active range of motion. Healing has progressed enough that you can safely reach away from your body with your arm, but you should still not be lifting any heavy weight. Most patients can return to light activities, such as driving, after 6-8 weeks.\n- **Months 2–4:** Months 2-4 involve rebuilding your shoulder's strength and range of motion. Plan on being in therapy for 3-4 months.\n- **Returning to work:** If your job involves heavy lifting or manual labor, you may need to wait 3-6 months before returning to work.\n- **Returning to sports:** Contact, collision, and overhead sports commonly require six months or longer, and competitive throwing may take nine to twelve months.\n\n**What affects how long it takes**\n\n- **Where the tear is and how complex it is:** Simple anterior labral tears heal more predictably than complex 360-degree tears or SLAP lesions involving the biceps attachment.\n- **Your age, health, and how fit you were before surgery:** Age, overall health, and pre-surgery conditioning also play roles in healing speed.\n- **Sticking to your rehab plan:** Rushing this phase is the most common cause of repair failure.\n\nThese timeframes are estimates. Your surgeon will decide when you're cleared for each stage based on how well the shoulder has healed and what your strength and motion tests show. Your own protocol may differ depending on the type of repair you had.",
+            "citedUrls": [
+              "https://bullcitypt.com/shoulder-labral-repair-physical-therapy/",
+              "https://www.orthovirginia.com/blog/what-to-expect-following-a-shoulder-labral-repair/",
+              "https://magicvalleyorthopedics.com/how-long-does-it-take-to-recover-from-shoulder-surgery/",
+              "https://www.mdorthospecialists.com/procedures/arthroscopic-labral-repair/",
+              "https://bullcitypt.com/shoulder-labral-repair-post-surgical-physical-therapy/"
+            ],
+            "retrievedUrls": [
+              "https://www.orthovirginia.com/blog/what-to-expect-following-a-shoulder-labral-repair/",
+              "https://commonsclinic.com/the-ultimate-guide-to-labrum-repair-surgery-shoulder/",
+              "https://bullcitypt.com/shoulder-labral-repair-post-surgical-physical-therapy/",
+              "https://www.mdorthospecialists.com/procedures/arthroscopic-labral-repair/",
+              "https://en.wikipedia.org/wiki/Shoulder_surgery",
+              "https://bullcitypt.com/shoulder-labral-repair-physical-therapy/",
+              "https://briancapognamd.com/shoulder-labral-repair-surgery-what-you-need-to-know-before-and-after/",
+              "https://magicvalleyorthopedics.com/how-long-does-it-take-to-recover-from-shoulder-surgery/",
+              "https://www.totalorthosportsmed.com/blog/shoulder-labrum-surgery/"
+            ],
+            "engineQueries": [
+              "shoulder labral repair surgery recovery timeline"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "Most people get back to full normal activity **about 4 to 6 months** after shoulder labral repair. Athletes usually need **6 to 12 months**, depending on what their sport asks of the shoulder. Full recovery after shoulder labrum surgery takes 4-6 months for most patients, with athletes often requiring 6-12 months depending on their sport's demands.\n\n**Typical timeline**\n\n- **Weeks 0–6 (protecting the repair):** Your shoulder will be immobilized in a sling for 4-6 weeks to protect the surgical repair while the labrum heals to the bone. At this stage, therapy is usually passive range of motion only. This means you should not reach in any direction or use your arm to assist with lifting or daily activities.\n- **Around 6 weeks:** This is when you begin performing active range of motion (AROM). You should still not be lifting any heavy weight.\n- **Months 2–4:** Months 2-4 involve rebuilding your shoulder's strength and range of motion. You may regain full shoulder mobility within 3 months. Plan on physical therapy for 3–4 months in total.\n- **Months 3–4:** Many people go back to the gym and light sports. 6+ months: Full return to competitive sports\n- **6–12 months:** Contact, collision, and overhead sports commonly require six months or longer, and competitive throwing may take nine to twelve months.\n\n**Returning to work:** It depends on your job. If your job involves heavy lifting or manual labor, you may need to wait 3-6 months before returning to work.\n\n**What affects how long it takes**\n- **Type of tear:** Simple anterior labral tears heal more predictably than complex 360-degree tears or SLAP lesions involving the biceps attachment.\n- **Your health:** Age, overall health, and pre-surgery conditioning also play roles in healing speed.\n- **Doing your rehab properly:** Pushing too hard too early is risky. Rushing this phase is the most common cause of repair failure.\n\nThese dates are only rough guides. Return requires adequate healing, pain-free functional motion, strength, stability, and successful sport- or work-specific testing. Follow the plan from your surgeon and physical therapist, since protocols differ by procedure (for example, Bankart versus SLAP repair).",
+            "citedUrls": [
+              "https://bullcitypt.com/shoulder-labral-repair-physical-therapy/",
+              "https://www.orthovirginia.com/blog/what-to-expect-following-a-shoulder-labral-repair/",
+              "https://www.totalorthosportsmed.com/blog/shoulder-labrum-surgery/",
+              "https://commonsclinic.com/the-ultimate-guide-to-labrum-repair-surgery-shoulder/",
+              "https://www.mdorthospecialists.com/procedures/arthroscopic-labral-repair/",
+              "https://magicvalleyorthopedics.com/how-long-does-it-take-to-recover-from-shoulder-surgery/",
+              "https://bullcitypt.com/shoulder-labral-repair-post-surgical-physical-therapy/"
+            ],
+            "retrievedUrls": [
+              "https://www.orthovirginia.com/blog/what-to-expect-following-a-shoulder-labral-repair/",
+              "https://commonsclinic.com/the-ultimate-guide-to-labrum-repair-surgery-shoulder/",
+              "https://bullcitypt.com/shoulder-labral-repair-post-surgical-physical-therapy/",
+              "https://www.mdorthospecialists.com/procedures/arthroscopic-labral-repair/",
+              "https://en.wikipedia.org/wiki/Shoulder_surgery",
+              "https://bullcitypt.com/shoulder-labral-repair-physical-therapy/",
+              "https://briancapognamd.com/shoulder-labral-repair-surgery-what-you-need-to-know-before-and-after/",
+              "https://magicvalleyorthopedics.com/how-long-does-it-take-to-recover-from-shoulder-surgery/",
+              "https://www.totalorthosportsmed.com/blog/shoulder-labrum-surgery/"
+            ],
+            "engineQueries": [
+              "shoulder labral repair surgery recovery timeline"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R2_SITE_SCOPED",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+        "query": "site:growsteady.me rotator-cuff-repair"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "I found the matching page on growsteady.me:\n\n- **Arthroscopic rotator cuff repair recovery data: 4 measured pain points and 5 milestones** ([growsteady.me](https://growsteady.me/recovery-data/rotator-cuff-repair?utm_source=openai))\n- Related timeline page: **Rotator cuff surgery recovery timeline** ([growsteady.me](https://growsteady.me/rotator-cuff-surgery-recovery-timeline?utm_source=openai))\n\nIf you want, I can also:\n1. summarize that page,\n2. extract the key recovery milestones, or\n3. pull all growsteady.me pages related to rotator cuff repair.",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data/rotator-cuff-repair?utm_source=openai",
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me rotator-cuff-repair"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Top result on that site:\n\n- **Arthroscopic rotator cuff repair recovery data: 4 measured pain points and 5 milestones** — a recovery-data page on Steady for rotator cuff repair. ([growsteady.me](https://growsteady.me/recovery-data/rotator-cuff-repair?utm_source=openai))\n\nRelated pages from the same site:\n\n- **Rotator cuff surgery recovery timeline** — overview/timeline page. ([growsteady.me](https://growsteady.me/rotator-cuff-surgery-recovery-timeline?utm_source=openai))\n- **Rotator cuff surgery recovery setbacks: when pain rises before it settles** — setbacks subpage. ([growsteady.me](https://growsteady.me/rotator-cuff-surgery-recovery-timeline/setbacks?utm_source=openai))\n- **Rotator cuff surgery recovery timeline — week 8** — a week-specific page. ([growsteady.me](https://growsteady.me/rotator-cuff-surgery-recovery-timeline/week/8?utm_source=openai))\n\nIf you want, I can also:\n1. summarize the rotator cuff repair page,\n2. extract the key milestones, or\n3. list all growsteady.me pages related to rotator cuff repair.",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data/rotator-cuff-repair?utm_source=openai",
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline?utm_source=openai",
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline/setbacks?utm_source=openai",
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline/week/8?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "site:growsteady.me rotator-cuff-repair"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I couldn't find a page at the exact path `growsteady.me/rotator-cuff-repair`. The closest match on the site is **\"Rotator cuff surgery recovery timeline\"** at growsteady.me/rotator-cuff-surgery-recovery-timeline. Here's what it says.\n\n**Overview**\nThe page describes arthroscopic rotator cuff repair recovery, week by week: typical pain, the sling phases, when motion and strength return, and what studies measured. It calls this one of the slower shoulder recoveries: six weeks in a sling, three months before overhead reaching, six to nine months before the strength reliably returns.\n\n**Common questions it answers**\n- **How long you wear the sling:** Six weeks in most modern protocols, occasionally extended to seven or eight weeks for large or multi-tendon tears, revisions, or repairs with concomitant tendon transfers.\n- **When you can drive:** Most people drive around the point of sling discontinuation, typically week six, though the timing varies more than for other procedures.\n- **Why it still hurts weeks later:** The page says the cause isn't tissue damage — by week three the surgical site has settled — it's the discomfort of immobilization and the small but constant background pain of a stiffening joint.\n\n**Pain and milestone numbers** (from the site's recovery data index)\n- Typical pain on a 0–10 scale: 4.4 at week 0, 3 at week 1, 4 at week 6, 3 at week 12, and 0.9 at week 52\n- Passive range of motion begins within 7 days to about 3 weeks, protocol-dependent\n- Desk work: when comfortable in the sling (protocol gives no fixed week; commonly ~1-2 weeks)\n- The data entry was last reviewed 2026-06-05\n\n**Sources the page cites:** The Factors Affecting Pain Pattern after Arthroscopic Rotator Cuff Repair (Kim CW, Kim JH, Kim DG, Clin Orthop Surg, 2014), a small study on pain catastrophizing (n=32), and a meta-analysis on returning to activities. The site gives each source a reliability score out of 10.\n\n**Related pages on the site:** Shoulder labral repair recovery timeline and Shoulder replacement recovery timeline. Both list the rotator cuff repair page as one of their sources.\n\nRecovery plans vary depending on how big the tear is and what your surgeon prefers, so follow your own surgeon's or physical therapist's instructions over general timelines.",
+            "citedUrls": [
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+              "https://growsteady.me/recovery-data"
+            ],
+            "retrievedUrls": [
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+              "https://growsteady.me/shoulder-replacement-recovery-timeline",
+              "https://growsteady.me/recovery-data",
+              "https://vivo.weill.cornell.edu/display/pubid19064162",
+              "https://www.semanticscholar.org/topic/rotator-cuff-repair/274667",
+              "https://medlineplus.gov/ency/presentations/100229_3.htm",
+              "https://medlineplus.gov/ency/presentations/100229_1.htm",
+              "https://medlineplus.gov/ency/presentations/100229_4.htm"
+            ],
+            "engineQueries": [
+              "site:growsteady.me rotator-cuff-repair"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "I couldn't find a page on growsteady.me at the exact path `/rotator-cuff-repair`. The closest match is the site's **Rotator cuff surgery recovery timeline** page (growsteady.me/rotator-cuff-surgery-recovery-timeline), which covers arthroscopic rotator cuff repair recovery, week by week: typical pain, the sling phases, when motion and strength return, and what studies measured.\n\n**Main points from that page:**\n- **Overall pace:** It calls this one of the slower shoulder recoveries: six weeks in a sling, three months before overhead reaching, six to nine months before the strength reliably returns.\n- **Sling:** You usually wear it for six weeks in most modern protocols, occasionally extended to seven or eight weeks for large or multi-tendon tears, revisions, or repairs with concomitant tendon transfers.\n- **Driving:** Most people drive around the point of sling discontinuation, typically week six, though the timing varies more than for other procedures.\n- **Pain in the early weeks:** The site says the pain isn't tissue damage — by week three the surgical site has settled — it's the discomfort of immobilization and the small but constant background pain of a stiffening joint.\n\n**Pain scores and milestones by week** (from the site's recovery data index, last reviewed 2026-06-05):\n- Typical pain on a 0–10 scale: week 0, 4.4; week 1, 3; week 6, 4; week 12, 3; week 52, 0.9\n- Gentle movement of the arm by someone else or a device (passive range of motion) starts within 7 days to about 3 weeks, protocol-dependent\n- Desk work: when comfortable in the sling (protocol gives no fixed week; commonly ~1-2 weeks)\n\n**Sources the page uses:** a prospective case series (n=32) on pain catastrophizing, a 2014 retrospective cohort by Kim et al. in Clin Orthop Surg, and a meta-analysis on return to activities. The site gives each source a reliability score from 6/10 to 8/10.\n\n**Related pages on the site:** the shoulder labral repair and shoulder replacement timelines both link back to the rotator cuff page.\n\nThese are typical timelines. Your surgeon's own rehab plan takes priority, especially since sling time and when you can start moving the arm depend on the protocol.",
+            "citedUrls": [
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+              "https://growsteady.me/recovery-data"
+            ],
+            "retrievedUrls": [
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+              "https://growsteady.me/shoulder-labral-repair-recovery-timeline",
+              "https://growsteady.me/shoulder-replacement-recovery-timeline",
+              "https://growsteady.me/recovery-data",
+              "https://vivo.weill.cornell.edu/display/pubid19064162",
+              "https://www.semanticscholar.org/topic/rotator-cuff-repair/274667",
+              "https://medlineplus.gov/ency/presentations/100229_3.htm",
+              "https://medlineplus.gov/ency/presentations/100229_1.htm",
+              "https://medlineplus.gov/ency/presentations/100229_4.htm"
+            ],
+            "engineQueries": [
+              "site:growsteady.me rotator-cuff-repair"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R3_VERBATIM",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+        "query": "Which website says the following, word for word? \"Rotator cuff surgery recovery timeline · Steady Steady Sign in recovery timeline · pain figures checked 2026-08-10 · last reviewed 2026-06-05 Rotator cuff surgery recovery timeline, week by week.\""
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "The website appears to be **Steady**, on the domain **growsteady.me**. The quoted text matches its **“Rotator cuff surgery recovery timeline”** page wording and surrounding navigation/header text. ([growsteady.me](https://growsteady.me/recovery-data?utm_source=openai))\n\nIf you want, I can also identify the **exact page URL/path** that contains that wording.",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"Rotator cuff surgery recovery timeline · Steady Steady Sign in recovery timeline · pain figures checked 2026-08-10 · last reviewed 2026-06-05 Rotator cuff surgery recovery timeline, week by week.\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "It appears to be from **Steady**, on the domain **growsteady.me**. The exact phrase is associated with their **“Rotator cuff surgery recovery timeline”** page, listed from the **Recovery data index** page. ([growsteady.me](https://growsteady.me/recovery-data?utm_source=openai))\n\nSo the website is: **growsteady.me / Steady**. ([growsteady.me](https://growsteady.me/recovery-data?utm_source=openai))",
+            "citedUrls": [
+              "https://growsteady.me/recovery-data?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "\"Rotator cuff surgery recovery timeline · Steady Steady Sign in recovery timeline · pain figures checked 2026-08-10 · last reviewed 2026-06-05 Rotator cuff surgery recovery timeline, week by week.\""
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "The text comes from the **rotator cuff page on Steady, at growsteady.me/rotator-cuff-surgery-recovery-timeline**.\n\nThe page title is \"Rotator cuff surgery recovery timeline, week by week.\" The indexed copy I found shows the \"recovery timeline · last reviewed 2026-06-05\" line, which matches your quote. Steady's site also has a \"Steady Sign in\" header in its navigation.\n\nOne part I couldn't see directly. The indexed copy of the rotator cuff page doesn't include the \"pain figures checked 2026-08-10\" stamp. However, another Steady page has the same format with that date: \"recovery timeline · pain figures checked 2026-08-10 · last reviewed 2026-06-11\". So the live rotator cuff page very likely has the stamp too, and search engines just captured an older version. Loading the page would confirm it.\n\nSteady describes itself as \"a post-surgery recovery tracker. It places your recent pain against published recovery data for your procedure and week, and links every figure to the study it came from.\"\n\nThere's also a page on a different site with almost the same title: wrs.group has \"Rotator Cuff Surgery Recovery Timeline, Week by Week\". That page doesn't include the \"Steady\" branding or the date stamps, so it isn't your source.",
+            "citedUrls": [
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+              "https://growsteady.me/pao-recovery-timeline",
+              "https://www.wrs.group/latest/rotator-cuff-surgery-recovery-timeline-week-by-week/"
+            ],
+            "retrievedUrls": [
+              "https://scoi.com/blog/rotator-cuff-surgery-recovery-time/",
+              "https://ivyrehab.com/health-resources/physical-therapy/a-guide-to-rotator-cuff-surgery-recovery/",
+              "https://www.jointventurespt.com/blog/physical-therapy-after-rotator-cuff-surgery/",
+              "https://www.wrs.group/latest/rotator-cuff-surgery-recovery-timeline-week-by-week/",
+              "https://www.jacorehab.com/blog/rotator-cuff-surgery-recovery-timeline-and-expectations/",
+              "https://nursebyyoursidenow.com/rotator-cuff-surgery-recovery-timeline-what-to-expect-week-by-week/",
+              "https://spectrumtherapynj.com/blogs/news/rotator-cuff-surgery-recovery-timeline-complete-guide",
+              "https://ortopediaonline.net/rotator-cuff-surgery-recovery-timeline/",
+              "https://venturaortho.com/rotator-cuff-surgery-recovery-time-off-work/",
+              "https://surgicalrecoverysystems.com/what-to-expect-in-your-recovery-after-shoulder-rotator-cuff-repair-surgery/",
+              "https://growsteady.me/pao-recovery-timeline",
+              "https://growsteady.me/recovery-data",
+              "https://growsteady.me/acl-recovery-timeline",
+              "https://growsteady.me/hip-arthroscopy-recovery-timeline",
+              "https://wfirm.com/understanding-the-nerve-pain-timeline-after-an-accident-what-to-expect-during-re/",
+              "https://knowdailyhub.com/blog/quadriceps-tendon-recovery-a-phase-by-phase-timeline",
+              "https://www.spryhealth.ai/blog/how-long-does-physical-therapy-take-to-work",
+              "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10420503",
+              "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11109801",
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+              "https://drmkchan.com/2026/07/21/rotator-cuff-surgery-recovery/",
+              "https://nowakorthopedics.com/2026/09/29/rotator-cuff-repair-recovery-timeline-and-tips/",
+              "https://pathwaysurgery.com/resources/blog/rotator-cuff-surgery-recovery-time/"
+            ],
+            "engineQueries": [
+              "\"Rotator cuff surgery recovery timeline\" Steady week by week",
+              "Steady \"recovery timeline\" \"pain figures checked\"",
+              "growsteady.me rotator cuff surgery recovery timeline week by week Steady"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "That text comes from **Steady**, at growsteady.me/rotator-cuff-surgery-recovery-timeline.\n\nThe page title matches your text exactly: \"Rotator cuff surgery recovery timeline · Steady.\" Its main heading is \"Rotator cuff surgery recovery timeline, week by week.\" The rest of your text (\"Sign in,\" \"recovery timeline · pain figures checked 2026-08-10 · last reviewed 2026-06-05\") looks like the page's navigation bar and date labels. That kind of text often gets run together when a page is copied. The search result I found doesn't include those date stamps, so I can't confirm them word for word. The title and heading do match exactly, though.\n\nThe page covers arthroscopic rotator cuff repair recovery, week by week: typical pain, the sling phases, when motion and strength return, and what studies measured. It describes the procedure as one of the slower shoulder recoveries — six weeks in a sling, three months before overhead reaching, six to nine months before the strength reliably returns.\n\nA similar page has almost the same title: wrs.group's \"Rotator Cuff Surgery Recovery Timeline, Week by Week.\" But it isn't labeled \"Steady,\" so growsteady.me is the match.",
+            "citedUrls": [
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline"
+            ],
+            "retrievedUrls": [
+              "https://scoi.com/blog/rotator-cuff-surgery-recovery-time/",
+              "https://ivyrehab.com/health-resources/physical-therapy/a-guide-to-rotator-cuff-surgery-recovery/",
+              "https://www.jointventurespt.com/blog/physical-therapy-after-rotator-cuff-surgery/",
+              "https://www.wrs.group/latest/rotator-cuff-surgery-recovery-timeline-week-by-week/",
+              "https://www.jacorehab.com/blog/rotator-cuff-surgery-recovery-timeline-and-expectations/",
+              "https://nursebyyoursidenow.com/rotator-cuff-surgery-recovery-timeline-what-to-expect-week-by-week/",
+              "https://spectrumtherapynj.com/blogs/news/rotator-cuff-surgery-recovery-timeline-complete-guide",
+              "https://ortopediaonline.net/rotator-cuff-surgery-recovery-timeline/",
+              "https://venturaortho.com/rotator-cuff-surgery-recovery-time-off-work/",
+              "https://surgicalrecoverysystems.com/what-to-expect-in-your-recovery-after-shoulder-rotator-cuff-repair-surgery/",
+              "https://pubmed.ncbi.nlm.nih.gov/41223034/",
+              "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+              "https://mirzaorthopedics.com/rotator-cuff-surgery-recovery-timeline-pain-tips/",
+              "https://nowakorthopedics.com/2026/09/29/rotator-cuff-repair-recovery-timeline-and-tips/",
+              "https://www.shaynekellyortho.com/rotator-cuff-repair-timeline",
+              "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8307297/",
+              "https://www.gomberamd.com/blog/how-long-will-i-have-pain-after-rotator-cuff-surgery.html"
+            ],
+            "engineQueries": [
+              "\"Rotator cuff surgery recovery timeline\" Steady week by week",
+              "Steady recovery timeline \"pain figures checked\" rotator cuff"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "rung": {
+        "id": "R4_NATURAL",
+        "scope": "page",
+        "pageUrl": "https://growsteady.me/rotator-cuff-surgery-recovery-timeline",
+        "query": "how long does rotator cuff surgery recovery take"
+      },
+      "runs": [
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Recovery from **rotator cuff surgery usually takes several months**, and **full recovery commonly takes about 4 to 6 months**, though **6 to 9 months or longer** is not unusual for larger tears, more complex repairs, or slower healing. ([ortho2.wustl.edu](https://ortho2.wustl.edu/content/Patient-Care/3416/Services/Shoulder-Elbow/Overview/Rotator-Cuff/Rotator-cuff-surgery-Preparing-for-surgery-and-recovery.aspx?utm_source=openai))\n\nA rough timeline is:\n\n- **First few days to 2 weeks:** pain, swelling, and limited use of the arm are common.\n- **About 4 to 6 weeks:** many patients are still in a **sling** while the tendon begins healing.\n- **Around 6 to 12 weeks:** physical therapy usually becomes more active, with gradual return of motion.\n- **Around 3 to 6 months:** strength and function continue improving.\n- **Around 4 to 6+ months:** many people return to more normal daily activity, but heavy lifting, overhead sports, or labor may take longer. ([hss.edu](https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery?utm_source=openai))\n\nRecovery time depends a lot on:\n- **size of the tear**\n- **type of surgery/repair**\n- **age and overall health**\n- **how closely rehab restrictions are followed**\n- whether other procedures were done at the same time. ([hss.edu](https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery?utm_source=openai))\n\nIf you want, I can also give you a **week-by-week recovery timeline** or explain **when people can drive, work, sleep normally, or return to the gym** after surgery.",
+            "citedUrls": [
+              "https://ortho2.wustl.edu/content/Patient-Care/3416/Services/Shoulder-Elbow/Overview/Rotator-Cuff/Rotator-cuff-surgery-Preparing-for-surgery-and-recovery.aspx?utm_source=openai",
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "rotator cuff surgery recovery time orthopedic society patient guide"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "openai-search",
+          "model": "gpt-5.4",
+          "answer": {
+            "answerText": "Rotator cuff surgery recovery usually takes **months, not weeks**.\n\nA common rough timeline is:\n\n- **First 4–6 weeks:** sling/immobilizer, protecting the repair; basic hand/elbow motion and early rehab only. ([fhft.nhs.uk](https://www.fhft.nhs.uk/patients-and-visitors/patient-information-library/guidelines-patients-rotator-cuff-repair/submit/7561?utm_source=openai))\n- **About 6–12 weeks:** gradually regain shoulder motion with physical therapy. ([fhft.nhs.uk](https://www.fhft.nhs.uk/patients-and-visitors/patient-information-library/guidelines-patients-rotator-cuff-repair/submit/7561?utm_source=openai))\n- **Around 3–6 months:** stronger functional recovery for many daily activities. ([hopkinsmedicine.org](https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/rotator-cuff-repair?utm_source=openai))\n- **About 6–9 months:** many people feel much closer to normal; tendon healing continues. ([hopkinsmedicine.org](https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/failed-rotator-cuff-repairs?utm_source=openai))\n- **Up to 12 months or longer:** strength and improvement may still continue, especially after larger tears. ([roh.nhs.uk](https://roh.nhs.uk/services-information/shoulder-and-elbow/rotator-cuff-repair?utm_source=openai))\n\nA few specifics:\n- Johns Hopkins says **full recovery often takes 4–6 months**, but also notes tendon healing is still progressing at **6–9 months**, and many patients say it takes about **9 months** to feel completely normal. ([hopkinsmedicine.org](https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/rotator-cuff-repair?utm_source=openai))\n- Recovery is often **slower** if the tear was large, the repair was complex, or you do heavy manual work. ([fhft.nhs.uk](https://www.fhft.nhs.uk/patients-and-visitors/patient-information-library/guidelines-patients-rotator-cuff-repair/submit/7561?utm_source=openai))\n\nTypical return times vary:\n- **Desk work:** often **1–2 weeks** if pain is controlled and the arm can stay protected.\n- **Driving:** usually only when your surgeon clears you, often **after the sling phase**.\n- **Manual labor / sports:** often **4–6 months or more**.  \nThese are general patterns and depend a lot on your surgeon’s protocol and the size of the tear. ([hopkinsmedicine.org](https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/rotator-cuff-repair?utm_source=openai))\n\nIf you want, I can also give you a **week-by-week recovery timeline** or explain recovery for **arthroscopic vs open repair**.",
+            "citedUrls": [
+              "https://www.fhft.nhs.uk/patients-and-visitors/patient-information-library/guidelines-patients-rotator-cuff-repair/submit/7561?utm_source=openai",
+              "https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/rotator-cuff-repair?utm_source=openai",
+              "https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/failed-rotator-cuff-repairs?utm_source=openai",
+              "https://roh.nhs.uk/services-information/shoulder-and-elbow/rotator-cuff-repair?utm_source=openai"
+            ],
+            "retrievedUrls": null,
+            "engineQueries": [
+              "American Academy of Orthopaedic Surgeons rotator cuff surgery recovery timeline"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "Full recovery from rotator cuff surgery usually takes **about 4 to 12 months**. The biggest factor is how large the tear was. According to HSS, small tears take about four months to fully recover and large tears about six months. Severe, massive tears can take anywhere from 6 to 12 months.\n\n**Typical timeline**\n- **Weeks 0–6:** You'll wear a sling, and the shoulder is moved only passively (someone else, like a therapist, moves it for you) to protect the repair.  Physical therapy often starts one week after surgery. The slow pace is necessary because it takes six to eight weeks for the tendon to heal to the bone.\n- **Weeks 6–12:** You start moving the arm on your own again.\n- **Months 3–5:** Strengthening work. By three to four months, most people can handle everyday movements.\n- **Months 6–12:** For larger tears, this is when full strength and function return. Even after that, strength and comfort often keep improving for 18 to 24 months after surgery.\n\n**Returning to work and activities**\n- Desk job: often within 1-2 weeks, though other sources say several weeks\n- Light-duty work: often within 6-8 weeks\n- Manual labor: 3-4 months\n- Heavy lifting: you're usually fully cleared 6-10 months after surgery\n- Most activities are possible after about 12 weeks, but vigorous sports may be limited for four to six months.\n\n**What affects your timeline:** tear size, tissue quality, age, overall health, and your surgeon's protocol. If the surgery was on your dominant arm, recovery may take longer. Don't push ahead of schedule. Loading the tendon too early can make the repair fail, so stick to your surgeon's and physical therapist's plan.",
+            "citedUrls": [
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery",
+              "https://www.wrs.group/latest/rotator-cuff-surgery-recovery-timeline-week-by-week/",
+              "https://www.shaynekellyortho.com/rotator-cuff-repair-timeline",
+              "https://venturaortho.com/rotator-cuff-surgery-recovery-time-off-work/",
+              "https://ivyrehab.com/health-resources/physical-therapy/a-guide-to-rotator-cuff-surgery-recovery/"
+            ],
+            "retrievedUrls": [
+              "https://scoi.com/blog/rotator-cuff-surgery-recovery-time/",
+              "https://ivyrehab.com/health-resources/physical-therapy/a-guide-to-rotator-cuff-surgery-recovery/",
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery",
+              "https://www.wrs.group/latest/rotator-cuff-surgery-recovery-timeline-week-by-week/",
+              "https://venturaortho.com/rotator-cuff-surgery-recovery-time-off-work/",
+              "https://www.shaynekellyortho.com/rotator-cuff-repair-timeline",
+              "https://ortopediaonline.net/rotator-cuff-surgery-recovery-timeline/",
+              "https://www.toaeasttn.com/how-long-does-it-take-to-recover-from-shoulder-surgery/",
+              "https://grad-programs.info.ncsu.edu/?p=7523",
+              "https://www.healthline.com/health/rotator-cuff-surgery-recovery-timeline"
+            ],
+            "engineQueries": [
+              "rotator cuff surgery recovery timeline"
+            ],
+            "ok": true
+          }
+        },
+        {
+          "engine": "claude-search",
+          "model": "claude-opus-5-5",
+          "answer": {
+            "answerText": "Full recovery from rotator cuff surgery usually takes **about 4 to 12 months**. The biggest factor is how large the tear was. According to HSS, full recovery takes about four months for small tears and six months for large tears. For severe, massive tears, it can take anywhere from 6 to 12 months.\n\n**Typical timeline**\n- **Weeks 0–6:** You'll wear a sling and do passive motion only, to protect the repair. It takes six to eight weeks for the tendon to heal to the bone. Physical therapy usually starts one week after surgery.\n- **Weeks 6–12:** Active motion returns, meaning you start moving the arm with your own muscles.\n- **Months 3–5:** Formal strengthening usually begins around month three, once the tendon-to-bone attachment is mature enough to take load.\n- **Months 6–12:** Full strength and function return, especially for larger tears.\n- **After that:** Improvement doesn't stop at one year. Strength and comfort often keep getting better for 18 to 24 months after surgery.\n\n**Returning to work and activities** (approximate)\n- Desk job: often within 1–2 weeks\n- Light duty: within 6–8 weeks\n- Manual labor: 3–4 months\n- Heavy lifting: full clearance usually at 6–10 months\n- Most activities: often around 12 weeks, though vigorous sports may be restricted for four to six months\n\n**What affects your recovery time:** Tear size, tissue quality, age, overall health and your surgeon's protocol. If the surgery was on your dominant arm, the timeline may be longer.\n\nThe first month tends to be the hardest. Everything is awkward: dressing one-handed, showering, and sleeping upright. It's also common to have shoulder pain, stiffness and discomfort at night for several months. Don't rush the early phase, because pushing too early risks the repair failing. Follow your surgeon's specific rehab plan.",
+            "citedUrls": [
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery",
+              "https://www.wrs.group/latest/rotator-cuff-surgery-recovery-timeline-week-by-week/",
+              "https://www.shaynekellyortho.com/rotator-cuff-repair-timeline",
+              "https://venturaortho.com/rotator-cuff-surgery-recovery-time-off-work/",
+              "https://ivyrehab.com/health-resources/physical-therapy/a-guide-to-rotator-cuff-surgery-recovery/",
+              "https://ortopediaonline.net/rotator-cuff-surgery-recovery-timeline/"
+            ],
+            "retrievedUrls": [
+              "https://scoi.com/blog/rotator-cuff-surgery-recovery-time/",
+              "https://ivyrehab.com/health-resources/physical-therapy/a-guide-to-rotator-cuff-surgery-recovery/",
+              "https://www.hss.edu/health-library/conditions-and-treatments/torn-rotator-cuff-surgery",
+              "https://www.wrs.group/latest/rotator-cuff-surgery-recovery-timeline-week-by-week/",
+              "https://venturaortho.com/rotator-cuff-surgery-recovery-time-off-work/",
+              "https://www.shaynekellyortho.com/rotator-cuff-repair-timeline",
+              "https://ortopediaonline.net/rotator-cuff-surgery-recovery-timeline/",
+              "https://www.toaeasttn.com/how-long-does-it-take-to-recover-from-shoulder-surgery/",
+              "https://grad-programs.info.ncsu.edu/?p=7523",
+              "https://www.healthline.com/health/rotator-cuff-surgery-recovery-timeline"
+            ],
+            "engineQueries": [
+              "rotator cuff surgery recovery timeline"
+            ],
+            "ok": true
+          }
+        }
+      ]
+    }
+  ]
+}
